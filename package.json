@@ -1,0 +1,66 @@
+{
+  "name": "antibes",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint src",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "jest",
+    "test:watch": "yarn test --watch",
+    "generate": "yarn plop --plopfile generators/plopfile.js",
+    "storybook": "start-storybook -s ./public -p 6006",
+    "build-storybook": "build-storybook -s ./public",
+    "main": "git checkout main && git pull"
+  },
+  "husky": {
+    "hooks": {
+      "skip-pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*": [
+      "yarn lint --fix",
+      "yarn test --findRelatedTests --bail"
+    ]
+  },
+  "dependencies": {
+    "next": "13.2.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-swipeable": "^7.0.0",
+    "styled-components": "^5.3.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/preset-typescript": "^7.10.4",
+    "@storybook/addon-essentials": "6.0.16",
+    "@storybook/react": "6.0.16",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^10.4.9",
+    "@types/jest": "^26.0.10",
+    "@types/node": "18.14.2",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.11",
+    "@types/styled-components": "^5.1.26",
+    "@typescript-eslint/eslint-plugin": "^5.54.x",
+    "@typescript-eslint/parser": "^5.54.x",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-styled-components": "^2.0.7",
+    "eslint": "8.35.0",
+    "eslint-config-next": "13.2.1",
+    "eslint-config-prettier": "^8.6.x",
+    "eslint-plugin-prettier": "^4.2.x",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^4.2.5",
+    "jest": "^26.4.2",
+    "jest-styled-components": "^7.0.3",
+    "lint-staged": "^10.2.11",
+    "plop": "^2.7.4",
+    "prettier": "^2.8.x",
+    "typescript": "4.9.5"
+  }
+}
