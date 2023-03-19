@@ -13,39 +13,21 @@ import Languages from '@/enums/languages'
 import { useIsHome, useIsLaptop, useText } from '@/hooks'
 import { LangContext } from '@/stores'
 
-const slideDown = keyframes`
-  from {
-    transform: translateY(-100%);
-  }
-
-  to {
-    transform: translateY(70%);
-  }
-`
-const slideUp = keyframes`
-  from {
-    transform: translateY(65%);
-  }
-  
-  to {
-    transform: translateY(-100%);
-  }
-`
 const LangMenuContainer = styled.div`
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: absolute;
-  transform: translateY(-100%);
   width: 60px;
   z-index: 1;
+  top: 23px;
 
   &[data-open='true'] {
-    animation: ${slideDown} 1s forwards ease-in-out;
+    display: flex;
   }
   &[data-open='false'] {
-    animation: ${slideUp} 1s forwards ease-in-out;
+    display: none;
   }
 
   background-color: white;
@@ -65,8 +47,8 @@ const LangContainer = styled.div`
   position: relative;
   z-index: 3;
   background-color: white;
-  height: 100%;
-  width: 60px;
+  width: fit-content;
+  height: fit-content;
   text-align: center;
   .btn {
     position: relative;
@@ -77,7 +59,7 @@ const LangContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: ${(props) => props.theme.bgColors.primary};
+    padding: 10px;
   }
 `
 const Lang = () => {
@@ -90,7 +72,7 @@ const Lang = () => {
     setLang(_lang)
     handleBtnClick()
   }
-
+  const langs = [Languages.FR, Languages.EN, Languages.RU]
   return (
     <LangContainer
       className="tobook"
@@ -108,6 +90,7 @@ const Lang = () => {
           <path
             d="M1 0.999939L8 10.9999L11.5 5.99994L15 0.999939"
             stroke="#D99380"
+            style={{opacity: `${isOpen ? 0 : 1}`}}
             strokeWidth="2"
           />
         </svg>
@@ -117,11 +100,14 @@ const Lang = () => {
         className="sc-lang-menu"
         style={{ fontSize: '14px', cursor: 'pointer' }}
       >
-        <div onClick={() => handleLangClick(Languages.FR)}>{Languages.FR}</div>
-        <Divider />
-        <div onClick={() => handleLangClick(Languages.EN)}>{Languages.EN}</div>
-        <Divider />
-        <div onClick={() => handleLangClick(Languages.RU)}>{Languages.RU}</div>
+        {
+          langs.filter(item => item !== lang).map((item) => 
+            <>
+              <Divider />
+              <div onClick={() => handleLangClick(item)}>{item}</div>
+            </>
+          )
+        }
       </LangMenuContainer>
     </LangContainer>
   )
@@ -132,7 +118,7 @@ const ToBookMenuContainer = styled.div`
   justify-content: center;
   align-items: center;
   position: absolute;
-  transform: translateY(60%);
+  top: 30px;
   width: 250px;
   z-index: 1;
 
@@ -168,6 +154,7 @@ const ToBookContainer = styled.div`
     z-index: 3;
     width: 250px;
     height: 100%;
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
