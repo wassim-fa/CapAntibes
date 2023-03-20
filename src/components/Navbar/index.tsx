@@ -72,7 +72,6 @@ const Lang = () => {
     setLang(_lang)
     handleBtnClick()
   }
-  const langs = [Languages.FR, Languages.EN, Languages.RU]
   return (
     <LangContainer
       className="tobook"
@@ -100,14 +99,27 @@ const Lang = () => {
         className="sc-lang-menu"
         style={{ fontSize: '14px', cursor: 'pointer' }}
       >
-        {
-          langs.filter(item => item !== lang).map((item) => 
-            <>
-              <Divider />
-              <div onClick={() => handleLangClick(item)}>{item}</div>
-            </>
-          )
-        }
+      {
+        lang !== Languages.FR && 
+        <>
+          <Divider />
+          <div onClick={() => handleLangClick(Languages.FR)}>{Languages.FR}</div>
+        </>
+      }
+      {
+        lang !== Languages.EN && 
+        <>
+          <Divider />
+          <div onClick={() => handleLangClick(Languages.EN)}>{Languages.EN}</div>
+        </>
+      }
+      {
+        lang !== Languages.RU && 
+        <>
+          <Divider />
+          <div onClick={() => handleLangClick(Languages.RU)}>{Languages.RU}</div>
+        </>
+      }
       </LangMenuContainer>
     </LangContainer>
   )

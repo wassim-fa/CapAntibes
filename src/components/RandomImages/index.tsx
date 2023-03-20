@@ -1,6 +1,5 @@
 import { useIsMobile } from '@/hooks'
 import { useCallback, useEffect, useState } from 'react'
-import { useSwipeable } from 'react-swipeable'
 import * as S from './styles'
 import random0 from '../../../public/assets/images/home/random0.png'
 import random1 from '../../../public/assets/images/home/random1.png'
@@ -23,15 +22,6 @@ const randomsImages = [
   random6,
   random7
 ]
-const swipeConfig = {
-  delta: { up: 2000, down: 2000 }, // min distance(px) before a swipe starts. *See Notes*
-  preventScrollOnSwipe: false, // prevents scroll during swipe (*See Details*)
-  trackTouch: true, // track touch input
-  trackMouse: false, // track mouse input
-  rotationAngle: 0, // set a rotation angle
-  swipeDuration: Infinity, // allowable duration of a swipe (ms). *See Notes*
-  touchEventOptions: { passive: true } // options for touch listeners (*See Details*)
-}
 type RandomImagesContainerProps = {
   imageToShow: number | number
   img1: number
@@ -84,10 +74,6 @@ const RandomImages = () => {
     imgId,
     nbOfChildren
   ])
-  const handlers = useSwipeable({
-    onSwiped: () => changeImgAuto(),
-    ...swipeConfig
-  })
   useEffect(() => {
     const interval = setInterval(() => {
       changeImgAuto()
@@ -96,7 +82,7 @@ const RandomImages = () => {
   }, [changeImgAuto])
 
   return (
-    <div className="sc-randomimages" onClick={changeImgAuto} {...handlers}>
+    <div className="sc-randomimages" onClick={changeImgAuto}>
       <Row>
         {Array(nbOfChildren)
           .fill(true)
