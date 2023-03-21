@@ -7,29 +7,45 @@ export const Wrapper = styled.div`
     cursor: pointer;
     overflow: hidden;
 
-    > * {
+    &[data-isshowfirst='true'] > *:first-child,
+    &[data-isshowfirst='false'] > *:last-child {
+        z-index: 2;
+        display: flex;
+        transition: all 10s 10.5s ease-in-out ;
+    }
+    
+    > div {
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+        display: none;
         z-index: 0;
-        opacity: 0;
-        object-fit: cover;
-        width: 100%;
         height: 100%;
-    }
-    > .car-active {
-        opacity: 1;
-        transition: all 0.5s ease-in-out;
-        left: 0;
-        z-index: 1;
-    }
-    > .car-previous {
-        opacity: 1;
-        transition: all 0.5s ease-in-out;
-        left: -100%;
-        z-index: 1;
-    }
-    > .car-next {
-        opacity: 1;
-        transition: all 0.5s ease-in-out;
-        left: 100%;
-        z-index: 1;
+        width: 100%;
+        > * {
+            z-index: 0;
+            opacity: 0;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        > .car-active {
+            opacity: 1;
+            transition: all 0.5s ease-in-out;
+            left: 0;
+            z-index: 1;
+        }
+        > .car-previous {
+            opacity: 1;
+            transition: all 0.5s ease-in-out;
+            left: -100%;
+            z-index: 1;
+        }
+        > .car-next {
+            opacity: 1;
+            transition: all 0.5s ease-in-out;
+            left: 100%;
+            z-index: 1;
+        }
     }
 `
