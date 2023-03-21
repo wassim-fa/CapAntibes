@@ -89,7 +89,7 @@ const Lang = () => {
           <path
             d="M1 0.999939L8 10.9999L11.5 5.99994L15 0.999939"
             stroke="#D99380"
-            style={{opacity: `${isOpen ? 0 : 1}`}}
+            style={{ opacity: `${isOpen ? 0 : 1}` }}
             strokeWidth="2"
           />
         </svg>
@@ -99,27 +99,30 @@ const Lang = () => {
         className="sc-lang-menu"
         style={{ fontSize: '14px', cursor: 'pointer' }}
       >
-      {
-        lang !== Languages.FR && 
-        <>
-          <Divider />
-          <div onClick={() => handleLangClick(Languages.FR)}>{Languages.FR}</div>
-        </>
-      }
-      {
-        lang !== Languages.EN && 
-        <>
-          <Divider />
-          <div onClick={() => handleLangClick(Languages.EN)}>{Languages.EN}</div>
-        </>
-      }
-      {
-        lang !== Languages.RU && 
-        <>
-          <Divider />
-          <div onClick={() => handleLangClick(Languages.RU)}>{Languages.RU}</div>
-        </>
-      }
+        {lang !== Languages.FR && (
+          <>
+            <Divider />
+            <div onClick={() => handleLangClick(Languages.FR)}>
+              {Languages.FR}
+            </div>
+          </>
+        )}
+        {lang !== Languages.EN && (
+          <>
+            <Divider />
+            <div onClick={() => handleLangClick(Languages.EN)}>
+              {Languages.EN}
+            </div>
+          </>
+        )}
+        {lang !== Languages.RU && (
+          <>
+            <Divider />
+            <div onClick={() => handleLangClick(Languages.RU)}>
+              {Languages.RU}
+            </div>
+          </>
+        )}
       </LangMenuContainer>
     </LangContainer>
   )

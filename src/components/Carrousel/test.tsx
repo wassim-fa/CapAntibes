@@ -6,7 +6,9 @@ describe('<Carrousel />', () => {
   it('should render the heading', () => {
     const { container } = render(<Carrousel />)
 
-    expect(screen.getByRole('heading', { name: /Carrousel/i })).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: /Carrousel/i })
+    ).toBeInTheDocument()
 
     expect(container.firstChild).toMatchSnapshot()
   })

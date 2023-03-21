@@ -24,7 +24,7 @@ const RandomImagesContainer = ({
 interface RandomImagesProps {
   listImages: StaticImageData[]
 }
-const RandomImages = ({listImages} : RandomImagesProps) => {
+const RandomImages = ({ listImages }: RandomImagesProps) => {
   const isMobile = useIsMobile()
   const nbOfChildren = isMobile ? 1 : 2
   const initImgId: number = isMobile ? 1 : 3
@@ -58,7 +58,8 @@ const RandomImages = ({listImages} : RandomImagesProps) => {
     images,
     imagesToShow,
     imgId,
-    nbOfChildren
+    nbOfChildren,
+    listImages
   ])
   useEffect(() => {
     const interval = setInterval(() => {

@@ -6,4 +6,4 @@ export default {
   component: Carrousel
 } as Meta
 
-export const Default: Story = () => <Carrousel />
+export const Default: Story = () => <Carrousel images={[]} />
