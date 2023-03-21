@@ -7,18 +7,22 @@ export const Wrapper = styled.div`
     cursor: pointer;
     overflow: hidden;
 
-    &[data-isshowfirst='true'] > *:first-child,
+    /* &[data-isshowfirst='true'] > *:first-child,
     &[data-isshowfirst='false'] > *:last-child {
         z-index: 2;
         display: flex;
-        transition: all 10s 10.5s ease-in-out ;
     }
-    
+     */
+    &[data-isshowfirst='true'] > *:first-child,
+    &[data-isshowfirst='false'] > *:last-child {
+        z-index: 2;
+    }
+
+
     > div {
         position: relative;
         cursor: pointer;
         overflow: hidden;
-        display: none;
         z-index: 0;
         height: 100%;
         width: 100%;

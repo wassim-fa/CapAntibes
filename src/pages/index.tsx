@@ -124,7 +124,7 @@ export default function Home() {
             />
           </svg>
         </div>
-        {isLaptop ? <RandomImages listImages={randomsImages} /> : <Carrousel images={[randomsImages[randomsImages.length -1], ...randomsImages]} /> }
+        {isLaptop ? <RandomImages listImages={randomsImages} /> : <Carrousel images={randomsImages} /> }
         <Column
           opt_margin={isLaptop ? [1, 1, 1, 1] : [0.5, 0.5, 0.5, 0.5]}
           opt_spacing={spacing}

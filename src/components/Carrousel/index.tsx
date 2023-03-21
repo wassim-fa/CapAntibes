@@ -19,23 +19,21 @@ interface CarrouselProps {
 }
 const Carrousel = ({ images }: CarrouselProps) => {
   const [showFirstTab, setShowFirstTab] = useState(true)
+  const [direction, setDirection] = useState('Left')
   const [currentImage, setCurrentImage] = useState(1);
   const imageRefs = useRef(images.map(() => null));
 
   const handleSwipe = (eventData: SwipeEventData) => {
-    let nextValue = currentImage
-    if (eventData.dir === "Left") {
-      nextValue = (currentImage + 1) % images.length;
-    } else if (eventData.dir === "Right") {
-      nextValue = (currentImage - 1) % images.length;
-    }
+    let nextValue = (eventData.dir === "Left" ? currentImage + 1 : currentImage - 1)
+    let nextIndex = nextValue % images.length
     if(nextValue < 0) {
-      nextValue = images.length - 1
+      nextIndex = images.length - 1
     }
-    if (nextValue === (images.length-1) || nextValue === 0) {
+    if (nextValue === images.length || nextValue === 0) {
       setShowFirstTab(!showFirstTab)
     }
-    setCurrentImage(nextValue);
+    setDirection(eventData.dir)
+    setCurrentImage(nextIndex);
   }
 
   const swipeHandlers = useSwipeable({
@@ -46,27 +44,29 @@ const Carrousel = ({ images }: CarrouselProps) => {
 
   const getClassName = (index: number) => {
     let state = ''
+    const previous = currentImage - 1 < 0 ? (images.length - 1) : currentImage - 1
+    const next = currentImage + 1 > (images.length - 1) ? 0 : currentImage + 1
 
     if (index === currentImage) {
       state = 'car-active'
-    } else if (index === (currentImage - 1)) {
+    } else if (index === (previous)) {
       state = 'car-previous'
-    } else if (index === currentImage + 1) {
+    } else if (index === next) {
       state = 'car-next'
     }
 
     return state
   }
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     handleSwipe({ dir: "Left" } as SwipeEventData)
-  //   }, 2000)
-  //   return () => clearInterval(interval)
-  // }, [handleSwipe])
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleSwipe({ dir: "Left" } as SwipeEventData)
+    }, 2000)
+    return () => clearInterval(interval)
+  }, [handleSwipe])
 
   return (
-    <S.Wrapper className="sc-carrousel" data-isshowfirst={showFirstTab} {...swipeHandlers}>
+    <S.Wrapper className="sc-carrousel" data-direction={direction} data-isshowfirst={showFirstTab} {...swipeHandlers}>
       <div>
         {images.map((src, index) => (
           <Image
