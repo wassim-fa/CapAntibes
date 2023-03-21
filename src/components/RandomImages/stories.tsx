@@ -6,4 +6,4 @@ export default {
   component: RandomImage
 } as Meta
 
-export const Default: Story = () => <RandomImage />
+export const Default: Story = () => <RandomImage listImages={[]} />

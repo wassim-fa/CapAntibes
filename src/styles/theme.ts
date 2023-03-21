@@ -3,11 +3,13 @@ import { DefaultTheme } from 'styled-components'
 export const defaultTheme: DefaultTheme = {
   bgColors: {
     primary: '#FFFFFF',
-    secondary: '#FFA36F'
+    secondary: '#FFA36F',
+    yellow: 'rgba(150, 180, 0 , 0.2)'
   },
   fontColors: {
     primary: '#D99380',
-    secondary: '#FFFFFF'
+    secondary: '#FFFFFF',
+    yellow: '#FAB400'
   },
   fontStyles: {
     medium: 'EurostileMediumExt',

@@ -11,6 +11,15 @@ import img1 from '../../public/assets/images/home/home_1.png'
 import img2 from '../../public/assets/images/home/home_2.png'
 import img3 from '../../public/assets/images/home/home_3.png'
 import img4 from '../../public/assets/images/home/home_4.png'
+import logo3 from '../../public/assets/images/home/logo_3.png'
+import random0 from '../../public/assets/images/home/random0.png'
+import random1 from '../../public/assets/images/home/random1.png'
+import random2 from '../../public/assets/images/home/random2.png'
+import random3 from '../../public/assets/images/home/random3.png'
+import random4 from '../../public/assets/images/home/random4.png'
+import random5 from '../../public/assets/images/home/random5.png'
+import random6 from '../../public/assets/images/home/random6.png'
+import random7 from '../../public/assets/images/home/random7.png'
 import Image from 'next/image'
 import Colors from '@/enums/colors'
 import { TCssSize } from '@/interfaces'
@@ -19,11 +28,21 @@ import { useIsLaptop, useIsMobile, useText } from '@/hooks'
 import RandomImages from '@/components/RandomImages'
 import RowToColumn from '@/components/RowToColumn'
 import { createGlobalStyle } from 'styled-components'
+import Carrousel from '@/components/Carrousel'
 
 const IndexPageStyles = createGlobalStyle`
   .mobile {}
 `
-
+const randomsImages = [
+  random0,
+  random1,
+  random2,
+  random3,
+  random4,
+  random5,
+  random6,
+  random7
+]
 export default function Home() {
   const isMobile = useIsMobile()
   const isLaptop = useIsLaptop()
@@ -105,7 +124,11 @@ export default function Home() {
             />
           </svg>
         </div>
-        <RandomImages />
+        {isLaptop ? (
+          <RandomImages listImages={randomsImages} />
+        ) : (
+          <Carrousel images={randomsImages} />
+        )}
         <Column
           opt_margin={isLaptop ? [1, 1, 1, 1] : [0.5, 0.5, 0.5, 0.5]}
           opt_spacing={spacing}
@@ -189,14 +212,22 @@ export default function Home() {
           align="center"
           marginForRow={[0.5, 0, 0.5, 0]}
           marginForColumn={[1, 0, 1, 0]}
-          bgColor={Colors.SECONDARY}
+          bgColor={Colors.YELLOW}
         >
           <Column opt_margin={[0.5, 0.5, 1, 0.5]} opt_spacing={spacing}>
-            <Text opt_size={fontRegular} opt_color={Colors.SECONDARY}>
+            <Image
+              style={{
+                width: `20%`,
+                height: 'auto'
+              }}
+              src={logo3}
+              alt="logo poisson"
+            />
+            <Text opt_size={fontRegular} opt_color={Colors.YELLOW}>
               {useText(contentsHome.text5)}
             </Text>
-            <Button opt_color={Colors.SECONDARY}>
-              <Text opt_size={fontSmall} opt_color={Colors.SECONDARY}>
+            <Button opt_color={Colors.YELLOW}>
+              <Text opt_size={fontSmall} opt_color={Colors.YELLOW}>
                 {useText(contentsHome.btnMoreInformation)}
               </Text>
             </Button>

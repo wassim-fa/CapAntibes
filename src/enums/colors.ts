@@ -1,6 +1,7 @@
 const enum Colors {
   PRIMARY = 'primary',
-  SECONDARY = 'secondary'
+  SECONDARY = 'secondary',
+  YELLOW = 'yellow'
 }
 
 export default Colors

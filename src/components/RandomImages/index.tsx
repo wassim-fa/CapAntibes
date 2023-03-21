@@ -1,54 +1,30 @@
 import { useIsMobile } from '@/hooks'
 import { useCallback, useEffect, useState } from 'react'
-import { useSwipeable } from 'react-swipeable'
 import * as S from './styles'
-import random0 from '../../../public/assets/images/home/random0.png'
-import random1 from '../../../public/assets/images/home/random1.png'
-import random2 from '../../../public/assets/images/home/random2.png'
-import random3 from '../../../public/assets/images/home/random3.png'
-import random4 from '../../../public/assets/images/home/random4.png'
-import random5 from '../../../public/assets/images/home/random5.png'
-import random6 from '../../../public/assets/images/home/random6.png'
-import random7 from '../../../public/assets/images/home/random7.png'
 import Row from '../Row'
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 
-const randomsImages = [
-  random0,
-  random1,
-  random2,
-  random3,
-  random4,
-  random5,
-  random6,
-  random7
-]
-const swipeConfig = {
-  delta: { up: 2000, down: 2000 }, // min distance(px) before a swipe starts. *See Notes*
-  preventScrollOnSwipe: false, // prevents scroll during swipe (*See Details*)
-  trackTouch: true, // track touch input
-  trackMouse: false, // track mouse input
-  rotationAngle: 0, // set a rotation angle
-  swipeDuration: Infinity, // allowable duration of a swipe (ms). *See Notes*
-  touchEventOptions: { passive: true } // options for touch listeners (*See Details*)
-}
 type RandomImagesContainerProps = {
+  listImages: StaticImageData[]
   imageToShow: number | number
   img1: number
   img2: number
 }
 const RandomImagesContainer = ({
+  listImages,
   imageToShow,
   img1,
   img2
 }: RandomImagesContainerProps) => (
   <S.Wrapper data-imgtoshow={imageToShow}>
-    <Image src={randomsImages[img1]} alt="liste d'images" />
-    <Image src={randomsImages[img2]} alt="liste d'images" />
+    <Image src={listImages[img1]} alt="liste d'images" />
+    <Image src={listImages[img2]} alt="liste d'images" />
   </S.Wrapper>
 )
-
-const RandomImages = () => {
+interface RandomImagesProps {
+  listImages: StaticImageData[]
+}
+const RandomImages = ({ listImages }: RandomImagesProps) => {
   const isMobile = useIsMobile()
   const nbOfChildren = isMobile ? 1 : 2
   const initImgId: number = isMobile ? 1 : 3
@@ -61,7 +37,7 @@ const RandomImages = () => {
   const [imagesToShow, setImagesToShow] = useState<[number, number]>([0, 0])
 
   const changeImgAuto = useCallback(() => {
-    const newImgId = (imgId + 1) % randomsImages.length
+    const newImgId = (imgId + 1) % listImages.length
     const newComponentActive = (componentActive + 1) % nbOfChildren
     const _imagesToShow = imagesToShow
     _imagesToShow[newComponentActive] =
@@ -82,12 +58,9 @@ const RandomImages = () => {
     images,
     imagesToShow,
     imgId,
-    nbOfChildren
+    nbOfChildren,
+    listImages
   ])
-  const handlers = useSwipeable({
-    onSwiped: () => changeImgAuto(),
-    ...swipeConfig
-  })
   useEffect(() => {
     const interval = setInterval(() => {
       changeImgAuto()
@@ -96,7 +69,7 @@ const RandomImages = () => {
   }, [changeImgAuto])
 
   return (
-    <div className="sc-randomimages" onClick={changeImgAuto} {...handlers}>
+    <div className="sc-randomimages" onClick={changeImgAuto}>
       <Row>
         {Array(nbOfChildren)
           .fill(true)
@@ -106,6 +79,7 @@ const RandomImages = () => {
               imageToShow={imagesToShow[i]}
               img1={images[i][0]}
               img2={images[i][1]}
+              listImages={listImages}
             />
           ))}
       </Row>
