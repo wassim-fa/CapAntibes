@@ -9,6 +9,7 @@ type RowToColumnProps = {
   align: TCssAlign
   marginForRow: TMargin
   marginForColumn: TMargin
+  className?: string
   bgColor?: Colors
   isReverseForRow?: boolean
   isReverseForColumn?: boolean
@@ -17,6 +18,7 @@ const RowToColumn = ({
   align,
   marginForRow,
   marginForColumn,
+  className = '',
   bgColor = Colors.PRIMARY,
   isReverseForRow = false,
   isReverseForColumn = false,
@@ -26,6 +28,7 @@ const RowToColumn = ({
   if (isLaptop) {
     return (
       <Row
+        className={className}
         opt_alignItems={align}
         opt_margin={marginForRow}
         opt_reverse={isReverseForRow}
@@ -37,6 +40,7 @@ const RowToColumn = ({
   } else {
     return (
       <Column
+        className={className}
         opt_alignItems={align}
         opt_margin={marginForColumn}
         opt_reverse={isReverseForColumn}
