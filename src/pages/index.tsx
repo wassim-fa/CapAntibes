@@ -27,12 +27,9 @@ import InfinitySlider from '@/components/InfinitySlider'
 import { useIsLaptop, useIsMobile, useText } from '@/hooks'
 import RandomImages from '@/components/RandomImages'
 import RowToColumn from '@/components/RowToColumn'
-import { createGlobalStyle } from 'styled-components'
 import Carrousel from '@/components/Carrousel'
+import { IndexPageStyles } from '@/styles/pages'
 
-const IndexPageStyles = createGlobalStyle`
-  .mobile {}
-`
 const randomsImages = [
   random0,
   random1,
@@ -179,7 +176,11 @@ export default function Home() {
             src={img1}
             alt="chambre au bord de l'eau"
           />
-          <Column opt_margin={[0.5, 0.5, 1, 0.5]} opt_spacing={spacing}>
+          <Column
+            className=""
+            opt_margin={[0.5, 0.5, 1, 0.5]}
+            opt_spacing={spacing}
+          >
             <Text opt_size={fontRegular}>{useText(contentsHome.text3)}</Text>
             <Button>
               <Text opt_size={fontSmall}>
