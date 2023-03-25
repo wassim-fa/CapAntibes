@@ -93,7 +93,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <main id="home" className={!isLaptop ? 'mobile' : ''}>
         <div
           style={{
             position: 'relative',

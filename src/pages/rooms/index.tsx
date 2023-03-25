@@ -42,7 +42,7 @@ export default function Rooms() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={!isLaptop ? 'mobile' : ''}>
+      <main id="rooms" className={!isLaptop ? 'mobile' : ''}>
         <Row opt_margin={isLaptop ? [1, 1, 0.5, 1] : [3, 0.5, 0.5, 0.5]}>
           <Text className="h1">{useText(contentsRoomsIndex.title)}</Text>
         </Row>
