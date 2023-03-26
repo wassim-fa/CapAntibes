@@ -3,6 +3,7 @@ import Languages from '@/enums/languages'
 import { useIsLaptop, useText } from '@/hooks'
 import { MenuContext } from '@/stores'
 import { LangContext } from '@/stores'
+import Link from 'next/link'
 import { useContext, useState } from 'react'
 import * as S from './styles'
 
@@ -109,16 +110,16 @@ const Menu = () => {
                 flexDirection: isLaptop ? 'row' : 'column'
               }}
             >
-              <div>{texts.rooms.deluxe}</div>
-              <div>{texts.rooms.privilege}</div>
+              <div><Link href='/rooms/luxe'>{texts.rooms.deluxe}</Link></div>
+              <div><Link href='/rooms/privilege'>{texts.rooms.privilege}</Link></div>
             </S.Link>
             <S.Link
               style={{
                 flexDirection: isLaptop ? 'row' : 'column'
               }}
             >
-              <div>{texts.rooms.seaview}</div>
-              <div>{texts.rooms.design}</div>
+              <div><Link href='/rooms/seaview'>{texts.rooms.seaview}</Link></div>
+              <div><Link href='/rooms/design'>{texts.rooms.design}</Link></div>
             </S.Link>
           </S.SubItem>
         </S.Item>

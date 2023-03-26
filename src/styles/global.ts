@@ -3,12 +3,12 @@ import { createGlobalStyle } from 'styled-components'
 const GlobalStyles = createGlobalStyle`
 @font-face {
   font-family: 'EurostileMediumExt';
-  src: url('assets/fonts/EurostileMediumExtended.otf') format('truetype');
+  src: url('/assets/fonts/EurostileMediumExtended.otf') format('truetype');
   font-style: normal;
 }
 @font-face {
   font-family: 'EurostileBlackExt';
-  src: url('assets/fonts/EurostileBlackExtended.woff2') format('woff2'), url('assets/fonts/EurostileBlackExtended.woff') format('woff');
+  src: url('/assets/fonts/EurostileBlackExtended.woff2') format('woff2'), url('assets/fonts/EurostileBlackExtended.woff') format('woff');
   font-style: normal;
 }
 

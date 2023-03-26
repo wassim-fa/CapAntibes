@@ -17,6 +17,7 @@ import Carrousel from '@/components/Carrousel'
 import Image from 'next/image'
 import Column from '@/components/Column'
 import { TCssSize } from '@/interfaces'
+import Link from 'next/link'
 
 const randomsImages = [
   random1,
@@ -72,9 +73,11 @@ export default function Rooms() {
             <Text className="p">
               {useText(contentsRoomsIndex.luxeSubTitle)}
             </Text>
-            <Button className="btn">
-              <Text>{useText(contentsRoomsIndex.toBook)}</Text>
-            </Button>
+            <Link href="/rooms/luxe">
+              <Button className="btn">
+                <Text>{useText(contentsRoomsIndex.toBook)}</Text>
+              </Button>
+            </Link>
           </Column>
           <Column
             opt_margin={isLaptop ? [0.2, 1, 0.2, 1] : [0.2, 0, 0.2, 0]}
@@ -108,9 +111,11 @@ export default function Rooms() {
             <Text className="p">
               {useText(contentsRoomsIndex.luxeSubTitle)}
             </Text>
-            <Button className="btn">
-              <Text>{useText(contentsRoomsIndex.toBook)}</Text>
-            </Button>
+            <Link href="/rooms/luxe">
+              <Button className="btn">
+                <Text>{useText(contentsRoomsIndex.toBook)}</Text>
+              </Button>
+            </Link>
           </Column>
         </RowToColumn>
       </main>
