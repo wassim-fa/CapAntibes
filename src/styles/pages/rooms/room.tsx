@@ -1,14 +1,11 @@
 import { createGlobalStyle } from 'styled-components'
 
-export const RoomsPageStyles = createGlobalStyle`
-  main#rooms {
+export const RoomPageStyles = createGlobalStyle`
+  main#room {
       margin-top: 80px;
-    .h1, .h3, p, .btn {
+    .h3, .p, .btn, .menu, .item {
       line-height: 29px;
-    }
-    .h1 {
-      font-size: 56px;
-    }
+    }    
     .h3 {
       font-size: 24px;
     }
@@ -18,17 +15,26 @@ export const RoomsPageStyles = createGlobalStyle`
     .p {
       font-size: 17px;
     }
+    .menu {
+      font-size: 22px;
+    }
+    .item {
+      font-size: 11px;
+    }
+
+    .menu-middle p {
+      line-height: normal;
+      border-bottom: 2px solid ${(props) => props.theme.fontColors.primary};
+      padding-bottom: -5px;
+    }
     
     .section .btn {
       margin-left: 5%
     }
 
     &.mobile {
-      .h1, .h3, p, .btn {
+    .h3, .p, .btn, .menu, .item {
         line-height: 23px;
-      }
-      .h1 {
-        font-size: 24px;
       }
       .h3 {
         font-size: 20px;
@@ -39,8 +45,17 @@ export const RoomsPageStyles = createGlobalStyle`
       .p {
         font-size: 13px;
       }
+      .menu {
+        font-size: 13px;
+      }
+      .item {
+        font-size: 10px;
+      }
 
-      .sc-column p,
+      .menu > a {
+        margin: 5px 0;
+      }
+
       .section p {
         margin: 5% 0;
       }

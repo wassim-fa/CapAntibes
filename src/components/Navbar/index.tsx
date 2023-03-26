@@ -12,6 +12,8 @@ import Divider from '../Divider'
 import Languages from '@/enums/languages'
 import { useIsHome, useIsLaptop, useText } from '@/hooks'
 import { LangContext } from '@/stores'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const LangMenuContainer = styled.div`
   display: none;
@@ -292,6 +294,7 @@ const Burger = () => {
   )
 }
 const Navbar = () => {
+  const router = useRouter()
   const { isBookMenuOpen } = useContext(BookMenuContext)
   const { isMenuOpen } = useContext(MenuContext)
   const isLaptop = useIsLaptop()
@@ -328,12 +331,13 @@ const Navbar = () => {
       </S.Part>
       <S.Part flex={2} align={'center'}>
         <Image
+          onClick={() => router.push('/')}
           data-islarge={isLaptop}
           src={title}
           style={{
-            transform: `translateY(${cancelEffect ? 0 : translate}vh) scale(${
-              cancelEffect ? 1 : scale
-            })`
+            cursor: 'pointer',
+            transform: `translateY(${cancelEffect ? 0 : translate}vh) scale(${cancelEffect ? 1 : scale
+              })`
           }}
           alt="Cap d'antibes - beach hotel"
         />

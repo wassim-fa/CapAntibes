@@ -66,6 +66,7 @@ export const Wrapper = styled.div`
   }
   display: none;
   position: fixed;
+  top: 0;
   z-index: 3;
   flex-direction: column;
   align-items: flex-start;
