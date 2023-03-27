@@ -73,7 +73,7 @@ export default function Rooms() {
             <Text className="p">
               {useText(contentsRoomsIndex.luxeSubTitle)}
             </Text>
-            <Link href="/rooms/luxe">
+            <Link scroll href="/rooms/luxe">
               <Button className="btn">
                 <Text>{useText(contentsRoomsIndex.toBook)}</Text>
               </Button>
@@ -111,7 +111,7 @@ export default function Rooms() {
             <Text className="p">
               {useText(contentsRoomsIndex.luxeSubTitle)}
             </Text>
-            <Link href="/rooms/luxe">
+            <Link scroll href="/rooms/luxe">
               <Button className="btn">
                 <Text>{useText(contentsRoomsIndex.toBook)}</Text>
               </Button>

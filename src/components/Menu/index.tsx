@@ -9,7 +9,7 @@ import * as S from './styles'
 
 const Menu = () => {
   const { lang, setLang } = useContext(LangContext)
-  const { isMenuOpen } = useContext(MenuContext)
+  const { menuOpen } = useContext(MenuContext)
   const [showItems, setShowItems] = useState<
     null | 'hotel' | 'room' | 'restaurant' | 'farniente'
   >(null)
@@ -61,7 +61,7 @@ const Menu = () => {
 
   return (
     <S.Wrapper
-      data-open={isMenuOpen}
+      data-open={menuOpen === 'menu'}
       className={`sc-menu ${!isLaptop ? 'mobile' : ''}`}
     >
       <div className="list">
@@ -111,10 +111,14 @@ const Menu = () => {
               }}
             >
               <div>
-                <Link href="/rooms/luxe">{texts.rooms.deluxe}</Link>
+                <Link scroll href="/rooms/luxe">
+                  {texts.rooms.deluxe}
+                </Link>
               </div>
               <div>
-                <Link href="/rooms/privilege">{texts.rooms.privilege}</Link>
+                <Link scroll href="/rooms/privilege">
+                  {texts.rooms.privilege}
+                </Link>
               </div>
             </S.Link>
             <S.Link
@@ -123,10 +127,14 @@ const Menu = () => {
               }}
             >
               <div>
-                <Link href="/rooms/seaview">{texts.rooms.seaview}</Link>
+                <Link scroll href="/rooms/seaview">
+                  {texts.rooms.seaview}
+                </Link>
               </div>
               <div>
-                <Link href="/rooms/design">{texts.rooms.design}</Link>
+                <Link scroll href="/rooms/design">
+                  {texts.rooms.design}
+                </Link>
               </div>
             </S.Link>
           </S.SubItem>

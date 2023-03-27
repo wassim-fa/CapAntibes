@@ -1,4 +1,4 @@
-import { BookMenuContext, MenuContext } from '@/stores'
+import { MenuContext } from '@/stores'
 import { useCallback, useContext, useEffect, useState } from 'react'
 import * as S from './styles'
 import titleLarge from '../../../public/assets/images/global/title_large.png'
@@ -65,9 +65,11 @@ const LangContainer = styled.div`
 `
 const Lang = () => {
   const { lang, setLang } = useContext(LangContext)
-  const [isOpen, setIsOpen] = useState<boolean | null>(null)
+  const { menuOpen, setMenuOpen } = useContext(MenuContext)
+  const isOpen = menuOpen === 'lang-dropdown'
   const handleBtnClick = () => {
-    setIsOpen(!isOpen)
+    const value = menuOpen === 'lang-dropdown' ? 'none' : 'lang-dropdown'
+    setMenuOpen(value)
   }
   const handleLangClick = (_lang: Languages) => {
     setLang(_lang)
@@ -178,9 +180,11 @@ const ToBookContainer = styled.div`
   }
 `
 const ToBook = () => {
-  const [isOpen, setIsOpen] = useState<boolean | null>(null)
+  const { menuOpen, setMenuOpen } = useContext(MenuContext)
+  const isOpen = menuOpen === 'tobook-dropdown'
   const handleClick = () => {
-    setIsOpen(!isOpen)
+    const value = menuOpen === 'tobook-dropdown' ? 'none' : 'tobook-dropdown'
+    setMenuOpen(value)
   }
   const texts = {
     book: useText(contentsLayout.book),
@@ -276,10 +280,11 @@ const BurgerContainer = styled.div`
   }
 `
 const Burger = () => {
-  const { isMenuOpen, setIsMenuOpen } = useContext(MenuContext)
+  const { menuOpen, setMenuOpen } = useContext(MenuContext)
+  const isMenuOpen = menuOpen === 'menu'
   const handleMenuClick = () => {
-    const value = !isMenuOpen
-    setIsMenuOpen(value)
+    const value = menuOpen === 'menu' ? 'none' : 'menu'
+    setMenuOpen(value)
   }
   return (
     <BurgerContainer
@@ -294,10 +299,10 @@ const Burger = () => {
 }
 const Navbar = () => {
   const router = useRouter()
-  const { isBookMenuOpen } = useContext(BookMenuContext)
-  const { isMenuOpen } = useContext(MenuContext)
+  const { menuOpen, setMenuOpen } = useContext(MenuContext)
   const isLaptop = useIsLaptop()
   const isHome = useIsHome()
+  const cancelEffect = !isHome || ['tobook', 'menu'].includes(menuOpen)
   const title = isLaptop ? titleLarge : titleSmall
   const init = {
     scale: isHome ? 2 : 1,
@@ -305,7 +310,6 @@ const Navbar = () => {
   }
   const [scale, setScale] = useState(init.scale)
   const [translate, setTranslate] = useState(init.translate)
-  const cancelEffect = isBookMenuOpen || isMenuOpen
 
   const handleScroll = useCallback(() => {
     if (isHome) {
@@ -318,6 +322,9 @@ const Navbar = () => {
       setTranslate(translateFactor)
     }
   }, [isHome])
+  useEffect(() => {
+    setMenuOpen('none')
+  }, [router.asPath, setMenuOpen])
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
