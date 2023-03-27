@@ -12,7 +12,6 @@ import Divider from '../Divider'
 import Languages from '@/enums/languages'
 import { useIsHome, useIsLaptop, useText } from '@/hooks'
 import { LangContext } from '@/stores'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 const LangMenuContainer = styled.div`
@@ -336,8 +335,9 @@ const Navbar = () => {
           src={title}
           style={{
             cursor: 'pointer',
-            transform: `translateY(${cancelEffect ? 0 : translate}vh) scale(${cancelEffect ? 1 : scale
-              })`
+            transform: `translateY(${cancelEffect ? 0 : translate}vh) scale(${
+              cancelEffect ? 1 : scale
+            })`
           }}
           alt="Cap d'antibes - beach hotel"
         />

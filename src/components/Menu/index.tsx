@@ -110,16 +110,24 @@ const Menu = () => {
                 flexDirection: isLaptop ? 'row' : 'column'
               }}
             >
-              <div><Link href='/rooms/luxe'>{texts.rooms.deluxe}</Link></div>
-              <div><Link href='/rooms/privilege'>{texts.rooms.privilege}</Link></div>
+              <div>
+                <Link href="/rooms/luxe">{texts.rooms.deluxe}</Link>
+              </div>
+              <div>
+                <Link href="/rooms/privilege">{texts.rooms.privilege}</Link>
+              </div>
             </S.Link>
             <S.Link
               style={{
                 flexDirection: isLaptop ? 'row' : 'column'
               }}
             >
-              <div><Link href='/rooms/seaview'>{texts.rooms.seaview}</Link></div>
-              <div><Link href='/rooms/design'>{texts.rooms.design}</Link></div>
+              <div>
+                <Link href="/rooms/seaview">{texts.rooms.seaview}</Link>
+              </div>
+              <div>
+                <Link href="/rooms/design">{texts.rooms.design}</Link>
+              </div>
             </S.Link>
           </S.SubItem>
         </S.Item>

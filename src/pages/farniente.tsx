@@ -2,7 +2,6 @@ import Button from '@/components/Button'
 import Row from '@/components/Row'
 import RowToColumn from '@/components/RowToColumn'
 import Text from '@/components/Text'
-import { contentsRoomsIndex } from '@/contents/pages'
 import { useIsLaptop, useText } from '@/hooks'
 import Head from 'next/head'
 import img1 from '../../public/assets/images/farniente/farniente_1.png'
@@ -11,12 +10,9 @@ import img3 from '../../public/assets/images/farniente/farniente_3.png'
 import img2Mobile from '../../public/assets/images/farniente/farniente_2_mobile.png'
 import img3Mobile from '../../public/assets/images/farniente/farniente_3_mobile.png'
 
-import RandomImages from '@/components/RandomImages'
-import Carrousel from '@/components/Carrousel'
 import Image from 'next/image'
 import Column from '@/components/Column'
 import { TCssSize } from '@/interfaces'
-import Link from 'next/link'
 import { FarnientePageStyles } from '@/styles/pages/farniente'
 import { contentsFarnienteRoom } from '@/contents/pages/farniente'
 
@@ -43,23 +39,28 @@ export default function Farniente() {
         >
           <Column opt_spacing={spacing}>
             <Text className="h1">{useText(contentsFarnienteRoom.title)}</Text>
-            <Text className="h3">{useText(contentsFarnienteRoom.subTitle1)}</Text>
+            <Text className="h3">
+              {useText(contentsFarnienteRoom.subTitle1)}
+            </Text>
             <Text className="p">{useText(contentsFarnienteRoom.text1)}</Text>
           </Column>
-          <Column opt_alignItems='center' opt_justifyContent='center'>
-            <Image 
-                style={{
-                  width: `${isLaptop ? '70%' : '100%'}`,
-                  height: 'auto'
-                }}
-                src={img1} 
-                alt='plage' />
+          <Column opt_alignItems="center" opt_justifyContent="center">
+            <Image
+              style={{
+                width: `${isLaptop ? '70%' : '100%'}`,
+                height: 'auto'
+              }}
+              src={img1}
+              alt="plage"
+            />
           </Column>
         </RowToColumn>
         <Row opt_margin={isLaptop ? [1, 1, 0.5, 1] : [3, 0.2, 0.2, 0.5]}>
           {isLaptop && <Column></Column>}
           <Column opt_spacing={spacing} className="item">
-            <Text className="h3">{useText(contentsFarnienteRoom.subTitle2)}</Text>
+            <Text className="h3">
+              {useText(contentsFarnienteRoom.subTitle2)}
+            </Text>
             <Text className="p">{useText(contentsFarnienteRoom.text2)}</Text>
             <Button className="btn">
               <Text>{useText(contentsFarnienteRoom.btn2)}</Text>
@@ -68,22 +69,32 @@ export default function Farniente() {
         </Row>
         <Row opt_margin={isLaptop ? [1, 1, 0.5, 1] : [3, 0.2, 0.2, 0.5]}>
           <Column opt_spacing={spacing} className="item">
-            <Text className="h3">{useText(contentsFarnienteRoom.subTitle3)}</Text>
+            <Text className="h3">
+              {useText(contentsFarnienteRoom.subTitle3)}
+            </Text>
             <Text className="p">{useText(contentsFarnienteRoom.text3)}</Text>
           </Column>
           {isLaptop && <Column></Column>}
         </Row>
-        <Image className='fullWidth' src={isLaptop ? img2 : img2Mobile} alt='paysage' />
+        <Image
+          className="fullWidth"
+          src={isLaptop ? img2 : img2Mobile}
+          alt="paysage"
+        />
         <Row opt_margin={isLaptop ? [1, 1, 0.5, 1] : [3, 0.2, 0.2, 0.5]}>
           {isLaptop && <Column></Column>}
           <Column opt_spacing={spacing} className="item">
-            <Text className="h3">{useText(contentsFarnienteRoom.subTitle4)}</Text>
+            <Text className="h3">
+              {useText(contentsFarnienteRoom.subTitle4)}
+            </Text>
             <Text className="p">{useText(contentsFarnienteRoom.text4)}</Text>
           </Column>
         </Row>
         <Row opt_margin={isLaptop ? [1, 1, 0.5, 1] : [3, 0.2, 0.2, 0.5]}>
           <Column opt_spacing={spacing} className="item">
-            <Text className="h3">{useText(contentsFarnienteRoom.subTitle5)}</Text>
+            <Text className="h3">
+              {useText(contentsFarnienteRoom.subTitle5)}
+            </Text>
             <Text className="p">{useText(contentsFarnienteRoom.text5)}</Text>
           </Column>
           {isLaptop && <Column></Column>}
@@ -91,14 +102,21 @@ export default function Farniente() {
         <Row opt_margin={isLaptop ? [1, 1, 0.5, 1] : [3, 0.2, 0.2, 0.5]}>
           {isLaptop && <Column></Column>}
           <Column opt_spacing={spacing} className="item">
-            <Text className="h3">{useText(contentsFarnienteRoom.subTitle6)}</Text>
+            <Text className="h3">
+              {useText(contentsFarnienteRoom.subTitle6)}
+            </Text>
             <Text className="p">{useText(contentsFarnienteRoom.text6)}</Text>
             <Button className="btn">
               <Text>{useText(contentsFarnienteRoom.btn6)}</Text>
             </Button>
           </Column>
         </Row>
-        <Image style={{marginBottom: '5%'}} className='fullWidth' src={isLaptop ? img3 : img3Mobile} alt='paysage' />
+        <Image
+          style={{ marginBottom: '5%' }}
+          className="fullWidth"
+          src={isLaptop ? img3 : img3Mobile}
+          alt="paysage"
+        />
       </main>
     </>
   )

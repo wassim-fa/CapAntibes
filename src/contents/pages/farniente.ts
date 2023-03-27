@@ -75,5 +75,5 @@ export const contentsFarnienteRoom: Record<string, IContentByLang> = {
     fr: 'privatiser',
     en: 'en-privatiser',
     ru: 'ru-privatiser'
-  },
+  }
 }
