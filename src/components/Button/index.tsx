@@ -21,23 +21,23 @@ const Button = ({
     {...props}
     width={opt_width}
   >
-    {opt_arrow_position === 'left' && 
-      <svg 
+    {opt_arrow_position === 'left' && (
+      <svg
         width="18"
         height="20"
         viewBox="0 0 18 20"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path 
-          d="M18 17.9776L3 10.5728L18 1.77957" 
+        <path
+          d="M18 17.9776L3 10.5728L18 1.77957"
           stroke={defaultTheme.fontColors[opt_color]}
           strokeWidth="2"
         />
       </svg>
-    }
+    )}
     {children}
-    {opt_arrow_position === 'right' && 
+    {opt_arrow_position === 'right' && (
       <svg
         width="18"
         height="20"
@@ -51,7 +51,7 @@ const Button = ({
           strokeWidth="2"
         />
       </svg>
-    }
+    )}
   </S.Wrapper>
 )
 

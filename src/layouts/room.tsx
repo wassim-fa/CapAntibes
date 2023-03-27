@@ -3,7 +3,6 @@ import RandomImages from '@/components/RandomImages'
 import RowToColumn from '@/components/RowToColumn'
 import { useIsLaptop, useText } from '@/hooks'
 import { IContentByLang } from '@/interfaces'
-import { defaultTheme } from '@/styles'
 import { RoomPageStyles } from '@/styles/pages/rooms/room'
 import Head from 'next/head'
 import Image, { StaticImageData } from 'next/image'
@@ -14,6 +13,25 @@ import Column from '@/components/Column'
 import Row from '@/components/Row'
 import Divider from '@/components/Divider'
 
+interface IITemProps {
+  itemPadding: number
+  item: IContentByLang
+}
+const Item = ({ itemPadding, item }: IITemProps) => {
+  const itemText = useText(item)
+  return (
+    <Column
+      style={{
+        marginTop: `${2 * itemPadding}px`
+      }}
+      opt_spacing={{ unit: 'px', value: itemPadding }}
+    >
+      <Text className="item">{itemText}</Text>
+      <Divider />
+    </Column>
+  )
+}
+
 interface IMeta {
   title: string
   description: string
@@ -23,47 +41,45 @@ interface IMenu {
   middle: string
   right: string
 }
-interface IRoomLayout {
+interface IRoomLayoutProps {
   meta: IMeta
   randomsImages: StaticImageData[]
   content: Record<string, IContentByLang>
-  items: IContentByLang[],
+  items: IContentByLang[]
   menu: IMenu
   image: StaticImageData
   imageMobile: StaticImageData
 }
-const RoomLayout = (props: IRoomLayout): JSX.Element => {
-  const { meta, randomsImages, content, menu, image, imageMobile, items } = props
+const RoomLayout = (props: IRoomLayoutProps): JSX.Element => {
+  const { meta, randomsImages, content, menu, image, imageMobile, items } =
+    props
   const isLaptop = useIsLaptop()
-  const imgToShow = isLaptop ? image : imageMobile;
+  const imgToShow = isLaptop ? image : imageMobile
   const nbItemsPerColumn = Math.round(items.length / 3)
-  const itemsByLang = items.map((item) => useText(item))
   const itemsColumnMargin = isLaptop ? '25px' : 'initial'
   const itemPadding = isLaptop ? 6 : 3
 
   const renderItemsColumn = (start: number) => {
     const end = nbItemsPerColumn + start
-    const items = itemsByLang.slice(start, end)
-    return items.map((item, index) => (
-      <Column style={{
-        marginTop: `${2*itemPadding}px`
-      }} key={start + index} opt_spacing={{unit: 'px', value: itemPadding}}>
-        <Text className='item'>{item}</Text>
-        <Divider />
-      </Column>)
-    )
+    const _items = items.slice(start, end)
+    return _items.map((item, index) => (
+      <Item key={start + index} item={item} itemPadding={itemPadding} />
+    ))
   }
   const renderItems = () => (
     <>
       <Column>{renderItemsColumn(0)}</Column>
-      <Column style={{
-        marginRight: itemsColumnMargin,
-        marginLeft: itemsColumnMargin
-      }}>{renderItemsColumn(nbItemsPerColumn)}</Column>
+      <Column
+        style={{
+          marginRight: itemsColumnMargin,
+          marginLeft: itemsColumnMargin
+        }}
+      >
+        {renderItemsColumn(nbItemsPerColumn)}
+      </Column>
       <Column>{renderItemsColumn(2 * nbItemsPerColumn)}</Column>
     </>
   )
-
 
   return (
     <>
@@ -81,24 +97,46 @@ const RoomLayout = (props: IRoomLayout): JSX.Element => {
           <Carrousel images={randomsImages} />
         )}
         <RowToColumn
-          className='menu'
+          className="menu"
           align="center"
           marginForRow={[0.5, 1, 0.5, 1]}
           marginForColumn={[1, 0.5, 1, 0.5]}
         >
-          <Link style={{ width: '100%', display: 'flex', justifyContent: 'flex-start' }} href={menu.left}>
-            <Button opt_arrow_position='left' ><Text>{useText(content.menuLeft)}</Text></Button>
+          <Link
+            style={{
+              width: '100%',
+              display: 'flex',
+              justifyContent: 'flex-start'
+            }}
+            href={menu.left}
+          >
+            <Button opt_arrow_position="left">
+              <Text>{useText(content.menuLeft)}</Text>
+            </Button>
           </Link>
-          <Link className='menu-middle' style={{ width: '100%', display: 'flex', justifyContent: 'center' }} href={menu.middle}>
+          <Link
+            className="menu-middle"
+            style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
+            href={menu.middle}
+          >
             <Text>{useText(content.menuMiddle)}</Text>
           </Link>
-          <Link style={{ width: '100%', display: 'flex', justifyContent: 'flex-end' }} href={menu.right}>
-            <Button opt_arrow_position='right' ><Text>{useText(content.menuRight)}</Text></Button>
+          <Link
+            style={{
+              width: '100%',
+              display: 'flex',
+              justifyContent: 'flex-end'
+            }}
+            href={menu.right}
+          >
+            <Button opt_arrow_position="right">
+              <Text>{useText(content.menuRight)}</Text>
+            </Button>
           </Link>
         </RowToColumn>
         <RowToColumn
           className="section"
-          align='flex-start'
+          align="flex-start"
           marginForRow={[0.5, 1, 0.5, 1]}
           marginForColumn={[1, 0.5, 1, 0.5]}
         >
@@ -114,10 +152,11 @@ const RoomLayout = (props: IRoomLayout): JSX.Element => {
         </RowToColumn>
         <RowToColumn
           className="items"
-          align='flex-start'
+          align="flex-start"
           marginForRow={[0.5, 1, 0.5, 1]}
           marginForColumn={[1, 0.5, 1, 0.5]}
-        >{renderItems()}
+        >
+          {renderItems()}
         </RowToColumn>
         <Row opt_margin={[0, 0, 1, 0]}>
           <Image
