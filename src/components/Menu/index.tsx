@@ -111,10 +111,14 @@ const Menu = () => {
               }}
             >
               <div>
-                <Link scroll href="/rooms/luxe">{texts.rooms.deluxe}</Link>
+                <Link scroll href="/rooms/luxe">
+                  {texts.rooms.deluxe}
+                </Link>
               </div>
               <div>
-                <Link scroll href="/rooms/privilege">{texts.rooms.privilege}</Link>
+                <Link scroll href="/rooms/privilege">
+                  {texts.rooms.privilege}
+                </Link>
               </div>
             </S.Link>
             <S.Link
@@ -123,10 +127,14 @@ const Menu = () => {
               }}
             >
               <div>
-                <Link scroll href="/rooms/seaview">{texts.rooms.seaview}</Link>
+                <Link scroll href="/rooms/seaview">
+                  {texts.rooms.seaview}
+                </Link>
               </div>
               <div>
-                <Link scroll href="/rooms/design">{texts.rooms.design}</Link>
+                <Link scroll href="/rooms/design">
+                  {texts.rooms.design}
+                </Link>
               </div>
             </S.Link>
           </S.SubItem>

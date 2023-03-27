@@ -324,7 +324,7 @@ const Navbar = () => {
   }, [isHome])
   useEffect(() => {
     setMenuOpen('none')
-  }, [router.asPath])
+  }, [router.asPath, setMenuOpen])
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
@@ -342,9 +342,9 @@ const Navbar = () => {
           src={title}
           style={{
             cursor: 'pointer',
-            transform: `translateY(${
-              cancelEffect ? 0 : translate
-            }vh) scale(${cancelEffect ? 1 : scale})`
+            transform: `translateY(${cancelEffect ? 0 : translate}vh) scale(${
+              cancelEffect ? 1 : scale
+            })`
           }}
           alt="Cap d'antibes - beach hotel"
         />
