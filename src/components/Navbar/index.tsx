@@ -299,10 +299,10 @@ const Burger = () => {
 }
 const Navbar = () => {
   const router = useRouter()
-  const { menuOpen } = useContext(MenuContext)
+  const { menuOpen, setMenuOpen } = useContext(MenuContext)
   const isLaptop = useIsLaptop()
   const isHome = useIsHome()
-  const cancelEffect = ['tobook', 'menu'].includes(menuOpen)
+  const cancelEffect = !isHome || ['tobook', 'menu'].includes(menuOpen)
   const title = isLaptop ? titleLarge : titleSmall
   const init = {
     scale: isHome ? 2 : 1,
@@ -322,6 +322,9 @@ const Navbar = () => {
       setTranslate(translateFactor)
     }
   }, [isHome])
+  useEffect(() => {
+    setMenuOpen('none')
+  }, [router.asPath])
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
