@@ -1,5 +1,4 @@
 import {
-  BookMenuContextProvider,
   FormatContextProvider,
   LangContextProvider,
   MenuContextProvider
@@ -15,9 +14,7 @@ export function ContextsLayout({
     <>
       <FormatContextProvider>
         <LangContextProvider>
-          <BookMenuContextProvider>
-            <MenuContextProvider>{children}</MenuContextProvider>
-          </BookMenuContextProvider>
+          <MenuContextProvider>{children}</MenuContextProvider>
         </LangContextProvider>
       </FormatContextProvider>
     </>

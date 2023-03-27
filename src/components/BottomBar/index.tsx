@@ -1,7 +1,7 @@
 import { contentsLayout } from '@/contents/globals'
 import { useIsMobile, useText } from '@/hooks'
-import { BookMenuContext } from '@/stores'
-import { useContext, useState } from 'react'
+import { MenuContext } from '@/stores'
+import { useContext } from 'react'
 import styled, { keyframes } from 'styled-components'
 import Divider from '../Divider'
 import * as S from './styles'
@@ -53,11 +53,10 @@ const ToBookMenuContainer = styled.div`
   }
 `
 const BottomBar = () => {
-  const { isBookMenuOpen, setIsBookMenuOpen } = useContext(BookMenuContext)
-  const [isOpen, setIsOpen] = useState<boolean | null>(null)
+  const { menuOpen, setMenuOpen } = useContext(MenuContext)
   const handleClick = () => {
-    setIsOpen(!isOpen)
-    setIsBookMenuOpen(!isBookMenuOpen)
+    const value = menuOpen === 'tobook' ? 'none' : 'tobook'
+    setMenuOpen(value)
   }
   const isMobile = useIsMobile()
   const texts = {
@@ -72,7 +71,7 @@ const BottomBar = () => {
     return (
       <>
         <ToBookMenuContainer
-          data-open={isOpen}
+          data-open={menuOpen === 'tobook'}
           className="sc-tobook-menu"
           style={{ fontSize: '14px', cursor: 'pointer' }}
         >

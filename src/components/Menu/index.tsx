@@ -9,7 +9,7 @@ import * as S from './styles'
 
 const Menu = () => {
   const { lang, setLang } = useContext(LangContext)
-  const { isMenuOpen } = useContext(MenuContext)
+  const { menuOpen } = useContext(MenuContext)
   const [showItems, setShowItems] = useState<
     null | 'hotel' | 'room' | 'restaurant' | 'farniente'
   >(null)
@@ -61,7 +61,7 @@ const Menu = () => {
 
   return (
     <S.Wrapper
-      data-open={isMenuOpen}
+      data-open={menuOpen === 'menu'}
       className={`sc-menu ${!isLaptop ? 'mobile' : ''}`}
     >
       <div className="list">

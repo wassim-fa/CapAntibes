@@ -1,9 +1,9 @@
-import { MenuContextType } from '@/interfaces'
+import { MenuContextType, TMenuType } from '@/interfaces'
 import React from 'react'
 
 export const MenuContext = React.createContext<MenuContextType>({
-  isMenuOpen: undefined,
-  setIsMenuOpen: () => {}
+  menuOpen: 'none',
+  setMenuOpen: () => {}
 })
 
 export const MenuContextProvider = ({
@@ -11,14 +11,12 @@ export const MenuContextProvider = ({
 }: {
   children: React.ReactNode
 }) => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState<boolean | undefined>(
-    undefined
-  )
+  const [menuOpen, setMenuOpen] = React.useState<TMenuType>('none')
   return (
     <MenuContext.Provider
       value={{
-        isMenuOpen,
-        setIsMenuOpen
+        menuOpen,
+        setMenuOpen
       }}
     >
       {children}
