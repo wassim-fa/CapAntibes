@@ -8,12 +8,23 @@ import { RoomsPageStyles } from '@/styles/pages/rooms'
 import Head from 'next/head'
 import img1 from '../../../public/assets/images/rooms/index/rooms_1.png'
 import img2 from '../../../public/assets/images/rooms/index/rooms_2.png'
+import img3 from '../../../public/assets/images/rooms/index/rooms_3.png'
+import img4 from '../../../public/assets/images/rooms/index/rooms_4.png'
+import img5 from '../../../public/assets/images/rooms/index/rooms_5.png'
+import img6 from '../../../public/assets/images/rooms/index/rooms_6.png'
+import img7 from '../../../public/assets/images/rooms/index/rooms_7.png'
+import img8 from '../../../public/assets/images/rooms/index/rooms_8.png'
+import img9 from '../../../public/assets/images/rooms/index/rooms_9.png'
 import img1_mobile from '../../../public/assets/images/rooms/index/rooms_1_mobile.png'
 import img2_mobile from '../../../public/assets/images/rooms/index/rooms_2_mobile.png'
+import img4_mobile from '../../../public/assets/images/rooms/index/rooms_4_mobile.png'
+import img5_mobile from '../../../public/assets/images/rooms/index/rooms_5_mobile.png'
+import img7_mobile from '../../../public/assets/images/rooms/index/rooms_7_mobile.png'
+import img8_mobile from '../../../public/assets/images/rooms/index/rooms_8_mobile.png'
+import img9_mobile from '../../../public/assets/images/rooms/index/rooms_9_mobile.png'
 import random1 from '../../../public/assets/images/rooms/index/random_1.png'
 import random2 from '../../../public/assets/images/rooms/index/random_2.png'
 import RandomImages from '@/components/RandomImages'
-import Carrousel from '@/components/Carrousel'
 import Image from 'next/image'
 import Column from '@/components/Column'
 import { TCssSize } from '@/interfaces'
@@ -44,40 +55,42 @@ export default function Rooms() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main id="rooms" className={!isLaptop ? 'mobile' : ''}>
-        <Row opt_margin={isLaptop ? [1, 1, 0.5, 1] : [3, 0.5, 0.5, 0.5]}>
+        <Column opt_margin={isLaptop ? [1, 1, 2, 1] : [3, 1.5, 1.5, 1.5]}>
           <Text className="h1">{useText(contentsRoomsIndex.title)}</Text>
-        </Row>
-        <RowToColumn
-          className="section"
-          align={isLaptop ? 'flex-end' : 'flex-start'}
-          marginForRow={[0.5, 1, 0.5, 1]}
-          marginForColumn={[1, 0.5, 1, 0.5]}
-        >
           <Text className="p">{useText(contentsRoomsIndex.subTitle1)}</Text>
           <Button className="btn">
             <Text>{useText(contentsRoomsIndex.toBook)}</Text>
           </Button>
-        </RowToColumn>
-        {isLaptop ? (
-          <RandomImages listImages={randomsImages} />
-        ) : (
-          <Carrousel images={randomsImages} />
-        )}
+        </Column>
+        {isLaptop && <RandomImages listImages={randomsImages} />}
         <RowToColumn
           align="center"
-          marginForRow={[0.5, 0, 0.5, 0]}
+          marginForRow={[0.5, 1.5, 0.5, 1.5]}
           marginForColumn={[1, 0, 0, 0]}
+          isReverseForColumn={true}
         >
-          <Column opt_margin={[0.5, 0.5, 1, 0.5]} opt_spacing={spacing}>
+          <Column
+            opt_margin={isLaptop ? [0.5, 0.5, 1, 0.5] : [1.5, 1.5, 2, 1.5]}
+            opt_spacing={spacing}
+          >
             <Text className="h3">{useText(contentsRoomsIndex.luxeTitle)}</Text>
             <Text className="p">
               {useText(contentsRoomsIndex.luxeSubTitle)}
             </Text>
-            <Link scroll href="/rooms/luxe">
-              <Button className="btn">
-                <Text>{useText(contentsRoomsIndex.toBook)}</Text>
-              </Button>
-            </Link>
+            <Row>
+              <Column opt_alignItems="flex-start">
+                <Link scroll href="/rooms/luxe">
+                  <Button className="btn">
+                    <Text>{useText(contentsRoomsIndex.discover)}</Text>
+                  </Button>
+                </Link>
+              </Column>
+              <Column opt_alignItems="flex-end">
+                <Button className="btn">
+                  <Text>{useText(contentsRoomsIndex.toBook)}</Text>
+                </Button>
+              </Column>
+            </Row>
           </Column>
           <Column
             opt_margin={isLaptop ? [0.2, 1, 0.2, 1] : [0.2, 0, 0.2, 0]}
@@ -94,7 +107,6 @@ export default function Rooms() {
           align="center"
           marginForRow={[0.5, 0, 0.5, 0]}
           marginForColumn={[1, 0, 1, 0]}
-          isReverseForColumn={true}
         >
           <Column
             opt_margin={isLaptop ? [0.2, 1, 0.2, 1] : [0.2, 0, 0.2, 0]}
@@ -106,18 +118,213 @@ export default function Rooms() {
               alt="chambre privilège"
             />
           </Column>
-          <Column opt_margin={[0.5, 0.5, 1, 0.5]} opt_spacing={spacing}>
-            <Text className="h3">{useText(contentsRoomsIndex.luxeTitle)}</Text>
-            <Text className="p">
-              {useText(contentsRoomsIndex.luxeSubTitle)}
+          <Column
+            opt_margin={isLaptop ? [0.5, 0.5, 1, 0.5] : [1.5, 1.5, 2, 1.5]}
+            opt_spacing={spacing}
+          >
+            <Text className="h3">
+              {useText(contentsRoomsIndex.seaViewTitle)}
             </Text>
-            <Link scroll href="/rooms/luxe">
-              <Button className="btn">
-                <Text>{useText(contentsRoomsIndex.toBook)}</Text>
-              </Button>
-            </Link>
+            <Text className="p">
+              {useText(contentsRoomsIndex.seaViewSubTitle)}
+            </Text>
+            <Row>
+              <Column opt_alignItems="flex-start">
+                <Link scroll href="/rooms/seaview">
+                  <Button className="btn">
+                    <Text>{useText(contentsRoomsIndex.discover)}</Text>
+                  </Button>
+                </Link>
+              </Column>
+              <Column opt_alignItems="flex-end">
+                <Button className="btn">
+                  <Text>{useText(contentsRoomsIndex.toBook)}</Text>
+                </Button>
+              </Column>
+            </Row>
           </Column>
         </RowToColumn>
+        {isLaptop && (
+          <Row>
+            <Image className={'fullWidth'} src={img3} alt="chambre privilège" />
+          </Row>
+        )}
+        <RowToColumn
+          align="center"
+          marginForRow={[0.5, 1.5, 0.5, 1.5]}
+          marginForColumn={[1, 0, 0, 0]}
+          isReverseForColumn={true}
+        >
+          <Column
+            opt_margin={isLaptop ? [0.5, 0.5, 1, 0.5] : [1.5, 1.5, 2, 1.5]}
+            opt_spacing={spacing}
+          >
+            <Text className="h3">{useText(contentsRoomsIndex.priviTitle)}</Text>
+            <Text className="p">
+              {useText(contentsRoomsIndex.priviSubTitle)}
+            </Text>
+            <Row>
+              <Column opt_alignItems="flex-start">
+                <Link scroll href="/rooms/privilege">
+                  <Button className="btn">
+                    <Text>{useText(contentsRoomsIndex.discover)}</Text>
+                  </Button>
+                </Link>
+              </Column>
+              <Column opt_alignItems="flex-end">
+                <Button className="btn">
+                  <Text>{useText(contentsRoomsIndex.toBook)}</Text>
+                </Button>
+              </Column>
+            </Row>
+          </Column>
+          <Column
+            opt_margin={isLaptop ? [0.2, 1, 0.2, 1] : [0.2, 0, 0.2, 0]}
+            opt_alignItems="center"
+          >
+            <Image
+              className={isLaptop ? '' : 'fullWidth'}
+              src={isLaptop ? img4 : img4_mobile}
+              alt="chambre de luxe"
+            />
+          </Column>
+        </RowToColumn>
+        <RowToColumn
+          align="center"
+          marginForRow={[0.5, 0, 0.5, 0]}
+          marginForColumn={[1, 0, 1, 0]}
+        >
+          <Column
+            opt_margin={isLaptop ? [0.2, 1, 0.2, 1] : [0.2, 0, 0.2, 0]}
+            opt_alignItems="center"
+          >
+            <Image
+              className={isLaptop ? '' : 'fullWidth'}
+              src={isLaptop ? img5 : img5_mobile}
+              alt="chambre privilège"
+            />
+          </Column>
+          <Column
+            opt_margin={isLaptop ? [0.5, 0.5, 1, 0.5] : [1.5, 1.5, 2, 1.5]}
+            opt_spacing={spacing}
+          >
+            <Text className="h3">
+              {useText(contentsRoomsIndex.designTitle)}
+            </Text>
+            <Text className="p">
+              {useText(contentsRoomsIndex.designSubTitle)}
+            </Text>
+            <Row>
+              <Column opt_alignItems="flex-start">
+                <Link scroll href="/rooms/design">
+                  <Button className="btn">
+                    <Text>{useText(contentsRoomsIndex.discover)}</Text>
+                  </Button>
+                </Link>
+              </Column>
+              <Column opt_alignItems="flex-end">
+                <Button className="btn">
+                  <Text>{useText(contentsRoomsIndex.toBook)}</Text>
+                </Button>
+              </Column>
+            </Row>
+          </Column>
+        </RowToColumn>
+        {isLaptop && (
+          <Row>
+            <Image className={'fullWidth'} src={img6} alt="chambre privilège" />
+          </Row>
+        )}
+        <RowToColumn
+          align="center"
+          marginForRow={[0.5, 1.5, 0.5, 1.5]}
+          marginForColumn={[1, 0, 0, 0]}
+          isReverseForColumn={true}
+        >
+          <Column
+            opt_margin={isLaptop ? [0.5, 0.5, 1, 0.5] : [1.5, 1.5, 2, 1.5]}
+            opt_spacing={spacing}
+          >
+            <Text className="h3">
+              {useText(contentsRoomsIndex.executiveTitle)}
+            </Text>
+            <Text className="p">
+              {useText(contentsRoomsIndex.executiveSubTitle)}
+            </Text>
+            <Row>
+              <Column opt_alignItems="flex-start">
+                <Link scroll href="/rooms/luxe">
+                  <Button className="btn">
+                    <Text>{useText(contentsRoomsIndex.discover)}</Text>
+                  </Button>
+                </Link>
+              </Column>
+              <Column opt_alignItems="flex-end">
+                <Button className="btn">
+                  <Text>{useText(contentsRoomsIndex.toBook)}</Text>
+                </Button>
+              </Column>
+            </Row>
+          </Column>
+          <Column
+            opt_margin={isLaptop ? [0.2, 1, 0.2, 1] : [0.2, 0, 0.2, 0]}
+            opt_alignItems="center"
+          >
+            <Image
+              className={isLaptop ? '' : 'fullWidth'}
+              src={isLaptop ? img7 : img7_mobile}
+              alt="chambre de luxe"
+            />
+          </Column>
+        </RowToColumn>
+        <RowToColumn
+          align="center"
+          marginForRow={[0.5, 0, 0.5, 0]}
+          marginForColumn={[1, 0, 1, 0]}
+        >
+          <Column
+            opt_margin={isLaptop ? [0.2, 1, 0.2, 1] : [0.2, 0, 0.2, 0]}
+            opt_alignItems="center"
+          >
+            <Image
+              className={isLaptop ? '' : 'fullWidth'}
+              src={isLaptop ? img8 : img8_mobile}
+              alt="chambre privilège"
+            />
+          </Column>
+          <Column
+            opt_margin={isLaptop ? [0.5, 0.5, 1, 0.5] : [1.5, 1.5, 2, 1.5]}
+            opt_spacing={spacing}
+          >
+            <Text className="h3">
+              {useText(contentsRoomsIndex.sharedTitle)}
+            </Text>
+            <Text className="p">
+              {useText(contentsRoomsIndex.sharedSubTitle)}
+            </Text>
+            <Row>
+              <Column opt_alignItems="flex-start">
+                <Link scroll href="/rooms/shared">
+                  <Button className="btn">
+                    <Text>{useText(contentsRoomsIndex.discover)}</Text>
+                  </Button>
+                </Link>
+              </Column>
+              <Column opt_alignItems="flex-end">
+                <Button className="btn">
+                  <Text>{useText(contentsRoomsIndex.toBook)}</Text>
+                </Button>
+              </Column>
+            </Row>
+          </Column>
+        </RowToColumn>
+        <Row opt_margin={[0, 0, 2, 0]}>
+          <Image
+            className={'fullWidth'}
+            src={isLaptop ? img9 : img9_mobile}
+            alt="chambre privilège"
+          />
+        </Row>
       </main>
     </>
   )
