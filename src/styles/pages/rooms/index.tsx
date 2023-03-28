@@ -8,15 +8,23 @@ export const RoomsPageStyles = createGlobalStyle`
     }
     .h1 {
       font-size: 56px;
+      text-transform: uppercase;
+      margin-bottom: 70px;
     }
     .h3 {
       font-size: 24px;
+      text-transform: uppercase;
     }
     .btn {
+      margin-top: 15px;
       font-size: 22px;
+      text-transform: uppercase;
     }
     .p {
       font-size: 17px;
+      p {
+        text-transform: none;
+      }
     }
     
     .section .btn {
@@ -29,6 +37,7 @@ export const RoomsPageStyles = createGlobalStyle`
       }
       .h1 {
         font-size: 24px;
+        margin-bottom: 20px;
       }
       .h3 {
         font-size: 20px;
@@ -38,6 +47,9 @@ export const RoomsPageStyles = createGlobalStyle`
       }
       .p {
         font-size: 13px;
+        p {
+          text-transform: none;
+        }
       }
 
       .sc-column p,
