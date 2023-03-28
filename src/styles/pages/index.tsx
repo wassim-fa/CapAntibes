@@ -1,7 +1,47 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const IndexPageStyles = createGlobalStyle`
-  main#rooms {
-    &.mobile {}
+  main#home {
+    .h3, p, .btn {
+      line-height: 29px;
+    }
+    .h3 {
+      text-transform: uppercase;
+      font-size: 24px;
+      margin-bottom: 20px;
+      img {
+        padding-left: 20px;
+      }
+    }
+    .btn {
+      margin-top: 15px;
+      text-transform: uppercase;
+      font-size: 16px;
+    }
+    .p {
+      font-size: 17px;
+      p {
+        text-transform: none;
+      }
+    }
+    &.mobile {
+      .h3, p, .btn {
+        line-height: 23px;
+      }
+      .h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+      .btn {
+        margin-top: 10px;
+        font-size: 14px;
+      }
+      .p {
+        font-size: 13px;
+        p {
+          text-transform: none;
+        }
+      }
+    }
   }
 `

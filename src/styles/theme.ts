@@ -7,9 +7,9 @@ export const defaultTheme: DefaultTheme = {
     yellow: 'rgba(150, 180, 0 , 0.2)'
   },
   fontColors: {
-    primary: '#D99380',
+    primary: '#D99B81',
     secondary: '#FFFFFF',
-    yellow: '#FAB400'
+    yellow: '#FAB50B'
   },
   fontStyles: {
     medium: 'EurostileMediumExt',

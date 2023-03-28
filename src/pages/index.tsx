@@ -3,7 +3,6 @@ import Text from '@/components/Text'
 import { contentsHome } from '@/contents/pages'
 import Button from '@/components/Button'
 import Column from '@/components/Column'
-import { getFontSize } from '@/utils'
 import Row from '@/components/Row'
 import slider0 from '../../public/assets/images/home/slider_0.png'
 import slider1 from '../../public/assets/images/home/slider_1.png'
@@ -22,9 +21,8 @@ import random6 from '../../public/assets/images/home/random6.png'
 import random7 from '../../public/assets/images/home/random7.png'
 import Image from 'next/image'
 import Colors from '@/enums/colors'
-import { TCssSize } from '@/interfaces'
 import InfinitySlider from '@/components/InfinitySlider'
-import { useIsLaptop, useIsMobile, useText } from '@/hooks'
+import { useIsLaptop, useText } from '@/hooks'
 import RandomImages from '@/components/RandomImages'
 import RowToColumn from '@/components/RowToColumn'
 import Carrousel from '@/components/Carrousel'
@@ -41,35 +39,7 @@ const randomsImages = [
   random7
 ]
 export default function Home() {
-  const isMobile = useIsMobile()
   const isLaptop = useIsLaptop()
-  const fontSizeLaptop = {
-    regular: {
-      current: '1.25vw',
-      middle: 20
-    },
-    small: {
-      current: '1.05vw',
-      middle: 18
-    }
-  }
-  const fontSizeMobile = {
-    regular: {
-      current: '2.2vw',
-      middle: 18
-    },
-    small: {
-      current: '2.2vw',
-      middle: 10
-    }
-  }
-  const spacing: TCssSize = { value: 0.8, unit: 'vw' }
-  const fontSize = isMobile ? fontSizeMobile : fontSizeLaptop
-  const fontRegular = getFontSize(
-    fontSize.regular.current,
-    fontSize.regular.middle
-  )
-  const fontSmall = getFontSize(fontSize.small.current, fontSize.small.middle)
 
   const getInfinitySliderImageSize = () => {
     const ratio = (slider0.height / slider0.width) * 100
@@ -127,15 +97,17 @@ export default function Home() {
           <Carrousel images={randomsImages} />
         )}
         <Column
-          opt_margin={isLaptop ? [1, 1, 1, 1] : [0.5, 0.5, 0.5, 0.5]}
-          opt_spacing={spacing}
-          opt_width={{ value: 90, unit: '%' }}
+          opt_margin={isLaptop ? [1, 1, 1, 1] : [3, 1.5, 3, 1.5]}
+          opt_width={{ value: isLaptop ? 80 : 100, unit: '%' }}
         >
-          <Text opt_size={fontRegular}>{useText(contentsHome.text1)}</Text>
-          <Button>
-            <Text opt_size={fontSmall}>
-              {useText(contentsHome.btnMoreInformation)}
-            </Text>
+          <Text className="h3">{useText(contentsHome.title1)}</Text>
+          <Text className="p">
+            {useText(contentsHome.text1_1)}
+            <br />
+            {useText(contentsHome.text1_2)}
+          </Text>
+          <Button className="btn">
+            <Text>{useText(contentsHome.btnMoreInformation)}</Text>
           </Button>
         </Column>
         <Row>
@@ -154,81 +126,92 @@ export default function Home() {
             ))}
           </InfinitySlider>
         </Row>
-        <Column
-          opt_margin={isLaptop ? [1, 1, 1, 1] : [0.5, 0.5, 0.5, 0.5]}
-          opt_spacing={spacing}
-          opt_width={{ value: 90, unit: '%' }}
-        >
-          <Text opt_size={fontRegular}>{useText(contentsHome.text2)}</Text>
-          <Button>
-            <Text opt_size={fontSmall}>
-              {useText(contentsHome.btnMoreInformation)}
-            </Text>
-          </Button>
-        </Column>
         <RowToColumn
           align="center"
-          marginForRow={[0.5, 0, 0.5, 0]}
-          marginForColumn={[1, 0, 1, 0]}
-        >
-          <Image
-            className="fullWidth"
-            src={img1}
-            alt="chambre au bord de l'eau"
-          />
-          <Column
-            className=""
-            opt_margin={[0.5, 0.5, 1, 0.5]}
-            opt_spacing={spacing}
-          >
-            <Text opt_size={fontRegular}>{useText(contentsHome.text3)}</Text>
-            <Button>
-              <Text opt_size={fontSmall}>
-                {useText(contentsHome.btnMoreInformation)}
-              </Text>
-            </Button>
-          </Column>
-        </RowToColumn>
-        <RowToColumn
-          align="center"
-          marginForRow={[0.5, 0, 0.5, 0]}
-          marginForColumn={[1, 0, 1, 0]}
+          marginForRow={[0.5, 2, 0.5, 2]}
+          marginForColumn={[3, 0, 1, 0]}
           isReverseForColumn={true}
         >
-          <Column opt_margin={[0.5, 0.5, 1, 0.5]} opt_spacing={spacing}>
-            <Text opt_size={fontRegular}>{useText(contentsHome.text4)}</Text>
-            <Button>
-              <Text opt_size={fontSmall}>
-                {useText(contentsHome.btnMoreInformation)}
-              </Text>
+          <Column
+            opt_alignItems="center"
+            opt_margin={isLaptop ? [0.5, 0.5, 1, 0.5] : [0.5, 0, 1.5, 0]}
+          >
+            <Image
+              style={{
+                width: `${isLaptop ? '60%' : '100%'}`,
+                height: 'auto'
+              }}
+              src={img1}
+              alt="chambre au bord de l'eau"
+            />
+          </Column>
+          <Column
+            className=""
+            opt_margin={isLaptop ? [0.5, 0.5, 1, 0.5] : [0.5, 1.5, 2.5, 1.5]}
+          >
+            <Text className="h3">{useText(contentsHome.title2)}</Text>
+            <Text className="p">{useText(contentsHome.text2)}</Text>
+            <Button className="btn">
+              <Text>{useText(contentsHome.btnMoreInformation)}</Text>
             </Button>
           </Column>
-          <Image
-            className="fullWidth"
-            src={img2}
-            alt="chambre au bord de l'eau"
-          />
         </RowToColumn>
         <RowToColumn
           align="center"
-          marginForRow={[0.5, 0, 0.5, 0]}
-          marginForColumn={[1, 0, 1, 0]}
-          bgColor={Colors.YELLOW}
+          marginForRow={[0.5, 2, 0.5, 2]}
+          marginForColumn={[0, 0, 0, 0]}
         >
-          <Column opt_margin={[0.5, 0.5, 1, 0.5]} opt_spacing={spacing}>
+          <Column
+            opt_margin={isLaptop ? [0.5, 0.5, 1, 0.5] : [0.5, 1.5, 2.5, 1.5]}
+          >
+            <Text className="h3">
+              {useText(contentsHome.title3_1)}
+              <br />
+              {useText(contentsHome.title3_2)}
+            </Text>
+            <Text className="p">{useText(contentsHome.text3)}</Text>
+            <Button className="btn">
+              <Text>{useText(contentsHome.btnMoreInformation)}</Text>
+            </Button>
+          </Column>
+          <Column
+            opt_alignItems="center"
+            opt_margin={isLaptop ? [0.5, 0.5, 1, 0.5] : [0.5, 0, 0, 0]}
+          >
             <Image
               style={{
-                width: `20%`,
+                width: `${isLaptop ? '60%' : '100%'}`,
                 height: 'auto'
               }}
-              src={logo3}
-              alt="logo poisson"
+              src={img2}
+              alt="chambre au bord de l'eau"
             />
-            <Text opt_size={fontRegular} opt_color={Colors.YELLOW}>
-              {useText(contentsHome.text5)}
+          </Column>
+        </RowToColumn>
+        <RowToColumn
+          align="center"
+          marginForRow={[0.5, 2, 0.5, 2]}
+          marginForColumn={[2, 0, 1, 0]}
+          bgColor={Colors.YELLOW}
+        >
+          <Column
+            opt_margin={isLaptop ? [0.5, 0.5, 1, 0.5] : [0.5, 1.5, 2.5, 1.5]}
+          >
+            <Row>
+              <Text opt_color={Colors.YELLOW} className="h3">
+                {useText(contentsHome.title4_1)}
+                <Image height={14} src={logo3} alt="logo poisson" />
+                <br />
+                {useText(contentsHome.title4_2)}
+              </Text>
+            </Row>
+            <Text opt_color={Colors.YELLOW} className="p">
+              {useText(contentsHome.text4_1)}
+              <br />
+              {useText(contentsHome.text4_2)}
             </Text>
-            <Button opt_color={Colors.YELLOW}>
-              <Text opt_size={fontSmall} opt_color={Colors.YELLOW}>
+            <Button opt_color={Colors.YELLOW} className="btn">
+              <Text opt_color={Colors.YELLOW}>
                 {useText(contentsHome.btnMoreInformation)}
               </Text>
             </Button>
@@ -247,24 +230,55 @@ export default function Home() {
         <RowToColumn
           align="center"
           marginForRow={[0.5, 0, 1, 0]}
-          marginForColumn={[1, 0, 1, 0]}
+          marginForColumn={[2, 0, 1, 0]}
           isReverseForColumn={true}
         >
-          <Image
-            className="fullWidth"
-            src={img4}
-            alt="chambre au bord de l'eau"
-          />
           <Column
-            opt_margin={isLaptop ? [0.5, 0.5, 1, 0.5] : [0.5, 0.5, 1.5, 0.5]}
-            opt_spacing={spacing}
+            opt_alignItems="center"
+            opt_margin={isLaptop ? [0.5, 0, 1, 0] : [0.5, 0, 1.5, 0]}
           >
-            <Text opt_size={fontRegular}>{useText(contentsHome.text6)}</Text>
-            <Button>
-              <Text opt_size={fontSmall}>
-                {useText(contentsHome.btnMoreInformation)}
-              </Text>
+            <Image
+              className="fullWidth"
+              src={img4}
+              alt="chambre au bord de l'eau"
+            />
+          </Column>
+          <Column
+            opt_margin={isLaptop ? [0.5, 0.5, 1, 0.5] : [0.5, 1.5, 2.5, 1.5]}
+          >
+            <Text className="h3">{useText(contentsHome.title5)}</Text>
+            <Text className="p">{useText(contentsHome.text5)}</Text>
+            <Button className="btn">
+              <Text>{useText(contentsHome.btnMoreInformation)}</Text>
             </Button>
+          </Column>
+        </RowToColumn>
+        <RowToColumn
+          align="center"
+          marginForRow={[0.5, 2, 0.5, 2]}
+          marginForColumn={[1, 0, 1, 0]}
+        >
+          <Column
+            opt_margin={isLaptop ? [0.5, 0.5, 1, 0.5] : [0.5, 1.5, 2.5, 1.5]}
+          >
+            <Text className="h3">{useText(contentsHome.title6)}</Text>
+            <Text className="p">{useText(contentsHome.text6)}</Text>
+            <Button className="btn">
+              <Text>{useText(contentsHome.btnMoreInformation)}</Text>
+            </Button>
+          </Column>
+          <Column
+            opt_alignItems="center"
+            opt_margin={isLaptop ? [0.5, 0.5, 1, 0.5] : [0.5, 0, 1.5, 0]}
+          >
+            <Image
+              src={img2}
+              style={{
+                width: `${isLaptop ? '60%' : '100%'}`,
+                height: 'auto'
+              }}
+              alt="chambre au bord de l'eau"
+            />
           </Column>
         </RowToColumn>
       </main>
