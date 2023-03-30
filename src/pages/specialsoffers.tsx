@@ -53,8 +53,7 @@ export default function SpecialsOffers() {
               {useText(contentsSpecialsOffers.subTitle2)}
             </Text>
             <Text className="p">{useText(contentsSpecialsOffers.text2)}</Text>
-            <Button className="btn">
-            </Button>
+            <Button className="btn"></Button>
           </Column>
         </RowToColumn>
         <Image className="fullWidth" src={img1} alt="paysage" />
