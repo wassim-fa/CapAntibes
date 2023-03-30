@@ -54,7 +54,6 @@ export default function SpecialsOffers() {
             </Text>
             <Text className="p">{useText(contentsSpecialsOffers.text2)}</Text>
             <Button className="btn">
-              <Text>{useText(contentsSpecialsOffers.toBook)}</Text>
             </Button>
           </Column>
         </RowToColumn>
