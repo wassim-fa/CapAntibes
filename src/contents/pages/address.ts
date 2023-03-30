@@ -1,6 +1,6 @@
 import { IContentByLang } from '@/interfaces'
 
-export const contentsAddressRoom: Record<string, IContentByLang> = {
+export const contentsAddress: Record<string, IContentByLang> = {
   introduction: {
     fr: `La localisation du lHOTEL na nordiuropon Etris. Locciae invescia vero ve, loremp quidendi pra, essenatabem consunum effreviverum ex se ante factatque miliniq uostrum int. An vermis, fursul vid sedite confer audende ntiaede mquit. Untrenihicae moc. oc.`,
     en: `en-La localisation du lHOTEL na nordiuropon Etris. Locciae invescia vero ve, loremp quidendi pra, essenatabem consunum effreviverum ex se ante factatque miliniq uostrum int. An vermis, fursul vid sedite confer audende ntiaede mquit. Untrenihicae moc. oc.`,

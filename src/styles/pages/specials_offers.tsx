@@ -22,7 +22,7 @@ export const SpecialsOffersPageStyles = createGlobalStyle`
       text-transform: uppercase;
     }
     &.mobile {
-      .h3, p {
+      .h3, p, .btn {
         line-height: 23px;
       }
       .h3 {

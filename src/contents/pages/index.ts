@@ -1,5 +1,7 @@
 export * from './address'
 export * from './farniente'
 export * from './home'
+export * from './restaurants-pecheurs'
 export * from './room-luxe'
 export * from './rooms-index'
+export * from './specials_offers'
