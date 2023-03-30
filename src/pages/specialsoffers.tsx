@@ -12,7 +12,7 @@ import Button from '@/components/Button'
 import Carrousel from '@/components/Carrousel'
 import RandomImages from '@/components/RandomImages'
 import { SpecialsOffersPageStyles } from '@/styles/pages/specials_offers'
-import { contentsSpecialsOffersRoom } from '@/contents/pages/specials_offers'
+import { contentsSpecialsOffers } from '@/contents/pages/specials_offers'
 
 const randomsImages = [random1, random2]
 export default function SpecialsOffers() {
@@ -41,24 +41,20 @@ export default function SpecialsOffers() {
         >
           <Column opt_margin={isLaptop ? [0.5, 0.5, 0, 0] : [1, 0, 2, 0]}>
             <Text className="h3">
-              {useText(contentsSpecialsOffersRoom.subTitle1)}
+              {useText(contentsSpecialsOffers.subTitle1)}
             </Text>
-            <Text className="p">
-              {useText(contentsSpecialsOffersRoom.text1)}
-            </Text>
+            <Text className="p">{useText(contentsSpecialsOffers.text1)}</Text>
             <Button className="btn">
-              <Text>{useText(contentsSpecialsOffersRoom.toBook)}</Text>
+              <Text>{useText(contentsSpecialsOffers.toBook)}</Text>
             </Button>
           </Column>
           <Column opt_margin={isLaptop ? [0, 0, 0, 0] : [1, 0, 2, 0]}>
             <Text className="h3">
-              {useText(contentsSpecialsOffersRoom.subTitle2)}
+              {useText(contentsSpecialsOffers.subTitle2)}
             </Text>
-            <Text className="p">
-              {useText(contentsSpecialsOffersRoom.text2)}
-            </Text>
+            <Text className="p">{useText(contentsSpecialsOffers.text2)}</Text>
             <Button className="btn">
-              <Text>{useText(contentsSpecialsOffersRoom.toBook)}</Text>
+              <Text>{useText(contentsSpecialsOffers.toBook)}</Text>
             </Button>
           </Column>
         </RowToColumn>
@@ -72,24 +68,20 @@ export default function SpecialsOffers() {
         >
           <Column opt_margin={isLaptop ? [0.5, 0.5, 0, 0] : [1, 0, 2, 0]}>
             <Text className="h3">
-              {useText(contentsSpecialsOffersRoom.subTitle3)}
+              {useText(contentsSpecialsOffers.subTitle3)}
             </Text>
-            <Text className="p">
-              {useText(contentsSpecialsOffersRoom.text3)}
-            </Text>
+            <Text className="p">{useText(contentsSpecialsOffers.text3)}</Text>
             <Button className="btn">
-              <Text>{useText(contentsSpecialsOffersRoom.toBook)}</Text>
+              <Text>{useText(contentsSpecialsOffers.toBook)}</Text>
             </Button>
           </Column>
           <Column opt_margin={isLaptop ? [0, 0, 0, 0] : [1, 0, 2, 0]}>
             <Text className="h3">
-              {useText(contentsSpecialsOffersRoom.subTitle4)}
+              {useText(contentsSpecialsOffers.subTitle4)}
             </Text>
-            <Text className="p">
-              {useText(contentsSpecialsOffersRoom.text4)}
-            </Text>
+            <Text className="p">{useText(contentsSpecialsOffers.text4)}</Text>
             <Button className="btn">
-              <Text>{useText(contentsSpecialsOffersRoom.toBook)}</Text>
+              <Text>{useText(contentsSpecialsOffers.toBook)}</Text>
             </Button>
           </Column>
         </RowToColumn>

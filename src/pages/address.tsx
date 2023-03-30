@@ -14,13 +14,13 @@ import Column from '@/components/Column'
 import { AddressPageStyles } from '@/styles/pages/address'
 import Carrousel from '@/components/Carrousel'
 import RandomImages from '@/components/RandomImages'
-import { contentsAddressRoom } from '@/contents/pages'
+import { contentsAddress } from '@/contents/pages'
 
 const randomsImages = [random1, random2]
 export default function Address() {
   const isLaptop = useIsLaptop()
-  const subTitle2 = useText(contentsAddressRoom.subTitle2)
-  const text2 = useText(contentsAddressRoom.text2)
+  const subTitle2 = useText(contentsAddress.subTitle2)
+  const text2 = useText(contentsAddress.text2)
   return (
     <>
       <AddressPageStyles />
@@ -37,7 +37,7 @@ export default function Address() {
           <Carrousel images={randomsImages} />
         )}
         <Row opt_margin={isLaptop ? [0.5, 1, 0.5, 1] : [2, 1, 2, 1]}>
-          <Text className="p">{useText(contentsAddressRoom.introduction)}</Text>
+          <Text className="p">{useText(contentsAddress.introduction)}</Text>
         </Row>
         <RowToColumn
           className="section"
@@ -47,8 +47,8 @@ export default function Address() {
           isReverseForColumn={true}
         >
           <Column opt_margin={isLaptop ? [0.5, 0.5, 0, 0] : [0, 0, 0, 0]}>
-            <Text className="h3">{useText(contentsAddressRoom.subTitle1)}</Text>
-            <Text className="p">{useText(contentsAddressRoom.text1)}</Text>
+            <Text className="h3">{useText(contentsAddress.subTitle1)}</Text>
+            <Text className="p">{useText(contentsAddress.text1)}</Text>
           </Column>
           {isLaptop && (
             <Column>

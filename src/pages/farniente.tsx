@@ -14,7 +14,7 @@ import Image from 'next/image'
 import Column from '@/components/Column'
 import { TCssSize } from '@/interfaces'
 import { FarnientePageStyles } from '@/styles/pages/farniente'
-import { contentsFarnienteRoom } from '@/contents/pages/farniente'
+import { contentsFarniente } from '@/contents/pages/farniente'
 
 export default function Farniente() {
   const isLaptop = useIsLaptop()
@@ -38,11 +38,9 @@ export default function Farniente() {
           isReverseForColumn={true}
         >
           <Column opt_spacing={spacing}>
-            <Text className="h1">{useText(contentsFarnienteRoom.title)}</Text>
-            <Text className="h3">
-              {useText(contentsFarnienteRoom.subTitle1)}
-            </Text>
-            <Text className="p">{useText(contentsFarnienteRoom.text1)}</Text>
+            <Text className="h1">{useText(contentsFarniente.title)}</Text>
+            <Text className="h3">{useText(contentsFarniente.subTitle1)}</Text>
+            <Text className="p">{useText(contentsFarniente.text1)}</Text>
           </Column>
           <Column opt_alignItems="center" opt_justifyContent="center">
             <Image
@@ -58,21 +56,17 @@ export default function Farniente() {
         <Row opt_margin={isLaptop ? [1, 1, 0.5, 1] : [3, 0.2, 0.2, 0.5]}>
           {isLaptop && <Column></Column>}
           <Column opt_spacing={spacing} className="item">
-            <Text className="h3">
-              {useText(contentsFarnienteRoom.subTitle2)}
-            </Text>
-            <Text className="p">{useText(contentsFarnienteRoom.text2)}</Text>
+            <Text className="h3">{useText(contentsFarniente.subTitle2)}</Text>
+            <Text className="p">{useText(contentsFarniente.text2)}</Text>
             <Button className="btn">
-              <Text>{useText(contentsFarnienteRoom.btn2)}</Text>
+              <Text>{useText(contentsFarniente.btn2)}</Text>
             </Button>
           </Column>
         </Row>
         <Row opt_margin={isLaptop ? [1, 1, 0.5, 1] : [3, 0.2, 0.2, 0.5]}>
           <Column opt_spacing={spacing} className="item">
-            <Text className="h3">
-              {useText(contentsFarnienteRoom.subTitle3)}
-            </Text>
-            <Text className="p">{useText(contentsFarnienteRoom.text3)}</Text>
+            <Text className="h3">{useText(contentsFarniente.subTitle3)}</Text>
+            <Text className="p">{useText(contentsFarniente.text3)}</Text>
           </Column>
           {isLaptop && <Column></Column>}
         </Row>
@@ -84,30 +78,24 @@ export default function Farniente() {
         <Row opt_margin={isLaptop ? [1, 1, 0.5, 1] : [3, 0.2, 0.2, 0.5]}>
           {isLaptop && <Column></Column>}
           <Column opt_spacing={spacing} className="item">
-            <Text className="h3">
-              {useText(contentsFarnienteRoom.subTitle4)}
-            </Text>
-            <Text className="p">{useText(contentsFarnienteRoom.text4)}</Text>
+            <Text className="h3">{useText(contentsFarniente.subTitle4)}</Text>
+            <Text className="p">{useText(contentsFarniente.text4)}</Text>
           </Column>
         </Row>
         <Row opt_margin={isLaptop ? [1, 1, 0.5, 1] : [3, 0.2, 0.2, 0.5]}>
           <Column opt_spacing={spacing} className="item">
-            <Text className="h3">
-              {useText(contentsFarnienteRoom.subTitle5)}
-            </Text>
-            <Text className="p">{useText(contentsFarnienteRoom.text5)}</Text>
+            <Text className="h3">{useText(contentsFarniente.subTitle5)}</Text>
+            <Text className="p">{useText(contentsFarniente.text5)}</Text>
           </Column>
           {isLaptop && <Column></Column>}
         </Row>
         <Row opt_margin={isLaptop ? [1, 1, 0.5, 1] : [3, 0.2, 0.2, 0.5]}>
           {isLaptop && <Column></Column>}
           <Column opt_spacing={spacing} className="item">
-            <Text className="h3">
-              {useText(contentsFarnienteRoom.subTitle6)}
-            </Text>
-            <Text className="p">{useText(contentsFarnienteRoom.text6)}</Text>
+            <Text className="h3">{useText(contentsFarniente.subTitle6)}</Text>
+            <Text className="p">{useText(contentsFarniente.text6)}</Text>
             <Button className="btn">
-              <Text>{useText(contentsFarnienteRoom.btn6)}</Text>
+              <Text>{useText(contentsFarniente.btn6)}</Text>
             </Button>
           </Column>
         </Row>

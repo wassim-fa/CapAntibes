@@ -1,6 +1,6 @@
 import { IContentByLang } from '@/interfaces'
 
-export const contentsFarnienteRoom: Record<string, IContentByLang> = {
+export const contentsFarniente: Record<string, IContentByLang> = {
   title: {
     fr: 'Farniente',
     en: 'en-Farniente',

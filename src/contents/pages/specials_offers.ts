@@ -1,6 +1,6 @@
 import { IContentByLang } from '@/interfaces'
 
-export const contentsSpecialsOffersRoom: Record<string, IContentByLang> = {
+export const contentsSpecialsOffers: Record<string, IContentByLang> = {
   toBook: {
     fr: 'Réserver',
     en: 'Réserver',
