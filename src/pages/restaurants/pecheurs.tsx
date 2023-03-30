@@ -32,9 +32,7 @@ export default function PecheursRestaurant() {
           <Text className="h3">
             {useText(contentsPecheursRestaurant.title)}
           </Text>
-          <Text className="p">
-            {useText(contentsPecheursRestaurant.intro)}
-          </Text>
+          <Text className="p">{useText(contentsPecheursRestaurant.intro)}</Text>
           <Text className="btn">
             {useText(contentsPecheursRestaurant.toBookTable)}
           </Text>
@@ -46,9 +44,7 @@ export default function PecheursRestaurant() {
           marginForRow={[1, 1, 1, 1]}
           marginForColumn={[0, 1, 1, 1]}
         >
-          <Column
-            opt_margin={isLaptop ? [0.5, 0, 0.5, 0] : [2, 0, 2, 0]}
-          >
+          <Column opt_margin={isLaptop ? [0.5, 0, 0.5, 0] : [2, 0, 2, 0]}>
             <Text className="h5">
               {useText(contentsPecheursRestaurant.chapter1)}
             </Text>
