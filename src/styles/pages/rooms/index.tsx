@@ -26,12 +26,16 @@ export const RoomsPageStyles = createGlobalStyle`
         text-transform: none;
       }
     }
-    
+
     .section .btn {
       margin-left: 5%
     }
 
     &.mobile {
+      
+    .div-orange {
+      background-color: red;
+    }
       .h1, .h3, p, .btn {
         line-height: 23px;
       }

@@ -19,10 +19,6 @@ export const FarnientePageStyles = createGlobalStyle`
     .p {
       font-size: 17px;
     }
-    
-    .section .btn {
-      margin-left: 5%
-    }
 
     &.mobile {
       .h1, .h3, p, .btn {
@@ -47,10 +43,6 @@ export const FarnientePageStyles = createGlobalStyle`
       .sc-column p,
       .section p {
         margin: 5% 0;
-      }
-      .section .btn {
-        margin-top: 2%;
-        margin-left: inherit;
       }
     }
   }
