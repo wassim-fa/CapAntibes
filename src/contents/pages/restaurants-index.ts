@@ -10,7 +10,7 @@ export const contentsRestaurantsIndex: Record<string, IContentByLang> = {
     fr: 'la plage sIgna nordiuropon Etris. Decteri ssendem audem iusquod condem ad mo turebatiam vid consu inatodi ctorarit. Locciae invescia vero ve, quidendi pra, essenatabem consunum effreviverum ex se ante factatque miliniq uostrum int? An vermis, fursul vid sedite confer audende ntiaede mquit. Untrenihicae moC. Muliam ium urnum poenduc idiis. Rorsupi cavero in tabit.',
     en: 'en-la plage sIgna nordiuropon Etris. Decteri ssendem audem iusquod condem ad mo turebatiam vid consu inatodi ctorarit. Locciae invescia vero ve, quidendi pra, essenatabem consunum effreviverum ex se ante factatque miliniq uostrum int? An vermis, fursul vid sedite confer audende ntiaede mquit. Untrenihicae moC. Muliam ium urnum poenduc idiis. Rorsupi cavero in tabit.',
     ru: 'ru-la plage sIgna nordiuropon Etris. Decteri ssendem audem iusquod condem ad mo turebatiam vid consu inatodi ctorarit. Locciae invescia vero ve, quidendi pra, essenatabem consunum effreviverum ex se ante factatque miliniq uostrum int? An vermis, fursul vid sedite confer audende ntiaede mquit. Untrenihicae moC. Muliam ium urnum poenduc idiis. Rorsupi cavero in tabit.'
-  }, 
+  },
   menu: {
     fr: `la carte`,
     en: `la carte`,
@@ -85,5 +85,5 @@ export const contentsRestaurantsIndex: Record<string, IContentByLang> = {
     fr: `Le matin signa nordiuropon etris. Decteri ssendem audem iusquod condem ad mo turebatiam vid consu inatodi ctorarit. Locciae invescia vero ve, quidendi pra, essenatabem consunum effreviverum ex se ante factatque miliniq uostrum int. An vermis, fursul vid sedite confer audende ntiaede mquit. Untrenihicae moc. Muliam ium urnum poenduc idiis. Rorsupi cavero in tabit.`,
     en: `Le matin signa nordiuropon etris. Decteri ssendem audem iusquod condem ad mo turebatiam vid consu inatodi ctorarit. Locciae invescia vero ve, quidendi pra, essenatabem consunum effreviverum ex se ante factatque miliniq uostrum int. An vermis, fursul vid sedite confer audende ntiaede mquit. Untrenihicae moc. Muliam ium urnum poenduc idiis. Rorsupi cavero in tabit.`,
     ru: `Le matin signa nordiuropon etris. Decteri ssendem audem iusquod condem ad mo turebatiam vid consu inatodi ctorarit. Locciae invescia vero ve, quidendi pra, essenatabem consunum effreviverum ex se ante factatque miliniq uostrum int. An vermis, fursul vid sedite confer audende ntiaede mquit. Untrenihicae moc. Muliam ium urnum poenduc idiis. Rorsupi cavero in tabit.`
-  },
+  }
 }

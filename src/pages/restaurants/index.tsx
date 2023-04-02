@@ -42,14 +42,12 @@ export default function Restaurants() {
           <Carrousel images={randomsImages} />
         )}
         <Column opt_margin={isLaptop ? [0.5, 1, 1, 1] : [1.5, 1, 2, 1]}>
-          <Text className="h3">
-            {useText(contentsRestaurantsIndex.title)}
+          <Text className="h3">{useText(contentsRestaurantsIndex.title)}</Text>
+          <Text className="p">
+            {useText(contentsRestaurantsIndex.description)}
           </Text>
-          <Text className="p">{useText(contentsRestaurantsIndex.description)}</Text>
           <Button className="btn">
-            <Text>
-              {useText(contentsRestaurantsIndex.button)}
-            </Text>
+            <Text>{useText(contentsRestaurantsIndex.button)}</Text>
           </Button>
         </Column>
         <Image
@@ -74,9 +72,7 @@ export default function Restaurants() {
             <Text className="h6">
               {useText(contentsRestaurantsIndex.subTitle1)}
             </Text>
-            <Text className="p">
-              {useText(contentsRestaurantsIndex.text1)}
-            </Text>
+            <Text className="p">{useText(contentsRestaurantsIndex.text1)}</Text>
             <Row>
               <Column opt_alignItems="flex-start">
                 <Button className="btn">
@@ -128,9 +124,7 @@ export default function Restaurants() {
             <Text className="h6">
               {useText(contentsRestaurantsIndex.subTitle2)}
             </Text>
-            <Text className="p">
-              {useText(contentsRestaurantsIndex.text2)}
-            </Text>
+            <Text className="p">{useText(contentsRestaurantsIndex.text2)}</Text>
             <Row>
               <Column opt_alignItems="flex-start">
                 <Button className="btn">
@@ -180,11 +174,9 @@ export default function Restaurants() {
             <Text className="h6">
               {useText(contentsRestaurantsIndex.subTitle3)}
             </Text>
-            <Text className="p">
-              {useText(contentsRestaurantsIndex.text3)}
-            </Text>
+            <Text className="p">{useText(contentsRestaurantsIndex.text3)}</Text>
             <Button className="btn">
-              <Text>{useText(contentsRestaurantsIndex.menu)}</Text>              
+              <Text>{useText(contentsRestaurantsIndex.menu)}</Text>
             </Button>
           </Column>
         </RowToColumn>
@@ -205,11 +197,9 @@ export default function Restaurants() {
             <Text className="h6">
               {useText(contentsRestaurantsIndex.subTitle4)}
             </Text>
-            <Text className="p">
-              {useText(contentsRestaurantsIndex.text4)}
-            </Text>
+            <Text className="p">{useText(contentsRestaurantsIndex.text4)}</Text>
             <Button className="btn">
-              <Text>{useText(contentsRestaurantsIndex.menu)}</Text>              
+              <Text>{useText(contentsRestaurantsIndex.menu)}</Text>
             </Button>
           </Column>
           <Column opt_alignItems="center" opt_justifyContent="center">
