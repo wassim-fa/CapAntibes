@@ -4,6 +4,7 @@ import Text from '@/components/Text'
 import { useIsLaptop, useText } from '@/hooks'
 import Head from 'next/head'
 import img1 from '../../../public/assets/images/restaurants/index/restaurants_1.png'
+import img1Mobile from '../../../public/assets/images/restaurants/index/restaurants_1_mobile.png'
 import img2 from '../../../public/assets/images/restaurants/index/restaurants_2.png'
 import img3 from '../../../public/assets/images/restaurants/index/restaurants_3.png'
 import img4 from '../../../public/assets/images/restaurants/index/restaurants_4.png'
@@ -53,7 +54,7 @@ export default function Restaurants() {
         <Image
           style={{ marginBottom: '5%' }}
           className="fullWidth"
-          src={img1}
+          src={isLaptop ? img1 : img1Mobile}
           alt="paysage"
         />
         <RowToColumn
@@ -152,18 +153,7 @@ export default function Restaurants() {
           align={isLaptop ? 'center' : 'flex-start'}
           marginForRow={[0.5, 1, 0.5, 1]}
           marginForColumn={[0, 0, 1, 0]}
-          isReverseForColumn={true}
         >
-          <Column opt_alignItems="center" opt_justifyContent="center">
-            <Image
-              style={{
-                width: `${isLaptop ? '70%' : '100%'}`,
-                height: 'auto'
-              }}
-              src={img5}
-              alt="plage"
-            />
-          </Column>
           <Column
             opt_spacing={spacing}
             opt_margin={isLaptop ? undefined : [1, 1.5, 1, 1.5]}
@@ -179,6 +169,16 @@ export default function Restaurants() {
               <Text>{useText(contentsRestaurantsIndex.menu)}</Text>
             </Button>
           </Column>
+          <Column opt_alignItems="center" opt_justifyContent="center">
+            <Image
+              style={{
+                width: `${isLaptop ? '70%' : '100%'}`,
+                height: 'auto'
+              }}
+              src={img5}
+              alt="plage"
+            />
+          </Column>
         </RowToColumn>
         <RowToColumn
           className="section"
@@ -187,6 +187,16 @@ export default function Restaurants() {
           marginForColumn={[0, 0, 1, 0]}
           isReverseForColumn={true}
         >
+          <Column opt_alignItems="center" opt_justifyContent="center">
+            <Image
+              style={{
+                width: `${isLaptop ? '70%' : '100%'}`,
+                height: 'auto'
+              }}
+              src={img6}
+              alt="plage"
+            />
+          </Column>
           <Column
             opt_spacing={spacing}
             opt_margin={isLaptop ? undefined : [1, 1.5, 1, 1.5]}
@@ -201,16 +211,6 @@ export default function Restaurants() {
             <Button className="btn">
               <Text>{useText(contentsRestaurantsIndex.menu)}</Text>
             </Button>
-          </Column>
-          <Column opt_alignItems="center" opt_justifyContent="center">
-            <Image
-              style={{
-                width: `${isLaptop ? '70%' : '100%'}`,
-                height: 'auto'
-              }}
-              src={img6}
-              alt="plage"
-            />
           </Column>
         </RowToColumn>
       </main>

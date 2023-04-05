@@ -40,14 +40,13 @@ export const PecheursRestaurantsPageStyles = createGlobalStyle`
     }
     &.mobile {
       
-      .border {
-        .sc-column:first-child {
+      .border > .sc-column {
+        :first-child {
           border-top: 2px solid #D99B81;
           border-bottom: 2px solid #D99B81;
         }
-        .sc-column:last-child {
-          border-top: none;
-          border-bottom: 2px solid #D99B81;
+        :last-child {
+          border: none;
         }
       }
       .h3, .h5, .h6, p, .btn {

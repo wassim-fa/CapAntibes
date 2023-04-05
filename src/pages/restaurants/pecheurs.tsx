@@ -6,6 +6,7 @@ import random1 from '../../../public/assets/images/restaurants/pecheurs/random_1
 import random2 from '../../../public/assets/images/restaurants/pecheurs/random_2.png'
 import img1 from '../../../public/assets/images/restaurants/pecheurs/pecheurs_1.png'
 import img1Mobile from '../../../public/assets/images/restaurants/pecheurs/pecheurs_1_mobile.png'
+import img2Mobile from '../../../public/assets/images/restaurants/pecheurs/pecheurs_2_mobile.png'
 
 import Image from 'next/image'
 import Column from '@/components/Column'
@@ -13,6 +14,7 @@ import Carrousel from '@/components/Carrousel'
 import RandomImages from '@/components/RandomImages'
 import { contentsPecheursRestaurant } from '@/contents/pages'
 import { PecheursRestaurantsPageStyles } from '@/styles/pages/restaurants/pecheurs'
+import Button from '@/components/Button'
 
 const randomsImages = [random1, random2, random1, random2]
 export default function PecheursRestaurant() {
@@ -33,11 +35,16 @@ export default function PecheursRestaurant() {
             {useText(contentsPecheursRestaurant.title)}
           </Text>
           <Text className="p">{useText(contentsPecheursRestaurant.intro)}</Text>
-          <Text className="btn">
-            {useText(contentsPecheursRestaurant.toBookTable)}
-          </Text>
+          <Button className="btn">
+            <Text>{useText(contentsPecheursRestaurant.toBookTable)}</Text>
+          </Button>
         </Column>
-        {isLaptop && <RandomImages listImages={randomsImages} />}
+        {isLaptop ? <RandomImages listImages={randomsImages} /> : <Image
+          style={{ marginBottom: '5%' }}
+          className="fullWidth"
+          src={img1Mobile}
+          alt="paysage"
+        />}
         <RowToColumn
           className="section border"
           align={isLaptop ? 'stretch' : 'flex-start'}
@@ -54,12 +61,11 @@ export default function PecheursRestaurant() {
             <Text className="p">
               {useText(contentsPecheursRestaurant.text1)}
             </Text>
-            <Text className="btn">
-              {useText(contentsPecheursRestaurant.menu)}
-            </Text>
+            <Button className="btn">
+              <Text>{useText(contentsPecheursRestaurant.menu)}</Text>
+            </Button>
           </Column>
           <Column
-            className="border"
             opt_margin={isLaptop ? [0.5, 0, 0.5, 0] : [2, 0, 2, 0]}
           >
             <Text className="h5">
@@ -76,7 +82,7 @@ export default function PecheursRestaurant() {
         <Image
           style={{ marginBottom: '5%' }}
           className="fullWidth"
-          src={isLaptop ? img1 : img1Mobile}
+          src={isLaptop ? img1 : img2Mobile}
           alt="paysage"
         />
       </main>
