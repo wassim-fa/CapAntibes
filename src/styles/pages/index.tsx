@@ -24,6 +24,9 @@ export const IndexPageStyles = createGlobalStyle`
         text-transform: none;
       }
     }
+    .yellow {
+      border: 3px solid #FAB50B;
+    }
     &.mobile {
       .h3, p, .btn {
         line-height: 23px;
@@ -41,6 +44,9 @@ export const IndexPageStyles = createGlobalStyle`
         p {
           text-transform: none;
         }
+      }
+      .yellow { 
+        margin-top: 20px;
       }
     }
   }
