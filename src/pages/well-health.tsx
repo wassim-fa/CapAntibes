@@ -33,6 +33,9 @@ export default function WellHealth() {
         <Column opt_margin={isLaptop ? [1, 1, 2, 1] : [3, 1.5, 1.5, 1.5]}>
           <Text className="h1">{useText(contentsWellHealth.title)}</Text>
           <Text className="p">{useText(contentsWellHealth.description)}</Text>
+          <Button className="btn">
+            <Text>{useText(contentsWellHealth.button)}</Text>
+          </Button>
         </Column>
         <Image
           style={{ marginBottom: '5%' }}

@@ -21,7 +21,6 @@ import random3Mobile from '../../public/assets/images/farniente/random_3_mobile.
 
 import Image from 'next/image'
 import Column from '@/components/Column'
-import { TCssSize } from '@/interfaces'
 import { FarnientePageStyles } from '@/styles/pages/farniente'
 import { contentsFarniente } from '@/contents/pages/farniente'
 import RandomImages from '@/components/RandomImages'
@@ -39,8 +38,6 @@ const randomsImagesMobile = [
 ]
 export default function Farniente() {
   const isLaptop = useIsLaptop()
-  const valueSpacing = isLaptop ? 20 : 10
-  const spacing: TCssSize = { value: valueSpacing, unit: 'px' }
   const getInfinitySliderImageSize = () => {
     const ratio = (slider0.height / slider0.width) * 100
     let width = 100
@@ -79,10 +76,7 @@ export default function Farniente() {
           marginForRow={[0.5, 1, 0.5, 1]}
           marginForColumn={[0, 0, 1, 0]}
         >
-          <Column
-            opt_spacing={spacing}
-            opt_margin={isLaptop ? undefined : [1, 1.5, 1, 1.5]}
-          >
+          <Column opt_margin={isLaptop ? undefined : [1, 1.5, 1, 1.5]}>
             <Text className="h3">{useText(contentsFarniente.subTitle1)}</Text>
             <Text className="p">{useText(contentsFarniente.text1)}</Text>
           </Column>
@@ -114,10 +108,7 @@ export default function Farniente() {
               alt="plage"
             />
           </Column>
-          <Column
-            opt_spacing={spacing}
-            opt_margin={isLaptop ? undefined : [1, 1.5, 1, 1.5]}
-          >
+          <Column opt_margin={isLaptop ? undefined : [1, 1.5, 1, 1.5]}>
             <Text className="h3">{useText(contentsFarniente.subTitle2)}</Text>
             <Text className="p">{useText(contentsFarniente.text2)}</Text>
           </Column>
@@ -146,10 +137,7 @@ export default function Farniente() {
           marginForRow={[0.5, 1, 0.5, 1]}
           marginForColumn={[0, 0, 1, 0]}
         >
-          <Column
-            opt_spacing={spacing}
-            opt_margin={isLaptop ? undefined : [1, 1.5, 1, 1.5]}
-          >
+          <Column opt_margin={isLaptop ? undefined : [1, 1.5, 1, 1.5]}>
             <Text className="h3">{useText(contentsFarniente.subTitle3)}</Text>
             <Text className="p">{useText(contentsFarniente.text3)}</Text>
           </Column>
@@ -181,10 +169,7 @@ export default function Farniente() {
               alt="plage"
             />
           </Column>
-          <Column
-            opt_spacing={spacing}
-            opt_margin={isLaptop ? undefined : [1, 1.5, 1, 1.5]}
-          >
+          <Column opt_margin={isLaptop ? undefined : [1, 1.5, 1, 1.5]}>
             <Text className="h3">{useText(contentsFarniente.subTitle4)}</Text>
             <Text className="p">{useText(contentsFarniente.text4)}</Text>
             <Button className="btn">
@@ -206,10 +191,7 @@ export default function Farniente() {
           marginForRow={[0.5, 1, 0.5, 1]}
           marginForColumn={[0, 0, 1, 0]}
         >
-          <Column
-            opt_spacing={spacing}
-            opt_margin={isLaptop ? undefined : [1, 1.5, 1, 1.5]}
-          >
+          <Column opt_margin={isLaptop ? undefined : [1, 1.5, 1, 1.5]}>
             <Text className="h3">{useText(contentsFarniente.subTitle5)}</Text>
             <Text className="p">{useText(contentsFarniente.text5)}</Text>
             <Button className="btn">
@@ -244,10 +226,7 @@ export default function Farniente() {
               alt="plage"
             />
           </Column>
-          <Column
-            opt_spacing={spacing}
-            opt_margin={isLaptop ? undefined : [1, 1.5, 1, 1.5]}
-          >
+          <Column opt_margin={isLaptop ? undefined : [1, 1.5, 1, 1.5]}>
             <Text className="h3">{useText(contentsFarniente.subTitle6)}</Text>
             <Text className="p">{useText(contentsFarniente.text6)}</Text>
             <Button className="btn">
