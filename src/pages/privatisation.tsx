@@ -34,6 +34,9 @@ export default function Privatisation() {
           <Text className="p">
             {useText(contentsPrivatisation.description)}
           </Text>
+          <Button className="btn">
+            <Text>{useText(contentsPrivatisation.button)}</Text>
+          </Button>
         </Column>
         <Image
           style={{ marginBottom: '5%' }}

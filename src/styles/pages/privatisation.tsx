@@ -9,15 +9,22 @@ export const PrivatisationPageStyles = createGlobalStyle`
     .h1 {
       font-size: 56px;
       margin-bottom: 8%;
+      text-transform: uppercase;
     }
     .h3 {
+      margin-bottom: 8%;
       font-size: 24px;
+      text-transform: uppercase;
     }
     .btn {
-      font-size: 22px;
+      font-size: 17px;
+      text-transform: uppercase;
     }
     .p {
-      font-size: 17px;
+      font-size: 16px;
+      p {
+        text-transform: none;
+      }
     }
 
     &.mobile {
@@ -26,8 +33,10 @@ export const PrivatisationPageStyles = createGlobalStyle`
       }
       .h1 {
         font-size: 24px;
+        margin-bottom: 2%;
       }
       .h3 {
+        margin-bottom: 2%;
         font-size: 20px;
       }
       .btn {
@@ -42,7 +51,7 @@ export const PrivatisationPageStyles = createGlobalStyle`
       }
       .sc-column p,
       .section p {
-        margin: 5% 0;
+        margin: 2% 0;
       }
     }
   }

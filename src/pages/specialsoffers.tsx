@@ -20,6 +20,15 @@ import { contentsSpecialsOffers } from '@/contents/pages/specials_offers'
 const randomsImages = [random1, random2]
 export default function SpecialsOffers() {
   const isLaptop = useIsLaptop()
+  const texts = {
+    subTitle2: useText(contentsSpecialsOffers.subTitle2),
+    text2: useText(contentsSpecialsOffers.text2),
+    subTitle3: useText(contentsSpecialsOffers.subTitle3),
+    text3: useText(contentsSpecialsOffers.text3),
+    subTitle4: useText(contentsSpecialsOffers.subTitle4),
+    text4: useText(contentsSpecialsOffers.text4),
+    toBook: useText(contentsSpecialsOffers.toBook)
+  }
   return (
     <>
       <SpecialsOffersPageStyles />
@@ -52,12 +61,10 @@ export default function SpecialsOffers() {
           </Column>
           {isLaptop && (
             <Column opt_margin={[0, 0, 0, 0]}>
-              <Text className="h3">
-                {useText(contentsSpecialsOffers.subTitle2)}
-              </Text>
-              <Text className="p">{useText(contentsSpecialsOffers.text2)}</Text>
+              <Text className="h3">{texts.subTitle2}</Text>
+              <Text className="p">{texts.text2}</Text>
               <Button className="btn">
-                <Text>{useText(contentsSpecialsOffers.toBook)}</Text>
+                <Text>{texts.toBook}</Text>
               </Button>
             </Column>
           )}
@@ -71,12 +78,10 @@ export default function SpecialsOffers() {
           >
             <Image className="fullWidth" src={img1Mobile} alt="paysage" />
             <Column opt_margin={[2, 1, 1, 1]}>
-              <Text className="h3">
-                {useText(contentsSpecialsOffers.subTitle2)}
-              </Text>
-              <Text className="p">{useText(contentsSpecialsOffers.text2)}</Text>
+              <Text className="h3">{texts.subTitle2}</Text>
+              <Text className="p">{texts.text2}</Text>
               <Button className="btn">
-                <Text>{useText(contentsSpecialsOffers.toBook)}</Text>
+                <Text>{texts.toBook}</Text>
               </Button>
             </Column>
           </RowToColumn>
@@ -93,21 +98,17 @@ export default function SpecialsOffers() {
             isReverseForColumn={true}
           >
             <Column opt_margin={isLaptop ? [0.5, 0.5, 0, 0] : [1, 0, 2, 0]}>
-              <Text className="h3">
-                {useText(contentsSpecialsOffers.subTitle3)}
-              </Text>
-              <Text className="p">{useText(contentsSpecialsOffers.text3)}</Text>
+              <Text className="h3">{texts.subTitle3}</Text>
+              <Text className="p">{texts.text3}</Text>
               <Button className="btn">
-                <Text>{useText(contentsSpecialsOffers.toBook)}</Text>
+                <Text>{texts.toBook}</Text>
               </Button>
             </Column>
             <Column opt_margin={isLaptop ? [0, 0, 0, 0] : [1, 0, 2, 0]}>
-              <Text className="h3">
-                {useText(contentsSpecialsOffers.subTitle4)}
-              </Text>
-              <Text className="p">{useText(contentsSpecialsOffers.text4)}</Text>
+              <Text className="h3">{texts.subTitle4}</Text>
+              <Text className="p">{texts.text4}</Text>
               <Button className="btn">
-                <Text>{useText(contentsSpecialsOffers.toBook)}</Text>
+                <Text>{texts.toBook}</Text>
               </Button>
             </Column>
           </RowToColumn>
@@ -122,12 +123,10 @@ export default function SpecialsOffers() {
           >
             <Image className="fullWidth" src={img2Mobile} alt="paysage" />
             <Column opt_margin={[2, 1, 1, 1]}>
-              <Text className="h3">
-                {useText(contentsSpecialsOffers.subTitle3)}
-              </Text>
-              <Text className="p">{useText(contentsSpecialsOffers.text3)}</Text>
+              <Text className="h3">{texts.subTitle3}</Text>
+              <Text className="p">{texts.text3}</Text>
               <Button className="btn">
-                <Text>{useText(contentsSpecialsOffers.toBook)}</Text>
+                <Text>{texts.toBook}</Text>
               </Button>
             </Column>
           </RowToColumn>
@@ -142,12 +141,10 @@ export default function SpecialsOffers() {
           >
             <Image className="fullWidth" src={img3Mobile} alt="paysage" />
             <Column opt_margin={[2, 1, 1, 1]}>
-              <Text className="h3">
-                {useText(contentsSpecialsOffers.subTitle4)}
-              </Text>
-              <Text className="p">{useText(contentsSpecialsOffers.text4)}</Text>
+              <Text className="h3">{texts.subTitle4}</Text>
+              <Text className="p">{texts.text4}</Text>
               <Button className="btn">
-                <Text>{useText(contentsSpecialsOffers.toBook)}</Text>
+                <Text>{texts.toBook}</Text>
               </Button>
             </Column>
           </RowToColumn>
