@@ -39,12 +39,16 @@ export default function PecheursRestaurant() {
             <Text>{useText(contentsPecheursRestaurant.toBookTable)}</Text>
           </Button>
         </Column>
-        {isLaptop ? <RandomImages listImages={randomsImages} /> : <Image
-          style={{ marginBottom: '5%' }}
-          className="fullWidth"
-          src={img1Mobile}
-          alt="paysage"
-        />}
+        {isLaptop ? (
+          <RandomImages listImages={randomsImages} />
+        ) : (
+          <Image
+            style={{ marginBottom: '5%' }}
+            className="fullWidth"
+            src={img1Mobile}
+            alt="paysage"
+          />
+        )}
         <RowToColumn
           className="section border"
           align={isLaptop ? 'stretch' : 'flex-start'}
@@ -65,9 +69,7 @@ export default function PecheursRestaurant() {
               <Text>{useText(contentsPecheursRestaurant.menu)}</Text>
             </Button>
           </Column>
-          <Column
-            opt_margin={isLaptop ? [0.5, 0, 0.5, 0] : [2, 0, 2, 0]}
-          >
+          <Column opt_margin={isLaptop ? [0.5, 0, 0.5, 0] : [2, 0, 2, 0]}>
             <Text className="h5">
               {useText(contentsPecheursRestaurant.chapter2)}
             </Text>

@@ -189,7 +189,7 @@ export default function Home() {
           </Column>
         </RowToColumn>
         <RowToColumn
-        className='yellow'
+          className="yellow"
           align="center"
           marginForRow={[0.5, 2, 0.5, 2]}
           marginForColumn={[2, 0, 1, 0]}

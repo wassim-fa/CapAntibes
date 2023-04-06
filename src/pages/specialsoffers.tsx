@@ -50,7 +50,7 @@ export default function SpecialsOffers() {
               <Text>{useText(contentsSpecialsOffers.toBook)}</Text>
             </Button>
           </Column>
-          {isLaptop &&
+          {isLaptop && (
             <Column opt_margin={[0, 0, 0, 0]}>
               <Text className="h3">
                 {useText(contentsSpecialsOffers.subTitle2)}
@@ -60,91 +60,98 @@ export default function SpecialsOffers() {
                 <Text>{useText(contentsSpecialsOffers.toBook)}</Text>
               </Button>
             </Column>
-          }
+          )}
         </RowToColumn>
-        {!isLaptop && <RowToColumn
-          className="section"
-          align={isLaptop ? 'center' : 'flex-start'}
-          marginForRow={[0, 0, 0, 0]}
-          marginForColumn={[0, 0, 0, 0]}
-        >
-          <Image className="fullWidth" src={img1Mobile} alt="paysage" />
-          <Column opt_margin={[2, 1, 1, 1]}>
-            <Text className="h3">
-              {useText(contentsSpecialsOffers.subTitle2)}
-            </Text>
-            <Text className="p">{useText(contentsSpecialsOffers.text2)}</Text>
-            <Button className="btn">
-              <Text>{useText(contentsSpecialsOffers.toBook)}</Text>
-            </Button>
-          </Column>
-        </RowToColumn>}
+        {!isLaptop && (
+          <RowToColumn
+            className="section"
+            align={isLaptop ? 'center' : 'flex-start'}
+            marginForRow={[0, 0, 0, 0]}
+            marginForColumn={[0, 0, 0, 0]}
+          >
+            <Image className="fullWidth" src={img1Mobile} alt="paysage" />
+            <Column opt_margin={[2, 1, 1, 1]}>
+              <Text className="h3">
+                {useText(contentsSpecialsOffers.subTitle2)}
+              </Text>
+              <Text className="p">{useText(contentsSpecialsOffers.text2)}</Text>
+              <Button className="btn">
+                <Text>{useText(contentsSpecialsOffers.toBook)}</Text>
+              </Button>
+            </Column>
+          </RowToColumn>
+        )}
 
         {isLaptop && <Image className="fullWidth" src={img1} alt="paysage" />}
 
-        {isLaptop && 
-        <RowToColumn
-          className="section"
-          align={isLaptop ? 'center' : 'flex-start'}
-          marginForRow={[0, 1, 1, 1]}
-          marginForColumn={[2, 1, 1, 1]}
-          isReverseForColumn={true}
-        >
-          <Column opt_margin={isLaptop ? [0.5, 0.5, 0, 0] : [1, 0, 2, 0]}>
-            <Text className="h3">
-              {useText(contentsSpecialsOffers.subTitle3)}
-            </Text>
-            <Text className="p">{useText(contentsSpecialsOffers.text3)}</Text>
-            <Button className="btn">
-              <Text>{useText(contentsSpecialsOffers.toBook)}</Text>
-            </Button>
-          </Column>
-          <Column opt_margin={isLaptop ? [0, 0, 0, 0] : [1, 0, 2, 0]}>
-            <Text className="h3">
-              {useText(contentsSpecialsOffers.subTitle4)}
-            </Text>
-            <Text className="p">{useText(contentsSpecialsOffers.text4)}</Text>
-            <Button className="btn">
-              <Text>{useText(contentsSpecialsOffers.toBook)}</Text>
-            </Button>
-          </Column>
-        </RowToColumn>}
-        
-        {!isLaptop && <RowToColumn
-          className="section"
-          align={isLaptop ? 'center' : 'flex-start'}
-          marginForRow={[0, 0, 0, 0]}
-          marginForColumn={[0, 0, 0, 0]}
-        >
-          <Image className="fullWidth" src={img2Mobile} alt="paysage" />
-          <Column opt_margin={[2, 1, 1, 1]}>
-            <Text className="h3">
-              {useText(contentsSpecialsOffers.subTitle3)}
-            </Text>
-            <Text className="p">{useText(contentsSpecialsOffers.text3)}</Text>
-            <Button className="btn">
-              <Text>{useText(contentsSpecialsOffers.toBook)}</Text>
-            </Button>
-          </Column>
-        </RowToColumn>}
-        
-        {!isLaptop && <RowToColumn
-          className="section"
-          align={isLaptop ? 'center' : 'flex-start'}
-          marginForRow={[0, 0, 0, 0]}
-          marginForColumn={[0, 0, 0, 0]}
-        >
-          <Image className="fullWidth" src={img3Mobile} alt="paysage" />
-          <Column opt_margin={[2, 1, 1, 1]}>
-            <Text className="h3">
-              {useText(contentsSpecialsOffers.subTitle4)}
-            </Text>
-            <Text className="p">{useText(contentsSpecialsOffers.text4)}</Text>
-            <Button className="btn">
-              <Text>{useText(contentsSpecialsOffers.toBook)}</Text>
-            </Button>
-          </Column>
-        </RowToColumn>}
+        {isLaptop && (
+          <RowToColumn
+            className="section"
+            align={isLaptop ? 'center' : 'flex-start'}
+            marginForRow={[0, 1, 1, 1]}
+            marginForColumn={[2, 1, 1, 1]}
+            isReverseForColumn={true}
+          >
+            <Column opt_margin={isLaptop ? [0.5, 0.5, 0, 0] : [1, 0, 2, 0]}>
+              <Text className="h3">
+                {useText(contentsSpecialsOffers.subTitle3)}
+              </Text>
+              <Text className="p">{useText(contentsSpecialsOffers.text3)}</Text>
+              <Button className="btn">
+                <Text>{useText(contentsSpecialsOffers.toBook)}</Text>
+              </Button>
+            </Column>
+            <Column opt_margin={isLaptop ? [0, 0, 0, 0] : [1, 0, 2, 0]}>
+              <Text className="h3">
+                {useText(contentsSpecialsOffers.subTitle4)}
+              </Text>
+              <Text className="p">{useText(contentsSpecialsOffers.text4)}</Text>
+              <Button className="btn">
+                <Text>{useText(contentsSpecialsOffers.toBook)}</Text>
+              </Button>
+            </Column>
+          </RowToColumn>
+        )}
+
+        {!isLaptop && (
+          <RowToColumn
+            className="section"
+            align={isLaptop ? 'center' : 'flex-start'}
+            marginForRow={[0, 0, 0, 0]}
+            marginForColumn={[0, 0, 0, 0]}
+          >
+            <Image className="fullWidth" src={img2Mobile} alt="paysage" />
+            <Column opt_margin={[2, 1, 1, 1]}>
+              <Text className="h3">
+                {useText(contentsSpecialsOffers.subTitle3)}
+              </Text>
+              <Text className="p">{useText(contentsSpecialsOffers.text3)}</Text>
+              <Button className="btn">
+                <Text>{useText(contentsSpecialsOffers.toBook)}</Text>
+              </Button>
+            </Column>
+          </RowToColumn>
+        )}
+
+        {!isLaptop && (
+          <RowToColumn
+            className="section"
+            align={isLaptop ? 'center' : 'flex-start'}
+            marginForRow={[0, 0, 0, 0]}
+            marginForColumn={[0, 0, 0, 0]}
+          >
+            <Image className="fullWidth" src={img3Mobile} alt="paysage" />
+            <Column opt_margin={[2, 1, 1, 1]}>
+              <Text className="h3">
+                {useText(contentsSpecialsOffers.subTitle4)}
+              </Text>
+              <Text className="p">{useText(contentsSpecialsOffers.text4)}</Text>
+              <Button className="btn">
+                <Text>{useText(contentsSpecialsOffers.toBook)}</Text>
+              </Button>
+            </Column>
+          </RowToColumn>
+        )}
       </main>
     </>
   )

@@ -134,7 +134,10 @@ const RoomLayout = (props: IRoomLayoutProps): JSX.Element => {
             </Button>
           </Link>
         </RowToColumn>
-        <Column opt_margin={isLaptop ? [0.5, 1, 0.5, 1] : [1, 0.5, 1, 0.5]} opt_spacing={{ unit: 'px', value: 10 }}>
+        <Column
+          opt_margin={isLaptop ? [0.5, 1, 0.5, 1] : [1, 0.5, 1, 0.5]}
+          opt_spacing={{ unit: 'px', value: 10 }}
+        >
           <Text className="h3">{useText(content.title)}</Text>
           <Text className="p">{useText(content.subTitle1)}</Text>
           <Button className="btn">
