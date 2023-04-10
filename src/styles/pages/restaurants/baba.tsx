@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
-export const PecheursRestaurantsPageStyles = createGlobalStyle`
-  main#pecheurs-restaurant {
+export const BabaRestaurantsPageStyles = createGlobalStyle`
+  main#baba-restaurant {
     margin-top: 80px;
     .section {
       gap: 4%;
@@ -24,7 +24,7 @@ export const PecheursRestaurantsPageStyles = createGlobalStyle`
     }
     .h6 {
       text-transform: uppercase;
-      font-size: 27px;
+      font-size: 17px;
       margin-bottom: 20px;
     }
     .p {
@@ -35,7 +35,7 @@ export const PecheursRestaurantsPageStyles = createGlobalStyle`
     }
     .btn {
       margin-top: 16px;
-      font-size: 22px;
+      font-size: 16px;
       text-transform: uppercase;
     }
     &.mobile {
