@@ -49,21 +49,22 @@ export const Wrapper = styled.div`
     transform: translateX(100%);
     display: flex;
   }
-  &[data-open='true'].mobile {
+  &[data-open='open'].mobile {
     animation: ${slideLeft} 1s forwards ease-in-out;
   }
 
-  &[data-open='false'].mobile {
+  &[data-open='close'].mobile {
     animation: ${slideRight} 1s forwards ease-in-out;
   }
 
-  &[data-open='true']:not(.mobile) {
+  &[data-open='open']:not(.mobile) {
     display: flex;
   }
 
-  &[data-open='false']:not(.mobile) {
+  &[data-open='close']:not(.mobile) {
     display: none;
   }
+
   display: none;
   position: fixed;
   top: 0;

@@ -8,9 +8,13 @@ export type FormatContextType = {
 export type TMenuType =
   | 'none'
   | 'menu'
+  | 'menu-close'
   | 'lang-dropdown'
+  | 'lang-dropdown-close'
   | 'tobook'
+  | 'tobook-close'
   | 'tobook-dropdown'
+  | 'tobook-dropdown-close'
 export type MenuContextType = {
   menuOpen: TMenuType
   setMenuOpen: React.Dispatch<React.SetStateAction<TMenuType>>
