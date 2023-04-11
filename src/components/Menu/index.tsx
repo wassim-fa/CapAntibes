@@ -4,12 +4,15 @@ import { useIsLaptop, useText } from '@/hooks'
 import { MenuContext } from '@/stores'
 import { LangContext } from '@/stores'
 import Link from 'next/link'
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import * as S from './styles'
 
 const Menu = () => {
   const { lang, setLang } = useContext(LangContext)
   const { menuOpen } = useContext(MenuContext)
+  const [menuStatus, setMenuStatus] = useState<'close' | 'open' | 'undefined'>(
+    'undefined'
+  )
   const [showItems, setShowItems] = useState<
     null | 'hotel' | 'room' | 'restaurant' | 'farniente'
   >(null)
@@ -59,9 +62,23 @@ const Menu = () => {
     setShowItems(newValue)
   }
 
+  useEffect(() => {
+    switch (menuOpen) {
+      case 'menu':
+        setMenuStatus('open')
+        break
+      case 'menu-close':
+        setMenuStatus('close')
+        break
+      default:
+        setMenuStatus('undefined')
+        break
+    }
+  }, [menuOpen])
+
   return (
     <S.Wrapper
-      data-open={menuOpen === 'menu'}
+      data-open={menuStatus}
       className={`sc-menu ${!isLaptop ? 'mobile' : ''}`}
     >
       <div className="list">

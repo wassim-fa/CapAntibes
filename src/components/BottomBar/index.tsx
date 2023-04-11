@@ -1,7 +1,7 @@
 import { contentsLayout } from '@/contents/globals'
 import { useIsMobile, useText } from '@/hooks'
 import { MenuContext } from '@/stores'
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import styled, { keyframes } from 'styled-components'
 import Divider from '../Divider'
 import * as S from './styles'
@@ -37,10 +37,10 @@ const ToBookMenuContainer = styled.div`
   height: calc(100% - 143px);
   z-index: 2;
 
-  &[data-open='true'] {
+  &[data-open='open'] {
     animation: ${slideDown} 1s forwards ease-in-out;
   }
-  &[data-open='false'] {
+  &[data-open='close'] {
     animation: ${slideUp} 1s forwards ease-in-out;
   }
 
@@ -54,8 +54,11 @@ const ToBookMenuContainer = styled.div`
 `
 const BottomBar = () => {
   const { menuOpen, setMenuOpen } = useContext(MenuContext)
+  const [menuStatus, setMenuStatus] = useState<'close' | 'open' | 'undefined'>(
+    'undefined'
+  )
   const handleClick = () => {
-    const value = menuOpen === 'tobook' ? 'none' : 'tobook'
+    const value = menuOpen === 'tobook' ? 'tobook-close' : 'tobook'
     setMenuOpen(value)
   }
   const isMobile = useIsMobile()
@@ -67,11 +70,26 @@ const BottomBar = () => {
     private: useText(contentsLayout.private),
     book: useText(contentsLayout.book)
   }
+
+  useEffect(() => {
+    switch (menuOpen) {
+      case 'tobook':
+        setMenuStatus('open')
+        break
+      case 'tobook-close':
+        setMenuStatus('close')
+        break
+      default:
+        setMenuStatus('undefined')
+        break
+    }
+  }, [menuOpen])
+
   if (isMobile) {
     return (
       <>
         <ToBookMenuContainer
-          data-open={menuOpen === 'tobook'}
+          data-open={menuStatus}
           className="sc-tobook-menu"
           style={{ fontSize: '14px', cursor: 'pointer' }}
         >

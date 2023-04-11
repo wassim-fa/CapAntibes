@@ -24,10 +24,10 @@ const LangMenuContainer = styled.div`
   z-index: 1;
   top: 23px;
 
-  &[data-open='true'] {
+  &[data-open='open'] {
     display: flex;
   }
-  &[data-open='false'] {
+  &[data-open='close'] {
     display: none;
   }
 
@@ -66,15 +66,33 @@ const LangContainer = styled.div`
 const Lang = () => {
   const { lang, setLang } = useContext(LangContext)
   const { menuOpen, setMenuOpen } = useContext(MenuContext)
+  const [menuStatus, setMenuStatus] = useState<'close' | 'open' | 'undefined'>(
+    'undefined'
+  )
   const isOpen = menuOpen === 'lang-dropdown'
   const handleBtnClick = () => {
-    const value = menuOpen === 'lang-dropdown' ? 'none' : 'lang-dropdown'
+    const value =
+      menuOpen === 'lang-dropdown' ? 'lang-dropdown-close' : 'lang-dropdown'
     setMenuOpen(value)
   }
   const handleLangClick = (_lang: Languages) => {
     setLang(_lang)
     handleBtnClick()
   }
+
+  useEffect(() => {
+    switch (menuOpen) {
+      case 'lang-dropdown':
+        setMenuStatus('open')
+        break
+      case 'lang-dropdown-close':
+        setMenuStatus('close')
+        break
+      default:
+        setMenuStatus('undefined')
+        break
+    }
+  }, [menuOpen])
   return (
     <LangContainer
       className="tobook"
@@ -98,7 +116,7 @@ const Lang = () => {
         </svg>
       </div>
       <LangMenuContainer
-        data-open={isOpen}
+        data-open={menuStatus}
         className="sc-lang-menu"
         style={{ fontSize: '14px', cursor: 'pointer' }}
       >
@@ -140,10 +158,10 @@ const ToBookMenuContainer = styled.div`
   width: 250px;
   z-index: 1;
 
-  &[data-open='true'] {
+  &[data-open='open'] {
     display: flex;
   }
-  &[data-open='false'] {
+  &[data-open='close'] {
     display: none;
   }
 
@@ -181,9 +199,14 @@ const ToBookContainer = styled.div`
 `
 const ToBook = () => {
   const { menuOpen, setMenuOpen } = useContext(MenuContext)
-  const isOpen = menuOpen === 'tobook-dropdown'
+  const [menuStatus, setMenuStatus] = useState<'close' | 'open' | 'undefined'>(
+    'undefined'
+  )
   const handleClick = () => {
-    const value = menuOpen === 'tobook-dropdown' ? 'none' : 'tobook-dropdown'
+    const value =
+      menuOpen === 'tobook-dropdown'
+        ? 'tobook-dropdown-close'
+        : 'tobook-dropdown'
     setMenuOpen(value)
   }
   const texts = {
@@ -194,6 +217,20 @@ const ToBook = () => {
     health: useText(contentsLayout.health),
     private: useText(contentsLayout.private)
   }
+  useEffect(() => {
+    switch (menuOpen) {
+      case 'tobook-dropdown':
+        setMenuStatus('open')
+        break
+      case 'tobook-dropdown-close':
+        setMenuStatus('close')
+        break
+      default:
+        setMenuStatus('undefined')
+        break
+    }
+  }, [menuOpen])
+
   return (
     <ToBookContainer
       className="tobook"
@@ -203,7 +240,7 @@ const ToBook = () => {
         {texts.book}
       </div>
       <ToBookMenuContainer
-        data-open={isOpen}
+        data-open={menuStatus}
         className="sc-tobook-dropdown"
         style={{ fontSize: '14px', cursor: 'pointer' }}
       >
@@ -283,7 +320,7 @@ const Burger = () => {
   const { menuOpen, setMenuOpen } = useContext(MenuContext)
   const isMenuOpen = menuOpen === 'menu'
   const handleMenuClick = () => {
-    const value = menuOpen === 'menu' ? 'none' : 'menu'
+    const value = menuOpen === 'menu' ? 'menu-close' : 'menu'
     setMenuOpen(value)
   }
   return (
