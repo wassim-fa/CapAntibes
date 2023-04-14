@@ -1,5 +1,5 @@
 import Languages from '@/enums/languages'
-import Home from '@/features'
+import WellHealth from '@/features/well-health'
 
 export async function getStaticProps() {
   return {
@@ -9,6 +9,6 @@ export async function getStaticProps() {
   }
 }
 
-export default function IndexPage() {
-  return <Home />
+export default function WellHealthPage() {
+  return <WellHealth />
 }

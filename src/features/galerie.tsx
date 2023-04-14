@@ -17,7 +17,7 @@ import Image from 'next/image'
 import { GaleriePageStyles } from '@/styles/pages/galerie'
 import Row from '@/components/Row'
 
-export default function Privatisation() {
+export default function Galerie() {
   const isLaptop = useIsLaptop()
   const renderDesktop = () => (
     <>

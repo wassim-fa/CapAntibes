@@ -1,6 +1,6 @@
 import { contentsLayout } from '@/contents/globals'
 import Languages from '@/enums/languages'
-import { useIsLaptop, useText } from '@/hooks'
+import { useIsLaptop, useLink, useText } from '@/hooks'
 import { MenuContext } from '@/stores'
 import { LangContext } from '@/stores'
 import Link from 'next/link'
@@ -33,7 +33,9 @@ const Menu = () => {
       deluxe: useText(contentsLayout.rooms_deluxe),
       privilege: useText(contentsLayout.rooms_privilege),
       seaview: useText(contentsLayout.rooms_seaview),
-      design: useText(contentsLayout.rooms_design)
+      design: useText(contentsLayout.rooms_design),
+      executive: useText(contentsLayout.rooms_executive),
+      connecting: useText(contentsLayout.rooms_connecting)
     },
     restaurant: {
       main: useText(contentsLayout.restaurant),
@@ -44,12 +46,12 @@ const Menu = () => {
     farniente: {
       main: useText(contentsLayout.farniente),
       beach: useText(contentsLayout.farniente_beach),
-      health: useText(contentsLayout.farniente_health),
       jardin: useText(contentsLayout.farniente_jardin),
       rent: useText(contentsLayout.farniente_rent),
-      family: useText(contentsLayout.farniente_family),
-      private: useText(contentsLayout.farniente_private)
-    }
+      family: useText(contentsLayout.farniente_family)
+    },
+    wellness: useText(contentsLayout.wellness),
+    privatization: useText(contentsLayout.privatization)
   }
   const handleLangClick = (lang: Languages) => {
     setLang(lang)
@@ -98,16 +100,24 @@ const Menu = () => {
                 flexDirection: isLaptop ? 'row' : 'column'
               }}
             >
-              <div>{texts.hotel.history}</div>
-              <div>{texts.hotel.gallery}</div>
+              <Link href={useLink('/histoire-du-cap')}>
+                <div>{texts.hotel.history}</div>
+              </Link>
+              <Link href={useLink('/la-galerie')}>
+                <div>{texts.hotel.gallery}</div>
+              </Link>
             </S.Link>
             <S.Link
               style={{
                 flexDirection: isLaptop ? 'row' : 'column'
               }}
             >
-              <div>{texts.hotel.localisation}</div>
-              <div>{texts.hotel.collection}</div>
+              <Link href={useLink('/localisation')}>
+                <div>{texts.hotel.localisation}</div>
+              </Link>
+              <Link href={useLink('/la-collection')}>
+                <div>{texts.hotel.collection}</div>
+              </Link>
             </S.Link>
           </S.SubItem>
         </S.Item>
@@ -127,32 +137,36 @@ const Menu = () => {
                 flexDirection: isLaptop ? 'row' : 'column'
               }}
             >
-              <div>
-                <Link scroll href="/rooms/luxe">
-                  {texts.rooms.deluxe}
-                </Link>
-              </div>
-              <div>
-                <Link scroll href="/rooms/privilege">
-                  {texts.rooms.privilege}
-                </Link>
-              </div>
+              <Link href={useLink('/chambre-deluxe')}>
+                <div>{texts.rooms.deluxe}</div>
+              </Link>
+              <Link href={useLink('/chambre-privilege')}>
+                <div>{texts.rooms.privilege}</div>
+              </Link>
             </S.Link>
             <S.Link
               style={{
                 flexDirection: isLaptop ? 'row' : 'column'
               }}
             >
-              <div>
-                <Link scroll href="/rooms/seaview">
-                  {texts.rooms.seaview}
-                </Link>
-              </div>
-              <div>
-                <Link scroll href="/rooms/design">
-                  {texts.rooms.design}
-                </Link>
-              </div>
+              <Link href={useLink('/chambre-privilege-vue-mer')}>
+                <div>{texts.rooms.seaview}</div>
+              </Link>
+              <Link href={useLink('/suite-design')}>
+                <div>{texts.rooms.design}</div>
+              </Link>
+            </S.Link>
+            <S.Link
+              style={{
+                flexDirection: isLaptop ? 'row' : 'column'
+              }}
+            >
+              <Link href={useLink('/suite-executive')}>
+                <div>{texts.rooms.executive}</div>
+              </Link>
+              <Link href={useLink('/chambres-communicantes')}>
+                <div>{texts.rooms.connecting}</div>
+              </Link>
             </S.Link>
           </S.SubItem>
         </S.Item>
@@ -172,15 +186,21 @@ const Menu = () => {
                 flexDirection: isLaptop ? 'row' : 'column'
               }}
             >
-              <div>{texts.restaurant.fishing}</div>
+              <Link href={useLink('/restaurant-les-pecheurs')}>
+                <div>{texts.restaurant.fishing}</div>
+              </Link>
             </S.Link>
             <S.Link
               style={{
                 flexDirection: isLaptop ? 'row' : 'column'
               }}
             >
-              <div>{texts.restaurant.beach}</div>
-              <div>{texts.restaurant.baba}</div>
+              <Link href={useLink('/restaurant-baba')}>
+                <div>{texts.restaurant.beach}</div>
+              </Link>
+              <Link href={useLink('/restaurant-baba')}>
+                <div>{texts.restaurant.baba}</div>
+              </Link>
             </S.Link>
           </S.SubItem>
         </S.Item>
@@ -200,20 +220,40 @@ const Menu = () => {
                 flexDirection: isLaptop ? 'row' : 'column'
               }}
             >
-              <div>{texts.farniente.beach}</div>
-              <div>{texts.farniente.health}</div>
-              <div>{texts.farniente.jardin}</div>
+              <Link href={useLink('/localisation')}>
+                <div>{texts.farniente.beach}</div>
+              </Link>
+              <Link href={useLink('/localisation')}>
+                <div>{texts.farniente.jardin}</div>
+              </Link>
             </S.Link>
             <S.Link
               style={{
                 flexDirection: isLaptop ? 'row' : 'column'
               }}
             >
-              <div>{texts.farniente.rent}</div>
-              <div>{texts.farniente.family}</div>
-              <div>{texts.farniente.private}</div>
+              <Link href={useLink('/localisation')}>
+                <div>{texts.farniente.rent}</div>
+              </Link>
+              <Link href={useLink('/localisation')}>
+                <div>{texts.farniente.family}</div>
+              </Link>
             </S.Link>
           </S.SubItem>
+        </S.Item>
+        <S.Item className={!isLaptop ? 'mobile' : ''}>
+          <Link href={useLink('/bien-etre')}>
+            <div style={{ fontSize: labelSize, zIndex: 3 }}>
+              {texts.wellness}
+            </div>
+          </Link>
+        </S.Item>
+        <S.Item className={!isLaptop ? 'mobile' : ''}>
+          <Link href={useLink('/privatisation')}>
+            <div style={{ fontSize: labelSize, zIndex: 3 }}>
+              {texts.privatization}
+            </div>
+          </Link>
         </S.Item>
       </div>
       {!isLaptop && (

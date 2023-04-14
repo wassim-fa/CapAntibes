@@ -4,7 +4,7 @@ import Farniente from '@/features/farniente'
 export async function getStaticProps() {
   return {
     props: {
-      language: Languages.FR
+      language: Languages.RU
     }
   }
 }

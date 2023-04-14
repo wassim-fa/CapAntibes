@@ -2,5 +2,5 @@ import { useRouter } from 'next/router'
 
 export const useIsHome = () => {
   const router = useRouter()
-  return router.route === '/'
+  return ['/', '/en', '/ru'].includes(router.route)
 }

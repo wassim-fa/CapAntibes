@@ -3,7 +3,7 @@ import Row from '@/components/Row'
 import RowToColumn from '@/components/RowToColumn'
 import Text from '@/components/Text'
 import { contentsRoomsIndex } from '@/contents/pages'
-import { useIsLaptop, useText } from '@/hooks'
+import { useIsLaptop, useLink, useText } from '@/hooks'
 import { RoomsPageStyles } from '@/styles/pages/rooms'
 import Head from 'next/head'
 import img1 from '../../../public/assets/images/rooms/index/rooms_1.png'
@@ -79,7 +79,7 @@ export default function Rooms() {
             </Text>
             <Row>
               <Column opt_alignItems="flex-start">
-                <Link scroll href="/rooms/luxe">
+                <Link href={useLink('/chambre-deluxe')}>
                   <Button className="btn">
                     <Text>{useText(contentsRoomsIndex.discover)}</Text>
                   </Button>
@@ -130,7 +130,7 @@ export default function Rooms() {
             </Text>
             <Row>
               <Column opt_alignItems="flex-start">
-                <Link scroll href="/rooms/seaview">
+                <Link href={useLink('/chambre-privilege-vue-mer')}>
                   <Button className="btn">
                     <Text>{useText(contentsRoomsIndex.discover)}</Text>
                   </Button>
@@ -165,7 +165,7 @@ export default function Rooms() {
             </Text>
             <Row>
               <Column opt_alignItems="flex-start">
-                <Link scroll href="/rooms/privilege">
+                <Link href={useLink('/chambre-privilege')}>
                   <Button className="btn">
                     <Text>{useText(contentsRoomsIndex.discover)}</Text>
                   </Button>
@@ -216,7 +216,7 @@ export default function Rooms() {
             </Text>
             <Row>
               <Column opt_alignItems="flex-start">
-                <Link scroll href="/rooms/design">
+                <Link href={useLink('/suite-design')}>
                   <Button className="btn">
                     <Text>{useText(contentsRoomsIndex.discover)}</Text>
                   </Button>
@@ -253,7 +253,7 @@ export default function Rooms() {
             </Text>
             <Row>
               <Column opt_alignItems="flex-start">
-                <Link scroll href="/rooms/luxe">
+                <Link href={useLink('/suite-executive')}>
                   <Button className="btn">
                     <Text>{useText(contentsRoomsIndex.discover)}</Text>
                   </Button>
@@ -304,7 +304,7 @@ export default function Rooms() {
             </Text>
             <Row>
               <Column opt_alignItems="flex-start">
-                <Link scroll href="/rooms/shared">
+                <Link href={useLink('/chambres-communicantes')}>
                   <Button className="btn">
                     <Text>{useText(contentsRoomsIndex.discover)}</Text>
                   </Button>

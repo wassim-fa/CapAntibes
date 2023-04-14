@@ -4,7 +4,7 @@ import Privatisation from '@/features/privatisation'
 export async function getStaticProps() {
   return {
     props: {
-      language: Languages.FR
+      language: Languages.RU
     }
   }
 }

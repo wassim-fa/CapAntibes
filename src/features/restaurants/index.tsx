@@ -1,7 +1,7 @@
 import Button from '@/components/Button'
 import RowToColumn from '@/components/RowToColumn'
 import Text from '@/components/Text'
-import { useIsLaptop, useText } from '@/hooks'
+import { useIsLaptop, useLink, useText } from '@/hooks'
 import Head from 'next/head'
 import img1 from '../../../public/assets/images/restaurants/index/restaurants_1.png'
 import img1Mobile from '../../../public/assets/images/restaurants/index/restaurants_1_mobile.png'
@@ -21,6 +21,7 @@ import Carrousel from '@/components/Carrousel'
 import { RestaurantsPageStyles } from '@/styles/pages/restaurants'
 import { contentsRestaurantsIndex } from '@/contents/pages/restaurants-index'
 import Row from '@/components/Row'
+import Link from 'next/link'
 
 const randomsImages = [random1, random2, random1, random2]
 export default function Restaurants() {
@@ -76,9 +77,11 @@ export default function Restaurants() {
             <Text className="p">{useText(contentsRestaurantsIndex.text1)}</Text>
             <Row>
               <Column opt_alignItems="flex-start">
-                <Button className="btn">
-                  <Text>{useText(contentsRestaurantsIndex.discover)}</Text>
-                </Button>
+                <Link href={useLink('/restaurant-les-pecheurs')}>
+                  <Button className="btn">
+                    <Text>{useText(contentsRestaurantsIndex.discover)}</Text>
+                  </Button>
+                </Link>
               </Column>
               <Column opt_alignItems="flex-end">
                 <Button className="btn">
@@ -128,9 +131,11 @@ export default function Restaurants() {
             <Text className="p">{useText(contentsRestaurantsIndex.text2)}</Text>
             <Row>
               <Column opt_alignItems="flex-start">
-                <Button className="btn">
-                  <Text>{useText(contentsRestaurantsIndex.discover)}</Text>
-                </Button>
+                <Link href={useLink('/restaurant-baba')}>
+                  <Button className="btn">
+                    <Text>{useText(contentsRestaurantsIndex.discover)}</Text>
+                  </Button>
+                </Link>
               </Column>
               <Column opt_alignItems="flex-end">
                 <Button className="btn">
