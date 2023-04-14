@@ -7,17 +7,20 @@ import GlobalStyles from '@/styles/global'
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import { ContextsLayout } from './contexts'
+import Languages from '@/enums/languages'
 
 export function DefaultLayout({
+  defaultLang,
   children
 }: {
+  defaultLang: Languages
   children: React.ReactNode
 }): JSX.Element {
   return (
     <>
       <GlobalStyles />
       <ThemeProvider theme={defaultTheme}>
-        <ContextsLayout>
+        <ContextsLayout defaultLang={defaultLang}>
           <Menu />
           <Navbar />
           {children}

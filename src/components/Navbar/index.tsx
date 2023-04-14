@@ -110,7 +110,7 @@ const Lang = () => {
           <path
             d="M1 0.999939L8 10.9999L11.5 5.99994L15 0.999939"
             stroke="#D99380"
-            style={{ opacity: `${isOpen ? 0 : 1}` }}
+            style={{ display: `${isOpen ? 'none' : 'initial'}` }}
             strokeWidth="2"
           />
         </svg>

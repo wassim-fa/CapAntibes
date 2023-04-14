@@ -5,7 +5,7 @@ import React from 'react'
 function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <DefaultLayout>
+      <DefaultLayout defaultLang={pageProps.language}>
         <Component {...pageProps} />
       </DefaultLayout>
     </>

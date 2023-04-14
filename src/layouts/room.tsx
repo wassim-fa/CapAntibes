@@ -1,7 +1,7 @@
 import Carrousel from '@/components/Carrousel'
 import RandomImages from '@/components/RandomImages'
 import RowToColumn from '@/components/RowToColumn'
-import { useIsLaptop, useText } from '@/hooks'
+import { useIsLaptop, useLink, useText } from '@/hooks'
 import { IContentByLang } from '@/interfaces'
 import { RoomPageStyles } from '@/styles/pages/rooms/room'
 import Head from 'next/head'
@@ -108,7 +108,7 @@ const RoomLayout = (props: IRoomLayoutProps): JSX.Element => {
               display: 'flex',
               justifyContent: 'flex-start'
             }}
-            href={menu.left}
+            href={useLink(menu.left)}
           >
             <Button opt_arrow_position="left">
               <Text>{useText(content.menuLeft)}</Text>
@@ -117,7 +117,7 @@ const RoomLayout = (props: IRoomLayoutProps): JSX.Element => {
           <Link
             className="menu-middle"
             style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
-            href={menu.middle}
+            href={useLink(menu.middle)}
           >
             <Text>{useText(content.menuMiddle)}</Text>
           </Link>
@@ -127,7 +127,7 @@ const RoomLayout = (props: IRoomLayoutProps): JSX.Element => {
               display: 'flex',
               justifyContent: 'flex-end'
             }}
-            href={menu.right}
+            href={useLink(menu.right)}
           >
             <Button opt_arrow_position="right">
               <Text>{useText(content.menuRight)}</Text>

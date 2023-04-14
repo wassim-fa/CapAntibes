@@ -1,3 +1,4 @@
+import Languages from '@/enums/languages'
 import {
   FormatContextProvider,
   LangContextProvider,
@@ -6,14 +7,16 @@ import {
 import React from 'react'
 
 export function ContextsLayout({
+  defaultLang,
   children
 }: {
+  defaultLang: Languages
   children: React.ReactNode
 }): JSX.Element {
   return (
     <>
       <FormatContextProvider>
-        <LangContextProvider>
+        <LangContextProvider defaultLang={defaultLang}>
           <MenuContextProvider>{children}</MenuContextProvider>
         </LangContextProvider>
       </FormatContextProvider>

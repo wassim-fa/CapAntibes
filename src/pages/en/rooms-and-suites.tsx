@@ -1,14 +1,14 @@
 import Languages from '@/enums/languages'
-import Home from '@/features'
+import Rooms from '@/features/rooms'
 
 export async function getStaticProps() {
   return {
     props: {
-      language: Languages.FR
+      language: Languages.EN
     }
   }
 }
 
-export default function IndexPage() {
-  return <Home />
+export default function RoomsPage() {
+  return <Rooms />
 }

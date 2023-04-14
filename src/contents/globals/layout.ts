@@ -81,6 +81,16 @@ export const contentsLayout: Record<string, IContentByLang> = {
     en: 'en-Suite design •',
     ru: 'ru-Suite design •'
   },
+  rooms_executive: {
+    fr: 'Suite executive •',
+    en: 'en-Suite executive •',
+    ru: 'ru-Suite executive •'
+  },
+  rooms_connecting: {
+    fr: 'Chambres communicantes •',
+    en: 'en-Chambres communicantes •',
+    ru: 'ru-Chambres communicantes •'
+  },
   restaurant: {
     fr: 'Restaurants • Bar',
     en: 'en-Restaurants • Bar',
@@ -111,11 +121,6 @@ export const contentsLayout: Record<string, IContentByLang> = {
     en: 'en-Plage •',
     ru: 'ru-Plage •'
   },
-  farniente_health: {
-    fr: 'Bien être •',
-    en: 'en-Bien être •',
-    ru: 'ru-Bien être •'
-  },
   farniente_jardin: {
     fr: 'Jardin botanique •',
     en: 'en-Jardin botanique •',
@@ -131,9 +136,14 @@ export const contentsLayout: Record<string, IContentByLang> = {
     en: 'en-Famille •',
     ru: 'ru-Famille •'
   },
-  farniente_private: {
-    fr: 'Privatisation •',
-    en: 'en-Privatisation •',
-    ru: 'ru-Privatisation •'
+  wellness: {
+    fr: 'Bien être',
+    en: 'en-Bien être',
+    ru: 'ru-Bien être'
+  },
+  privatization: {
+    fr: 'Privatisation',
+    en: 'en-Privatisation',
+    ru: 'ru-Privatisation'
   }
 }
