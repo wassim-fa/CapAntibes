@@ -3,8 +3,6 @@ import { useCallback, useContext, useEffect, useState } from 'react'
 import * as S from './styles'
 import titleLarge from '../../../public/assets/images/global/title_large.png'
 import titleSmall from '../../../public/assets/images/global/title_small.png'
-import burger from '../../../public/assets/images/global/burger.png'
-import close from '../../../public/assets/images/global/close.png'
 import Image from 'next/image'
 import styled, { keyframes } from 'styled-components'
 import { contentsLayout } from '@/contents/globals'
@@ -292,10 +290,10 @@ const BurgerContainer = styled.div`
     height: 100%;
   }
 
-  *:first-child {
+  > *:first-child {
     opacity: 1;
   }
-  *:last-child {
+  > *:last-child {
     opacity: 0;
   }
 
@@ -329,8 +327,29 @@ const Burger = () => {
       onClick={handleMenuClick}
       data-isopen={isMenuOpen}
     >
-      <Image src={burger} alt="bouton burger" />
-      <Image src={close} alt="bouton de fermeture" />
+      <svg
+        width="36"
+        height="24"
+        viewBox="0 0 36 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 1.92307H36M0 12.3077H36M0 22.6923H36"
+          stroke="#D99B81"
+          strokeWidth="2"
+        />
+      </svg>
+      <svg
+        width="29"
+        height="29"
+        viewBox="0 0 29 29"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M1 1L27.5 27.5" stroke="#D99B81" strokeWidth="2" />
+        <path d="M27.5 1L0.999999 27.5" stroke="#D99B81" strokeWidth="2" />
+      </svg>
     </BurgerContainer>
   )
 }
@@ -379,9 +398,8 @@ const Navbar = () => {
           src={title}
           style={{
             cursor: 'pointer',
-            transform: `translateY(${cancelEffect ? 0 : translate}vh) scale(${
-              cancelEffect ? 1 : scale
-            })`
+            transform: `translateY(${cancelEffect ? 0 : translate}vh) scale(${cancelEffect ? 1 : scale
+              })`
           }}
           alt="Cap d'antibes - beach hotel"
         />
