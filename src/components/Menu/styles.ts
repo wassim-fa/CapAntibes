@@ -24,7 +24,7 @@ export const Item = styled.div`
   margin: 2px 0;
 
   &:hover > *:first-child {
-    color: #F3D7C8;
+    color: #f3d7c8;
   }
 
   &.mobile > *:first-child {
@@ -44,8 +44,8 @@ export const SubItem = styled.div`
 export const Link = styled.div`
   display: flex;
 
-   > *:hover {
-    color: #F3D7C8;
+  > *:hover {
+    color: #f3d7c8;
   }
   > * {
     margin: 0.4% 0;

@@ -28,7 +28,7 @@ export const LangContextProvider = ({
     if (newPath) {
       router.push(newPath[lang], undefined, { shallow: true })
     }
-  }, [lang])
+  }, [lang, router])
   return (
     <LangContext.Provider
       value={{

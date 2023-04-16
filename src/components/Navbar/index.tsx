@@ -59,7 +59,7 @@ const LangContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 10px 10px 0 10px;
     p {
       padding-bottom : 5px;
     }
@@ -389,8 +389,10 @@ const Navbar = () => {
     }
   }, [isHome])
   useEffect(() => {
+    setIsEffectCancelled(false)
     setMenuOpen('none')
-  }, [router.asPath, setMenuOpen])
+    handleScroll()
+  }, [router.asPath, setMenuOpen, setIsEffectCancelled])
 
   useEffect(() => {
     if (isEffectCancelled) {
@@ -402,7 +404,7 @@ const Navbar = () => {
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [handleScroll, menuOpen])
+  }, [handleScroll, menuOpen, isEffectCancelled])
   return (
     <S.Wrapper className={`sc-navbar ${isLaptop ? '' : 'mobile'}`}>
       <S.Part flex={1} align={'flex-start'}>

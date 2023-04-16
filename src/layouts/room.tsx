@@ -102,7 +102,7 @@ const RoomLayout = (props: IRoomLayoutProps): JSX.Element => {
           marginForRow={[0.2, 0.5, 0.5, 0.5]}
           marginForColumn={[1, 0.5, 1, 0.5]}
         >
-          <Column opt_alignItems='flex-start'>
+          <Column opt_alignItems="flex-start">
             <Link
               style={{
                 display: 'flex',
@@ -123,7 +123,7 @@ const RoomLayout = (props: IRoomLayoutProps): JSX.Element => {
             <Text>{useText(content.menuMiddle)}</Text>
           </Link> */}
 
-          <Column opt_alignItems='flex-end'>
+          <Column opt_alignItems="flex-end">
             <Link
               style={{
                 display: 'flex',

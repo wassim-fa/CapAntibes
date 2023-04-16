@@ -24,7 +24,6 @@ import img8_mobile from '../../../public/assets/images/rooms/index/rooms_8_mobil
 import img9_mobile from '../../../public/assets/images/rooms/index/rooms_9_mobile.png'
 import random1 from '../../../public/assets/images/rooms/index/random_1.png'
 import random2 from '../../../public/assets/images/rooms/index/random_2.png'
-import RandomImages from '@/components/RandomImages'
 import Image from 'next/image'
 import Column from '@/components/Column'
 import { TCssSize } from '@/interfaces'
@@ -49,9 +48,9 @@ export default function Rooms() {
           <Button className="btn">
             <Text>{useText(contentsRoomsIndex.toBook)}</Text>
           </Button>
-        </Column>      
+        </Column>
         {isLaptop && (
-          <Row opt_margin={[0, 0, 0, 0]} className='imgs'>
+          <Row opt_margin={[0, 0, 0, 0]} className="imgs">
             <Image src={random1} alt="image" />
             <Image src={random2} alt="image" />
           </Row>
@@ -238,7 +237,9 @@ export default function Rooms() {
             opt_margin={isLaptop ? [0.5, 0, 1, 0] : [1.5, 1.5, 2, 1.5]}
             opt_spacing={spacing}
           >
-            <Text className="h3">{useText(contentsRoomsIndex.executiveTitle)}</Text>
+            <Text className="h3">
+              {useText(contentsRoomsIndex.executiveTitle)}
+            </Text>
             <Text className="p">
               {useText(contentsRoomsIndex.executiveSubTitle)}
             </Text>
