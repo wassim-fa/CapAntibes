@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components'
 export const CollectionPageStyles = createGlobalStyle`
   main#collection {
     p, .btn {
-      line-height: 29px;
+      line-height: 22px;
     }
     .p {
       font-size: 17px;
@@ -13,8 +13,8 @@ export const CollectionPageStyles = createGlobalStyle`
     }
     .btn {
       margin-top: 15px;
-      font-size: 22px;
       text-transform: uppercase;
+      font-size: 16px;
     }
     #address-btn {
       height: 45px;

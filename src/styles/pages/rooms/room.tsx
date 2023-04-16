@@ -4,13 +4,15 @@ export const RoomPageStyles = createGlobalStyle`
   main#room {
       margin-top: 80px;
     .h3, .p, .btn, .menu, .item {
-      line-height: 29px;
+      line-height: 22px;
     }    
     .h3 {
       font-size: 24px;
     }
     .btn {
-      font-size: 22px;
+      margin-top: 15px;
+      text-transform: uppercase;
+      font-size: 16px;
     }
     .p {
       font-size: 17px;

@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components'
 export const SpecialsOffersPageStyles = createGlobalStyle`
   main#specials-offers {
     .h3, p, .btn {
-      line-height: 29px;
+      line-height: 22px;
     }
     .h3 {
       text-transform: uppercase;
@@ -18,8 +18,8 @@ export const SpecialsOffersPageStyles = createGlobalStyle`
     }
     .btn {
       margin-top: 15px;
-      font-size: 22px;
       text-transform: uppercase;
+      font-size: 16px;
     }
     &.mobile {
       .h3, p, .btn {

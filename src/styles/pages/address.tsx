@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components'
 export const AddressPageStyles = createGlobalStyle`
   main#address {
     .h3, p {
-      line-height: 29px;
+      line-height: 22px;
     }
     .h3 {
       text-transform: uppercase;

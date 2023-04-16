@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components'
 export const IndexPageStyles = createGlobalStyle`
   main#home {
     .h3, p, .btn {
-      line-height: 29px;
+      line-height: 22px;
     }
     .h3 {
       text-transform: uppercase;
