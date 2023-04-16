@@ -158,7 +158,7 @@ export default function Home() {
         </Row>
         <RowToColumn
           align="center"
-          marginForRow={[0.5, 1.5, 0, 1.5]}
+          marginForRow={[0.5, 1.5, 0.5, 1.5]}
           marginForColumn={[3, 0, 1, 0]}
           isReverseForColumn={true}
         >
@@ -168,7 +168,7 @@ export default function Home() {
           >
             <Image
               style={{
-                width: `${isLaptop ? '74%' : '100%'}`,
+                width: `${isLaptop ? '90%' : '100%'}`,
                 height: 'auto'
               }}
               src={isLaptop ? img1 : img1Mobile}
@@ -187,7 +187,7 @@ export default function Home() {
         </RowToColumn>
         <RowToColumn
           align="center"
-          marginForRow={[1, 1.5, 0.5, 1.5]}
+          marginForRow={[0.5, 1.5, 0.5, 1.5]}
           marginForColumn={[0, 0, 0, 0]}
         >
           <Column opt_margin={isLaptop ? [0, 0, 0, 0] : [0.5, 1.5, 2.5, 1.5]}>
@@ -209,7 +209,7 @@ export default function Home() {
           >
             <Image
               style={{
-                width: `${isLaptop ? '74%' : '100%'}`,
+                width: `${isLaptop ? '90%' : '100%'}`,
                 height: 'auto'
               }}
               src={isLaptop ? img2 : img2Mobile}
@@ -220,7 +220,7 @@ export default function Home() {
         <RowToColumn
           className="yellow"
           align="center"
-          marginForRow={[0.5, 0, 0.5, 0]}
+          marginForRow={[0.5, 1.5, 0.5, 1.5]}
           marginForColumn={[2, 0, 1, 0]}
           bgColor={Colors.YELLOW}
         >
@@ -297,7 +297,7 @@ export default function Home() {
         </RowToColumn>
         <RowToColumn
           align="center"
-          marginForRow={[0, 1.5, 0.5, 1.5]}
+          marginForRow={[0.5, 1.5, 0.5, 1.5]}
           marginForColumn={[1, 0, 1, 0]}
         >
           <Column opt_margin={isLaptop ? [0, 0, 0, 0] : [0.5, 1.5, 2.5, 1.5]}>
@@ -316,7 +316,7 @@ export default function Home() {
             <Image
               src={img2}
               style={{
-                width: `${isLaptop ? '74%' : '100%'}`,
+                width: `${isLaptop ? '90%' : '100%'}`,
                 height: 'auto'
               }}
               alt="chambre au bord de l'eau"
