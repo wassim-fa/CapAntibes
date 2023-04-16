@@ -28,6 +28,8 @@ import RowToColumn from '@/components/RowToColumn'
 import Carrousel from '@/components/Carrousel'
 import { IndexPageStyles } from '@/styles/pages'
 import Link from 'next/link'
+import { useCallback, useContext, useEffect, useState } from 'react'
+import { MenuContext } from '@/stores'
 
 const randomsImages = [
   random0,
@@ -40,6 +42,8 @@ const randomsImages = [
   random7
 ]
 export default function Home() {
+  const { menuOpen } = useContext(MenuContext)
+  const [isEffectCancelled, setIsEffectCancelled] = useState(false)
   const isLaptop = useIsLaptop()
 
   const getInfinitySliderImageSize = () => {
@@ -55,6 +59,25 @@ export default function Home() {
       height
     }
   }
+  const handleScroll = useCallback(() => {
+    const height = window.innerHeight - Math.round(window.innerHeight / 20)
+    const scrolled = window.pageYOffset
+    if (scrolled >= height) {
+      setIsEffectCancelled(true)
+    }
+  }, [])
+  useEffect(() => {
+    if (isEffectCancelled) {
+      return
+    }
+    if (['tobook', 'menu'].includes(menuOpen)) {
+      setIsEffectCancelled(true)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [handleScroll, isEffectCancelled, menuOpen])
+
   return (
     <>
       <IndexPageStyles />
@@ -65,33 +88,35 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main id="home" className={!isLaptop ? 'mobile' : ''}>
-        <div
-          style={{
-            position: 'relative',
-            zIndex: 2,
-            backgroundColor: 'white',
-            width: '100%',
-            height: '100vh',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'flex-end',
-            paddingBottom: `${isLaptop ? '1%' : '5%'}`
-          }}
-        >
-          <svg
-            width="17"
-            height="15"
-            viewBox="0 0 17 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+        {!isEffectCancelled && (
+          <div
+            style={{
+              position: 'relative',
+              zIndex: 2,
+              backgroundColor: 'white',
+              width: '100%',
+              height: '100vh',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'flex-end',
+              paddingBottom: `${isLaptop ? '1%' : '5%'}`
+            }}
           >
-            <path
-              d="M16 1L9.14286 13L1 0.999999"
-              stroke="#D99380"
-              strokeWidth="2"
-            />
-          </svg>
-        </div>
+            <svg
+              width="17"
+              height="15"
+              viewBox="0 0 17 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16 1L9.14286 13L1 0.999999"
+                stroke="#D99380"
+                strokeWidth="2"
+              />
+            </svg>
+          </div>
+        )}
         {isLaptop ? (
           <RandomImages listImages={randomsImages} />
         ) : (

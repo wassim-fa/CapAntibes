@@ -116,26 +116,6 @@ export const contentsLayout: Record<string, IContentByLang> = {
     en: 'en-Farniente',
     ru: 'ru-Farniente'
   },
-  farniente_beach: {
-    fr: 'Plage •',
-    en: 'en-Plage •',
-    ru: 'ru-Plage •'
-  },
-  farniente_jardin: {
-    fr: 'Jardin botanique •',
-    en: 'en-Jardin botanique •',
-    ru: 'ru-Jardin botanique •'
-  },
-  farniente_rent: {
-    fr: 'Location •',
-    en: 'en-Location •',
-    ru: 'ru-Location •'
-  },
-  farniente_family: {
-    fr: 'Famille •',
-    en: 'en-Famille •',
-    ru: 'ru-Famille •'
-  },
   wellness: {
     fr: 'Bien être',
     en: 'en-Bien être',

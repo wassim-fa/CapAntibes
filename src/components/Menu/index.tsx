@@ -43,13 +43,7 @@ const Menu = () => {
       beach: useText(contentsLayout.restaurant_beach),
       baba: useText(contentsLayout.restaurant_baba)
     },
-    farniente: {
-      main: useText(contentsLayout.farniente),
-      beach: useText(contentsLayout.farniente_beach),
-      jardin: useText(contentsLayout.farniente_jardin),
-      rent: useText(contentsLayout.farniente_rent),
-      family: useText(contentsLayout.farniente_family)
-    },
+    farniente: useText(contentsLayout.farniente),
     wellness: useText(contentsLayout.wellness),
     privatization: useText(contentsLayout.privatization)
   }
@@ -205,41 +199,11 @@ const Menu = () => {
           </S.SubItem>
         </S.Item>
         <S.Item className={!isLaptop ? 'mobile' : ''}>
-          <div
-            onClick={() => handleClick('farniente')}
-            style={{ fontSize: labelSize, zIndex: 3 }}
-          >
-            {texts.farniente.main}
-          </div>
-          <S.SubItem
-            className={`${showItems === 'farniente' ? 'active' : ''}`}
-            style={{ fontSize: linkSize }}
-          >
-            <S.Link
-              style={{
-                flexDirection: isLaptop ? 'row' : 'column'
-              }}
-            >
-              <Link href={useLink('/localisation')}>
-                <div>{texts.farniente.beach}</div>
-              </Link>
-              <Link href={useLink('/localisation')}>
-                <div>{texts.farniente.jardin}</div>
-              </Link>
-            </S.Link>
-            <S.Link
-              style={{
-                flexDirection: isLaptop ? 'row' : 'column'
-              }}
-            >
-              <Link href={useLink('/localisation')}>
-                <div>{texts.farniente.rent}</div>
-              </Link>
-              <Link href={useLink('/localisation')}>
-                <div>{texts.farniente.family}</div>
-              </Link>
-            </S.Link>
-          </S.SubItem>
+          <Link href={useLink('/farniente')}>
+            <div style={{ fontSize: labelSize, zIndex: 3 }}>
+              {texts.farniente}
+            </div>
+          </Link>
         </S.Item>
         <S.Item className={!isLaptop ? 'mobile' : ''}>
           <Link href={useLink('/bien-etre')}>

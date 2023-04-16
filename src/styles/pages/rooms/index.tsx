@@ -3,6 +3,9 @@ import { createGlobalStyle } from 'styled-components'
 export const RoomsPageStyles = createGlobalStyle`
   main#rooms {
       margin-top: 80px;
+      .imgs > *{
+        height: auto
+      }
     .h1, .h3, p, .btn {
       line-height: 22px;
     }

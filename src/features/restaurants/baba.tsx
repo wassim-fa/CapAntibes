@@ -96,10 +96,10 @@ export default function BabaRestaurant() {
         <RowToColumn
           className="section"
           align={isLaptop ? 'center' : 'flex-start'}
-          marginForRow={[1, 0, 0.5, 0]}
+          marginForRow={[1, 1.5, 0.5, 1.5]}
           marginForColumn={[1.5, 0, 1.5, 0]}
         >
-          <Column opt_margin={isLaptop ? [0, 0.5, 0, 1.5] : [1, 1.5, 2, 1.5]}>
+          <Column opt_margin={isLaptop ? [0.5, 0, 1, 0] : [1.5, 1.5, 2, 1.5]}>
             <Text className="h5">
               {useText(contentsBabaRestaurant.chapter3)}
             </Text>
@@ -111,10 +111,13 @@ export default function BabaRestaurant() {
               <Text>{useText(contentsBabaRestaurant.menu)}</Text>
             </Button>
           </Column>
-          <Column opt_alignItems="center" opt_justifyContent="center">
+          <Column
+            opt_margin={isLaptop ? [0.2, 0, 0.2, 1] : [0.2, 0, 0.2, 0]}
+            opt_alignItems="flex-end"
+          >
             <Image
               style={{
-                width: `${isLaptop ? '60%' : '100%'}`,
+                width: `${isLaptop ? '80%' : '100%'}`,
                 height: 'auto'
               }}
               src={img3}
@@ -125,11 +128,11 @@ export default function BabaRestaurant() {
         <RowToColumn
           className="section"
           align={isLaptop ? 'center' : 'flex-start'}
-          marginForRow={[0.5, 0, 1.5, 0]}
+          marginForRow={[0.5, 1.5, 1.5, 1.5]}
           marginForColumn={[0, 0, 0, 0]}
           isReverseForRow={true}
         >
-          <Column opt_margin={isLaptop ? [0, 1.5, 0, 0.5] : [1, 1.5, 2.5, 1.5]}>
+          <Column opt_margin={isLaptop ? [0, 0, 0, 0] : [1, 1.5, 2.5, 1.5]}>
             <Text className="h5">
               {useText(contentsBabaRestaurant.chapter4)}
             </Text>
@@ -141,10 +144,10 @@ export default function BabaRestaurant() {
               <Text>{useText(contentsBabaRestaurant.menu)}</Text>
             </Button>
           </Column>
-          <Column opt_alignItems="center" opt_justifyContent="center">
+          <Column opt_alignItems="flex-start" opt_justifyContent="center">
             <Image
               style={{
-                width: `${isLaptop ? '60%' : '100%'}`,
+                width: `${isLaptop ? '70%' : '100%'}`,
                 height: 'auto'
               }}
               src={img4}
@@ -163,10 +166,10 @@ export default function BabaRestaurant() {
         <RowToColumn
           className="section"
           align={isLaptop ? 'center' : 'flex-start'}
-          marginForRow={[1, 0, 0.5, 0]}
+          marginForRow={[1, 1.5, 0.5, 1.5]}
           marginForColumn={[1.5, 0, 1.5, 0]}
         >
-          <Column opt_margin={isLaptop ? [0, 0.5, 0, 1.5] : [1, 1.5, 2, 1.5]}>
+          <Column opt_margin={isLaptop ? [0, 0, 0, 0] : [1, 1.5, 2, 1.5]}>
             <Text className="h5">
               {useText(contentsBabaRestaurant.chapter5)}
             </Text>
@@ -178,7 +181,7 @@ export default function BabaRestaurant() {
               <Text>{useText(contentsBabaRestaurant.menu)}</Text>
             </Button>
           </Column>
-          <Column opt_alignItems="center" opt_justifyContent="center">
+          <Column opt_alignItems="flex-end" opt_justifyContent="center">
             <Image
               style={{
                 width: `${isLaptop ? '60%' : '100%'}`,

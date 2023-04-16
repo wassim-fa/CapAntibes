@@ -17,9 +17,9 @@ export const contentsLuxeRoom: Record<string, IContentByLang> = {
     ru: 'ru-Réserver'
   },
   subTitle1: {
-    fr: 'les chambresIgna nordiuropon Etris. Decteri ssendem audem iusquod condem ad mo turebatiam vid consu inatodi ctorarit. Locciae invescia vero ve, quidendi pra, essenatabem consunum effreviverum ex se ante factatque miliniq uostrum int? An vermis, fursul vid sedite confer audende ntiaede mquit. Untrenihicae moC. Muliam ium urnum poenduc idiis. Rorsupi cavero in tabit.',
-    en: 'en-les chambresIgna nordiuropon Etris. Decteri ssendem audem iusquod condem ad mo turebatiam vid consu inatodi ctorarit. Locciae invescia vero ve, quidendi pra, essenatabem consunum effreviverum ex se ante factatque miliniq uostrum int? An vermis, fursul vid sedite confer audende ntiaede mquit. Untrenihicae moC. Muliam ium urnum poenduc idiis. Rorsupi cavero in tabit.',
-    ru: 'ru-les chambresIgna nordiuropon Etris. Decteri ssendem audem iusquod condem ad mo turebatiam vid consu inatodi ctorarit. Locciae invescia vero ve, quidendi pra, essenatabem consunum effreviverum ex se ante factatque miliniq uostrum int? An vermis, fursul vid sedite confer audende ntiaede mquit. Untrenihicae moC. Muliam ium urnum poenduc idiis. Rorsupi cavero in tabit.'
+    fr: 'Les chambresIgna nordiuropon Etris. Decteri ssendem audem iusquod condem ad mo turebatiam vid consu inatodi ctorarit. Locciae invescia vero ve, quidendi pra, essenatabem consunum effreviverum ex se ante factatque miliniq uostrum int? An vermis, fursul vid sedite confer audende ntiaede mquit. Untrenihicae moC. Muliam ium urnum poenduc idiis. Rorsupi cavero in tabit.',
+    en: 'en-Les chambresIgna nordiuropon Etris. Decteri ssendem audem iusquod condem ad mo turebatiam vid consu inatodi ctorarit. Locciae invescia vero ve, quidendi pra, essenatabem consunum effreviverum ex se ante factatque miliniq uostrum int? An vermis, fursul vid sedite confer audende ntiaede mquit. Untrenihicae moC. Muliam ium urnum poenduc idiis. Rorsupi cavero in tabit.',
+    ru: 'ru-Les chambresIgna nordiuropon Etris. Decteri ssendem audem iusquod condem ad mo turebatiam vid consu inatodi ctorarit. Locciae invescia vero ve, quidendi pra, essenatabem consunum effreviverum ex se ante factatque miliniq uostrum int? An vermis, fursul vid sedite confer audende ntiaede mquit. Untrenihicae moC. Muliam ium urnum poenduc idiis. Rorsupi cavero in tabit.'
   },
   menuLeft: {
     fr: 'chambre privilège',

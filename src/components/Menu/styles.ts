@@ -21,7 +21,11 @@ const slideRight = keyframes`
 export const Item = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 10px 0;
+  margin: 2px 0;
+
+  &:hover > *:first-child {
+    color: #f3d7c8;
+  }
 
   &.mobile > *:first-child {
     margin: 10px 0;
@@ -40,6 +44,9 @@ export const SubItem = styled.div`
 export const Link = styled.div`
   display: flex;
 
+  > *:hover {
+    color: #f3d7c8;
+  }
   > * {
     margin: 0.4% 0;
   }
@@ -71,7 +78,7 @@ export const Wrapper = styled.div`
   z-index: 3;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: flex-start;
   background-color: ${(props) => props.theme.bgColors.primary};
   width: 100vw;
   height: 100%;
@@ -79,7 +86,7 @@ export const Wrapper = styled.div`
   font-family: ${(props) => props.theme.fontStyles.medium};
 
   margin-top: ${(props) => props.theme.navBar.laptop}px;
-  padding-top: 5%;
+  padding-top: 10%;
   padding-left: 4%;
   &.mobile {
     padding-top: 20%;
@@ -87,7 +94,6 @@ export const Wrapper = styled.div`
     margin-top: ${(props) => props.theme.navBar.laptop}px;
     height: calc(100% - 145px);
   }
-  padding-top: 5%;
   padding-left: 4%;
   .list {
     display: flex;

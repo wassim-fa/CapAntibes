@@ -47,12 +47,12 @@ export default function Privatisation() {
         <RowToColumn
           className="section"
           align={isLaptop ? 'center' : 'flex-start'}
-          marginForRow={[0.5, 1, 0.5, 1]}
+          marginForRow={[0.5, 1.5, 0.5, 1.5]}
           marginForColumn={[0, 0, 1, 0]}
         >
           <Column
             opt_spacing={spacing}
-            opt_margin={isLaptop ? undefined : [1, 1.5, 1, 1.5]}
+            opt_margin={isLaptop ? [1, 0, 2, 0] : [1, 1.5, 1, 1.5]}
           >
             <Text className="h3">
               {useText(contentsPrivatisation.subTitle1)}
@@ -62,7 +62,7 @@ export default function Privatisation() {
               <Text>{useText(contentsPrivatisation.button)}</Text>
             </Button>
           </Column>
-          <Column opt_alignItems="center" opt_justifyContent="center">
+          <Column opt_alignItems="flex-end" opt_justifyContent="center">
             <Image
               style={{
                 width: `${isLaptop ? '70%' : '100%'}`,
@@ -76,11 +76,11 @@ export default function Privatisation() {
         <RowToColumn
           className="section"
           align={isLaptop ? 'center' : 'flex-start'}
-          marginForRow={[0.5, 1, 0.5, 1]}
+          marginForRow={[0.5, 1.5, 0.5, 1.5]}
           marginForColumn={[0, 0, 1, 0]}
           isReverseForColumn={true}
         >
-          <Column opt_alignItems="center" opt_justifyContent="center">
+          <Column opt_alignItems="flex-start" opt_justifyContent="center">
             <Image
               style={{
                 width: `${isLaptop ? '70%' : '100%'}`,
@@ -92,7 +92,7 @@ export default function Privatisation() {
           </Column>
           <Column
             opt_spacing={spacing}
-            opt_margin={isLaptop ? undefined : [1, 1.5, 1, 1.5]}
+            opt_margin={isLaptop ? [0.5, 0, 1, 0] : [1, 1.5, 1, 1.5]}
           >
             <Text className="h3">
               {useText(contentsPrivatisation.subTitle2)}
@@ -106,12 +106,12 @@ export default function Privatisation() {
         <RowToColumn
           className="section"
           align={isLaptop ? 'center' : 'flex-start'}
-          marginForRow={[0.5, 1, 0.5, 1]}
+          marginForRow={[0.5, 1.5, 0.5, 1.5]}
           marginForColumn={[0, 0, 1, 0]}
         >
           <Column
             opt_spacing={spacing}
-            opt_margin={isLaptop ? undefined : [1, 1.5, 1, 1.5]}
+            opt_margin={isLaptop ? [1, 0, 2, 0] : [1, 1.5, 1, 1.5]}
           >
             <Text className="h3">
               {useText(contentsPrivatisation.subTitle3)}
@@ -121,7 +121,7 @@ export default function Privatisation() {
               <Text>{useText(contentsPrivatisation.button)}</Text>
             </Button>
           </Column>
-          <Column opt_alignItems="center" opt_justifyContent="center">
+          <Column opt_alignItems="flex-end" opt_justifyContent="center">
             <Image
               style={{
                 width: `${isLaptop ? '70%' : '100%'}`,
