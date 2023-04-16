@@ -61,12 +61,12 @@ export default function Restaurants() {
         <RowToColumn
           className="section"
           align={isLaptop ? 'center' : 'flex-start'}
-          marginForRow={[0.5, 1, 0.5, 1]}
+          marginForRow={[0.5, 1.5, 0.5, 1.5]}
           marginForColumn={[0, 0, 1, 0]}
         >
           <Column
             opt_spacing={spacing}
-            opt_margin={isLaptop ? undefined : [1, 1.5, 1, 1.5]}
+            opt_margin={isLaptop ? [0.5, 0, 1, 0] : [1.5, 1.5, 2, 1.5]}
           >
             <Text className="h5">
               {useText(contentsRestaurantsIndex.chapter1)}
@@ -90,25 +90,28 @@ export default function Restaurants() {
               </Column>
             </Row>
           </Column>
-          <Column opt_alignItems="center" opt_justifyContent="center">
+          <Column
+            opt_margin={isLaptop ? [0.2, 0, 0.2, 1] : [0.2, 0, 0.2, 0]}
+            opt_alignItems="flex-end"
+          >
             <Image
               style={{
-                width: `${isLaptop ? '70%' : '100%'}`,
+                width: `${isLaptop ? '80%' : '100%'}`,
                 height: 'auto'
               }}
               src={img2}
-              alt="plage"
+              alt="chambre de luxe"
             />
           </Column>
         </RowToColumn>
         <RowToColumn
           className="section"
           align={isLaptop ? 'center' : 'flex-start'}
-          marginForRow={[0.5, 1, 0.5, 1]}
+          marginForRow={[0.5, 1.5, 0.5, 1.5]}
           marginForColumn={[0, 0, 1, 0]}
           isReverseForColumn={true}
         >
-          <Column opt_alignItems="center" opt_justifyContent="center">
+          <Column opt_alignItems="flex-start" opt_justifyContent="center">
             <Image
               style={{
                 width: `${isLaptop ? '70%' : '100%'}`,
@@ -120,7 +123,7 @@ export default function Restaurants() {
           </Column>
           <Column
             opt_spacing={spacing}
-            opt_margin={isLaptop ? undefined : [1, 1.5, 1, 1.5]}
+            opt_margin={isLaptop ? [0.5, 0, 1, 0] : [1.5, 1.5, 2, 1.5]}
           >
             <Text className="h5">
               {useText(contentsRestaurantsIndex.chapter2)}
@@ -156,12 +159,12 @@ export default function Restaurants() {
         <RowToColumn
           className="section"
           align={isLaptop ? 'center' : 'flex-start'}
-          marginForRow={[0.5, 1, 0.5, 1]}
+          marginForRow={[0.5, 1.5, 0.5, 1.5]}
           marginForColumn={[0, 0, 1, 0]}
         >
           <Column
             opt_spacing={spacing}
-            opt_margin={isLaptop ? undefined : [1, 1.5, 1, 1.5]}
+            opt_margin={isLaptop ? [0.5, 0, 1, 0] : [1.5, 1.5, 2, 1.5]}
           >
             <Text className="h5">
               {useText(contentsRestaurantsIndex.chapter3)}
@@ -174,25 +177,28 @@ export default function Restaurants() {
               <Text>{useText(contentsRestaurantsIndex.menu)}</Text>
             </Button>
           </Column>
-          <Column opt_alignItems="center" opt_justifyContent="center">
+          <Column
+            opt_margin={isLaptop ? [0.2, 0, 0.2, 1] : [0.2, 0, 0.2, 0]}
+            opt_alignItems="flex-end"
+          >
             <Image
               style={{
-                width: `${isLaptop ? '70%' : '100%'}`,
+                width: `${isLaptop ? '80%' : '100%'}`,
                 height: 'auto'
               }}
               src={img5}
-              alt="plage"
+              alt="chambre de luxe"
             />
           </Column>
         </RowToColumn>
         <RowToColumn
           className="section"
           align={isLaptop ? 'center' : 'flex-start'}
-          marginForRow={[0.5, 1, 0.5, 1]}
+          marginForRow={[0.5, 1.5, 0.5, 1.5]}
           marginForColumn={[0, 0, 1, 0]}
           isReverseForColumn={true}
         >
-          <Column opt_alignItems="center" opt_justifyContent="center">
+          <Column opt_alignItems="flex-start" opt_justifyContent="center">
             <Image
               style={{
                 width: `${isLaptop ? '70%' : '100%'}`,
@@ -204,7 +210,7 @@ export default function Restaurants() {
           </Column>
           <Column
             opt_spacing={spacing}
-            opt_margin={isLaptop ? undefined : [1, 1.5, 1, 1.5]}
+            opt_margin={isLaptop ? [0.5, 0, 1, 0] : [1.5, 1.5, 2, 1.5]}
           >
             <Text className="h5">
               {useText(contentsRestaurantsIndex.chapter4)}

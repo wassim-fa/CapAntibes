@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components'
 
 export const IndexPageStyles = createGlobalStyle`
   main#home {
+    margin-top: 85px;
     .h3, p, .btn {
       line-height: 22px;
     }

@@ -46,12 +46,12 @@ export default function WellHealth() {
         <RowToColumn
           className="section"
           align={isLaptop ? 'center' : 'flex-start'}
-          marginForRow={[0.5, 1, 0.5, 1]}
+          marginForRow={[0.5, 1.5, 0.5, 1.5]}
           marginForColumn={[0, 0, 1, 0]}
         >
           <Column
             opt_spacing={spacing}
-            opt_margin={isLaptop ? undefined : [1, 1.5, 1, 1.5]}
+            opt_margin={isLaptop ? [1, 0, 2, 0] : [1, 1.5, 1, 1.5]}
           >
             <Text className="h3">{useText(contentsWellHealth.subTitle1)}</Text>
             <Text className="p">{useText(contentsWellHealth.text1)}</Text>
@@ -59,7 +59,7 @@ export default function WellHealth() {
               <Text>{useText(contentsWellHealth.button)}</Text>
             </Button>
           </Column>
-          <Column opt_alignItems="center" opt_justifyContent="center">
+          <Column opt_alignItems="flex-end" opt_justifyContent="center">
             <Image
               style={{
                 width: `${isLaptop ? '70%' : '100%'}`,
@@ -73,11 +73,11 @@ export default function WellHealth() {
         <RowToColumn
           className="section"
           align={isLaptop ? 'center' : 'flex-start'}
-          marginForRow={[0.5, 1, 0.5, 1]}
+          marginForRow={[0.5, 1.5, 0.5, 1.5]}
           marginForColumn={[0, 0, 1, 0]}
           isReverseForColumn={true}
         >
-          <Column opt_alignItems="center" opt_justifyContent="center">
+          <Column opt_alignItems="flex-start" opt_justifyContent="center">
             <Image
               style={{
                 width: `${isLaptop ? '70%' : '100%'}`,
@@ -89,7 +89,7 @@ export default function WellHealth() {
           </Column>
           <Column
             opt_spacing={spacing}
-            opt_margin={isLaptop ? undefined : [1, 1.5, 1, 1.5]}
+            opt_margin={isLaptop ? [0.5, 0, 1, 0] : [1, 1.5, 1, 1.5]}
           >
             <Text className="h3">{useText(contentsWellHealth.subTitle2)}</Text>
             <Text className="p">{useText(contentsWellHealth.text2)}</Text>
@@ -109,12 +109,12 @@ export default function WellHealth() {
         <RowToColumn
           className="section"
           align={isLaptop ? 'center' : 'flex-start'}
-          marginForRow={[0.5, 1, 0.5, 1]}
+          marginForRow={[0.5, 1.5, 0.5, 1.5]}
           marginForColumn={[0, 0, 1, 0]}
         >
           <Column
             opt_spacing={spacing}
-            opt_margin={isLaptop ? undefined : [1, 1.5, 1, 1.5]}
+            opt_margin={isLaptop ? [1, 0, 2, 0] : [1, 1.5, 1, 1.5]}
           >
             <Text className="h3">{useText(contentsWellHealth.subTitle3)}</Text>
             <Text className="p">{useText(contentsWellHealth.text3)}</Text>
@@ -122,7 +122,7 @@ export default function WellHealth() {
               <Text>{useText(contentsWellHealth.button)}</Text>
             </Button>
           </Column>
-          <Column opt_alignItems="center" opt_justifyContent="center">
+          <Column opt_alignItems="flex-end" opt_justifyContent="center">
             <Image
               style={{
                 width: `${isLaptop ? '70%' : '100%'}`,

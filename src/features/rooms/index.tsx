@@ -30,18 +30,6 @@ import Column from '@/components/Column'
 import { TCssSize } from '@/interfaces'
 import Link from 'next/link'
 
-const randomsImages = [
-  random1,
-  random2,
-  random1,
-  random2,
-  random1,
-  random2,
-  random1,
-  random2,
-  random1,
-  random2
-]
 export default function Rooms() {
   const isLaptop = useIsLaptop()
   const spacing: TCssSize = { value: 0.8, unit: 'vw' }
@@ -61,8 +49,13 @@ export default function Rooms() {
           <Button className="btn">
             <Text>{useText(contentsRoomsIndex.toBook)}</Text>
           </Button>
-        </Column>
-        {isLaptop && <RandomImages listImages={randomsImages} />}
+        </Column>      
+        {isLaptop && (
+          <Row opt_margin={[0, 0, 0, 0]} className='imgs'>
+            <Image src={random1} alt="image" />
+            <Image src={random2} alt="image" />
+          </Row>
+        )}
         <RowToColumn
           align="center"
           marginForRow={[0.5, 1.5, 0.5, 1.5]}
@@ -70,7 +63,7 @@ export default function Rooms() {
           isReverseForColumn={true}
         >
           <Column
-            opt_margin={isLaptop ? [0.5, 0.5, 1, 0.5] : [1.5, 1.5, 2, 1.5]}
+            opt_margin={isLaptop ? [0.5, 0, 1, 0] : [1.5, 1.5, 2, 1.5]}
             opt_spacing={spacing}
           >
             <Text className="h3">{useText(contentsRoomsIndex.luxeTitle)}</Text>
@@ -93,8 +86,8 @@ export default function Rooms() {
             </Row>
           </Column>
           <Column
-            opt_margin={isLaptop ? [0.2, 1, 0.2, 1] : [0.2, 0, 0.2, 0]}
-            opt_alignItems="center"
+            opt_margin={isLaptop ? [0.2, 0, 0.2, 1] : [0.2, 0, 0.2, 0]}
+            opt_alignItems="flex-end"
           >
             <Image
               className={isLaptop ? '' : 'fullWidth'}
@@ -105,12 +98,12 @@ export default function Rooms() {
         </RowToColumn>
         <RowToColumn
           align="center"
-          marginForRow={[0.5, 0, 0.5, 0]}
-          marginForColumn={[1, 0, 1, 0]}
+          marginForRow={[0.5, 1.5, 0.5, 1.5]}
+          marginForColumn={[1, 0, 0, 0]}
         >
           <Column
-            opt_margin={isLaptop ? [0.2, 1, 0.2, 1] : [0.2, 0, 0.2, 0]}
-            opt_alignItems="center"
+            opt_margin={isLaptop ? [0.2, 0, 0.2, 0] : [0.2, 0, 0.2, 0]}
+            opt_alignItems="flex-start"
           >
             <Image
               className={isLaptop ? '' : 'fullWidth'}
@@ -119,7 +112,7 @@ export default function Rooms() {
             />
           </Column>
           <Column
-            opt_margin={isLaptop ? [0.5, 0.5, 1, 0.5] : [1.5, 1.5, 2, 1.5]}
+            opt_margin={isLaptop ? [0.5, 0, 1, 0] : [1.5, 1.5, 2, 1.5]}
             opt_spacing={spacing}
           >
             <Text className="h3">
@@ -156,7 +149,7 @@ export default function Rooms() {
           isReverseForColumn={true}
         >
           <Column
-            opt_margin={isLaptop ? [0.5, 0.5, 1, 0.5] : [1.5, 1.5, 2, 1.5]}
+            opt_margin={isLaptop ? [0.5, 0, 1, 0] : [1.5, 1.5, 2, 1.5]}
             opt_spacing={spacing}
           >
             <Text className="h3">{useText(contentsRoomsIndex.priviTitle)}</Text>
@@ -165,7 +158,7 @@ export default function Rooms() {
             </Text>
             <Row>
               <Column opt_alignItems="flex-start">
-                <Link href={useLink('/chambre-privilege')}>
+                <Link href={useLink('/chambre-deluxe')}>
                   <Button className="btn">
                     <Text>{useText(contentsRoomsIndex.discover)}</Text>
                   </Button>
@@ -179,8 +172,8 @@ export default function Rooms() {
             </Row>
           </Column>
           <Column
-            opt_margin={isLaptop ? [0.2, 1, 0.2, 1] : [0.2, 0, 0.2, 0]}
-            opt_alignItems="center"
+            opt_margin={isLaptop ? [0.2, 0, 0.2, 1] : [0.2, 0, 0.2, 0]}
+            opt_alignItems="flex-end"
           >
             <Image
               className={isLaptop ? '' : 'fullWidth'}
@@ -191,12 +184,12 @@ export default function Rooms() {
         </RowToColumn>
         <RowToColumn
           align="center"
-          marginForRow={[0.5, 0, 0.5, 0]}
-          marginForColumn={[1, 0, 1, 0]}
+          marginForRow={[0.5, 1.5, 0.5, 1.5]}
+          marginForColumn={[1, 0, 0, 0]}
         >
           <Column
-            opt_margin={isLaptop ? [0.2, 1, 0.2, 1] : [0.2, 0, 0.2, 0]}
-            opt_alignItems="center"
+            opt_margin={isLaptop ? [0.2, 0, 0.2, 0] : [0.2, 0, 0.2, 0]}
+            opt_alignItems="flex-start"
           >
             <Image
               className={isLaptop ? '' : 'fullWidth'}
@@ -205,7 +198,7 @@ export default function Rooms() {
             />
           </Column>
           <Column
-            opt_margin={isLaptop ? [0.5, 0.5, 1, 0.5] : [1.5, 1.5, 2, 1.5]}
+            opt_margin={isLaptop ? [0.5, 0, 1, 0] : [1.5, 1.5, 2, 1.5]}
             opt_spacing={spacing}
           >
             <Text className="h3">
@@ -216,7 +209,7 @@ export default function Rooms() {
             </Text>
             <Row>
               <Column opt_alignItems="flex-start">
-                <Link href={useLink('/suite-design')}>
+                <Link href={useLink('/chambre-privilege-vue-mer')}>
                   <Button className="btn">
                     <Text>{useText(contentsRoomsIndex.discover)}</Text>
                   </Button>
@@ -242,18 +235,16 @@ export default function Rooms() {
           isReverseForColumn={true}
         >
           <Column
-            opt_margin={isLaptop ? [0.5, 0.5, 1, 0.5] : [1.5, 1.5, 2, 1.5]}
+            opt_margin={isLaptop ? [0.5, 0, 1, 0] : [1.5, 1.5, 2, 1.5]}
             opt_spacing={spacing}
           >
-            <Text className="h3">
-              {useText(contentsRoomsIndex.executiveTitle)}
-            </Text>
+            <Text className="h3">{useText(contentsRoomsIndex.executiveTitle)}</Text>
             <Text className="p">
               {useText(contentsRoomsIndex.executiveSubTitle)}
             </Text>
             <Row>
               <Column opt_alignItems="flex-start">
-                <Link href={useLink('/suite-executive')}>
+                <Link href={useLink('/chambre-deluxe')}>
                   <Button className="btn">
                     <Text>{useText(contentsRoomsIndex.discover)}</Text>
                   </Button>
@@ -267,8 +258,8 @@ export default function Rooms() {
             </Row>
           </Column>
           <Column
-            opt_margin={isLaptop ? [0.2, 1, 0.2, 1] : [0.2, 0, 0.2, 0]}
-            opt_alignItems="center"
+            opt_margin={isLaptop ? [0.2, 0, 0.2, 1] : [0.2, 0, 0.2, 0]}
+            opt_alignItems="flex-end"
           >
             <Image
               className={isLaptop ? '' : 'fullWidth'}
@@ -279,12 +270,12 @@ export default function Rooms() {
         </RowToColumn>
         <RowToColumn
           align="center"
-          marginForRow={[0.5, 0, 0.5, 0]}
-          marginForColumn={[1, 0, 1, 0]}
+          marginForRow={[0.5, 1.5, 0.5, 1.5]}
+          marginForColumn={[1, 0, 0, 0]}
         >
           <Column
-            opt_margin={isLaptop ? [0.2, 1, 0.2, 1] : [0.2, 0, 0.2, 0]}
-            opt_alignItems="center"
+            opt_margin={isLaptop ? [0.2, 0, 0.2, 0] : [0.2, 0, 0.2, 0]}
+            opt_alignItems="flex-start"
           >
             <Image
               className={isLaptop ? '' : 'fullWidth'}
@@ -293,7 +284,7 @@ export default function Rooms() {
             />
           </Column>
           <Column
-            opt_margin={isLaptop ? [0.5, 0.5, 1, 0.5] : [1.5, 1.5, 2, 1.5]}
+            opt_margin={isLaptop ? [0.5, 0, 1, 0] : [1.5, 1.5, 2, 1.5]}
             opt_spacing={spacing}
           >
             <Text className="h3">
@@ -304,7 +295,7 @@ export default function Rooms() {
             </Text>
             <Row>
               <Column opt_alignItems="flex-start">
-                <Link href={useLink('/chambres-communicantes')}>
+                <Link href={useLink('/chambre-privilege-vue-mer')}>
                   <Button className="btn">
                     <Text>{useText(contentsRoomsIndex.discover)}</Text>
                   </Button>

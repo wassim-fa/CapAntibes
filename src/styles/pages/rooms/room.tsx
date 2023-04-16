@@ -16,9 +16,12 @@ export const RoomPageStyles = createGlobalStyle`
     }
     .p {
       font-size: 17px;
+      p {
+        text-transform: none;
+      }
     }
     .menu {
-      font-size: 22px;
+      font-size: 11px;
     }
     .item {
       font-size: 11px;

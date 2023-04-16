@@ -99,40 +99,43 @@ const RoomLayout = (props: IRoomLayoutProps): JSX.Element => {
         <RowToColumn
           className="menu"
           align="center"
-          marginForRow={[0.5, 1, 0.5, 1]}
+          marginForRow={[0.2, 0.5, 0.5, 0.5]}
           marginForColumn={[1, 0.5, 1, 0.5]}
         >
-          <Link
-            style={{
-              width: '100%',
-              display: 'flex',
-              justifyContent: 'flex-start'
-            }}
-            href={useLink(menu.left)}
-          >
-            <Button opt_arrow_position="left">
-              <Text>{useText(content.menuLeft)}</Text>
-            </Button>
-          </Link>
-          <Link
+          <Column opt_alignItems='flex-start'>
+            <Link
+              style={{
+                display: 'flex',
+                justifyContent: 'flex-start'
+              }}
+              href={useLink(menu.left)}
+            >
+              <Button opt_arrow_position="left">
+                <Text>{useText(content.menuLeft)}</Text>
+              </Button>
+            </Link>
+          </Column>
+          {/* <Link
             className="menu-middle"
-            style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
+            style={{ display: 'flex', justifyContent: 'center' }}
             href={useLink(menu.middle)}
           >
             <Text>{useText(content.menuMiddle)}</Text>
-          </Link>
-          <Link
-            style={{
-              width: '100%',
-              display: 'flex',
-              justifyContent: 'flex-end'
-            }}
-            href={useLink(menu.right)}
-          >
-            <Button opt_arrow_position="right">
-              <Text>{useText(content.menuRight)}</Text>
-            </Button>
-          </Link>
+          </Link> */}
+
+          <Column opt_alignItems='flex-end'>
+            <Link
+              style={{
+                display: 'flex',
+                justifyContent: 'flex-end'
+              }}
+              href={useLink(menu.right)}
+            >
+              <Button opt_arrow_position="right">
+                <Text>{useText(content.menuRight)}</Text>
+              </Button>
+            </Link>
+          </Column>
         </RowToColumn>
         <Column
           opt_margin={isLaptop ? [0.5, 1, 0.5, 1] : [1, 0.5, 1, 0.5]}

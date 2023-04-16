@@ -28,6 +28,7 @@ import RowToColumn from '@/components/RowToColumn'
 import Carrousel from '@/components/Carrousel'
 import { IndexPageStyles } from '@/styles/pages'
 import Link from 'next/link'
+import { useCallback, useEffect, useState } from 'react'
 
 const randomsImages = [
   random0,
@@ -40,6 +41,7 @@ const randomsImages = [
   random7
 ]
 export default function Home() {
+  const [isEffectCancelled, setIsEffectCancelled] = useState(false)
   const isLaptop = useIsLaptop()
 
   const getInfinitySliderImageSize = () => {
@@ -55,6 +57,22 @@ export default function Home() {
       height
     }
   }
+  const handleScroll = useCallback(() => {
+    const height = window.innerHeight - Math.round(window.innerHeight / 20)
+    const scrolled = window.pageYOffset
+    if (scrolled >= height) {
+      setIsEffectCancelled(true)
+    }
+  }, [])
+  useEffect(() => {
+    if (isEffectCancelled) {
+      return
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [handleScroll])
+
   return (
     <>
       <IndexPageStyles />
@@ -65,7 +83,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main id="home" className={!isLaptop ? 'mobile' : ''}>
-        <div
+        {!isEffectCancelled && <div
           style={{
             position: 'relative',
             zIndex: 2,
@@ -91,7 +109,7 @@ export default function Home() {
               strokeWidth="2"
             />
           </svg>
-        </div>
+        </div>}
         {isLaptop ? (
           <RandomImages listImages={randomsImages} />
         ) : (

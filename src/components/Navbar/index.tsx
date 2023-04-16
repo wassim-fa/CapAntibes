@@ -2,8 +2,8 @@
 import { MenuContext } from '@/stores'
 import { useCallback, useContext, useEffect, useState } from 'react'
 import * as S from './styles'
-import titleLarge from '../../../public/assets/images/global/title_large.png'
-import titleSmall from '../../../public/assets/images/global/title_small.png'
+import titleLarge from '../../../public/assets/images/global/title_large.svg'
+import titleSmall from '../../../public/assets/images/global/title_small.svg'
 import Image from 'next/image'
 import styled, { keyframes } from 'styled-components'
 import { contentsLayout } from '@/contents/globals'
@@ -359,27 +359,33 @@ const Burger = () => {
 }
 const Navbar = () => {
   const router = useRouter()
-  const { menuOpen, setMenuOpen } = useContext(MenuContext)
-  const isLaptop = useIsLaptop()
   const isHome = useIsHome()
-  const cancelEffect = !isHome || ['tobook', 'menu'].includes(menuOpen)
+  const isLaptop = useIsLaptop()
+  
   const title = isLaptop ? titleLarge : titleSmall
   const init = {
     scale: isHome ? 2 : 1,
     translate: isHome ? 45 : 0
   }
+
+  const { menuOpen, setMenuOpen } = useContext(MenuContext)
+  const [isEffectCancelled, setIsEffectCancelled] = useState(!isHome)
   const [scale, setScale] = useState(init.scale)
   const [translate, setTranslate] = useState(init.translate)
-
+  
   const handleScroll = useCallback(() => {
     if (isHome) {
       const height = window.innerHeight - Math.round(window.innerHeight / 20)
       const scrolled = window.pageYOffset
-      const percentage = 1 - scrolled / height
-      const scaleFactor = Math.max(2 - (2 - 1) * (1 - percentage), 1)
-      const translateFactor = Math.max(45 - 45 * (1 - percentage), 0)
-      setScale(scaleFactor)
-      setTranslate(translateFactor)
+      if(scrolled >= height) {
+        setIsEffectCancelled(true)
+      } else {
+        const percentage = 1 - scrolled / height
+        const scaleFactor = Math.max(2 - (2 - 1) * (1 - percentage), 1)
+        const translateFactor = Math.max(45 - 45 * (1 - percentage), 0)
+        setScale(scaleFactor)
+        setTranslate(translateFactor)
+      }
     }
   }, [isHome])
   useEffect(() => {
@@ -387,9 +393,16 @@ const Navbar = () => {
   }, [router.asPath, setMenuOpen])
 
   useEffect(() => {
+    if (isEffectCancelled) {
+      return
+    }
+    if (['tobook', 'menu'].includes(menuOpen)) {
+      setIsEffectCancelled(true)
+    }
+
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [handleScroll])
+  }, [handleScroll, menuOpen])
   return (
     <S.Wrapper className={`sc-navbar ${isLaptop ? '' : 'mobile'}`}>
       <S.Part flex={1} align={'flex-start'}>
@@ -402,7 +415,7 @@ const Navbar = () => {
           src={title}
           style={{
             cursor: 'pointer',
-            transform: `translateY(${cancelEffect ? 0 : translate}vh) scale(${cancelEffect ? 1 : scale
+            transform: `translateY(${isEffectCancelled ? 0 : translate}vh) scale(${isEffectCancelled ? 1 : scale
               })`
           }}
           alt="Cap d'antibes - beach hotel"

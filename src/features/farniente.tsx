@@ -74,14 +74,17 @@ export default function Farniente() {
         <RowToColumn
           className="section"
           align={isLaptop ? 'center' : 'flex-start'}
-          marginForRow={[0.5, 1, 0.5, 1]}
+          marginForRow={[0.5, 1.5, 0.5, 1.5]}
           marginForColumn={[0, 0, 1, 0]}
         >
-          <Column opt_margin={isLaptop ? undefined : [1, 1.5, 1, 1.5]}>
+          <Column opt_margin={isLaptop ? [0.5, 0, 1, 0] : [1, 1.5, 1, 1.5]}>
             <Text className="h3">{useText(contentsFarniente.subTitle1)}</Text>
             <Text className="p">{useText(contentsFarniente.text1)}</Text>
           </Column>
-          <Column opt_alignItems="center" opt_justifyContent="center">
+          <Column
+            opt_margin={isLaptop ? [0.2, 0, 0.2, 1] : [0.2, 0, 0.2, 0]}
+            opt_alignItems="flex-end"
+          >
             <Image
               style={{
                 width: `${isLaptop ? '70%' : '100%'}`,
@@ -95,11 +98,11 @@ export default function Farniente() {
         <RowToColumn
           className="section"
           align={isLaptop ? 'center' : 'flex-start'}
-          marginForRow={[0.5, 1, 0.5, 1]}
+          marginForRow={[0.5, 1.5, 0.5, 1.5]}
           marginForColumn={[0, 0, 1, 0]}
           isReverseForColumn={true}
         >
-          <Column opt_alignItems="center" opt_justifyContent="center">
+          <Column opt_alignItems="flex-start" opt_justifyContent="center">
             <Image
               style={{
                 width: `${isLaptop ? '70%' : '100%'}`,
@@ -109,7 +112,7 @@ export default function Farniente() {
               alt="plage"
             />
           </Column>
-          <Column opt_margin={isLaptop ? undefined : [1, 1.5, 1, 1.5]}>
+          <Column opt_margin={isLaptop ? [0.5, 0, 1, 0] : [1, 1.5, 1, 1.5]}>
             <Text className="h3">{useText(contentsFarniente.subTitle2)}</Text>
             <Text className="p">{useText(contentsFarniente.text2)}</Text>
           </Column>
@@ -135,14 +138,17 @@ export default function Farniente() {
         <RowToColumn
           className="section"
           align={isLaptop ? 'center' : 'flex-start'}
-          marginForRow={[0.5, 1, 0.5, 1]}
+          marginForRow={[0.5, 1.5, 0.5, 1.5]}
           marginForColumn={[0, 0, 1, 0]}
         >
-          <Column opt_margin={isLaptop ? undefined : [1, 1.5, 1, 1.5]}>
+          <Column opt_margin={isLaptop ? [0.5, 0, 1, 0] : [1, 1.5, 1, 1.5]}>
             <Text className="h3">{useText(contentsFarniente.subTitle3)}</Text>
             <Text className="p">{useText(contentsFarniente.text3)}</Text>
           </Column>
-          <Column opt_alignItems="center" opt_justifyContent="center">
+          <Column
+            opt_margin={isLaptop ? [0.2, 0, 0.2, 1] : [0.2, 0, 0.2, 0]}
+            opt_alignItems="flex-end"
+          >
             <Image
               style={{
                 width: `${isLaptop ? '70%' : '100%'}`,
@@ -156,11 +162,11 @@ export default function Farniente() {
         <RowToColumn
           className="section"
           align={isLaptop ? 'center' : 'flex-start'}
-          marginForRow={[0.5, 1, 0.5, 1]}
+          marginForRow={[0.5, 1.5, 0.5, 1.5]}
           marginForColumn={[0, 0, 1, 0]}
           isReverseForColumn={true}
         >
-          <Column opt_alignItems="center" opt_justifyContent="center">
+          <Column opt_alignItems="flex-start" opt_justifyContent="center">
             <Image
               style={{
                 width: `${isLaptop ? '70%' : '100%'}`,
@@ -170,7 +176,7 @@ export default function Farniente() {
               alt="plage"
             />
           </Column>
-          <Column opt_margin={isLaptop ? undefined : [1, 1.5, 1, 1.5]}>
+          <Column opt_margin={isLaptop ? [0.5, 0, 1, 0] : [1, 1.5, 1, 1.5]}>
             <Text className="h3">{useText(contentsFarniente.subTitle4)}</Text>
             <Text className="p">{useText(contentsFarniente.text4)}</Text>
             <Link href={useLink('/localisation')}>
@@ -191,17 +197,20 @@ export default function Farniente() {
         <RowToColumn
           className="section"
           align={isLaptop ? 'center' : 'flex-start'}
-          marginForRow={[0.5, 1, 0.5, 1]}
+          marginForRow={[0.5, 1.5, 0.5, 1.5]}
           marginForColumn={[0, 0, 1, 0]}
         >
-          <Column opt_margin={isLaptop ? undefined : [1, 1.5, 1, 1.5]}>
+          <Column opt_margin={isLaptop ? [0.5, 0, 1, 0] : [1, 1.5, 1, 1.5]}>
             <Text className="h3">{useText(contentsFarniente.subTitle5)}</Text>
             <Text className="p">{useText(contentsFarniente.text5)}</Text>
             <Button className="btn">
               <Text>{useText(contentsFarniente.btn5)}</Text>
             </Button>
           </Column>
-          <Column opt_alignItems="center" opt_justifyContent="center">
+          <Column
+            opt_margin={isLaptop ? [0.2, 0, 0.2, 1] : [0.2, 0, 0.2, 0]}
+            opt_alignItems="flex-end"
+          >
             <Image
               style={{
                 width: `${isLaptop ? '70%' : '100%'}`,
@@ -215,11 +224,11 @@ export default function Farniente() {
         <RowToColumn
           className="section"
           align={isLaptop ? 'center' : 'flex-start'}
-          marginForRow={[0.5, 1, 0.5, 1]}
+          marginForRow={[0.5, 1.5, 0.5, 1.5]}
           marginForColumn={[0, 0, 1, 0]}
           isReverseForColumn={true}
         >
-          <Column opt_alignItems="center" opt_justifyContent="center">
+          <Column opt_alignItems="flex-start" opt_justifyContent="center">
             <Image
               style={{
                 width: `${isLaptop ? '70%' : '100%'}`,
@@ -229,7 +238,7 @@ export default function Farniente() {
               alt="plage"
             />
           </Column>
-          <Column opt_margin={isLaptop ? undefined : [1, 1.5, 1, 1.5]}>
+          <Column opt_margin={isLaptop ? [0.5, 0, 1, 0] : [1, 1.5, 1, 1.5]}>
             <Text className="h3">{useText(contentsFarniente.subTitle6)}</Text>
             <Text className="p">{useText(contentsFarniente.text6)}</Text>
             <Button className="btn">

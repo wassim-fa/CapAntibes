@@ -7,7 +7,7 @@ import luxe0 from '../../../public/assets/images/rooms/luxe/luxe_0.png'
 import luxe0Mobile from '../../../public/assets/images/rooms/luxe/luxe_0_mobile.png'
 
 export default function LuxeRoom() {
-  const randomsImages = [random0, random1]
+  const randomsImages = [random0, random1, random0, random1, random0, random1]
   const meta = {
     title: useText(contentsLuxeRoom.title),
     description: useText(contentsLuxeRoom.description)
