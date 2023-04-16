@@ -4,7 +4,7 @@ export const HistoryPageStyles = createGlobalStyle`
   main#history {
     margin-top: 80px;
     .h3, .p {
-      line-height: 29px;
+      line-height: 22px;
     }
     .h3 {
       text-transform: uppercase;

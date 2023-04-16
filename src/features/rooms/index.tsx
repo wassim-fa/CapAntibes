@@ -55,7 +55,7 @@ export default function Rooms() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main id="rooms" className={!isLaptop ? 'mobile' : ''}>
-        <Column opt_margin={isLaptop ? [1, 1, 2, 1] : [3, 1.5, 1.5, 1.5]}>
+        <Column opt_margin={isLaptop ? [1, 3, 2, 1] : [3, 1.5, 1.5, 1.5]}>
           <Text className="h1">{useText(contentsRoomsIndex.title)}</Text>
           <Text className="p">{useText(contentsRoomsIndex.subTitle1)}</Text>
           <Button className="btn">

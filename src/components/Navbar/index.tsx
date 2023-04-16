@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { MenuContext } from '@/stores'
 import { useCallback, useContext, useEffect, useState } from 'react'
 import * as S from './styles'
@@ -59,6 +60,9 @@ const LangContainer = styled.div`
     justify-content: center;
     align-items: center;
     padding: 10px;
+    p {
+      padding-bottom : 5px;
+    }
   }
 `
 const Lang = () => {

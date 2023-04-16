@@ -4,7 +4,7 @@ export const defaultTheme: DefaultTheme = {
   bgColors: {
     primary: '#FFFFFF',
     secondary: '#FFA36F',
-    yellow: 'rgba(150, 180, 0 , 0.2)'
+    yellow: '#FFF9E5'
   },
   fontColors: {
     primary: '#D99B81',
@@ -21,7 +21,7 @@ export const defaultTheme: DefaultTheme = {
   },
   bottomBar: 67,
   navBar: {
-    laptop: 78,
+    laptop: 84,
     mobile: 118
   }
 }

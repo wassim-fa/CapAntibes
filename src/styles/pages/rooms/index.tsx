@@ -4,7 +4,7 @@ export const RoomsPageStyles = createGlobalStyle`
   main#rooms {
       margin-top: 80px;
     .h1, .h3, p, .btn {
-      line-height: 29px;
+      line-height: 22px;
     }
     .h1 {
       font-size: 56px;
@@ -17,8 +17,8 @@ export const RoomsPageStyles = createGlobalStyle`
     }
     .btn {
       margin-top: 15px;
-      font-size: 22px;
       text-transform: uppercase;
+      font-size: 16px;
     }
     .p {
       font-size: 17px;
@@ -47,7 +47,8 @@ export const RoomsPageStyles = createGlobalStyle`
         font-size: 20px;
       }
       .btn {
-        font-size: 13px;
+        margin-top: 10px;
+        font-size: 14px;
       }
       .p {
         font-size: 13px;

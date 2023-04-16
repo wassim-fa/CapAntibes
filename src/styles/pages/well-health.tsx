@@ -4,7 +4,7 @@ export const WellHealthPageStyles = createGlobalStyle`
   main#well-health {
       margin-top: 80px;
     .h1, .h3, p, .btn {
-      line-height: 29px;
+      line-height: 22px;
     }
     .h1 {
       font-size: 56px;
@@ -17,8 +17,9 @@ export const WellHealthPageStyles = createGlobalStyle`
       margin-bottom: 8%;
     }
     .btn {
-      font-size: 17px;
+      margin-top: 15px;
       text-transform: uppercase;
+      font-size: 16px;
     }
     .p {
       font-size: 17px;
