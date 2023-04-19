@@ -392,7 +392,7 @@ const Navbar = () => {
     setIsEffectCancelled(false)
     setMenuOpen('none')
     handleScroll()
-  }, [router.asPath, setMenuOpen, setIsEffectCancelled])
+  }, [router.asPath, setMenuOpen, setIsEffectCancelled, handleScroll])
 
   useEffect(() => {
     if (isEffectCancelled) {
@@ -412,7 +412,7 @@ const Navbar = () => {
       </S.Part>
       <S.Part flex={2} align={'center'}>
         <Image
-          onClick={() => router.push('/')}
+          onClick={() => router.push('/', undefined, { shallow: true })}
           data-islarge={isLaptop}
           src={title}
           style={{

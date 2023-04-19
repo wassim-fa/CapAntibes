@@ -86,7 +86,7 @@ export const Wrapper = styled.div`
   font-family: ${(props) => props.theme.fontStyles.medium};
 
   margin-top: ${(props) => props.theme.navBar.laptop}px;
-  padding-top: 10%;
+  padding-top: 5.5%;
   padding-left: 4%;
   &.mobile {
     padding-top: 20%;

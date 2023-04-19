@@ -154,17 +154,17 @@ export default function Home() {
         </Row>
         <RowToColumn
           align="center"
-          marginForRow={[0.5, 1.5, 0.5, 1.5]}
+          marginForRow={[0.5, 1.5, 0, 1.5]}
           marginForColumn={[3, 0, 1, 0]}
           isReverseForColumn={true}
         >
           <Column
-            opt_alignItems="center"
-            opt_margin={isLaptop ? [0.5, 0.5, 1, 0.5] : [0.5, 0, 1.5, 0]}
+            opt_alignItems="flex-start"
+            opt_margin={isLaptop ? [0, 0, 0, 0] : [0.5, 0, 1.5, 0]}
           >
             <Image
               style={{
-                width: `${isLaptop ? '90%' : '100%'}`,
+                width: `${isLaptop ? '74%' : '100%'}`,
                 height: 'auto'
               }}
               src={img1}
@@ -172,8 +172,7 @@ export default function Home() {
             />
           </Column>
           <Column
-            className=""
-            opt_margin={isLaptop ? [0.5, 0.5, 1, 0.5] : [0.5, 1.5, 2.5, 1.5]}
+            opt_margin={isLaptop ? [0, 0, 0, 0] : [0.5, 1.5, 2.5, 1.5]}
           >
             <Text className="h3">{useText(contentsHome.title2)}</Text>
             <Text className="p">{useText(contentsHome.text2)}</Text>
@@ -186,11 +185,11 @@ export default function Home() {
         </RowToColumn>
         <RowToColumn
           align="center"
-          marginForRow={[0.5, 1.5, 0.5, 1.5]}
+          marginForRow={[1, 1.5, 0.5, 1.5]}
           marginForColumn={[0, 0, 0, 0]}
         >
           <Column
-            opt_margin={isLaptop ? [0.5, 0.5, 1, 0.5] : [0.5, 1.5, 2.5, 1.5]}
+            opt_margin={isLaptop ? [0, 0, 0, 0] : [0.5, 1.5, 2.5, 1.5]}
           >
             <Text className="h3">
               {useText(contentsHome.title3_1)}
@@ -205,12 +204,12 @@ export default function Home() {
             </Link>
           </Column>
           <Column
-            opt_alignItems="center"
-            opt_margin={isLaptop ? [0.5, 0.5, 1, 0.5] : [0.5, 0, 0, 0]}
+            opt_alignItems="flex-end"
+            opt_margin={isLaptop ? [0, 0, 0, 0] : [0.5, 0, 0, 0]}
           >
             <Image
               style={{
-                width: `${isLaptop ? '90%' : '100%'}`,
+                width: `${isLaptop ? '74%' : '100%'}`,
                 height: 'auto'
               }}
               src={img2}
@@ -221,17 +220,17 @@ export default function Home() {
         <RowToColumn
           className="yellow"
           align="center"
-          marginForRow={[0.5, 1.5, 0.5, 1.5]}
+          marginForRow={[0.5, 0, 0.5, 0]}
           marginForColumn={[2, 0, 1, 0]}
           bgColor={Colors.YELLOW}
         >
           <Column
-            opt_margin={isLaptop ? [0.5, 0.5, 1, 0.5] : [0.5, 1.5, 2.5, 1.5]}
+            opt_margin={isLaptop ? [0.5, 0, 1, 1.5] : [0.5, 1.5, 2.5, 1.5]}
           >
             <Row>
               <Text opt_color={Colors.YELLOW} className="h3">
                 {useText(contentsHome.title4_1)}
-                <Image height={14} src={logo3} alt="logo poisson" />
+                <Image className='icon-fish' height={14} src={logo3} alt="logo poisson" />
                 <br />
                 {useText(contentsHome.title4_2)}
               </Text>
@@ -249,7 +248,7 @@ export default function Home() {
               </Button>
             </Link>
           </Column>
-          <Column opt_margin={[0.2, 1, 0.2, 1]} opt_alignItems="center">
+          <Column opt_margin={isLaptop ? [0.2, 0, 0.2, 0.8] : [0.2, 1, 0.2, 1]} opt_alignItems="center">
             <Image
               style={{
                 width: `${isLaptop ? '25vw' : '50vw'}`,
@@ -262,7 +261,7 @@ export default function Home() {
         </RowToColumn>
         <RowToColumn
           align="center"
-          marginForRow={[0.5, 0, 1, 0]}
+          marginForRow={[0.5, 0, 0, 0]}
           marginForColumn={[2, 0, 1, 0]}
           isReverseForColumn={true}
         >
@@ -290,11 +289,11 @@ export default function Home() {
         </RowToColumn>
         <RowToColumn
           align="center"
-          marginForRow={[0.5, 1.5, 0.5, 1.5]}
+          marginForRow={[0, 1.5, 0.5, 1.5]}
           marginForColumn={[1, 0, 1, 0]}
         >
           <Column
-            opt_margin={isLaptop ? [0.5, 0.5, 1, 0.5] : [0.5, 1.5, 2.5, 1.5]}
+            opt_margin={isLaptop ? [0, 0, 0, 0] : [0.5, 1.5, 2.5, 1.5]}
           >
             <Text className="h3">{useText(contentsHome.title6)}</Text>
             <Text className="p">{useText(contentsHome.text6)}</Text>
@@ -305,13 +304,13 @@ export default function Home() {
             </Link>
           </Column>
           <Column
-            opt_alignItems="center"
-            opt_margin={isLaptop ? [0.5, 0.5, 1, 0.5] : [0.5, 0, 1.5, 0]}
+            opt_alignItems="flex-end"
+            opt_margin={isLaptop ? [0, 0, 0, 0] : [0.5, 0, 0, 0]}
           >
             <Image
               src={img2}
               style={{
-                width: `${isLaptop ? '90%' : '100%'}`,
+                width: `${isLaptop ? '74%' : '100%'}`,
                 height: 'auto'
               }}
               alt="chambre au bord de l'eau"

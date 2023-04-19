@@ -34,9 +34,12 @@ export default function BabaRestaurant() {
       </Head>
       <main id="baba-restaurant" className={!isLaptop ? 'mobile' : ''}>
         {!isLaptop && <Carrousel images={randomsImages} />}
-        <Column opt_margin={isLaptop ? [0.5, 1, 1, 1] : [1.5, 1, 2, 1]}>
+        <Column
+          style={{ width: `${isLaptop ? '90%' : '100%'}` }}
+          opt_margin={isLaptop ? [0.5, 1, 1, 1] : [1.5, 1, 2, 1]}
+        >
           <Image
-            style={{ height: isLaptop ? '38px' : '28px' }}
+            style={{ height: isLaptop ? '38px' : '28px', marginBottom: '5px' }}
             src={img0}
             alt="paysage"
           />
@@ -88,7 +91,6 @@ export default function BabaRestaurant() {
           </Column>
         </RowToColumn>
         <Image
-          style={{ marginBottom: '5%' }}
           className="fullWidth"
           src={isLaptop ? img1 : img5}
           alt="paysage"
