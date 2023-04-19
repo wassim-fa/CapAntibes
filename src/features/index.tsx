@@ -43,7 +43,7 @@ const randomsImages = [
 ]
 export default function Home() {
   const { menuOpen } = useContext(MenuContext)
-  const [isEffectCancelled, setIsEffectCancelled] = useState(false)
+  const [isEffectCancelled, setIsEffectCancelled] = useState(true) // useState(false)
   const isLaptop = useIsLaptop()
 
   const getInfinitySliderImageSize = () => {
@@ -67,16 +67,16 @@ export default function Home() {
     }
   }, [])
   useEffect(() => {
-    if (isEffectCancelled) {
-      return
-    }
-    if (['tobook', 'menu'].includes(menuOpen)) {
-      setIsEffectCancelled(true)
-    }
+    // if (isEffectCancelled) {
+    //   return
+    // }
+    // if (['tobook', 'menu'].includes(menuOpen)) {
+    //   setIsEffectCancelled(true)
+    // }
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [handleScroll, isEffectCancelled, menuOpen])
+  }, [handleScroll, /*isEffectCancelled,*/ menuOpen])
 
   return (
     <>
@@ -171,9 +171,7 @@ export default function Home() {
               alt="chambre au bord de l'eau"
             />
           </Column>
-          <Column
-            opt_margin={isLaptop ? [0, 0, 0, 0] : [0.5, 1.5, 2.5, 1.5]}
-          >
+          <Column opt_margin={isLaptop ? [0, 0, 0, 0] : [0.5, 1.5, 2.5, 1.5]}>
             <Text className="h3">{useText(contentsHome.title2)}</Text>
             <Text className="p">{useText(contentsHome.text2)}</Text>
             <Link href={useLink('/chambre-et-suites')}>
@@ -188,9 +186,7 @@ export default function Home() {
           marginForRow={[1, 1.5, 0.5, 1.5]}
           marginForColumn={[0, 0, 0, 0]}
         >
-          <Column
-            opt_margin={isLaptop ? [0, 0, 0, 0] : [0.5, 1.5, 2.5, 1.5]}
-          >
+          <Column opt_margin={isLaptop ? [0, 0, 0, 0] : [0.5, 1.5, 2.5, 1.5]}>
             <Text className="h3">
               {useText(contentsHome.title3_1)}
               <br />
@@ -230,7 +226,12 @@ export default function Home() {
             <Row>
               <Text opt_color={Colors.YELLOW} className="h3">
                 {useText(contentsHome.title4_1)}
-                <Image className='icon-fish' height={14} src={logo3} alt="logo poisson" />
+                <Image
+                  className="icon-fish"
+                  height={14}
+                  src={logo3}
+                  alt="logo poisson"
+                />
                 <br />
                 {useText(contentsHome.title4_2)}
               </Text>
@@ -248,7 +249,10 @@ export default function Home() {
               </Button>
             </Link>
           </Column>
-          <Column opt_margin={isLaptop ? [0.2, 0, 0.2, 0.8] : [0.2, 1, 0.2, 1]} opt_alignItems="center">
+          <Column
+            opt_margin={isLaptop ? [0.2, 0, 0.2, 0.8] : [0.2, 1, 0.2, 1]}
+            opt_alignItems="center"
+          >
             <Image
               style={{
                 width: `${isLaptop ? '25vw' : '50vw'}`,
@@ -292,9 +296,7 @@ export default function Home() {
           marginForRow={[0, 1.5, 0.5, 1.5]}
           marginForColumn={[1, 0, 1, 0]}
         >
-          <Column
-            opt_margin={isLaptop ? [0, 0, 0, 0] : [0.5, 1.5, 2.5, 1.5]}
-          >
+          <Column opt_margin={isLaptop ? [0, 0, 0, 0] : [0.5, 1.5, 2.5, 1.5]}>
             <Text className="h3">{useText(contentsHome.title6)}</Text>
             <Text className="p">{useText(contentsHome.text6)}</Text>
             <Link href={useLink('/bien-etre')}>
