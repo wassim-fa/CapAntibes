@@ -43,8 +43,13 @@ export default function Restaurants() {
         ) : (
           <Carrousel images={randomsImages} />
         )}
-        <Column opt_margin={isLaptop ? [0.5, 1, 1, 1] : [1.5, 1, 2, 1]}>
-          <Text className="h3">{useText(contentsRestaurantsIndex.title)}</Text>
+        <Column
+          style={{ width: `${isLaptop ? '50%' : '100%'}` }}
+          opt_margin={isLaptop ? [0.5, 1, 1, 1] : [1.5, 1, 2, 1]}
+        >
+          <Text className="h3 title">
+            {useText(contentsRestaurantsIndex.title)}
+          </Text>
           <Text className="p">
             {useText(contentsRestaurantsIndex.description)}
           </Text>

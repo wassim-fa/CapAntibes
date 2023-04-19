@@ -30,7 +30,10 @@ export default function PecheursRestaurant() {
       </Head>
       <main id="pecheurs-restaurant" className={!isLaptop ? 'mobile' : ''}>
         {!isLaptop && <Carrousel images={randomsImages} />}
-        <Column opt_margin={isLaptop ? [0.5, 1, 1, 1] : [1.5, 1, 2, 1]}>
+        <Column
+          style={{ width: `${isLaptop ? '90%' : '100%'}` }}
+          opt_margin={isLaptop ? [0.5, 1, 1, 1] : [1.5, 1, 2, 1]}
+        >
           <Text className="h3">
             {useText(contentsPecheursRestaurant.title)}
           </Text>

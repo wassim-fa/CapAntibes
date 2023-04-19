@@ -40,8 +40,7 @@ const Menu = () => {
     restaurant: {
       main: useText(contentsLayout.restaurant),
       fishing: useText(contentsLayout.restaurant_fishing),
-      beach: useText(contentsLayout.restaurant_beach),
-      baba: useText(contentsLayout.restaurant_baba)
+      beach: useText(contentsLayout.restaurant_beach)
     },
     farniente: useText(contentsLayout.farniente),
     wellness: useText(contentsLayout.wellness),
@@ -191,9 +190,6 @@ const Menu = () => {
             >
               <Link href={useLink('/restaurant-baba')}>
                 <div>{texts.restaurant.beach}</div>
-              </Link>
-              <Link href={useLink('/restaurant-baba')}>
-                <div>{texts.restaurant.baba}</div>
               </Link>
             </S.Link>
           </S.SubItem>

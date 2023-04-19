@@ -369,7 +369,7 @@ const Navbar = () => {
   }
 
   const { menuOpen, setMenuOpen } = useContext(MenuContext)
-  const [isEffectCancelled, setIsEffectCancelled] = useState(!isHome)
+  const [isEffectCancelled, setIsEffectCancelled] = useState(true) // useState(!isHome)
   const [scale, setScale] = useState(init.scale)
   const [translate, setTranslate] = useState(init.translate)
   
@@ -389,22 +389,22 @@ const Navbar = () => {
     }
   }, [isHome])
   useEffect(() => {
-    setIsEffectCancelled(false)
+    // setIsEffectCancelled(false)
     setMenuOpen('none')
     handleScroll()
-  }, [router.asPath, setMenuOpen, setIsEffectCancelled])
+  }, [router.asPath, setMenuOpen, setIsEffectCancelled, handleScroll])
 
   useEffect(() => {
-    if (isEffectCancelled) {
-      return
-    }
-    if (['tobook', 'menu'].includes(menuOpen)) {
-      setIsEffectCancelled(true)
-    }
+    // if (isEffectCancelled) {
+    //   return
+    // }
+    // if (['tobook', 'menu'].includes(menuOpen)) {
+    //   setIsEffectCancelled(true)
+    // }
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [handleScroll, menuOpen, isEffectCancelled])
+  }, [handleScroll, menuOpen])
   return (
     <S.Wrapper className={`sc-navbar ${isLaptop ? '' : 'mobile'}`}>
       <S.Part flex={1} align={'flex-start'}>
@@ -412,7 +412,7 @@ const Navbar = () => {
       </S.Part>
       <S.Part flex={2} align={'center'}>
         <Image
-          onClick={() => router.push('/')}
+          onClick={() => router.push('/', undefined, { shallow: true })}
           data-islarge={isLaptop}
           src={title}
           style={{

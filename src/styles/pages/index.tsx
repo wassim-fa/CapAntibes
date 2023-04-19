@@ -3,6 +3,9 @@ import { createGlobalStyle } from 'styled-components'
 export const IndexPageStyles = createGlobalStyle`
   main#home {
     margin-top: 85px;
+    .icon-fish {
+      width: auto;
+    }
     .h3, p, .btn {
       line-height: 22px;
     }
@@ -48,6 +51,18 @@ export const IndexPageStyles = createGlobalStyle`
       }
       .yellow { 
         margin-top: 20px;
+      }
+    }
+    
+    @media screen and (max-width: 600px) {      
+      .h3 {
+        font-size: 24px;
+      }
+      .btn {
+        font-size: 16px;
+      }
+      .p {
+        font-size: 17px;
       }
     }
   }

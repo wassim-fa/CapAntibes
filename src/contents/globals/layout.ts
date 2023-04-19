@@ -102,14 +102,9 @@ export const contentsLayout: Record<string, IContentByLang> = {
     ru: 'ru-Les pêcheurs restaurant •'
   },
   restaurant_beach: {
-    fr: 'Baba restaurant de plage •',
-    en: 'en-Baba restaurant de plage •',
-    ru: 'ru-Baba restaurant de plage •'
-  },
-  restaurant_baba: {
-    fr: 'Bar baba •',
-    en: 'en-Bar baba •',
-    ru: 'ru-Bar baba •'
+    fr: 'Baba Restaurant Bar plage •',
+    en: 'en-Baba Restaurant Bar plage •',
+    ru: 'ru-Baba Restaurant Bar plage •'
   },
   farniente: {
     fr: 'Farniente',
