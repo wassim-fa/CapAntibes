@@ -30,7 +30,7 @@ export const Part = styled.div<PartProps>`
 export const Wrapper = styled.nav`
   position: fixed;
   top: 0;
-  z-index: 3;
+  z-index: 4;
 
   height: ${(props) => props.theme.navBar.laptop}px;
   .mobile {

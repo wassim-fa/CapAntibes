@@ -39,14 +39,6 @@ const GlobalStyles = createGlobalStyle`
       color: inherit;
       text-decoration: none;
   }
-  *:active,
-  *:focus, 
-  *:focus-visible,
-  *:target, 
-  *:hover {
-    border: none;
-    background-color: transparent;
-  }
 
   button {
     font-size: inherit;

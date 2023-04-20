@@ -283,7 +283,7 @@ const fadeIn = keyframes`
 `
 const BurgerContainer = styled.div`
   position: relative;
-  cursor: 'auto';
+  cursor: auto;
   height: 25px;
   width: 50px;
 
