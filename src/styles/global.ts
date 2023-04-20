@@ -39,7 +39,11 @@ const GlobalStyles = createGlobalStyle`
       color: inherit;
       text-decoration: none;
   }
-  *:focus-visible {
+  *:active,
+  *:focus, 
+  *:focus-visible,
+  *:target, 
+  *:hover {
     border: none;
     background-color: transparent;
   }
