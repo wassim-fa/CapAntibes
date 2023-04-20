@@ -35,7 +35,7 @@ const ToBookMenuContainer = styled.div`
   transform: translateY(-100%);
   width: 100%;
   height: calc(100% - 143px);
-  z-index: 2;
+  z-index: 3;
 
   &[data-open='open'] {
     animation: ${slideDown} 1s forwards ease-in-out;
@@ -91,7 +91,7 @@ const BottomBar = () => {
         <ToBookMenuContainer
           data-open={menuStatus}
           className="sc-tobook-menu"
-          style={{ fontSize: '14px', cursor: 'pointer' }}
+          style={{ fontSize: '14px' }}
         >
           <Divider />
           <div onClick={handleClick}>{texts.room}</div>

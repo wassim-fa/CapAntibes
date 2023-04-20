@@ -100,7 +100,7 @@ export const Wrapper = styled.div`
     flex-direction: column;
 
     div {
-      cursor: pointer;
+      cursor: auto;
     }
   }
 

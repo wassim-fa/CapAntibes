@@ -66,6 +66,7 @@ const LangContainer = styled.div`
   }
 `
 const Lang = () => {
+  const isLaptop = useIsLaptop()
   const { lang, setLang } = useContext(LangContext)
   const { menuOpen, setMenuOpen } = useContext(MenuContext)
   const [menuStatus, setMenuStatus] = useState<'close' | 'open' | 'undefined'>(
@@ -120,7 +121,7 @@ const Lang = () => {
       <LangMenuContainer
         data-open={menuStatus}
         className="sc-lang-menu"
-        style={{ fontSize: '14px', cursor: 'pointer' }}
+        style={{ fontSize: '14px', cursor: isLaptop ? 'pointer' : 'auto' }}
       >
         {lang !== Languages.FR && (
           <>
@@ -200,6 +201,7 @@ const ToBookContainer = styled.div`
   }
 `
 const ToBook = () => {
+  const isLaptop = useIsLaptop()
   const { menuOpen, setMenuOpen } = useContext(MenuContext)
   const [menuStatus, setMenuStatus] = useState<'close' | 'open' | 'undefined'>(
     'undefined'
@@ -236,7 +238,7 @@ const ToBook = () => {
   return (
     <ToBookContainer
       className="tobook"
-      style={{ fontSize: '14px', cursor: 'pointer' }}
+      style={{ fontSize: '14px', cursor: isLaptop ? 'pointer' : 'auto' }}
     >
       <div className="btn" onClick={handleClick}>
         {texts.book}
@@ -244,7 +246,7 @@ const ToBook = () => {
       <ToBookMenuContainer
         data-open={menuStatus}
         className="sc-tobook-dropdown"
-        style={{ fontSize: '14px', cursor: 'pointer' }}
+        style={{ fontSize: '14px', cursor: isLaptop ? 'pointer' : 'auto' }}
       >
         <Divider />
         <div>{texts.room}</div>
@@ -281,7 +283,7 @@ const fadeIn = keyframes`
 `
 const BurgerContainer = styled.div`
   position: relative;
-  cursor: pointer;
+  cursor: 'auto';
   height: 25px;
   width: 50px;
 
@@ -416,7 +418,7 @@ const Navbar = () => {
           data-islarge={isLaptop}
           src={title}
           style={{
-            cursor: 'pointer',
+            cursor: isLaptop ? 'pointer' : 'auto',
             transform: `translateY(${isEffectCancelled ? 0 : translate}vh) scale(${isEffectCancelled ? 1 : scale
               })`
           }}
