@@ -7,9 +7,12 @@ import random2 from '../../../public/assets/images/restaurants/baba/random_2.png
 import img0 from '../../../public/assets/images/restaurants/baba/baba_0.png'
 import img1 from '../../../public/assets/images/restaurants/baba/baba_1.png'
 import img3 from '../../../public/assets/images/restaurants/baba/baba_3.png'
+import img3Mobile from '../../../public/assets/images/restaurants/baba/baba_3_mobile.png'
 import img4 from '../../../public/assets/images/restaurants/baba/baba_4.png'
+import img4Mobile from '../../../public/assets/images/restaurants/baba/baba_4_mobile.png'
 import img5 from '../../../public/assets/images/restaurants/baba/baba_5.png'
 import img6 from '../../../public/assets/images/restaurants/baba/baba_6.png'
+import img6Mobile from '../../../public/assets/images/restaurants/baba/baba_6_mobile.png'
 import img1Mobile from '../../../public/assets/images/restaurants/baba/baba_1_mobile.png'
 
 import Image from 'next/image'
@@ -122,7 +125,7 @@ export default function BabaRestaurant() {
                 width: `${isLaptop ? '80%' : '100%'}`,
                 height: 'auto'
               }}
-              src={img3}
+              src={isLaptop ? img3 : img3Mobile}
               alt="plage"
             />
           </Column>
@@ -161,7 +164,7 @@ export default function BabaRestaurant() {
           <Image
             style={{ marginBottom: '5%' }}
             className="fullWidth"
-            src={img5}
+            src={isLaptop ? img5 : img5Mobile}
             alt="paysage"
           />
         )}
@@ -189,7 +192,7 @@ export default function BabaRestaurant() {
                 width: `${isLaptop ? '60%' : '100%'}`,
                 height: 'auto'
               }}
-              src={img6}
+              src={isLaptop ? img6 : img6Mobile}
               alt="plage"
             />
           </Column>

@@ -51,8 +51,8 @@ export default function Home() {
     let width = 100
     let height = ratio
     if (!isLaptop) {
-      width = 200
-      height = 2 * ratio
+      width = 100 * 2.7
+      height = 2.7 * ratio
     }
     return {
       width,

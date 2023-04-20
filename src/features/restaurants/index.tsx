@@ -6,10 +6,14 @@ import Head from 'next/head'
 import img1 from '../../../public/assets/images/restaurants/index/restaurants_1.png'
 import img1Mobile from '../../../public/assets/images/restaurants/index/restaurants_1_mobile.png'
 import img2 from '../../../public/assets/images/restaurants/index/restaurants_2.png'
+import img2Mobile from '../../../public/assets/images/restaurants/index/restaurants_2_mobile.png'
 import img3 from '../../../public/assets/images/restaurants/index/restaurants_3.png'
+import img3Mobile from '../../../public/assets/images/restaurants/index/restaurants_3_mobile.png'
 import img4 from '../../../public/assets/images/restaurants/index/restaurants_4.png'
 import img5 from '../../../public/assets/images/restaurants/index/restaurants_5.png'
+import img5Mobile from '../../../public/assets/images/restaurants/index/restaurants_5_mobile.png'
 import img6 from '../../../public/assets/images/restaurants/index/restaurants_6.png'
+import img6Mobile from '../../../public/assets/images/restaurants/index/restaurants_6_mobile.png'
 import random1 from '../../../public/assets/images/restaurants/index/random_1.png'
 import random2 from '../../../public/assets/images/restaurants/index/random_2.png'
 
@@ -104,7 +108,8 @@ export default function Restaurants() {
                 width: `${isLaptop ? '80%' : '100%'}`,
                 height: 'auto'
               }}
-              src={img2}
+              src={isLaptop ? img2 : img2Mobile}
+              src={isLaptop ? img2 : img2Mobile}
               alt="chambre de luxe"
             />
           </Column>
@@ -122,7 +127,7 @@ export default function Restaurants() {
                 width: `${isLaptop ? '70%' : '100%'}`,
                 height: 'auto'
               }}
-              src={img3}
+              src={isLaptop ? img3 : img3Mobile}
               alt="plage"
             />
           </Column>
@@ -191,7 +196,7 @@ export default function Restaurants() {
                 width: `${isLaptop ? '80%' : '100%'}`,
                 height: 'auto'
               }}
-              src={img5}
+              src={isLaptop ? img5 : img5Mobile}
               alt="chambre de luxe"
             />
           </Column>
@@ -209,7 +214,7 @@ export default function Restaurants() {
                 width: `${isLaptop ? '70%' : '100%'}`,
                 height: 'auto'
               }}
-              src={img6}
+              src={isLaptop ? img6 : img6Mobile}
               alt="plage"
             />
           </Column>

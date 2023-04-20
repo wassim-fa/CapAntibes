@@ -19,6 +19,7 @@ interface IITemProps {
 }
 const Item = ({ itemPadding, item }: IITemProps) => {
   const itemText = useText(item)
+  const isLaptop = useIsLaptop()
   return (
     <Column
       style={{
@@ -27,7 +28,13 @@ const Item = ({ itemPadding, item }: IITemProps) => {
       opt_spacing={{ unit: 'px', value: itemPadding }}
     >
       <Text className="item">{itemText}</Text>
-      <Divider />
+      <Divider opt_height={isLaptop ? {
+        unit: 'px',
+        value: 2
+      } : {
+        unit: 'px',
+        value: 1
+      }} />
     </Column>
   )
 }
