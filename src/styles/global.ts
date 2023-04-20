@@ -39,6 +39,10 @@ const GlobalStyles = createGlobalStyle`
       color: inherit;
       text-decoration: none;
   }
+  *:focus-visible {
+    border: none;
+    background-color: transparent;
+  }
 
   button {
     font-size: inherit;
