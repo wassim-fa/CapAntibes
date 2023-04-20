@@ -92,7 +92,7 @@ export const Wrapper = styled.div`
     padding-top: 20%;
     padding-left: 5%;
     margin-top: ${(props) => props.theme.navBar.laptop}px;
-    height: calc(100% - 145px);
+    height: calc(100% - 85px);
   }
   padding-left: 4%;
   .list {
@@ -100,7 +100,7 @@ export const Wrapper = styled.div`
     flex-direction: column;
 
     div {
-      cursor: pointer;
+      cursor: auto;
     }
   }
 

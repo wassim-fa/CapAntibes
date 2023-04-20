@@ -17,6 +17,7 @@ import img8 from '../../../public/assets/images/rooms/index/rooms_8.png'
 import img9 from '../../../public/assets/images/rooms/index/rooms_9.png'
 import img1_mobile from '../../../public/assets/images/rooms/index/rooms_1_mobile.png'
 import img2_mobile from '../../../public/assets/images/rooms/index/rooms_2_mobile.png'
+import img3_mobile from '../../../public/assets/images/rooms/index/rooms_3_mobile.png'
 import img4_mobile from '../../../public/assets/images/rooms/index/rooms_4_mobile.png'
 import img5_mobile from '../../../public/assets/images/rooms/index/rooms_5_mobile.png'
 import img7_mobile from '../../../public/assets/images/rooms/index/rooms_7_mobile.png'
@@ -114,11 +115,9 @@ export default function Rooms() {
             opt_margin={isLaptop ? [0.5, 0, 1, 0] : [1.5, 1.5, 2, 1.5]}
             opt_spacing={spacing}
           >
-            <Text className="h3">
-              {useText(contentsRoomsIndex.seaViewTitle)}
-            </Text>
+            <Text className="h3">{useText(contentsRoomsIndex.priviTitle)}</Text>
             <Text className="p">
-              {useText(contentsRoomsIndex.seaViewSubTitle)}
+              {useText(contentsRoomsIndex.priviSubTitle)}
             </Text>
             <Row>
               <Column opt_alignItems="flex-start">
@@ -136,24 +135,27 @@ export default function Rooms() {
             </Row>
           </Column>
         </RowToColumn>
-        {isLaptop && (
-          <Row>
-            <Image className={'fullWidth'} src={img3} alt="chambre privilège" />
-          </Row>
-        )}
+        <Row>
+          <Image
+            className={'fullWidth'}
+            src={isLaptop ? img3 : img3_mobile}
+            alt="chambre privilège"
+          />
+        </Row>
         <RowToColumn
           align="center"
           marginForRow={[0.5, 1.5, 0.5, 1.5]}
           marginForColumn={[1, 0, 0, 0]}
-          isReverseForColumn={true}
         >
           <Column
             opt_margin={isLaptop ? [0.5, 0, 1, 0] : [1.5, 1.5, 2, 1.5]}
             opt_spacing={spacing}
           >
-            <Text className="h3">{useText(contentsRoomsIndex.priviTitle)}</Text>
+            <Text className="h3">
+              {useText(contentsRoomsIndex.seaViewTitle)}
+            </Text>
             <Text className="p">
-              {useText(contentsRoomsIndex.priviSubTitle)}
+              {useText(contentsRoomsIndex.seaViewSubTitle)}
             </Text>
             <Row>
               <Column opt_alignItems="flex-start">
@@ -185,6 +187,7 @@ export default function Rooms() {
           align="center"
           marginForRow={[0.5, 1.5, 0.5, 1.5]}
           marginForColumn={[1, 0, 0, 0]}
+          isReverseForColumn={true}
         >
           <Column
             opt_margin={isLaptop ? [0.2, 0, 0.2, 0] : [0.2, 0, 0.2, 0]}
@@ -231,7 +234,6 @@ export default function Rooms() {
           align="center"
           marginForRow={[0.5, 1.5, 0.5, 1.5]}
           marginForColumn={[1, 0, 0, 0]}
-          isReverseForColumn={true}
         >
           <Column
             opt_margin={isLaptop ? [0.5, 0, 1, 0] : [1.5, 1.5, 2, 1.5]}
@@ -273,6 +275,7 @@ export default function Rooms() {
           align="center"
           marginForRow={[0.5, 1.5, 0.5, 1.5]}
           marginForColumn={[1, 0, 0, 0]}
+          isReverseForColumn={true}
         >
           <Column
             opt_margin={isLaptop ? [0.2, 0, 0.2, 0] : [0.2, 0, 0.2, 0]}

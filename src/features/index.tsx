@@ -7,9 +7,13 @@ import Row from '@/components/Row'
 import slider0 from '../../public/assets/images/home/slider_0.png'
 import slider1 from '../../public/assets/images/home/slider_1.png'
 import img1 from '../../public/assets/images/home/home_1.png'
+import img1Mobile from '../../public/assets/images/home/home_1_mobile.png'
 import img2 from '../../public/assets/images/home/home_2.png'
+import img2Mobile from '../../public/assets/images/home/home_2_mobile.png'
 import img3 from '../../public/assets/images/home/home_3.png'
+import img3Mobile from '../../public/assets/images/home/home_3_mobile.png'
 import img4 from '../../public/assets/images/home/home_4.png'
+import img4Mobile from '../../public/assets/images/home/home_4_mobile.png'
 import logo3 from '../../public/assets/images/home/logo_3.png'
 import random0 from '../../public/assets/images/home/random0.png'
 import random1 from '../../public/assets/images/home/random1.png'
@@ -51,8 +55,8 @@ export default function Home() {
     let width = 100
     let height = ratio
     if (!isLaptop) {
-      width = 200
-      height = 2 * ratio
+      width = 100 * 2.7
+      height = 2.7 * ratio
     }
     return {
       width,
@@ -167,7 +171,7 @@ export default function Home() {
                 width: `${isLaptop ? '74%' : '100%'}`,
                 height: 'auto'
               }}
-              src={img1}
+              src={isLaptop ? img1 : img1Mobile}
               alt="chambre au bord de l'eau"
             />
           </Column>
@@ -208,7 +212,7 @@ export default function Home() {
                 width: `${isLaptop ? '74%' : '100%'}`,
                 height: 'auto'
               }}
-              src={img2}
+              src={isLaptop ? img2 : img2Mobile}
               alt="chambre au bord de l'eau"
             />
           </Column>
@@ -258,7 +262,7 @@ export default function Home() {
                 width: `${isLaptop ? '25vw' : '50vw'}`,
                 height: 'auto'
               }}
-              src={img3}
+              src={isLaptop ? img3 : img3Mobile}
               alt="chambre au bord de l'eau"
             />
           </Column>
@@ -275,7 +279,7 @@ export default function Home() {
           >
             <Image
               className="fullWidth"
-              src={img4}
+              src={isLaptop ? img4 : img4Mobile}
               alt="chambre au bord de l'eau"
             />
           </Column>

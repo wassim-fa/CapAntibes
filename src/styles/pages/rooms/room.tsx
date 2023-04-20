@@ -61,6 +61,9 @@ export const RoomPageStyles = createGlobalStyle`
         margin: 5px 0;
       }
 
+      .menu-middle p {
+      border-bottom: 2px solid ${(props) => props.theme.fontColors.primary};
+    }
       .section p {
         margin: 5% 0;
       }

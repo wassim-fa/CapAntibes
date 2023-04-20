@@ -8,19 +8,23 @@ import * as S from './styles'
 
 const slideDown = keyframes`
   from {
+    top: 0px;
     transform: translateY(-100%);
   }
 
   to {
+    top: 76px;
     transform: translateY(0%);
   }
 `
 const slideUp = keyframes`
-  from {
+  from {    
+    top: 76px;
     transform: translateY(0%);
   }
   
   to {
+    top: 0px;
     transform: translateY(-100%);
   }
 `
@@ -31,11 +35,11 @@ const ToBookMenuContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   position: fixed;
-  top: 76px;
+  top: 0;
   transform: translateY(-100%);
   width: 100%;
   height: calc(100% - 143px);
-  z-index: 2;
+  z-index: 3;
 
   &[data-open='open'] {
     animation: ${slideDown} 1s forwards ease-in-out;
@@ -91,7 +95,7 @@ const BottomBar = () => {
         <ToBookMenuContainer
           data-open={menuStatus}
           className="sc-tobook-menu"
-          style={{ fontSize: '14px', cursor: 'pointer' }}
+          style={{ fontSize: '14px' }}
         >
           <Divider />
           <div onClick={handleClick}>{texts.room}</div>
