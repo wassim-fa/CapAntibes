@@ -109,7 +109,6 @@ export default function Restaurants() {
                 height: 'auto'
               }}
               src={isLaptop ? img2 : img2Mobile}
-              src={isLaptop ? img2 : img2Mobile}
               alt="chambre de luxe"
             />
           </Column>

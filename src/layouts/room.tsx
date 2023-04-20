@@ -28,13 +28,19 @@ const Item = ({ itemPadding, item }: IITemProps) => {
       opt_spacing={{ unit: 'px', value: itemPadding }}
     >
       <Text className="item">{itemText}</Text>
-      <Divider opt_height={isLaptop ? {
-        unit: 'px',
-        value: 2
-      } : {
-        unit: 'px',
-        value: 1
-      }} />
+      <Divider
+        opt_height={
+          isLaptop
+            ? {
+                unit: 'px',
+                value: 2
+              }
+            : {
+                unit: 'px',
+                value: 1
+              }
+        }
+      />
     </Column>
   )
 }
