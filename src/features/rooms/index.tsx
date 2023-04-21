@@ -72,7 +72,7 @@ export default function Rooms() {
             </Text>
             <Row>
               <Column opt_alignItems="flex-start">
-                <Link href={useLink('/chambre-deluxe')}>
+                <Link shallow replace href={useLink('/chambre-deluxe')}>
                   <Button className="btn">
                     <Text>{useText(contentsRoomsIndex.discover)}</Text>
                   </Button>
@@ -121,7 +121,11 @@ export default function Rooms() {
             </Text>
             <Row>
               <Column opt_alignItems="flex-start">
-                <Link href={useLink('/chambre-privilege-vue-mer')}>
+                <Link
+                  shallow
+                  replace
+                  href={useLink('/chambre-privilege-vue-mer')}
+                >
                   <Button className="btn">
                     <Text>{useText(contentsRoomsIndex.discover)}</Text>
                   </Button>
@@ -159,7 +163,7 @@ export default function Rooms() {
             </Text>
             <Row>
               <Column opt_alignItems="flex-start">
-                <Link href={useLink('/chambre-deluxe')}>
+                <Link shallow replace href={useLink('/chambre-deluxe')}>
                   <Button className="btn">
                     <Text>{useText(contentsRoomsIndex.discover)}</Text>
                   </Button>
@@ -211,7 +215,11 @@ export default function Rooms() {
             </Text>
             <Row>
               <Column opt_alignItems="flex-start">
-                <Link href={useLink('/chambre-privilege-vue-mer')}>
+                <Link
+                  shallow
+                  replace
+                  href={useLink('/chambre-privilege-vue-mer')}
+                >
                   <Button className="btn">
                     <Text>{useText(contentsRoomsIndex.discover)}</Text>
                   </Button>
@@ -247,7 +255,7 @@ export default function Rooms() {
             </Text>
             <Row>
               <Column opt_alignItems="flex-start">
-                <Link href={useLink('/chambre-deluxe')}>
+                <Link shallow replace href={useLink('/chambre-deluxe')}>
                   <Button className="btn">
                     <Text>{useText(contentsRoomsIndex.discover)}</Text>
                   </Button>
@@ -299,7 +307,11 @@ export default function Rooms() {
             </Text>
             <Row>
               <Column opt_alignItems="flex-start">
-                <Link href={useLink('/chambre-privilege-vue-mer')}>
+                <Link
+                  shallow
+                  replace
+                  href={useLink('/chambre-privilege-vue-mer')}
+                >
                   <Button className="btn">
                     <Text>{useText(contentsRoomsIndex.discover)}</Text>
                   </Button>

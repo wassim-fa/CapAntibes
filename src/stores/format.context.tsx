@@ -18,7 +18,6 @@ export const FormatContextProvider = ({
   useEffect(() => {
     function handleResize() {
       const format = getFormat(window.innerWidth)
-      window.scrollTo({ top: 0 })
 
       setFormat(format)
     }

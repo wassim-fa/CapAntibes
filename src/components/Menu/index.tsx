@@ -6,8 +6,11 @@ import { LangContext } from '@/stores'
 import Link from 'next/link'
 import { useContext, useEffect, useState } from 'react'
 import * as S from './styles'
+import { urls } from '@/utils'
+import { useRouter } from 'next/router'
 
 const Menu = () => {
+  const router = useRouter()
   const { lang, setLang } = useContext(LangContext)
   const { menuOpen } = useContext(MenuContext)
   const [menuStatus, setMenuStatus] = useState<'close' | 'open' | 'undefined'>(
@@ -47,6 +50,14 @@ const Menu = () => {
     privatization: useText(contentsLayout.privatization)
   }
   const handleLangClick = (lang: Languages) => {
+    const newPath = urls.find((item) =>
+      [item[Languages.FR], item[Languages.EN], item[Languages.RU]].includes(
+        router.route
+      )
+    )
+    if (newPath) {
+      router.push(newPath[lang], undefined, { shallow: true })
+    }
     setLang(lang)
   }
 
@@ -93,10 +104,10 @@ const Menu = () => {
                 flexDirection: isLaptop ? 'row' : 'column'
               }}
             >
-              <Link href={useLink('/histoire-du-cap')}>
+              <Link shallow replace href={useLink('/histoire-du-cap')}>
                 <div>{texts.hotel.history}</div>
               </Link>
-              <Link href={useLink('/la-galerie')}>
+              <Link shallow replace href={useLink('/la-galerie')}>
                 <div>{texts.hotel.gallery}</div>
               </Link>
             </S.Link>
@@ -105,10 +116,10 @@ const Menu = () => {
                 flexDirection: isLaptop ? 'row' : 'column'
               }}
             >
-              <Link href={useLink('/localisation')}>
+              <Link shallow replace href={useLink('/localisation')}>
                 <div>{texts.hotel.localisation}</div>
               </Link>
-              <Link href={useLink('/la-collection')}>
+              <Link shallow replace href={useLink('/la-collection')}>
                 <div>{texts.hotel.collection}</div>
               </Link>
             </S.Link>
@@ -130,10 +141,10 @@ const Menu = () => {
                 flexDirection: isLaptop ? 'row' : 'column'
               }}
             >
-              <Link href={useLink('/chambre-deluxe')}>
+              <Link shallow replace href={useLink('/chambre-deluxe')}>
                 <div>{texts.rooms.deluxe}</div>
               </Link>
-              <Link href={useLink('/chambre-privilege')}>
+              <Link shallow replace href={useLink('/chambre-privilege')}>
                 <div>{texts.rooms.privilege}</div>
               </Link>
             </S.Link>
@@ -142,10 +153,14 @@ const Menu = () => {
                 flexDirection: isLaptop ? 'row' : 'column'
               }}
             >
-              <Link href={useLink('/chambre-privilege-vue-mer')}>
+              <Link
+                shallow
+                replace
+                href={useLink('/chambre-privilege-vue-mer')}
+              >
                 <div>{texts.rooms.seaview}</div>
               </Link>
-              <Link href={useLink('/suite-design')}>
+              <Link shallow replace href={useLink('/suite-design')}>
                 <div>{texts.rooms.design}</div>
               </Link>
             </S.Link>
@@ -154,10 +169,10 @@ const Menu = () => {
                 flexDirection: isLaptop ? 'row' : 'column'
               }}
             >
-              <Link href={useLink('/suite-executive')}>
+              <Link shallow replace href={useLink('/suite-executive')}>
                 <div>{texts.rooms.executive}</div>
               </Link>
-              <Link href={useLink('/chambres-communicantes')}>
+              <Link shallow replace href={useLink('/chambres-communicantes')}>
                 <div>{texts.rooms.connecting}</div>
               </Link>
             </S.Link>
@@ -179,7 +194,7 @@ const Menu = () => {
                 flexDirection: isLaptop ? 'row' : 'column'
               }}
             >
-              <Link href={useLink('/restaurant-les-pecheurs')}>
+              <Link shallow replace href={useLink('/restaurant-les-pecheurs')}>
                 <div>{texts.restaurant.fishing}</div>
               </Link>
             </S.Link>
@@ -188,28 +203,28 @@ const Menu = () => {
                 flexDirection: isLaptop ? 'row' : 'column'
               }}
             >
-              <Link href={useLink('/restaurant-baba')}>
+              <Link shallow replace href={useLink('/restaurant-baba')}>
                 <div>{texts.restaurant.beach}</div>
               </Link>
             </S.Link>
           </S.SubItem>
         </S.Item>
         <S.Item className={!isLaptop ? 'mobile' : ''}>
-          <Link href={useLink('/farniente')}>
+          <Link shallow replace href={useLink('/farniente')}>
             <div style={{ fontSize: labelSize, zIndex: 3 }}>
               {texts.farniente}
             </div>
           </Link>
         </S.Item>
         <S.Item className={!isLaptop ? 'mobile' : ''}>
-          <Link href={useLink('/bien-etre')}>
+          <Link shallow replace href={useLink('/bien-etre')}>
             <div style={{ fontSize: labelSize, zIndex: 3 }}>
               {texts.wellness}
             </div>
           </Link>
         </S.Item>
         <S.Item className={!isLaptop ? 'mobile' : ''}>
-          <Link href={useLink('/privatisation')}>
+          <Link shallow replace href={useLink('/privatisation')}>
             <div style={{ fontSize: labelSize, zIndex: 3 }}>
               {texts.privatization}
             </div>

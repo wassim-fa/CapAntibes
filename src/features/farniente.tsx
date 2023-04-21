@@ -179,7 +179,7 @@ export default function Farniente() {
           <Column opt_margin={isLaptop ? [0.5, 0, 1, 0] : [1, 1.5, 1, 1.5]}>
             <Text className="h3">{useText(contentsFarniente.subTitle4)}</Text>
             <Text className="p">{useText(contentsFarniente.text4)}</Text>
-            <Link href={useLink('/localisation')}>
+            <Link shallow replace href={useLink('/localisation')}>
               <Button className="btn">
                 <Text>{useText(contentsFarniente.btn4)}</Text>
               </Button>
