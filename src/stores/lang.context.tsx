@@ -20,6 +20,7 @@ export const LangContextProvider = ({
   const [lang, setLang] = React.useState<Languages>(defaultLang || Languages.FR)
 
   useEffect(() => {
+    console.log('useeffect lang')
     const newPath = urls.find((item) =>
       [item[Languages.FR], item[Languages.EN], item[Languages.RU]].includes(
         router.route
@@ -28,7 +29,7 @@ export const LangContextProvider = ({
     if (newPath) {
       router.push(newPath[lang], undefined, { shallow: true })
     }
-  }, [lang, router])
+  }, [lang, router.asPath])
   return (
     <LangContext.Provider
       value={{

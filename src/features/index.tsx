@@ -178,7 +178,7 @@ export default function Home() {
           <Column opt_margin={isLaptop ? [0, 0, 0, 0] : [0.5, 1.5, 2.5, 1.5]}>
             <Text className="h3">{useText(contentsHome.title2)}</Text>
             <Text className="p">{useText(contentsHome.text2)}</Text>
-            <Link href={useLink('/chambre-et-suites')}>
+            <Link shallow replace href={useLink('/chambre-et-suites')}>
               <Button className="btn">
                 <Text>{useText(contentsHome.btnMoreInformation)}</Text>
               </Button>
@@ -197,7 +197,7 @@ export default function Home() {
               {useText(contentsHome.title3_2)}
             </Text>
             <Text className="p">{useText(contentsHome.text3)}</Text>
-            <Link href={useLink('/restaurant-les-pecheurs')}>
+            <Link shallow replace href={useLink('/restaurant-les-pecheurs')}>
               <Button className="btn">
                 <Text>{useText(contentsHome.btnMoreInformation)}</Text>
               </Button>
@@ -245,7 +245,7 @@ export default function Home() {
               <br />
               {useText(contentsHome.text4_2)}
             </Text>
-            <Link href={useLink('/restaurant-baba')}>
+            <Link shallow replace href={useLink('/restaurant-baba')}>
               <Button opt_color={Colors.YELLOW} className="btn">
                 <Text opt_color={Colors.YELLOW}>
                   {useText(contentsHome.btnMoreInformation)}
@@ -288,7 +288,7 @@ export default function Home() {
           >
             <Text className="h3">{useText(contentsHome.title5)}</Text>
             <Text className="p">{useText(contentsHome.text5)}</Text>
-            <Link href={useLink('/farniente')}>
+            <Link shallow replace href={useLink('/farniente')}>
               <Button className="btn">
                 <Text>{useText(contentsHome.btnMoreInformation)}</Text>
               </Button>
@@ -303,7 +303,7 @@ export default function Home() {
           <Column opt_margin={isLaptop ? [0, 0, 0, 0] : [0.5, 1.5, 2.5, 1.5]}>
             <Text className="h3">{useText(contentsHome.title6)}</Text>
             <Text className="p">{useText(contentsHome.text6)}</Text>
-            <Link href={useLink('/bien-etre')}>
+            <Link shallow replace href={useLink('/bien-etre')}>
               <Button className="btn">
                 <Text>{useText(contentsHome.btnMoreInformation)}</Text>
               </Button>

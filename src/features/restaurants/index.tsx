@@ -86,7 +86,7 @@ export default function Restaurants() {
             <Text className="p">{useText(contentsRestaurantsIndex.text1)}</Text>
             <Row>
               <Column opt_alignItems="flex-start">
-                <Link href={useLink('/restaurant-les-pecheurs')}>
+                <Link shallow replace href={useLink('/restaurant-les-pecheurs')}>
                   <Button className="btn">
                     <Text>{useText(contentsRestaurantsIndex.discover)}</Text>
                   </Button>
@@ -143,7 +143,7 @@ export default function Restaurants() {
             <Text className="p">{useText(contentsRestaurantsIndex.text2)}</Text>
             <Row>
               <Column opt_alignItems="flex-start">
-                <Link href={useLink('/restaurant-baba')}>
+                <Link shallow replace href={useLink('/restaurant-baba')}>
                   <Button className="btn">
                     <Text>{useText(contentsRestaurantsIndex.discover)}</Text>
                   </Button>
