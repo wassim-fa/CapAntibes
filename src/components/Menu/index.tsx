@@ -6,8 +6,11 @@ import { LangContext } from '@/stores'
 import Link from 'next/link'
 import { useContext, useEffect, useState } from 'react'
 import * as S from './styles'
+import { urls } from '@/utils'
+import { useRouter } from 'next/router'
 
 const Menu = () => {
+  const router = useRouter()
   const { lang, setLang } = useContext(LangContext)
   const { menuOpen } = useContext(MenuContext)
   const [menuStatus, setMenuStatus] = useState<'close' | 'open' | 'undefined'>(
@@ -47,6 +50,14 @@ const Menu = () => {
     privatization: useText(contentsLayout.privatization)
   }
   const handleLangClick = (lang: Languages) => {
+    const newPath = urls.find((item) =>
+      [item[Languages.FR], item[Languages.EN], item[Languages.RU]].includes(
+        router.route
+      )
+    )
+    if (newPath) {
+      router.push(newPath[lang], undefined, { shallow: true })
+    }
     setLang(lang)
   }
 
@@ -142,7 +153,11 @@ const Menu = () => {
                 flexDirection: isLaptop ? 'row' : 'column'
               }}
             >
-              <Link shallow replace href={useLink('/chambre-privilege-vue-mer')}>
+              <Link
+                shallow
+                replace
+                href={useLink('/chambre-privilege-vue-mer')}
+              >
                 <div>{texts.rooms.seaview}</div>
               </Link>
               <Link shallow replace href={useLink('/suite-design')}>

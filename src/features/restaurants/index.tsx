@@ -86,7 +86,11 @@ export default function Restaurants() {
             <Text className="p">{useText(contentsRestaurantsIndex.text1)}</Text>
             <Row>
               <Column opt_alignItems="flex-start">
-                <Link shallow replace href={useLink('/restaurant-les-pecheurs')}>
+                <Link
+                  shallow
+                  replace
+                  href={useLink('/restaurant-les-pecheurs')}
+                >
                   <Button className="btn">
                     <Text>{useText(contentsRestaurantsIndex.discover)}</Text>
                   </Button>

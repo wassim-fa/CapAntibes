@@ -12,6 +12,7 @@ import Languages from '@/enums/languages'
 import { useIsHome, useIsLaptop, useText } from '@/hooks'
 import { LangContext } from '@/stores'
 import { useRouter } from 'next/router'
+import { urls } from '@/utils'
 
 const LangMenuContainer = styled.div`
   display: none;
@@ -66,6 +67,7 @@ const LangContainer = styled.div`
   }
 `
 const Lang = () => {
+  const router = useRouter()
   const isLaptop = useIsLaptop()
   const { lang, setLang } = useContext(LangContext)
   const { menuOpen, setMenuOpen } = useContext(MenuContext)
@@ -79,6 +81,14 @@ const Lang = () => {
     setMenuOpen(value)
   }
   const handleLangClick = (_lang: Languages) => {
+    const newPath = urls.find((item) =>
+      [item[Languages.FR], item[Languages.EN], item[Languages.RU]].includes(
+        router.route
+      )
+    )
+    if (newPath) {
+      router.push(newPath[_lang], undefined, { shallow: true })
+    }
     setLang(_lang)
     handleBtnClick()
   }
@@ -363,7 +373,7 @@ const Navbar = () => {
   const router = useRouter()
   const isHome = useIsHome()
   const isLaptop = useIsLaptop()
-  
+
   const title = isLaptop ? titleLarge : titleSmall
   const init = {
     scale: isHome ? 2 : 1,
@@ -374,12 +384,12 @@ const Navbar = () => {
   const [isEffectCancelled, setIsEffectCancelled] = useState(true) // useState(!isHome)
   const [scale, setScale] = useState(init.scale)
   const [translate, setTranslate] = useState(init.translate)
-  
+
   const handleScroll = useCallback(() => {
     if (isHome) {
       const height = window.innerHeight - Math.round(window.innerHeight / 20)
       const scrolled = window.pageYOffset
-      if(scrolled >= height) {
+      if (scrolled >= height) {
         setIsEffectCancelled(true)
       } else {
         const percentage = 1 - scrolled / height
