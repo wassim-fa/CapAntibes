@@ -24,7 +24,7 @@ export const PecheursRestaurantsPageStyles = createGlobalStyle`
     }
     .h6 {
       text-transform: uppercase;
-      font-size: 27px;
+      font-size: 17px;
       margin-bottom: 20px;
     }
     .p {

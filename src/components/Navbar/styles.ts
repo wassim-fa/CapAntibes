@@ -23,7 +23,7 @@ export const Part = styled.div<PartProps>`
 
   [data-islarge='false'] {
     height: auto;
-    width: clamp(20vw, 100%, 40vw);
+    width: clamp(55vw, 100%, 40vw);
   }
 `
 

@@ -43,8 +43,13 @@ export default function Restaurants() {
         ) : (
           <Carrousel images={randomsImages} />
         )}
-        <Column opt_margin={isLaptop ? [0.5, 1, 1, 1] : [1.5, 1, 2, 1]}>
-          <Text className="h3">{useText(contentsRestaurantsIndex.title)}</Text>
+        <Column
+          style={{ width: `${isLaptop ? '70%' : '100%'}` }}
+          opt_margin={isLaptop ? [0.5, 1, 1, 1] : [1.5, 1, 2, 1]}
+        >
+          <Text className="h3 title">
+            {useText(contentsRestaurantsIndex.title)}
+          </Text>
           <Text className="p">
             {useText(contentsRestaurantsIndex.description)}
           </Text>
@@ -53,7 +58,7 @@ export default function Restaurants() {
           </Button>
         </Column>
         <Image
-          style={{ marginBottom: '5%' }}
+          style={{ marginBottom: '2%' }}
           className="fullWidth"
           src={isLaptop ? img1 : img1Mobile}
           alt="paysage"
@@ -61,7 +66,7 @@ export default function Restaurants() {
         <RowToColumn
           className="section"
           align={isLaptop ? 'center' : 'flex-start'}
-          marginForRow={[0.5, 1, 0.5, 1]}
+          marginForRow={[1.1, 2.2, 0, 2.2]}
           marginForColumn={[0, 0, 1, 0]}
         >
           <Column
@@ -104,7 +109,7 @@ export default function Restaurants() {
         <RowToColumn
           className="section"
           align={isLaptop ? 'center' : 'flex-start'}
-          marginForRow={[0.5, 1, 0.5, 1]}
+          marginForRow={[0, 2.2, 0.5, 2.2]}
           marginForColumn={[0, 0, 1, 0]}
           isReverseForColumn={true}
         >
@@ -147,7 +152,7 @@ export default function Restaurants() {
         </RowToColumn>
         {isLaptop && (
           <Image
-            style={{ marginBottom: '5%' }}
+            style={{ marginBottom: '2%' }}
             className="fullWidth"
             src={img4}
             alt="paysage"
@@ -156,7 +161,7 @@ export default function Restaurants() {
         <RowToColumn
           className="section"
           align={isLaptop ? 'center' : 'flex-start'}
-          marginForRow={[0.5, 1, 0.5, 1]}
+          marginForRow={[1.1, 2.2, 0, 2.2]}
           marginForColumn={[0, 0, 1, 0]}
         >
           <Column
@@ -188,7 +193,7 @@ export default function Restaurants() {
         <RowToColumn
           className="section"
           align={isLaptop ? 'center' : 'flex-start'}
-          marginForRow={[0.5, 1, 0.5, 1]}
+          marginForRow={[0, 2.2, 0.5, 2.2]}
           marginForColumn={[0, 0, 1, 0]}
           isReverseForColumn={true}
         >

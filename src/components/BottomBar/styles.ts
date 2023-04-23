@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   height: ${(props) => props.theme.bottomBar}px;
   width: 100%;
 
-  font-size: 20px;
+  font-size: 17px;
   font-family: ${(props) => props.theme.fontStyles.medium};
   text-transform: uppercase;
 

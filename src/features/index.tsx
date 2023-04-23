@@ -129,7 +129,7 @@ export default function Home() {
         </Row>
         <RowToColumn
           align="center"
-          marginForRow={[0.5, 1.5, 0.5, 1.5]}
+          marginForRow={[1.1, 2.2, 0, 2.2]}
           marginForColumn={[3, 0, 1, 0]}
           isReverseForColumn={true}
         >
@@ -161,7 +161,7 @@ export default function Home() {
         </RowToColumn>
         <RowToColumn
           align="center"
-          marginForRow={[0.5, 1.5, 0.5, 1.5]}
+          marginForRow={[1, 2.2, 1, 2.2]}
           marginForColumn={[0, 0, 0, 0]}
         >
           <Column
@@ -224,7 +224,10 @@ export default function Home() {
               </Button>
             </Link>
           </Column>
-          <Column opt_margin={[0.2, 1, 0.2, 1]} opt_alignItems="center">
+          <Column
+            opt_margin={isLaptop ? [0.2, 0.8, 0.2, 0.8] : [0.2, 1, 0.2, 1]}
+            opt_alignItems="center"
+          >
             <Image
               style={{
                 width: `${isLaptop ? '25vw' : '50vw'}`,
@@ -265,7 +268,7 @@ export default function Home() {
         </RowToColumn>
         <RowToColumn
           align="center"
-          marginForRow={[0.5, 1.5, 0.5, 1.5]}
+          marginForRow={[0, 2.2, 0.5, 2.2]}
           marginForColumn={[1, 0, 1, 0]}
         >
           <Column
