@@ -117,4 +117,11 @@ export const Wrapper = styled.div`
       opacity: 1;
     }
   }
+
+  &.mobile {
+    .lang {
+      position: absolute;
+      bottom: 80px;
+    }
+  }
 `

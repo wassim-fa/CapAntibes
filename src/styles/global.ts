@@ -36,6 +36,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   a {
+      cursor: auto;
       color: inherit;
       text-decoration: none;
   }
