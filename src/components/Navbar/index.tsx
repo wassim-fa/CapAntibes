@@ -329,9 +329,19 @@ const BurgerContainer = styled.div`
       animation: ${fadeIn} 0.2s forwards ease-in-out;
     }
   }
+  &.small {
+    > * {
+      top: 0;
+      right: 10px;
+      object-fit: cover;
+      width: auto;
+      height: 70%;
+    }
+  }
 `
 const Burger = () => {
   const { menuOpen, setMenuOpen } = useContext(MenuContext)
+  const isLaptop = useIsLaptop()
   const isMenuOpen = menuOpen === 'menu'
   const handleMenuClick = () => {
     const value = menuOpen === 'menu' ? 'menu-close' : 'menu'
@@ -339,7 +349,7 @@ const Burger = () => {
   }
   return (
     <BurgerContainer
-      className={'burger-btn'}
+      className={`burger-btn ${isLaptop ? '' : 'small'}`}
       onClick={handleMenuClick}
       data-isopen={isMenuOpen}
     >
