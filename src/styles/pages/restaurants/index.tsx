@@ -11,7 +11,7 @@ export const RestaurantsPageStyles = createGlobalStyle`
     }
     .h3 {
       text-transform: uppercase;
-      font-size: 24px;
+      font-size: 56px;
       margin-bottom: 20px;
     }
     .title {

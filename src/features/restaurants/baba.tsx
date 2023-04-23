@@ -42,7 +42,7 @@ export default function BabaRestaurant() {
           opt_margin={isLaptop ? [0.5, 1, 1, 1] : [1.5, 1, 2, 1]}
         >
           <Image
-            style={{ height: isLaptop ? '38px' : '28px', marginBottom: '5px' }}
+            style={{ height: isLaptop ? '38px' : '28px', marginBottom: '8px' }}
             src={img0}
             alt="paysage"
           />

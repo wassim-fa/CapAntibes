@@ -50,7 +50,7 @@ export const IndexPageStyles = createGlobalStyle`
         }
       }
       .yellow { 
-        margin-top: 20px;
+        margin-top: 42px;
       }
     }
     
