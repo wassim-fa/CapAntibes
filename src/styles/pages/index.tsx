@@ -50,19 +50,7 @@ export const IndexPageStyles = createGlobalStyle`
         }
       }
       .yellow { 
-        margin-top: 20px;
-      }
-    }
-    
-    @media screen and (max-width: 600px) {      
-      .h3 {
-        font-size: 24px;
-      }
-      .btn {
-        font-size: 16px;
-      }
-      .p {
-        font-size: 17px;
+        margin-top: 42px;
       }
     }
   }

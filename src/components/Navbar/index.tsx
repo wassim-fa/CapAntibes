@@ -60,7 +60,7 @@ const LangContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px 10px 0 10px;
+    padding: 10px;
     p {
       padding-bottom : 5px;
     }
