@@ -4,7 +4,7 @@ import { PropsWithChildren } from 'react'
 import * as S from './styles'
 
 interface TextProps extends React.ComponentPropsWithoutRef<'input'> {
-  opt_align?: 'center' | 'initial'
+  opt_align?: 'center' | 'initial' | 'left' | 'right' | 'justify'
   opt_font?: Fonts
   opt_color?: Colors
   opt_size?: string

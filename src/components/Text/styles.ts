@@ -3,7 +3,7 @@ import Fonts from '@/enums/fonts'
 import styled from 'styled-components'
 
 type WrapperProps = {
-  align: 'center' | 'initial'
+  align: 'center' | 'initial' | 'left' | 'right' | 'justify'
   font: Fonts
   color: Colors
   size: string

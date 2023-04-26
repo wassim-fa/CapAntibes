@@ -33,12 +33,12 @@ export const contentsLayout: Record<string, IContentByLang> = {
   },
   hotel: {
     fr: "l'hôtel",
-    en: "The hôtel",
+    en: 'The hôtel',
     ru: "ru-l'hôtel"
   },
   hotel_history: {
     fr: "L'histoire •",
-    en: "The history •",
+    en: 'The history •',
     ru: "ru-L'histoire •"
   },
   hotel_gallery: {

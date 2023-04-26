@@ -8,6 +8,11 @@ export const Wrapper = styled.input<WrapperProps>`
   border-bottom: 1px solid ${(props) => props.theme.fontColors.primary};
   padding-bottom: 2px;
   margin: 15px 0 20px 0;
+  &.large {
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
   color: ${(props) => props.theme.fontColors.primary};
   font-size: ${(props) => props.fontSize};
   font-weight: bold;

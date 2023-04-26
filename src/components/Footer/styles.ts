@@ -11,13 +11,52 @@ export const Wrapper = styled.footer`
     display: block;
     height: 67px;
   }
+
+  img {
+    width: auto;
+  }
+
+  .footer-btn {
+    > *{
+      margin: 0;
+    }
+  }
+
+  .large-form {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+
+    > *:first-child {
+      flex: 1;
+      margin-right: 20px;
+    }
+    > *:last-child {
+      flex: 1;
+      margin-left: 20px;
+    }
+
+    > *:not(:first-child):not(:last-child) {
+      flex: 3;
+    }
+  }
 `
 
 export const Section = styled.div`
   display: flex;
-  flex-direction: column;
+  &.mobile {
+    flex-direction: column;
+  }
+  flex-direction: row;
   width: calc(100% - ${getMargin(2)});
   margin: 20px ${getMargin()};
+  font-size: 12px;
+
+
+  *.first {
+    font-size: 14px;
+  }
 `
 
 type PartProps = {
