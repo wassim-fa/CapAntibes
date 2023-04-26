@@ -97,7 +97,11 @@ const Admin = ({ fontSize }: ContentProps) => {
       </S.Part>
       <S.Part direction="row" align="space-between" fontSize={fontSize}>
         <Text>
-          <Image style={{ height: fontSize, marginRight: '10px' }} src={imgCastle} alt="logo" />{' '}
+          <Image
+            style={{ height: fontSize, marginRight: '10px' }}
+            src={imgCastle}
+            alt="logo"
+          />{' '}
           {texts.hotels}
         </Text>
       </S.Part>
@@ -197,13 +201,28 @@ const Footer = (props: FooterProps) => {
           </ExternalLink>
           <Text>{texts.email}</Text>
           <Text>
-            <Image style={{ height: fontSmall, marginRight: '10px' }} src={imgCastle} alt="logo" />
+            <Image
+              style={{ height: fontSmall, marginRight: '10px' }}
+              src={imgCastle}
+              alt="logo"
+            />
             {texts.hotels}
           </Text>
         </Column>
         <Column opt_spacing={spacing} opt_alignItems="stretch">
-          <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
-            {texts.collection.split(' ').map((item) => <Text className="first">{item}</Text>)}
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'space-between'
+            }}
+          >
+            {texts.collection.split(' ').map((item, index) => (
+              <Text key={index} className="first">
+                {item}
+              </Text>
+            ))}
           </div>
           <Row opt_justifyContent="space-between">
             <ExternalLink link={contentsSocialLinks.instagram.link}>
@@ -215,13 +234,9 @@ const Footer = (props: FooterProps) => {
               </Text>
             </ExternalLink>
           </Row>
-          <form className='large-form'>
+          <form className="large-form">
             <Text>{texts.labelBis}</Text>
-            <Input
-              className="large"
-              type="email"
-              opt_fontSize={fontRegular}
-            />
+            <Input className="large" type="email" opt_fontSize={fontRegular} />
             <button type="submit">
               <Text opt_align="right">{texts.buttonBis}</Text>
             </button>

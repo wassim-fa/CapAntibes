@@ -17,7 +17,7 @@ export const Wrapper = styled.footer`
   }
 
   .footer-btn {
-    > *{
+    > * {
       margin: 0;
     }
   }
@@ -52,7 +52,6 @@ export const Section = styled.div`
   width: calc(100% - ${getMargin(2)});
   margin: 20px ${getMargin()};
   font-size: 12px;
-
 
   *.first {
     font-size: 14px;
