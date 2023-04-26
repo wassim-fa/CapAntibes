@@ -149,14 +149,14 @@ const Lang = () => {
             </div>
           </>
         )}
-        {lang !== Languages.RU && (
+        {/* {lang !== Languages.RU && (
           <>
             <Divider />
             <div onClick={() => handleLangClick(Languages.RU)}>
               {Languages.RU}
             </div>
           </>
-        )}
+        )} */}
       </LangMenuContainer>
     </LangContainer>
   )
@@ -283,12 +283,12 @@ const fadeOut = keyframes`
   }
 `
 const fadeIn = keyframes`
-  from {      
+  from {
     opacity: 0;
   }
 
-  to {       
-    opacity: 1;    
+  to {
+    opacity: 1;
   }
 `
 const BurgerContainer = styled.div`

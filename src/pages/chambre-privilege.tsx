@@ -1,5 +1,5 @@
 import Languages from '@/enums/languages'
-import LuxeRoom from '@/features/rooms/luxe'
+import PrivilegeRoom from '@/features/rooms/privilege'
 
 export async function getStaticProps() {
   return {
@@ -10,5 +10,5 @@ export async function getStaticProps() {
 }
 
 export default function PrivilegePage() {
-  return <LuxeRoom />
+  return <PrivilegeRoom />
 }

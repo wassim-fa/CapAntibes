@@ -6,6 +6,11 @@ export const contentsContact: Record<string, IContentByLang> = {
     en: 'en-10 • boulevard maréchal juin',
     ru: 'ru-10 • boulevard maréchal juin'
   },
+  collection: {
+    fr: 'un hôtel de la collection adresses hotels',
+    en: 'en-un hôtel de la collection adresses hotels',
+    ru: 'ru-un hôtel de la collection adresses hotels'
+  },
   zipCode: {
     fr: '06160',
     en: 'en-06160',

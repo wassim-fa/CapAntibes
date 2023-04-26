@@ -17,9 +17,9 @@ export const contentsAdmin: Record<string, IContentByLang> = {
     ru: 'ru-Recrutement'
   },
   hotels: {
-    fr: 'hôtel relais et chateaux',
-    en: 'en-hôtel relais et chateaux',
-    ru: 'ru-hôtel relais et chateaux'
+    fr: 'relais et chateaux',
+    en: 'en-relais et chateaux',
+    ru: 'ru-relais et chateaux'
   },
   legalNotice: {
     fr: 'Mention légal',
