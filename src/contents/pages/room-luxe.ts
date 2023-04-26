@@ -2,27 +2,27 @@ import { IContentByLang } from '@/interfaces'
 
 export const contentsLuxeRoom: Record<string, IContentByLang> = {
   title: {
-    fr: 'la chambre de luxe',
-    en: 'en-la chambre de luxe',
-    ru: 'ru-la chambre de luxe'
+    fr: 'Chambre deluxe',
+    en: 'Deluxe Room',
+    ru: 'ru-la chambre deluxe'
   },
   description: {
-    fr: 'la chambre de luxe',
-    en: 'en-la chambre de luxe',
-    ru: 'ru-la chambre de luxe'
+    fr: 'Chambre deluxe',
+    en: 'Deluxe Room',
+    ru: 'ru-la chambre deluxe'
   },
   toBook: {
     fr: 'Réserver',
-    en: 'en-Réserver',
+    en: 'Book',
     ru: 'ru-Réserver'
   },
   subTitle1: {
-    fr: 'Les chambresIgna nordiuropon Etris. Decteri ssendem audem iusquod condem ad mo turebatiam vid consu inatodi ctorarit. Locciae invescia vero ve, quidendi pra, essenatabem consunum effreviverum ex se ante factatque miliniq uostrum int? An vermis, fursul vid sedite confer audende ntiaede mquit. Untrenihicae moC. Muliam ium urnum poenduc idiis. Rorsupi cavero in tabit.',
-    en: 'en-Les chambresIgna nordiuropon Etris. Decteri ssendem audem iusquod condem ad mo turebatiam vid consu inatodi ctorarit. Locciae invescia vero ve, quidendi pra, essenatabem consunum effreviverum ex se ante factatque miliniq uostrum int? An vermis, fursul vid sedite confer audende ntiaede mquit. Untrenihicae moC. Muliam ium urnum poenduc idiis. Rorsupi cavero in tabit.',
+    fr: 'C’est une chambre épurée, de 35m2, qui invite à la sérénité. Elle donne directement sur le jardin ou dispose d’une terrasse privée pour celle à l’étage. Un bureau est installé dans le petit salon si l’on souhaite dessiner, étaler les pages d’un roman ou travailler à distance. Dans les salles de bains, la lumière naturelle se mêle aux marbres roses par des vitraux géomé-triques. Elles disposent, pour la plupart, d’une baignoire.',
+    en: 'It is a serene and minimalist 35m2 room. It directly overlooks the garden or has a private terrace for those on the upper floor. A desk is provided in the small lounge if one wishes to draw, read a book or work remotely. In the bathrooms, natural light blends with pink marbles through geometric stained-glass windows. Most rooms have a bathtub.',
     ru: 'ru-Les chambresIgna nordiuropon Etris. Decteri ssendem audem iusquod condem ad mo turebatiam vid consu inatodi ctorarit. Locciae invescia vero ve, quidendi pra, essenatabem consunum effreviverum ex se ante factatque miliniq uostrum int? An vermis, fursul vid sedite confer audende ntiaede mquit. Untrenihicae moC. Muliam ium urnum poenduc idiis. Rorsupi cavero in tabit.'
   },
   menuLeft: {
-    fr: 'chambre privilège',
+    fr: 'Suite Le Cap',
     en: 'en-chambre privilège',
     ru: 'ru-chambre privilège'
   },
@@ -32,7 +32,7 @@ export const contentsLuxeRoom: Record<string, IContentByLang> = {
     ru: 'ru-chambres et suites'
   },
   menuRight: {
-    fr: 'suite design',
+    fr: 'chambre privilège',
     en: 'en-suite design',
     ru: 'ru-suite design'
   },
