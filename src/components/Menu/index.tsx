@@ -88,7 +88,7 @@ const Menu = () => {
       className={`sc-menu ${!isLaptop ? 'mobile' : ''}`}
     >
       <div className="list">
-        <S.Item className={!isLaptop ? 'mobile' : ''}>
+        {/* <S.Item className={!isLaptop ? 'mobile' : ''}>
           <div
             onClick={() => handleClick('hotel')}
             style={{ fontSize: labelSize, zIndex: 3 }}
@@ -124,7 +124,7 @@ const Menu = () => {
               </Link>
             </S.Link>
           </S.SubItem>
-        </S.Item>
+        </S.Item> */}
         <S.Item className={!isLaptop ? 'mobile' : ''}>
           <div
             onClick={() => handleClick('room')}
@@ -209,7 +209,7 @@ const Menu = () => {
             </S.Link>
           </S.SubItem>
         </S.Item>
-        <S.Item className={!isLaptop ? 'mobile' : ''}>
+        {/* <S.Item className={!isLaptop ? 'mobile' : ''}>
           <Link shallow replace href={useLink('/farniente')}>
             <div style={{ fontSize: labelSize, zIndex: 3 }}>
               {texts.farniente}
@@ -229,7 +229,7 @@ const Menu = () => {
               {texts.privatization}
             </div>
           </Link>
-        </S.Item>
+        </S.Item> */}
       </div>
       {!isLaptop && (
         <div className="lang">
@@ -245,12 +245,12 @@ const Menu = () => {
           >
             {Languages.EN}
           </div>
-          <div
+          {/* <div
             className={`${lang === Languages.RU ? 'selected' : ''}`}
             onClick={() => handleLangClick(Languages.RU)}
           >
             {Languages.RU}
-          </div>
+          </div> */}
         </div>
       )}
     </S.Wrapper>

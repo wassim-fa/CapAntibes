@@ -1,4 +1,7 @@
-import { contentsPrivilegeRoom, contentsPrivilegeRoomItems } from '@/contents/pages'
+import {
+  contentsPrivilegeRoom,
+  contentsPrivilegeRoomItems
+} from '@/contents/pages'
 import { useText } from '@/hooks'
 import RoomLayout from '@/layouts/room'
 import random0 from '../../../public/assets/images/rooms/privilege/random_0.png'
