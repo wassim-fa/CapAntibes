@@ -1,5 +1,5 @@
 import Languages from '@/enums/languages'
-import LuxeRoom from '@/features/rooms/luxe'
+import ConnectingRoom from '@/features/rooms/connecting'
 
 export async function getStaticProps() {
   return {
@@ -10,5 +10,5 @@ export async function getStaticProps() {
 }
 
 export default function ConnectingPage() {
-  return <LuxeRoom />
+  return <ConnectingRoom />
 }

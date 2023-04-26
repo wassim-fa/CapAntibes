@@ -1,5 +1,5 @@
 import Languages from '@/enums/languages'
-import LuxeRoom from '@/features/rooms/luxe'
+import SeaViewRoom from '@/features/rooms/seaview'
 
 export async function getStaticProps() {
   return {
@@ -10,5 +10,5 @@ export async function getStaticProps() {
 }
 
 export default function SeaViewPage() {
-  return <LuxeRoom />
+  return <SeaViewRoom />
 }
