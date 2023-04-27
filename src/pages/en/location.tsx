@@ -10,5 +10,5 @@ export async function getStaticProps() {
 }
 
 export default function LocalisationPage() {
-  return <Address title={`Location | Beach Hotel Cap d'antibes - 5 stars`} description={``} />
+  return <Address title={`Location | Beach Hotel Cap d'antibes - 5 stars`} description={`Find the contact details of Beach Hotel Cap d'antibes, an authentic 5 stars hotel`} />
 }

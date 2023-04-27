@@ -18,11 +18,11 @@ const slideDown = keyframes`
   }
 `
 const slideUp = keyframes`
-  from {    
+  from {
     top: 76px;
     transform: translateY(0%);
   }
-  
+
   to {
     top: 0px;
     transform: translateY(-100%);
@@ -66,6 +66,13 @@ const BottomBar = () => {
     setMenuOpen(value)
   }
   const isMobile = useIsMobile()
+  const linksHref = {
+    room: useText(contentsLayout.linkRoom),
+    baba: useText(contentsLayout.linkBaba),
+    fishing: useText(contentsLayout.linkFishing),
+    health: useText(contentsLayout.linkHealth),
+    private: useText(contentsLayout.linkPrivate)
+  }
   const texts = {
     room: useText(contentsLayout.room),
     baba: useText(contentsLayout.baba),
@@ -98,15 +105,15 @@ const BottomBar = () => {
           style={{ fontSize: '14px' }}
         >
           <Divider />
-          <div onClick={handleClick}>{texts.room}</div>
+          <a href={`${linksHref.room}`}>{texts.room}</a>
           <Divider />
-          <div onClick={handleClick}>{texts.baba}</div>
+          <a href={`${linksHref.baba}`}>{texts.baba}</a>
           <Divider />
-          <div onClick={handleClick}>{texts.fishing}</div>
+          <a href={`${linksHref.fishing}`}>{texts.fishing}</a>
           <Divider />
-          <div onClick={handleClick}>{texts.health}</div>
+          <a href={`${linksHref.health}`}>{texts.health}</a>
           <Divider />
-          <div onClick={handleClick}>{texts.private}</div>
+          <a href={`${linksHref.private}`}>{texts.private}</a>
         </ToBookMenuContainer>
         <S.Wrapper onClick={handleClick}>{texts.book}</S.Wrapper>
       </>

@@ -62,7 +62,7 @@ const LangContainer = styled.div`
     align-items: center;
     padding: 10px;
     p {
-      padding-bottom : 5px;
+      padding-bottom: 5px;
     }
   }
 `
@@ -223,6 +223,13 @@ const ToBook = () => {
         : 'tobook-dropdown'
     setMenuOpen(value)
   }
+  const linksHref = {
+    room: useText(contentsLayout.linkRoom),
+    baba: useText(contentsLayout.linkBaba),
+    fishing: useText(contentsLayout.linkFishing),
+    health: useText(contentsLayout.linkHealth),
+    private: useText(contentsLayout.linkPrivate)
+  }
   const texts = {
     book: useText(contentsLayout.book),
     room: useText(contentsLayout.room),
@@ -259,15 +266,15 @@ const ToBook = () => {
         style={{ fontSize: '14px', cursor: isLaptop ? 'pointer' : 'auto' }}
       >
         <Divider />
-        <div>{texts.room}</div>
+        <a href={`${linksHref.room}`}>{texts.room}</a>
         <Divider />
-        <div>{texts.baba}</div>
+        <a href={`${linksHref.baba}`}>{texts.baba}</a>
         <Divider />
-        <div>{texts.fishing}</div>
+        <a href={`${linksHref.fishing}`}>{texts.fishing}</a>
         <Divider />
-        <div>{texts.health}</div>
+        <a href={`${linksHref.health}`}>{texts.health}</a>
         <Divider />
-        <div>{texts.private}</div>
+        <a href={`${linksHref.private}`}>{texts.private}</a>
       </ToBookMenuContainer>
     </ToBookContainer>
   )
@@ -439,8 +446,9 @@ const Navbar = () => {
           src={title}
           style={{
             cursor: isLaptop ? 'pointer' : 'auto',
-            transform: `translateY(${isEffectCancelled ? 0 : translate}vh) scale(${isEffectCancelled ? 1 : scale
-              })`
+            transform: `translateY(${
+              isEffectCancelled ? 0 : translate
+            }vh) scale(${isEffectCancelled ? 1 : scale})`
           }}
           alt="Cap d'antibes - beach hotel"
         />

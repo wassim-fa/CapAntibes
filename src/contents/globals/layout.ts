@@ -11,25 +11,50 @@ export const contentsLayout: Record<string, IContentByLang> = {
     en: 'A room',
     ru: 'ru-Une chambre'
   },
+  linkRoom: {
+    fr: 'https://www.secure-hotel-booking.com/Cap-d-Antibes-Beach-Hotel/JK7H/fr?hotelId=13829',
+    en: 'https://www.secure-hotel-booking.com/Cap-d-Antibes-Beach-Hotel/JK7H/en?hotelId=13829',
+    ru: 'https://www.secure-hotel-booking.com/Cap-d-Antibes-Beach-Hotel/JK7H/ru?hotelId=13829'
+  },
   baba: {
     fr: 'Une table Baba',
     en: 'A table at Baba',
     ru: 'ru-Une table Baba'
+  },
+  linkBaba: {
+    fr: 'https://bookings.zenchef.com/results?rid=361599&pid=1001',
+    en: 'https://bookings.zenchef.com/results?rid=361599&pid=1001&lang=en',
+    ru: 'https://bookings.zenchef.com/results?rid=361599&pid=1001&lang=ru'
   },
   fishing: {
     fr: 'Une table les pêcheurs',
     en: 'A table at les pêcheurs',
     ru: 'ru-Une table les pêcheurs'
   },
+  linkFishing: {
+    fr: 'https://module.lafourchette.com/fr_FR/cta/iframe/5972-d196c',
+    en: 'https://module.lafourchette.com/en_US/cta/iframe/5972-d196c',
+    ru: 'https://module.lafourchette.com/en_US/cta/iframe/5972-d196c'
+  },
   health: {
     fr: 'Un soin',
     en: 'A treatment',
     ru: 'ru-Un soin'
   },
+  linkHealth: {
+    fr: 'mailto:contact@cabh.fr',
+    en: 'mailto:contact@cabh.fr',
+    ru: 'mailto:contact@cabh.fr'
+  },
   private: {
     fr: 'Privatiser',
     en: 'Privatize',
     ru: 'ru-Privatiser'
+  },
+  linkPrivate: {
+    fr: 'mailto:event@cabh.fr',
+    en: 'mailto:event@cabh.fr',
+    ru: 'mailto:event@cabh.fr'
   },
   hotel: {
     fr: "l'hôtel",
