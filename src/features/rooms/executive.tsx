@@ -2,7 +2,6 @@ import {
   contentsExecutiveRoom,
   contentsExecutiveRoomItems
 } from '@/contents/pages'
-import { useText } from '@/hooks'
 import RoomLayout from '@/layouts/room'
 import random0 from '../../../public/assets/images/rooms/executive/random_0.png'
 import random1 from '../../../public/assets/images/rooms/executive/random_1.png'

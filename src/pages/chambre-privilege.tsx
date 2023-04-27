@@ -10,5 +10,10 @@ export async function getStaticProps() {
 }
 
 export default function PrivilegePage() {
-  return <PrivilegeRoom title={`Chambre Privilege | Une chambre sur la côte d'Azur`} description={`C’est une chambre de la Côte d'Azur de plus de 36 m2. Un grand dressing pour ranger ses affaires, idéal pour de longs séjours. `} />
+  return (
+    <PrivilegeRoom
+      title={`Chambre Privilege | Une chambre sur la côte d'Azur`}
+      description={`C’est une chambre de la Côte d'Azur de plus de 36 m2. Un grand dressing pour ranger ses affaires, idéal pour de longs séjours. `}
+    />
+  )
 }

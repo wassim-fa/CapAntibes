@@ -1,5 +1,4 @@
 import { contentsDesignRoom, contentsDesignRoomItems } from '@/contents/pages'
-import { useText } from '@/hooks'
 import RoomLayout from '@/layouts/room'
 import random0 from '../../../public/assets/images/rooms/design/random_0.png'
 import random1 from '../../../public/assets/images/rooms/design/random_1.png'

@@ -10,5 +10,10 @@ export async function getStaticProps() {
 }
 
 export default function DeluxePage() {
-  return <LuxeRoom title={`Deluxe Room | Cap d'antibes Beach Hotel *****`} description={`The Deluxe room is refined and invites serenity. It overlooks the garden or has a private terrace for the one upstairs.`} />
+  return (
+    <LuxeRoom
+      title={`Deluxe Room | Cap d'antibes Beach Hotel *****`}
+      description={`The Deluxe room is refined and invites serenity. It overlooks the garden or has a private terrace for the one upstairs.`}
+    />
+  )
 }
