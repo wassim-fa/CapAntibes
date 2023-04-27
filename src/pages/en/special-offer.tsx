@@ -10,5 +10,5 @@ export async function getStaticProps() {
 }
 
 export default function SpecialOffersPage() {
-  return <SpecialsOffers />
+  return <SpecialsOffers title={`Special Offers | 5 stars Hotel  in Cap d'antibes`} description={`Official Site - Best Rates Guaranteed | 5 star hotel in Cap d'antibes | Consult our special offers exclusively available on our website.`} />
 }

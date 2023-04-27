@@ -10,5 +10,5 @@ export async function getStaticProps() {
 }
 
 export default function RoomsPage() {
-  return <Rooms />
+  return <Rooms title={`The Rooms | 5 stars Hotel - South of France`} description={`Deluxe and Privilege rooms at the Cap d'Antibes Beach Hotel in the south of France overlook private gardens or terraces. The large suites offer spectacular views of the bay. `} />
 }

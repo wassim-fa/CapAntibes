@@ -10,5 +10,5 @@ export async function getStaticProps() {
 }
 
 export default function FarnientePage() {
-  return <Farniente />
+  return <Farniente title={`Farniente | Détente au Cap d'antibes Beach Hotel`} description={`Le Beach Hôtel et son trésor : la plage privée des Pêcheurs. Oisiveté sur un bain de soleil, cocktails entre amis ou promenades en pédalo. Le soleil brille, le temps suspend son vol.`} />
 }

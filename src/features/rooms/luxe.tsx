@@ -5,13 +5,10 @@ import random0 from '../../../public/assets/images/rooms/luxe/random_0.png'
 import random1 from '../../../public/assets/images/rooms/luxe/random_1.png'
 import room0 from '../../../public/assets/images/rooms/luxe/room_0.png'
 import room0Mobile from '../../../public/assets/images/rooms/luxe/room_0_mobile.png'
+import { IMetaPage } from '@/interfaces'
 
-export default function LuxeRoom() {
+export default function LuxeRoom(meta: IMetaPage) {
   const randomsImages = [random0, random1, random0, random1, random0, random1]
-  const meta = {
-    title: useText(contentsLuxeRoom['title']),
-    description: useText(contentsLuxeRoom['description'])
-  }
   const menu = {
     left: '/chambres-communicantes',
     middle: '/chambre-et-suites',

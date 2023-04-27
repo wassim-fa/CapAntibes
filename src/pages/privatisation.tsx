@@ -10,5 +10,5 @@ export async function getStaticProps() {
 }
 
 export default function PrivatisationPage() {
-  return <Privatisation />
+  return <Privatisation title={`Privatisation | Hotel Côte d'Azur`} description={`Moment unique et lieu unique. Le Beach Hotel cote d azur peut être privatisé pour un événement, un mariage ou une célébration qui vous tient particulièrement à coeur. Toute la magie du Beach Hôtel Cap d’Antibes, rien que pour vous. `} />
 }

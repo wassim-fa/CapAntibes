@@ -8,13 +8,10 @@ import random0 from '../../../public/assets/images/rooms/connecting/random_0.png
 import random1 from '../../../public/assets/images/rooms/connecting/random_1.png'
 import room0 from '../../../public/assets/images/rooms/connecting/room_0.png'
 import room0Mobile from '../../../public/assets/images/rooms/connecting/room_0_mobile.png'
+import { IMetaPage } from '@/interfaces'
 
-export default function ConnectingRoom() {
+export default function ConnectingRoom(meta: IMetaPage) {
   const randomsImages = [random0, random1, random0, random1, random0, random1]
-  const meta = {
-    title: useText(contentsConnectingRoom['title']),
-    description: useText(contentsConnectingRoom['description'])
-  }
   const menu = {
     left: '/suite-executive',
     middle: '/chambre-et-suites',

@@ -10,5 +10,5 @@ export async function getStaticProps() {
 }
 
 export default function SpecialOffersPage() {
-  return <SpecialsOffers />
+  return <SpecialsOffers title={`Offres Spéciales | Hotel 5 étoiles au Cap d'antibes`} description={`Site Officiel - Meilleurs tarifs garantis | Hotel 5 étoiles Cap d'antibes | Consultez nos offres spéciales exclusivement disponibles sur notre site internet .`} />
 }

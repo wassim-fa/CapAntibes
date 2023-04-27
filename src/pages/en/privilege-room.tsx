@@ -10,5 +10,5 @@ export async function getStaticProps() {
 }
 
 export default function PrivilegePage() {
-  return <PrivilegeRoom />
+  return <PrivilegeRoom title={`Privilege Room | A room in the French Rivieira`} description={`It is a room of the French Riviera of more than 36 m2. A large dressing room to store your things, ideal for long stays. `} />
 }

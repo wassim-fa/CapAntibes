@@ -10,5 +10,5 @@ export async function getStaticProps() {
 }
 
 export default function CollectionPage() {
-  return <Collection />
+  return <Collection title={`La collection | Cap d'antibes Beach Hotel - Cote d Azur`} description={`Le Cap d'antibes Beach Hotel, situé sur la côte d'Azur, fait parti de la collection Adresses Hotels.`} />
 }

@@ -10,5 +10,5 @@ export async function getStaticProps() {
 }
 
 export default function FarnientePage() {
-  return <Farniente />
+  return <Farniente title={`Farniente | Relaxation at Cap d'antibes Beach Hotel`} description={`The Beach Hotel and its treasure: the private beach of Les Pêcheurs. Lounging on a sun lounger, cocktails with friends, or pedalo rides. The sun shines, time stands still.`} />
 }
