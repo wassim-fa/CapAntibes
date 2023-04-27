@@ -16,9 +16,9 @@ export default function PrivilegeRoom() {
     description: useText(contentsPrivilegeRoom['description'])
   }
   const menu = {
-    left: '/chambre-privilege',
+    left: '/chambre-privilege-vue-mer',
     middle: '/chambre-et-suites',
-    right: '/chambre-privilege'
+    right: '/suite-design'
   }
   return (
     <>

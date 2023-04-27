@@ -13,9 +13,9 @@ export default function LuxeRoom() {
     description: useText(contentsLuxeRoom['description'])
   }
   const menu = {
-    left: '/chambre-privilege',
+    left: '/chambres-communicantes',
     middle: '/chambre-et-suites',
-    right: '/chambre-privilege'
+    right: '/chambre-privilege-vue-mer'
   }
   return (
     <>

@@ -16,9 +16,9 @@ export default function ExecutiveRoom() {
     description: useText(contentsExecutiveRoom['description'])
   }
   const menu = {
-    left: '/chambre-privilege',
+    left: '/suite-design',
     middle: '/chambre-et-suites',
-    right: '/chambre-privilege'
+    right: '/chambres-communicantes'
   }
   return (
     <>

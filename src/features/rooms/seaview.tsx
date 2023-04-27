@@ -13,7 +13,7 @@ export default function SeaViewRoom() {
     description: useText(contentsSeaViewRoom['description'])
   }
   const menu = {
-    left: '/chambre-privilege',
+    left: '/chambre-deluxe',
     middle: '/chambre-et-suites',
     right: '/chambre-privilege'
   }

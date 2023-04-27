@@ -16,9 +16,9 @@ export default function ConnectingRoom() {
     description: useText(contentsConnectingRoom['description'])
   }
   const menu = {
-    left: '/chambre-privilege',
+    left: '/suite-executive',
     middle: '/chambre-et-suites',
-    right: '/chambre-privilege'
+    right: '/chambre-deluxe'
   }
   return (
     <>

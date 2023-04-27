@@ -15,7 +15,7 @@ export default function DesignRoom() {
   const menu = {
     left: '/chambre-privilege',
     middle: '/chambre-et-suites',
-    right: '/chambre-privilege'
+    right: '/suite-executive'
   }
   return (
     <>
