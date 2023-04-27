@@ -10,5 +10,10 @@ export async function getStaticProps() {
 }
 
 export default function CollectionPage() {
-  return <Collection />
+  return (
+    <Collection
+      title={`The collection | Cap d'antibes Beach Hotel - Frenc Rivieira`}
+      description={`The Cap d'antibes Beach Hotel, located on the French Riviera, is part of the Adresses Hotels collection.`}
+    />
+  )
 }

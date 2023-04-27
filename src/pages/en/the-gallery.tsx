@@ -10,5 +10,10 @@ export async function getStaticProps() {
 }
 
 export default function GaleriePage() {
-  return <Galerie />
+  return (
+    <Galerie
+      title={`Gallery | Hotel of cap d'antibes - French Rivieira`}
+      description={`The photo gallery of hotel cap d'antibes beach hotel, a charming hotel on the French Riviera`}
+    />
+  )
 }

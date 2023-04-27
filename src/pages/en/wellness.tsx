@@ -10,5 +10,10 @@ export async function getStaticProps() {
 }
 
 export default function WellHealthPage() {
-  return <WellHealth />
+  return (
+    <WellHealth
+      title={`Wellness | The Spa in Antibes Juan les pins`}
+      description={`Water, wind, and the warmth of the sun. The natural elements are present in their strength and beauty in Antibes Juan Les Pins. The perfect setting to recharge and take care of your body and soul.`}
+    />
+  )
 }

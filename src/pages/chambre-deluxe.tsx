@@ -10,5 +10,10 @@ export async function getStaticProps() {
 }
 
 export default function DeluxePage() {
-  return <LuxeRoom />
+  return (
+    <LuxeRoom
+      title={`Chambre Deluxe | Cap d'antibes Beach Hotel *****`}
+      description={`La chambre Deluxe est épurée et invite à la sérénité. Elle donne directement sur le jardin ou dispose d’une terrasse privée pour celle à l’étage.`}
+    />
+  )
 }

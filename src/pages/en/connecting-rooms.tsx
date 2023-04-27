@@ -10,5 +10,10 @@ export async function getStaticProps() {
 }
 
 export default function ConnectingPage() {
-  return <ConnectingRoom />
+  return (
+    <ConnectingRoom
+      title={`Connecting rooms| Cap d'antibes Beach Hotel`}
+      description={`The family room combines two rooms into one apartment with two bathrooms. The ideal solution for a trip with family or friends.`}
+    />
+  )
 }

@@ -10,5 +10,10 @@ export async function getStaticProps() {
 }
 
 export default function LocalisationPage() {
-  return <Address />
+  return (
+    <Address
+      title={`L'adresse | Beach Hotel Cap d'antibes - 5 étoiles`}
+      description={`Retrouvez les coordonnées du Beach Hotel Cap d'antibes, un hotel 5 étoiles authentique `}
+    />
+  )
 }
