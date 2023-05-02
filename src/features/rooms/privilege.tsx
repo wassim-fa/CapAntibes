@@ -12,9 +12,9 @@ import { IMetaPage } from '@/interfaces'
 export default function PrivilegeRoom(meta: IMetaPage) {
   const randomsImages = [random0, random1, random0, random1, random0, random1]
   const menu = {
-    left: '/chambre-privilege-vue-mer',
+    left: '/chambre-deluxe',
     middle: '/chambre-et-suites',
-    right: '/suite'
+    right: '/chambre-privilege-vue-mer'
   }
   return (
     <>

@@ -9,9 +9,9 @@ import { IMetaPage } from '@/interfaces'
 export default function SeaViewRoom(meta: IMetaPage) {
   const randomsImages = [random0, random1, random0, random1, random0, random1]
   const menu = {
-    left: '/chambre-deluxe',
+    left: '/chambre-privilege',
     middle: '/chambre-et-suites',
-    right: '/chambre-privilege'
+    right: '/suite'
   }
   return (
     <>

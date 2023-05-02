@@ -9,7 +9,7 @@ import { IMetaPage } from '@/interfaces'
 export default function DesignRoom(meta: IMetaPage) {
   const randomsImages = [random0, random1, random0, random1, random0, random1]
   const menu = {
-    left: '/chambre-privilege',
+    left: '/chambre-privilege-vue-mer',
     middle: '/chambre-et-suites',
     right: '/suite-le-cap'
   }
