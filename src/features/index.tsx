@@ -137,9 +137,6 @@ export default function Home(meta: IMetaPage) {
             <br />
             {useText(contentsHome.text1_2)}
           </Text>
-          <Button className="btn">
-            <Text>{useText(contentsHome.btnMoreInformation)}</Text>
-          </Button>
         </Column>
         <Row>
           <InfinitySlider>
@@ -198,11 +195,11 @@ export default function Home(meta: IMetaPage) {
               {useText(contentsHome.title3_2)}
             </Text>
             <Text className="p">{useText(contentsHome.text3)}</Text>
-            <Link shallow replace href={useLink('/restaurant-les-pecheurs')}>
+            {/* <Link shallow replace href={useLink('/restaurant-les-pecheurs')}>
               <Button className="btn">
                 <Text>{useText(contentsHome.btnMoreInformation)}</Text>
               </Button>
-            </Link>
+            </Link> */}
           </Column>
           <Column
             opt_alignItems="flex-end"
@@ -246,13 +243,13 @@ export default function Home(meta: IMetaPage) {
               <br />
               {useText(contentsHome.text4_2)}
             </Text>
-            <Link shallow replace href={useLink('/restaurant-baba')}>
+            {/* <Link shallow replace href={useLink('/restaurant-baba')}>
               <Button opt_color={Colors.YELLOW} className="btn">
                 <Text opt_color={Colors.YELLOW}>
                   {useText(contentsHome.btnMoreInformation)}
                 </Text>
               </Button>
-            </Link>
+            </Link> */}
           </Column>
           <Column
             opt_margin={isLaptop ? [0.2, 0.8, 0.2, 0.8] : [0.2, 1, 0.2, 1]}
@@ -289,11 +286,11 @@ export default function Home(meta: IMetaPage) {
           >
             <Text className="h3">{useText(contentsHome.title5)}</Text>
             <Text className="p">{useText(contentsHome.text5)}</Text>
-            <Link shallow replace href={useLink('/farniente')}>
+            {/* <Link shallow replace href={useLink('/farniente')}>
               <Button className="btn">
                 <Text>{useText(contentsHome.btnMoreInformation)}</Text>
               </Button>
-            </Link>
+            </Link> */}
           </Column>
         </RowToColumn>
         <RowToColumn
@@ -304,11 +301,11 @@ export default function Home(meta: IMetaPage) {
           <Column opt_margin={isLaptop ? [0, 0, 0, 0] : [0.5, 1.5, 2.5, 1.5]}>
             <Text className="h3">{useText(contentsHome.title6)}</Text>
             <Text className="p">{useText(contentsHome.text6)}</Text>
-            <Link shallow replace href={useLink('/bien-etre')}>
+            {/* <Link shallow replace href={useLink('/bien-etre')}>
               <Button className="btn">
                 <Text>{useText(contentsHome.btnMoreInformation)}</Text>
               </Button>
-            </Link>
+            </Link> */}
           </Column>
           <Column
             opt_alignItems="flex-end"
