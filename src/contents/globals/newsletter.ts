@@ -8,22 +8,22 @@ export const contentsNewsLetter: Record<string, IContentByLang> = {
   },
   labelBis: {
     fr: 'newsletter',
-    en: 'en-newsletter',
-    ru: 'ru-newsletter'
+    en: 'newsletter',
+    ru: 'newsletter'
   },
   placeHolder: {
     fr: 'Adresse mail',
-    en: 'en-Adresse mail',
+    en: 'Mail adress',
     ru: 'ru-Adresse mail'
   },
   button: {
     fr: 'S’inscrire',
-    en: 'en-S’inscrire',
+    en: 'Sign up',
     ru: 'ru-S’inscrire'
   },
   buttonBis: {
     fr: `S'abonner`,
-    en: `en-S'abonner`,
+    en: `Subscribe`,
     ru: `ru-S'abonner`
   }
 }

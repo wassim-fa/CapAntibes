@@ -102,13 +102,13 @@ export const contentsLayout: Record<string, IContentByLang> = {
     ru: 'ru-Chambre privilège vue mer •'
   },
   rooms_design: {
-    fr: 'Suite design •',
+    fr: 'Suite •',
     en: 'Suite •',
     ru: 'ru-Suite design •'
   },
   rooms_executive: {
-    fr: 'Suite executive •',
-    en: 'Suite Le Cap •',
+    fr: 'Suite Le Cap •',
+    en: 'Le Cap Suite •',
     ru: 'ru-Suite executive •'
   },
   rooms_connecting: {

@@ -8,14 +8,14 @@ export const contentsSocialLinks: Record<Socials, ILinkContent> = {
   },
   [Socials.FACEBOOK]: {
     label: 'Facebook',
-    link: '/'
+    link: 'https://www.facebook.com/antibesbeachhotel/'
   },
   [Socials.INSTAGRAM]: {
     label: 'Instagram',
-    link: '/'
+    link: 'https://www.instagram.com/capdantibesbeachhotel/'
   },
   [Socials.LINKEDIN]: {
     label: 'Linkedin',
-    link: '/'
+    link: 'https://www.linkedin.com/company/35678536/admin/'
   }
 }
