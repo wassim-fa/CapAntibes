@@ -22,7 +22,7 @@ const LangMenuContainer = styled.div`
   position: absolute;
   width: 60px;
   z-index: 1;
-  top: 23px;
+  top: 26px;
 
   &[data-open='open'] {
     display: flex;
@@ -37,7 +37,7 @@ const LangMenuContainer = styled.div`
   padding: 10px 15px;
 
   > * {
-    margin: 10% 0;
+    margin: 5px 0;
     width: 110%;
     text-align: center;
   }
