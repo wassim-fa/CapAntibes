@@ -1,34 +1,29 @@
-import { useIsMobile } from '@/hooks'
 import { useCallback, useEffect, useState } from 'react'
 import * as S from './styles'
 import Row from '../Row'
 import Image, { StaticImageData } from 'next/image'
 
 type RandomImagesContainerProps = {
-  listImages: StaticImageData[]
   imageToShow: number | number
-  img1: number
-  img2: number
+  img1: StaticImageData
+  img2: StaticImageData
 }
 const RandomImagesContainer = ({
-  listImages,
   imageToShow,
   img1,
   img2
 }: RandomImagesContainerProps) => (
   <S.Wrapper data-imgtoshow={imageToShow}>
-    <Image src={listImages[img1]} alt="liste d'images" />
-    <Image src={listImages[img2]} alt="liste d'images" />
+    <Image src={img1} alt="liste d'images" />
+    <Image src={img2} alt="liste d'images" />
   </S.Wrapper>
 )
+
 interface RandomImagesProps {
   listImages: StaticImageData[]
 }
 const RandomImages = ({ listImages }: RandomImagesProps) => {
-  const isMobile = useIsMobile()
-  const nbOfChildren = isMobile ? 1 : 2
-  const initImgId: number = isMobile ? 0 : 2
-  const [imgId, setImgId] = useState<number>(initImgId)
+  const [imgId, setImgId] = useState<number>(3)
   const [componentActive, setComponentActive] = useState<number>(0)
   const [images, setImages] = useState<[number, number][]>([
     [0, 1],
@@ -38,13 +33,19 @@ const RandomImages = ({ listImages }: RandomImagesProps) => {
 
   const changeImgAuto = useCallback(() => {
     const newImgId = (imgId + 1) % listImages.length
-    const newComponentActive = (componentActive + 1) % nbOfChildren
+    const newComponentActive = (componentActive + 1) % 2
     const _imagesToShow = imagesToShow
     _imagesToShow[newComponentActive] =
-      (imagesToShow[newComponentActive] + 1) % nbOfChildren
+      (imagesToShow[newComponentActive] + 1) % 2
     const _images = images
     _images[newComponentActive][_imagesToShow[newComponentActive]] = newImgId
 
+    // console.log({
+    //   newImgId: newImgId,
+    //   imagesToShow: _imagesToShow,
+    //   newComponentActive: newComponentActive,
+    //   images: _images
+    // })
     setImgId(newImgId)
     setImages(_images)
     setImagesToShow(_imagesToShow)
@@ -58,7 +59,6 @@ const RandomImages = ({ listImages }: RandomImagesProps) => {
     images,
     imagesToShow,
     imgId,
-    nbOfChildren,
     listImages
   ])
   useEffect(() => {
@@ -68,26 +68,25 @@ const RandomImages = ({ listImages }: RandomImagesProps) => {
     return () => clearInterval(interval)
   }, [changeImgAuto])
 
-  useEffect(() => {
-    console.log('imgId', imgId)
-    console.log('images', images)
-    console.log('imagesToShow', imagesToShow)
-  }, [imgId, images, imagesToShow])
+  // useEffect(() => {
+  //   console.log('imgId', imgId)
+  //   console.log('images', images)
+  //   console.log('imagesToShow', imagesToShow)
+  // }, [imgId, images, imagesToShow])
 
   return (
     <div className="sc-randomimages" onClick={changeImgAuto}>
       <Row>
-        {Array(nbOfChildren)
-          .fill(true)
-          .map((_, i) => (
-            <RandomImagesContainer
-              key={i}
-              imageToShow={imagesToShow[i]}
-              img1={images[i][0]}
-              img2={images[i][1]}
-              listImages={listImages}
-            />
-          ))}
+        <RandomImagesContainer
+          imageToShow={imagesToShow[0]}
+          img1={listImages[images[0][0]]}
+          img2={listImages[images[0][1]]}
+        />
+        <RandomImagesContainer
+          imageToShow={imagesToShow[1]}
+          img1={listImages[images[1][0]]}
+          img2={listImages[images[1][1]]}
+        />
       </Row>
     </div>
   )
