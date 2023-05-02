@@ -37,7 +37,7 @@ const RandomImages = ({ listImages }: RandomImagesProps) => {
 
     // Change visibility of new active component
     const newComponentActive = (componentActive + 1) % 2
-    if(_imagesToShow[newComponentActive] === 0) {
+    if (_imagesToShow[newComponentActive] === 0) {
       _imagesToShow[newComponentActive] = 1
     } else {
       _imagesToShow[newComponentActive] = 0
@@ -45,7 +45,7 @@ const RandomImages = ({ listImages }: RandomImagesProps) => {
 
     // Change hidden image of inactive component
     const newImgId = (imgId + 1) % listImages.length
-    if(_imagesToShow[componentActive] === 0) {
+    if (_imagesToShow[componentActive] === 0) {
       _images[componentActive][1] = newImgId
     } else {
       _images[componentActive][0] = newImgId
