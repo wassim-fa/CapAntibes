@@ -24,7 +24,7 @@ interface RandomImagesProps {
 }
 const RandomImages = ({ listImages }: RandomImagesProps) => {
   const [imgId, setImgId] = useState<number>(3)
-  const [componentActive, setComponentActive] = useState<number>(0)
+  const [componentActive, setComponentActive] = useState<number>(1)
   const [images, setImages] = useState<[number, number][]>([
     [0, 1],
     [2, 3]
@@ -46,6 +46,12 @@ const RandomImages = ({ listImages }: RandomImagesProps) => {
     //   newComponentActive: newComponentActive,
     //   images: _images
     // })
+    console.log({
+      img0: _imagesToShow[0],
+      img1: _imagesToShow[1],
+      images0: _images[0],
+      images1: _images[1]
+    })
     setImgId(newImgId)
     setImages(_images)
     setImagesToShow(_imagesToShow)
@@ -64,7 +70,7 @@ const RandomImages = ({ listImages }: RandomImagesProps) => {
   useEffect(() => {
     const interval = setInterval(() => {
       changeImgAuto()
-    }, 2000)
+    }, 3000)
     return () => clearInterval(interval)
   }, [changeImgAuto])
 
