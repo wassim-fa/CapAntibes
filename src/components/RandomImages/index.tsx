@@ -70,11 +70,9 @@ const RandomImages = ({ listImages }: RandomImagesProps) => {
 
   useEffect(() => {
     console.log('imgId', imgId)
-  }, [imgId])
-
-  useEffect(() => {
     console.log('images', images)
-  }, [images])
+  }, [imgId, images])
+
 
   return (
     <div className="sc-randomimages" onClick={changeImgAuto}>
