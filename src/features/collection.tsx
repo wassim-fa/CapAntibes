@@ -1,9 +1,9 @@
 import Text from '@/components/Text'
 import { useIsLaptop, useText } from '@/hooks'
 import Head from 'next/head'
-import imgButton from '../../public/assets/images/collection/button.png'
-import img1Mobile from '../../public/assets/images/collection/collection_1_mobile.png'
-import img1 from '../../public/assets/images/collection/collection_1.png'
+import imgButton from '../../public/assets/images/collection/button.jpg'
+import img1Mobile from '../../public/assets/images/collection/collection_1_mobile.jpg'
+import img1 from '../../public/assets/images/collection/collection_1.jpg'
 
 import Image from 'next/image'
 import Column from '@/components/Column'

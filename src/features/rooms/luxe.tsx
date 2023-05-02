@@ -1,9 +1,9 @@
 import { contentsLuxeRoom, contentsLuxeRoomItems } from '@/contents/pages'
 import RoomLayout from '@/layouts/room'
-import random0 from '../../../public/assets/images/rooms/luxe/random_0.png'
-import random1 from '../../../public/assets/images/rooms/luxe/random_1.png'
-import room0 from '../../../public/assets/images/rooms/luxe/room_0.png'
-import room0Mobile from '../../../public/assets/images/rooms/luxe/room_0_mobile.png'
+import random0 from '../../../public/assets/images/rooms/luxe/random_0.jpg'
+import random1 from '../../../public/assets/images/rooms/luxe/random_1.jpg'
+import room0 from '../../../public/assets/images/rooms/luxe/room_0.jpg'
+import room0Mobile from '../../../public/assets/images/rooms/luxe/room_0_mobile.jpg'
 import { IMetaPage } from '@/interfaces'
 
 export default function LuxeRoom(meta: IMetaPage) {
