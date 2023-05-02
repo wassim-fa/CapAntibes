@@ -23,7 +23,7 @@ interface RandomImagesProps {
   listImages: StaticImageData[]
 }
 const RandomImages = ({ listImages }: RandomImagesProps) => {
-  const [imgId, setImgId] = useState<number>(3)
+  const [imgId, setImgId] = useState<number>(2)
   const [componentActive, setComponentActive] = useState<number>(1)
   const [images, setImages] = useState<[number, number][]>([
     [0, 1],
@@ -32,26 +32,24 @@ const RandomImages = ({ listImages }: RandomImagesProps) => {
   const [imagesToShow, setImagesToShow] = useState<[number, number]>([0, 0])
 
   const changeImgAuto = useCallback(() => {
-    const newImgId = (imgId + 1) % listImages.length
-    const newComponentActive = (componentActive + 1) % 2
     const _imagesToShow = imagesToShow
-    _imagesToShow[newComponentActive] =
-      (imagesToShow[newComponentActive] + 1) % 2
     const _images = images
-    _images[newComponentActive][_imagesToShow[newComponentActive]] = newImgId
 
-    // console.log({
-    //   newImgId: newImgId,
-    //   imagesToShow: _imagesToShow,
-    //   newComponentActive: newComponentActive,
-    //   images: _images
-    // })
-    console.log({
-      img0: _imagesToShow[0],
-      img1: _imagesToShow[1],
-      images0: _images[0],
-      images1: _images[1]
-    })
+    // Change visibility of new active component
+    const newComponentActive = (componentActive + 1) % 2
+    if(_imagesToShow[newComponentActive] === 0) {
+      _imagesToShow[newComponentActive] = 1
+    } else {
+      _imagesToShow[newComponentActive] = 0
+    }
+
+    // Change hidden image of inactive component
+    const newImgId = (imgId + 1) % listImages.length
+    if(_imagesToShow[componentActive] === 0) {
+      _images[componentActive][1] = newImgId
+    } else {
+      _images[componentActive][0] = newImgId
+    }
     setImgId(newImgId)
     setImages(_images)
     setImagesToShow(_imagesToShow)
@@ -73,12 +71,6 @@ const RandomImages = ({ listImages }: RandomImagesProps) => {
     }, 3000)
     return () => clearInterval(interval)
   }, [changeImgAuto])
-
-  // useEffect(() => {
-  //   console.log('imgId', imgId)
-  //   console.log('images', images)
-  //   console.log('imagesToShow', imagesToShow)
-  // }, [imgId, images, imagesToShow])
 
   return (
     <div className="sc-randomimages" onClick={changeImgAuto}>
