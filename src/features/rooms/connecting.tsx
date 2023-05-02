@@ -12,7 +12,7 @@ import { IMetaPage } from '@/interfaces'
 export default function ConnectingRoom(meta: IMetaPage) {
   const randomsImages = [random0, random1, random0, random1, random0, random1]
   const menu = {
-    left: '/suite-executive',
+    left: '/suite-le-cap',
     middle: '/chambre-et-suites',
     right: '/chambre-deluxe'
   }

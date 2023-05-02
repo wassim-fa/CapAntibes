@@ -11,7 +11,7 @@ export default function DesignRoom(meta: IMetaPage) {
   const menu = {
     left: '/chambre-privilege',
     middle: '/chambre-et-suites',
-    right: '/suite-executive'
+    right: '/suite-le-cap'
   }
   return (
     <>

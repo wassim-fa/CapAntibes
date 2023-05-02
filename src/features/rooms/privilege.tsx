@@ -14,7 +14,7 @@ export default function PrivilegeRoom(meta: IMetaPage) {
   const menu = {
     left: '/chambre-privilege-vue-mer',
     middle: '/chambre-et-suites',
-    right: '/suite-design'
+    right: '/suite'
   }
   return (
     <>

@@ -12,7 +12,7 @@ import { IMetaPage } from '@/interfaces'
 export default function ExecutiveRoom(meta: IMetaPage) {
   const randomsImages = [random0, random1, random0, random1, random0, random1]
   const menu = {
-    left: '/suite-design',
+    left: '/suite',
     middle: '/chambre-et-suites',
     right: '/chambres-communicantes'
   }
