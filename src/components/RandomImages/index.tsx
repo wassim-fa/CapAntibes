@@ -68,6 +68,10 @@ const RandomImages = ({ listImages }: RandomImagesProps) => {
     return () => clearInterval(interval)
   }, [changeImgAuto])
 
+  useEffect(() => {
+    console.log('imgId', imgId)
+  }, [imgId])
+
   return (
     <div className="sc-randomimages" onClick={changeImgAuto}>
       <Row>
