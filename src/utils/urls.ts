@@ -52,14 +52,14 @@ export const urls: IContentByLang[] = [
     ru: '/ru/privilege-room-with-sea-view'
   },
   {
-    fr: '/suite-design',
-    en: '/en/design-suite',
-    ru: '/ru/design-suite'
+    fr: '/suite',
+    en: '/en/suite',
+    ru: '/ru/suite'
   },
   {
-    fr: '/suite-executive',
-    en: '/en/executive-suite',
-    ru: '/ru/executive-suite'
+    fr: '/suite-le-cap',
+    en: '/en/le-cap-suite',
+    ru: '/ru/le-cap-suite'
   },
   {
     fr: '/chambres-communicantes',

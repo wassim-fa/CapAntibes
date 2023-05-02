@@ -3,16 +3,17 @@ import {
   contentsExecutiveRoomItems
 } from '@/contents/pages'
 import RoomLayout from '@/layouts/room'
-import random0 from '../../../public/assets/images/rooms/executive/random_0.png'
-import random1 from '../../../public/assets/images/rooms/executive/random_1.png'
-import room0 from '../../../public/assets/images/rooms/executive/room_0.png'
-import room0Mobile from '../../../public/assets/images/rooms/executive/room_0_mobile.png'
+import random0 from '../../../public/assets/images/rooms/executive/random_0.jpg'
+import random1 from '../../../public/assets/images/rooms/executive/random_1.jpg'
+import room0 from '../../../public/assets/images/rooms/executive/room_0.jpg'
+import room0Mobile from '../../../public/assets/images/rooms/executive/room_0_mobile.jpg'
 import { IMetaPage } from '@/interfaces'
 
 export default function ExecutiveRoom(meta: IMetaPage) {
-  const randomsImages = [random0, random1, random0, random1, random0, random1]
+  const images = [random0, random1, room0]
+  const imagesMobile = [random0, random1, room0Mobile]
   const menu = {
-    left: '/suite-design',
+    left: '/suite',
     middle: '/chambre-et-suites',
     right: '/chambres-communicantes'
   }
@@ -22,9 +23,8 @@ export default function ExecutiveRoom(meta: IMetaPage) {
         meta={meta}
         menu={menu}
         content={contentsExecutiveRoom}
-        randomsImages={randomsImages}
-        image={room0}
-        imageMobile={room0Mobile}
+        images={images}
+        imagesMobile={imagesMobile}
         items={contentsExecutiveRoomItems}
       />
     </>

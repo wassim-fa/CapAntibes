@@ -160,7 +160,7 @@ const Menu = () => {
               >
                 <div>{texts.rooms.seaview}</div>
               </Link>
-              <Link shallow replace href={useLink('/suite-design')}>
+              <Link shallow replace href={useLink('/suite')}>
                 <div>{texts.rooms.design}</div>
               </Link>
             </S.Link>
@@ -169,7 +169,7 @@ const Menu = () => {
                 flexDirection: isLaptop ? 'row' : 'column'
               }}
             >
-              <Link shallow replace href={useLink('/suite-executive')}>
+              <Link shallow replace href={useLink('/suite-le-cap')}>
                 <div>{texts.rooms.executive}</div>
               </Link>
               <Link shallow replace href={useLink('/chambres-communicantes')}>

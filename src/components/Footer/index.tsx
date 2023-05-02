@@ -6,7 +6,7 @@ import {
 } from '@/contents/globals'
 import { useIsMobile, useText } from '@/hooks'
 import { getFontSize } from '@/utils'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Button from '../Button'
 import Divider from '../Divider'
 import ExternalLink from '../ExternalLink'
@@ -18,6 +18,9 @@ import imgCastle from '../../../public/assets/images/global/castle.svg'
 import Column from '../Column'
 import Row from '../Row'
 import { TCssSize } from '@/interfaces'
+import { useRouter } from 'next/router'
+
+const linkHiring = 'https://careers.werecruit.io/fr/collection-adresses-hotels'
 
 const Section = ({ children }: { children: React.ReactNode }) => (
   <>
@@ -49,28 +52,71 @@ const Contact = ({ fontSize }: ContentProps) => {
         </Text>
       </S.Part>
       <S.Part direction="row" align="space-around" fontSize={fontSize}>
-        <Text>{texts.email}</Text>
-        <Text>{texts.phone}</Text>
+        <ExternalLink link={`mailto:${texts.email}`}>
+          <Text>{texts.email}</Text>
+        </ExternalLink>
+        <ExternalLink link={`tel:${texts.phone}`}>
+          <Text>{texts.phone}</Text>
+        </ExternalLink>
       </S.Part>
     </Section>
   )
 }
 const Social = ({ fontSize }: ContentProps) => {
+  const router = useRouter()
+  const [links, setLinks] = React.useState({
+    whatsapp: contentsSocialLinks.whatsapp.link,
+    facebook: contentsSocialLinks.facebook.link,
+    instagram: contentsSocialLinks.instagram.link,
+    linkedin: contentsSocialLinks.linkedin.link
+  })
+
+  useEffect(() => {
+    if (
+      ['/restaurant-les-pecheurs', '/en/les-pecheurs-restaurant'].includes(
+        router.asPath
+      )
+    ) {
+      setLinks({
+        whatsapp: contentsSocialLinks.whatsapp.linkRestoPecheur,
+        facebook: contentsSocialLinks.facebook.linkRestoPecheur,
+        instagram: contentsSocialLinks.instagram.linkRestoPecheur,
+        linkedin: contentsSocialLinks.linkedin.linkRestoPecheur
+      })
+    } else if (
+      ['/restaurant-baba', '/en/baba-restaurant'].includes(router.asPath)
+    ) {
+      setLinks({
+        whatsapp: contentsSocialLinks.whatsapp.linkRestoBaba,
+        facebook: contentsSocialLinks.facebook.linkRestoBaba,
+        instagram: contentsSocialLinks.instagram.linkRestoBaba,
+        linkedin: contentsSocialLinks.linkedin.linkRestoBaba
+      })
+    } else {
+      setLinks({
+        whatsapp: contentsSocialLinks.whatsapp.link,
+        facebook: contentsSocialLinks.facebook.link,
+        instagram: contentsSocialLinks.instagram.link,
+        linkedin: contentsSocialLinks.linkedin.link
+      })
+    }
+  }, [router.asPath])
+
   return (
     <Section>
       <S.Part direction="row" align="space-between" fontSize={fontSize}>
-        <ExternalLink link={contentsSocialLinks.whatsapp.link}>
+        <ExternalLink link={links.whatsapp}>
           <Text>{contentsSocialLinks.whatsapp.label}</Text>
         </ExternalLink>
-        <ExternalLink link={contentsSocialLinks.facebook.link}>
+        <ExternalLink link={links.facebook}>
           <Text>{contentsSocialLinks.facebook.label}</Text>
         </ExternalLink>
       </S.Part>
       <S.Part direction="row" align="space-between" fontSize={fontSize}>
-        <ExternalLink link={contentsSocialLinks.instagram.link}>
+        <ExternalLink link={links.instagram}>
           <Text>{contentsSocialLinks.instagram.label}</Text>
         </ExternalLink>
-        <ExternalLink link={contentsSocialLinks.linkedin.link}>
+        <ExternalLink link={links.linkedin}>
           <Text>{contentsSocialLinks.linkedin.label}</Text>
         </ExternalLink>
       </S.Part>
@@ -85,15 +131,20 @@ const Admin = ({ fontSize }: ContentProps) => {
     hiring: useText(contentsAdmin.hiring),
     hotels: useText(contentsAdmin.hotels)
   }
+  const backToTopClick = () => window.scrollTo(0, 0)
   return (
     <Section>
       <S.Part direction="row" align="space-between" fontSize={fontSize}>
         <Text>{texts.plan}</Text>
-        <Text>{texts.backToTop}</Text>
+        <div onClick={backToTopClick}>
+          <Text>{texts.backToTop}</Text>
+        </div>
       </S.Part>
       <S.Part direction="row" align="space-between" fontSize={fontSize}>
         <Text>{texts.legalNotice}</Text>
-        <Text>{texts.hiring}</Text>
+        <ExternalLink link={linkHiring}>
+          <Text>{texts.hiring}</Text>
+        </ExternalLink>
       </S.Part>
       <S.Part direction="row" align="space-between" fontSize={fontSize}>
         <Text>
@@ -111,11 +162,50 @@ const Admin = ({ fontSize }: ContentProps) => {
 
 type FooterProps = React.ComponentPropsWithoutRef<'footer'>
 const Footer = (props: FooterProps) => {
+  const [links, setLinks] = React.useState({
+    whatsapp: contentsSocialLinks.whatsapp.link,
+    facebook: contentsSocialLinks.facebook.link,
+    instagram: contentsSocialLinks.instagram.link,
+    linkedin: contentsSocialLinks.linkedin.link
+  })
+  const router = useRouter()
   const isMobile = useIsMobile()
   const spacing: TCssSize = {
     unit: 'px',
     value: 15
   }
+
+  useEffect(() => {
+    if (
+      ['/restaurant-les-pecheurs', '/en/les-pecheurs-restaurant'].includes(
+        router.asPath
+      )
+    ) {
+      setLinks({
+        whatsapp: contentsSocialLinks.whatsapp.linkRestoPecheur,
+        facebook: contentsSocialLinks.facebook.linkRestoPecheur,
+        instagram: contentsSocialLinks.instagram.linkRestoPecheur,
+        linkedin: contentsSocialLinks.linkedin.linkRestoPecheur
+      })
+    } else if (
+      ['/restaurant-baba', '/en/baba-restaurant'].includes(router.asPath)
+    ) {
+      setLinks({
+        whatsapp: contentsSocialLinks.whatsapp.linkRestoBaba,
+        facebook: contentsSocialLinks.facebook.linkRestoBaba,
+        instagram: contentsSocialLinks.instagram.linkRestoBaba,
+        linkedin: contentsSocialLinks.linkedin.linkRestoBaba
+      })
+    } else {
+      setLinks({
+        whatsapp: contentsSocialLinks.whatsapp.link,
+        facebook: contentsSocialLinks.facebook.link,
+        instagram: contentsSocialLinks.instagram.link,
+        linkedin: contentsSocialLinks.linkedin.link
+      })
+    }
+  }, [router.asPath])
+
   const texts = {
     label: useText(contentsNewsLetter.label),
     labelBis: useText(contentsNewsLetter.labelBis),
@@ -196,10 +286,12 @@ const Footer = (props: FooterProps) => {
       <Section>
         <Column opt_spacing={spacing} opt_alignItems="flex-start">
           <Text className="first">{texts.address}</Text>
-          <ExternalLink link={contentsSocialLinks.whatsapp.link}>
+          <ExternalLink link={links.whatsapp}>
             <Text>{contentsSocialLinks.whatsapp.label}</Text>
           </ExternalLink>
-          <Text>{texts.email}</Text>
+          <ExternalLink link={`mailto:${texts.email}`}>
+            <Text>{texts.email}</Text>
+          </ExternalLink>
           <Text>
             <Image
               style={{ height: fontSmall, marginRight: '10px' }}
@@ -225,10 +317,10 @@ const Footer = (props: FooterProps) => {
             ))}
           </div>
           <Row opt_justifyContent="space-between">
-            <ExternalLink link={contentsSocialLinks.instagram.link}>
+            <ExternalLink link={links.instagram}>
               <Text>{contentsSocialLinks.instagram.label}</Text>
             </ExternalLink>
-            <ExternalLink link={contentsSocialLinks.facebook.link}>
+            <ExternalLink link={links.facebook}>
               <Text opt_align="right">
                 {contentsSocialLinks.facebook.label}
               </Text>
@@ -243,17 +335,21 @@ const Footer = (props: FooterProps) => {
           </form>
           <Row opt_justifyContent="space-between">
             <Text>{texts.legalNotice}</Text>
-            <Text opt_align="right">{texts.hiring}</Text>
+            <ExternalLink link={linkHiring}>
+              <Text opt_align="right">{texts.hiring}</Text>
+            </ExternalLink>
           </Row>
         </Column>
         <Column opt_spacing={spacing} opt_alignItems="flex-end">
           <Text className="first">
             {texts.zipCode} &nbsp; {texts.city}
           </Text>
-          <ExternalLink link={contentsSocialLinks.linkedin.link}>
+          <ExternalLink link={links.linkedin}>
             <Text>{contentsSocialLinks.linkedin.label}</Text>
           </ExternalLink>
-          <Text>{texts.phone}</Text>
+          <ExternalLink link={`tel:${texts.phone}`}>
+            <Text>{texts.phone}</Text>
+          </ExternalLink>
           <Text>{texts.plan}</Text>
         </Column>
       </Section>

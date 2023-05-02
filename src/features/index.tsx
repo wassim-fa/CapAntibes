@@ -4,25 +4,25 @@ import { contentsHome } from '@/contents/pages'
 import Button from '@/components/Button'
 import Column from '@/components/Column'
 import Row from '@/components/Row'
-import slider0 from '../../public/assets/images/home/slider_0.png'
-import slider1 from '../../public/assets/images/home/slider_1.png'
-import img1 from '../../public/assets/images/home/home_1.png'
-import img1Mobile from '../../public/assets/images/home/home_1_mobile.png'
-import img2 from '../../public/assets/images/home/home_2.png'
-import img2Mobile from '../../public/assets/images/home/home_2_mobile.png'
-import img3 from '../../public/assets/images/home/home_3.png'
-import img3Mobile from '../../public/assets/images/home/home_3_mobile.png'
-import img4 from '../../public/assets/images/home/home_4.png'
-import img4Mobile from '../../public/assets/images/home/home_4_mobile.png'
-import logo3 from '../../public/assets/images/home/logo_3.png'
-import random0 from '../../public/assets/images/home/random0.png'
-import random1 from '../../public/assets/images/home/random1.png'
-import random2 from '../../public/assets/images/home/random2.png'
-import random3 from '../../public/assets/images/home/random3.png'
-import random4 from '../../public/assets/images/home/random4.png'
-import random5 from '../../public/assets/images/home/random5.png'
-import random6 from '../../public/assets/images/home/random6.png'
-import random7 from '../../public/assets/images/home/random7.png'
+import slider0 from '../../public/assets/images/home/slider_0.jpg'
+import slider1 from '../../public/assets/images/home/slider_1.jpg'
+import img1 from '../../public/assets/images/home/home_1.jpg'
+import img1Mobile from '../../public/assets/images/home/home_1_mobile.jpg'
+import img2 from '../../public/assets/images/home/home_2.jpg'
+import img2Mobile from '../../public/assets/images/home/home_2_mobile.jpg'
+import img3 from '../../public/assets/images/home/home_3.jpg'
+import img3Mobile from '../../public/assets/images/home/home_3_mobile.jpg'
+import img4 from '../../public/assets/images/home/home_4.jpg'
+import img4Mobile from '../../public/assets/images/home/home_4_mobile.jpg'
+import logo3 from '../../public/assets/images/home/logo_3.jpg'
+import random0 from '../../public/assets/images/home/random0.jpg'
+import random1 from '../../public/assets/images/home/random1.jpg'
+import random2 from '../../public/assets/images/home/random2.jpg'
+import random3 from '../../public/assets/images/home/random3.jpg'
+import random4 from '../../public/assets/images/home/random4.jpg'
+import random5 from '../../public/assets/images/home/random5.jpg'
+import random6 from '../../public/assets/images/home/random6.jpg'
+import random7 from '../../public/assets/images/home/random7.jpg'
 import Image from 'next/image'
 import Colors from '@/enums/colors'
 import InfinitySlider from '@/components/InfinitySlider'
@@ -137,9 +137,6 @@ export default function Home(meta: IMetaPage) {
             <br />
             {useText(contentsHome.text1_2)}
           </Text>
-          <Button className="btn">
-            <Text>{useText(contentsHome.btnMoreInformation)}</Text>
-          </Button>
         </Column>
         <Row>
           <InfinitySlider>
@@ -198,11 +195,11 @@ export default function Home(meta: IMetaPage) {
               {useText(contentsHome.title3_2)}
             </Text>
             <Text className="p">{useText(contentsHome.text3)}</Text>
-            <Link shallow replace href={useLink('/restaurant-les-pecheurs')}>
+            {/* <Link shallow replace href={useLink('/restaurant-les-pecheurs')}>
               <Button className="btn">
                 <Text>{useText(contentsHome.btnMoreInformation)}</Text>
               </Button>
-            </Link>
+            </Link> */}
           </Column>
           <Column
             opt_alignItems="flex-end"
@@ -246,13 +243,13 @@ export default function Home(meta: IMetaPage) {
               <br />
               {useText(contentsHome.text4_2)}
             </Text>
-            <Link shallow replace href={useLink('/restaurant-baba')}>
+            {/* <Link shallow replace href={useLink('/restaurant-baba')}>
               <Button opt_color={Colors.YELLOW} className="btn">
                 <Text opt_color={Colors.YELLOW}>
                   {useText(contentsHome.btnMoreInformation)}
                 </Text>
               </Button>
-            </Link>
+            </Link> */}
           </Column>
           <Column
             opt_margin={isLaptop ? [0.2, 0.8, 0.2, 0.8] : [0.2, 1, 0.2, 1]}
@@ -289,11 +286,11 @@ export default function Home(meta: IMetaPage) {
           >
             <Text className="h3">{useText(contentsHome.title5)}</Text>
             <Text className="p">{useText(contentsHome.text5)}</Text>
-            <Link shallow replace href={useLink('/farniente')}>
+            {/* <Link shallow replace href={useLink('/farniente')}>
               <Button className="btn">
                 <Text>{useText(contentsHome.btnMoreInformation)}</Text>
               </Button>
-            </Link>
+            </Link> */}
           </Column>
         </RowToColumn>
         <RowToColumn
@@ -304,11 +301,11 @@ export default function Home(meta: IMetaPage) {
           <Column opt_margin={isLaptop ? [0, 0, 0, 0] : [0.5, 1.5, 2.5, 1.5]}>
             <Text className="h3">{useText(contentsHome.title6)}</Text>
             <Text className="p">{useText(contentsHome.text6)}</Text>
-            <Link shallow replace href={useLink('/bien-etre')}>
+            {/* <Link shallow replace href={useLink('/bien-etre')}>
               <Button className="btn">
                 <Text>{useText(contentsHome.btnMoreInformation)}</Text>
               </Button>
-            </Link>
+            </Link> */}
           </Column>
           <Column
             opt_alignItems="flex-end"
