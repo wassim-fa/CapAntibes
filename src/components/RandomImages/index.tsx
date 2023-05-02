@@ -27,7 +27,7 @@ interface RandomImagesProps {
 const RandomImages = ({ listImages }: RandomImagesProps) => {
   const isMobile = useIsMobile()
   const nbOfChildren = isMobile ? 1 : 2
-  const initImgId: number = isMobile ? 1 : 3
+  const initImgId: number = isMobile ? 0 : 2
   const [imgId, setImgId] = useState<number>(initImgId)
   const [componentActive, setComponentActive] = useState<number>(0)
   const [images, setImages] = useState<[number, number][]>([
@@ -71,6 +71,7 @@ const RandomImages = ({ listImages }: RandomImagesProps) => {
   useEffect(() => {
     console.log('imgId', imgId)
     console.log('images', images)
+    console.log('imagesToShow', imagesToShow)
   }, [imgId, images])
 
   return (
