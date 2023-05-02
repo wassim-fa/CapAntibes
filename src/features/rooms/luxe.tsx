@@ -7,7 +7,8 @@ import room0Mobile from '../../../public/assets/images/rooms/luxe/room_0_mobile.
 import { IMetaPage } from '@/interfaces'
 
 export default function LuxeRoom(meta: IMetaPage) {
-  const randomsImages = [random0, random1, random0, random1, random0, random1]
+  const images = [random0, random1, room0]
+  const imagesMobile = [random0, random1, room0Mobile]
   const menu = {
     left: '/suite-le-cap',
     middle: '/chambre-et-suites',
@@ -19,9 +20,8 @@ export default function LuxeRoom(meta: IMetaPage) {
         meta={meta}
         menu={menu}
         content={contentsLuxeRoom}
-        randomsImages={randomsImages}
-        image={room0}
-        imageMobile={room0Mobile}
+        images={images}
+        imagesMobile={imagesMobile}
         items={contentsLuxeRoomItems}
       />
     </>

@@ -5,7 +5,7 @@ export const RoomPageStyles = createGlobalStyle`
       margin-top: 80px;
     .h3, .p, .btn, .menu, .item {
       line-height: 22px;
-    }    
+    }
     .h3 {
       font-size: 24px;
     }
@@ -32,12 +32,15 @@ export const RoomPageStyles = createGlobalStyle`
       border-bottom: 2px solid ${(props) => props.theme.fontColors.primary};
       padding-bottom: -5px;
     }
-    
+
     .section .btn {
       margin-left: 5%
     }
 
     &.mobile {
+      img {
+        height: auto;
+      }
     .h3, .p, .btn, .menu, .item {
         line-height: 23px;
       }

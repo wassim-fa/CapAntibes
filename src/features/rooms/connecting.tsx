@@ -10,7 +10,8 @@ import room0Mobile from '../../../public/assets/images/rooms/connecting/room_0_m
 import { IMetaPage } from '@/interfaces'
 
 export default function ConnectingRoom(meta: IMetaPage) {
-  const randomsImages = [random0, random1, random0, random1, random0, random1]
+  const images = [random0, random1, room0]
+  const imagesMobile = [random0, random1, room0Mobile]
   const menu = {
     left: '/suite-le-cap',
     middle: '/chambre-et-suites',
@@ -22,9 +23,8 @@ export default function ConnectingRoom(meta: IMetaPage) {
         meta={meta}
         menu={menu}
         content={contentsConnectingRoom}
-        randomsImages={randomsImages}
-        image={room0}
-        imageMobile={room0Mobile}
+        images={images}
+        imagesMobile={imagesMobile}
         items={contentsConnectingRoomItems}
       />
     </>

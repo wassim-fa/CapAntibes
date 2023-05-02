@@ -7,7 +7,8 @@ import room0Mobile from '../../../public/assets/images/rooms/seaview/room_0_mobi
 import { IMetaPage } from '@/interfaces'
 
 export default function SeaViewRoom(meta: IMetaPage) {
-  const randomsImages = [random0, random1, random0, random1, random0, random1]
+  const images = [random0, random1, room0]
+  const imagesMobile = [random0, random1, room0Mobile]
   const menu = {
     left: '/chambre-privilege',
     middle: '/chambre-et-suites',
@@ -19,9 +20,8 @@ export default function SeaViewRoom(meta: IMetaPage) {
         meta={meta}
         menu={menu}
         content={contentsSeaViewRoom}
-        randomsImages={randomsImages}
-        image={room0}
-        imageMobile={room0Mobile}
+        images={images}
+        imagesMobile={imagesMobile}
         items={contentsSeaViewRoomItems}
       />
     </>

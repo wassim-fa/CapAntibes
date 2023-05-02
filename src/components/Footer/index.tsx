@@ -96,7 +96,9 @@ const Admin = ({ fontSize }: ContentProps) => {
     <Section>
       <S.Part direction="row" align="space-between" fontSize={fontSize}>
         <Text>{texts.plan}</Text>
-        <div onClick={backToTopClick}><Text>{texts.backToTop}</Text></div>
+        <div onClick={backToTopClick}>
+          <Text>{texts.backToTop}</Text>
+        </div>
       </S.Part>
       <S.Part direction="row" align="space-between" fontSize={fontSize}>
         <Text>{texts.legalNotice}</Text>

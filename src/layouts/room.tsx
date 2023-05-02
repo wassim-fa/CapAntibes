@@ -1,5 +1,3 @@
-import Carrousel from '@/components/Carrousel'
-import RandomImages from '@/components/RandomImages'
 import RowToColumn from '@/components/RowToColumn'
 import { useIsLaptop, useLink, useText } from '@/hooks'
 import { IContentByLang } from '@/interfaces'
@@ -56,18 +54,16 @@ interface IMenu {
 }
 interface IRoomLayoutProps {
   meta: IMeta
-  randomsImages: StaticImageData[]
   content: Record<string, IContentByLang>
   items: IContentByLang[]
   menu: IMenu
-  image: StaticImageData
-  imageMobile: StaticImageData
+  images: StaticImageData[]
+  imagesMobile: StaticImageData[]
 }
 const RoomLayout = (props: IRoomLayoutProps): JSX.Element => {
-  const { meta, randomsImages, content, menu, image, imageMobile, items } =
-    props
+  const { meta, content, menu, images, imagesMobile, items } = props
   const isLaptop = useIsLaptop()
-  const imgToShow = isLaptop ? image : imageMobile
+  const imgsToShow = isLaptop ? images : imagesMobile
   const nbItemsPerColumn = Math.round(items.length / 3)
   const itemsColumnMargin = isLaptop ? '25px' : 'initial'
   const itemPadding = isLaptop ? 6 : 3
@@ -104,11 +100,16 @@ const RoomLayout = (props: IRoomLayoutProps): JSX.Element => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main id="room" className={!isLaptop ? 'mobile' : ''}>
-        {isLaptop ? (
-          <RandomImages listImages={randomsImages} />
-        ) : (
-          <Carrousel images={randomsImages} />
-        )}
+        <Row>
+          {isLaptop ? (
+            <>
+              <Image src={imgsToShow[0]} alt="image" />
+              <Image src={imgsToShow[1]} alt="image" />
+            </>
+          ) : (
+            <Image src={imgsToShow[0]} alt="image" />
+          )}
+        </Row>
         <RowToColumn
           className="menu"
           align="center"
@@ -170,7 +171,7 @@ const RoomLayout = (props: IRoomLayoutProps): JSX.Element => {
         </RowToColumn>
         <Row opt_margin={[0, 0, 1, 0]}>
           <Image
-            src={imgToShow}
+            src={isLaptop ? imgsToShow[2] : imgsToShow[1]}
             className={'fullWidth'}
             alt={`images de ${useText(content.title)}`}
           />
