@@ -18,7 +18,7 @@ export const contentsAdmin: Record<string, IContentByLang> = {
   },
   hotels: {
     fr: 'relais et chateaux',
-    en: 'en-relais et chateaux',
+    en: 'relais et chateaux',
     ru: 'ru-relais et chateaux'
   },
   legalNotice: {
