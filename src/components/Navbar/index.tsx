@@ -26,9 +26,11 @@ const LangMenuContainer = styled.div`
 
   &[data-open='open'] {
     display: flex;
+    z-index: 3;
   }
   &[data-open='close'] {
     display: none;
+    z-index: 1;
   }
 
   background-color: white;
