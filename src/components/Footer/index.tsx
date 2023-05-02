@@ -19,6 +19,8 @@ import Column from '../Column'
 import Row from '../Row'
 import { TCssSize } from '@/interfaces'
 
+const linkHiring = 'https://careers.werecruit.io/fr/collection-adresses-hotels'
+
 const Section = ({ children }: { children: React.ReactNode }) => (
   <>
     <Divider />
@@ -49,8 +51,12 @@ const Contact = ({ fontSize }: ContentProps) => {
         </Text>
       </S.Part>
       <S.Part direction="row" align="space-around" fontSize={fontSize}>
-        <Text>{texts.email}</Text>
-        <Text>{texts.phone}</Text>
+        <ExternalLink link={`mailto:${texts.email}`}>
+          <Text>{texts.email}</Text>
+        </ExternalLink>
+        <ExternalLink link={`tel:${texts.phone}`}>
+          <Text>{texts.phone}</Text>
+        </ExternalLink>
       </S.Part>
     </Section>
   )
@@ -85,15 +91,18 @@ const Admin = ({ fontSize }: ContentProps) => {
     hiring: useText(contentsAdmin.hiring),
     hotels: useText(contentsAdmin.hotels)
   }
+  const backToTopClick = () => window.scrollTo(0, 0)
   return (
     <Section>
       <S.Part direction="row" align="space-between" fontSize={fontSize}>
         <Text>{texts.plan}</Text>
-        <Text>{texts.backToTop}</Text>
+        <div onClick={backToTopClick}><Text>{texts.backToTop}</Text></div>
       </S.Part>
       <S.Part direction="row" align="space-between" fontSize={fontSize}>
         <Text>{texts.legalNotice}</Text>
-        <Text>{texts.hiring}</Text>
+        <ExternalLink link={linkHiring}>
+          <Text>{texts.hiring}</Text>
+        </ExternalLink>
       </S.Part>
       <S.Part direction="row" align="space-between" fontSize={fontSize}>
         <Text>
@@ -199,7 +208,9 @@ const Footer = (props: FooterProps) => {
           <ExternalLink link={contentsSocialLinks.whatsapp.link}>
             <Text>{contentsSocialLinks.whatsapp.label}</Text>
           </ExternalLink>
-          <Text>{texts.email}</Text>
+          <ExternalLink link={`mailto:${texts.email}`}>
+            <Text>{texts.email}</Text>
+          </ExternalLink>
           <Text>
             <Image
               style={{ height: fontSmall, marginRight: '10px' }}
@@ -243,7 +254,9 @@ const Footer = (props: FooterProps) => {
           </form>
           <Row opt_justifyContent="space-between">
             <Text>{texts.legalNotice}</Text>
-            <Text opt_align="right">{texts.hiring}</Text>
+            <ExternalLink link={linkHiring}>
+              <Text opt_align="right">{texts.hiring}</Text>
+            </ExternalLink>
           </Row>
         </Column>
         <Column opt_spacing={spacing} opt_alignItems="flex-end">
@@ -253,7 +266,9 @@ const Footer = (props: FooterProps) => {
           <ExternalLink link={contentsSocialLinks.linkedin.link}>
             <Text>{contentsSocialLinks.linkedin.label}</Text>
           </ExternalLink>
-          <Text>{texts.phone}</Text>
+          <ExternalLink link={`tel:${texts.phone}`}>
+            <Text>{texts.phone}</Text>
+          </ExternalLink>
           <Text>{texts.plan}</Text>
         </Column>
       </Section>
