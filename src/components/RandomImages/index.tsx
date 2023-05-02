@@ -72,7 +72,7 @@ const RandomImages = ({ listImages }: RandomImagesProps) => {
     console.log('imgId', imgId)
     console.log('images', images)
     console.log('imagesToShow', imagesToShow)
-  }, [imgId, images])
+  }, [imgId, images, imagesToShow])
 
   return (
     <div className="sc-randomimages" onClick={changeImgAuto}>
