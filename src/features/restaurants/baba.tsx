@@ -27,11 +27,17 @@ import Link from 'next/link'
 import { LangContext } from '@/stores'
 import { useContext } from 'react'
 import Languages from '@/enums/languages'
+import ExternalLink from '@/components/ExternalLink'
 
 const randomsImages = [random1, random2, random1, random2]
 export default function BabaRestaurant(meta: IMetaPage) {
   const isLaptop = useIsLaptop()
   const { lang } = useContext(LangContext)
+  let toBookLink = 'https://bookings.zenchef.com/results?rid=361599&pid=1001'
+  if (lang === Languages.EN) {
+    toBookLink =
+      'https://bookings.zenchef.com/results?rid=361599&pid=1001&lang=en'
+  }
   return (
     <>
       <BabaRestaurantsPageStyles />
@@ -54,9 +60,11 @@ export default function BabaRestaurant(meta: IMetaPage) {
           />
           <Text className="h3">{useText(contentsBabaRestaurant.title)}</Text>
           <Text className="p">{useText(contentsBabaRestaurant.intro)}</Text>
-          <Button className="btn">
-            <Text>{useText(contentsBabaRestaurant.toBookTable)}</Text>
-          </Button>
+          <ExternalLink link={toBookLink}>
+            <Button className="btn">
+              <Text>{useText(contentsBabaRestaurant.toBookTable)}</Text>
+            </Button>
+          </ExternalLink>
         </Column>
         {isLaptop ? (
           <RandomImages listImages={randomsImages} />

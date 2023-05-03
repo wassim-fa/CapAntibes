@@ -20,11 +20,16 @@ import { useContext } from 'react'
 import { LangContext } from '@/stores'
 import Link from 'next/link'
 import Languages from '@/enums/languages'
+import ExternalLink from '@/components/ExternalLink'
 
 const randomsImages = [random1, random2, random1, random2]
 export default function PecheursRestaurant(meta: IMetaPage) {
   const isLaptop = useIsLaptop()
   const { lang } = useContext(LangContext)
+  let toBookLink = 'https://module.lafourchette.com/fr_FR/cta/iframe/5972-d196c'
+  if (lang === Languages.EN) {
+    toBookLink = 'https://module.lafourchette.com/en_US/cta/iframe/5972-d196c'
+  }
   return (
     <>
       <PecheursRestaurantsPageStyles />
@@ -44,9 +49,12 @@ export default function PecheursRestaurant(meta: IMetaPage) {
             {useText(contentsPecheursRestaurant.title)}
           </Text>
           <Text className="p">{useText(contentsPecheursRestaurant.intro)}</Text>
-          <Button className="btn">
-            <Text>{useText(contentsPecheursRestaurant.toBookTable)}</Text>
-          </Button>
+
+          <ExternalLink link={toBookLink}>
+            <Button className="btn">
+              <Text>{useText(contentsPecheursRestaurant.toBookTable)}</Text>
+            </Button>
+          </ExternalLink>
         </Column>
         {isLaptop ? (
           <RandomImages listImages={randomsImages} />
