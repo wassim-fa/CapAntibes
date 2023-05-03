@@ -26,12 +26,28 @@ import { RestaurantsPageStyles } from '@/styles/pages/restaurants'
 import { contentsRestaurantsIndex } from '@/contents/pages/restaurants-index'
 import Row from '@/components/Row'
 import Link from 'next/link'
+import Languages from '@/enums/languages'
+import { LangContext } from '@/stores'
+import { useContext } from 'react'
+import ExternalLink from '@/components/ExternalLink'
 
 const randomsImages = [random1, random2, random1, random2]
 export default function Restaurants(meta: IMetaPage) {
   const isLaptop = useIsLaptop()
   const valueSpacing = isLaptop ? 20 : 10
   const spacing: TCssSize = { value: valueSpacing, unit: 'px' }
+  const { lang } = useContext(LangContext)
+  let toBookLinkFishing =
+    'https://module.lafourchette.com/fr_FR/cta/iframe/5972-d196c'
+  let toBookLinkBaba =
+    'https://bookings.zenchef.com/results?rid=361599&pid=1001'
+
+  if (lang === Languages.EN) {
+    toBookLinkBaba =
+      'https://bookings.zenchef.com/results?rid=361599&pid=1001&lang=en'
+    toBookLinkFishing =
+      'https://module.lafourchette.com/en_US/cta/iframe/5972-d196c'
+  }
   return (
     <>
       <RestaurantsPageStyles />
@@ -97,9 +113,11 @@ export default function Restaurants(meta: IMetaPage) {
                 </Link>
               </Column>
               <Column opt_alignItems="flex-end">
-                <Button className="btn">
-                  <Text>{useText(contentsRestaurantsIndex.button)}</Text>
-                </Button>
+                <ExternalLink link={toBookLinkFishing}>
+                  <Button className="btn">
+                    <Text>{useText(contentsRestaurantsIndex.button)}</Text>
+                  </Button>
+                </ExternalLink>
               </Column>
             </Row>
           </Column>
@@ -154,9 +172,11 @@ export default function Restaurants(meta: IMetaPage) {
                 </Link>
               </Column>
               <Column opt_alignItems="flex-end">
-                <Button className="btn">
-                  <Text>{useText(contentsRestaurantsIndex.button)}</Text>
-                </Button>
+                <ExternalLink link={toBookLinkBaba}>
+                  <Button className="btn">
+                    <Text>{useText(contentsRestaurantsIndex.button)}</Text>
+                  </Button>
+                </ExternalLink>
               </Column>
             </Row>
           </Column>
