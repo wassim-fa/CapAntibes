@@ -15,6 +15,7 @@ const GlobalStyles = createGlobalStyle`
   html {
     font-size: 62.5%;
     background-color: #FFF;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
   }
 
   html, body, #__next {
@@ -37,7 +38,6 @@ const GlobalStyles = createGlobalStyle`
 
   a {
       cursor: pointer;
-      -webkit-tap-highlight-color: rgba(0,0,0,0);
       color: inherit;
       text-decoration: none;
   }

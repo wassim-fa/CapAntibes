@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   width: 100%;
   height: 95vh;
   position: relative;
-  cursor: auto;
+  cursor: pointer;
   overflow: hidden;
 
   /* &[data-isshowfirst='true'] > *:first-child,
@@ -20,7 +20,7 @@ export const Wrapper = styled.div`
 
   > div {
     position: relative;
-    cursor: auto;
+  cursor: pointer;
     overflow: hidden;
     z-index: 0;
     height: 100%;

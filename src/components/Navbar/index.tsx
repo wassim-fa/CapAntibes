@@ -133,7 +133,7 @@ const Lang = () => {
       <LangMenuContainer
         data-open={menuStatus}
         className="sc-lang-menu"
-        style={{ fontSize: '14px', cursor: isLaptop ? 'pointer' : 'auto' }}
+        style={{ fontSize: '14px', cursor: 'pointer' }}
       >
         {lang !== Languages.FR && (
           <>
@@ -257,7 +257,7 @@ const ToBook = () => {
   return (
     <ToBookContainer
       className="tobook"
-      style={{ fontSize: '14px', cursor: isLaptop ? 'pointer' : 'auto' }}
+      style={{ fontSize: '14px', cursor: 'pointer' }}
     >
       <div className="btn" onClick={handleClick}>
         {texts.book}
@@ -265,7 +265,7 @@ const ToBook = () => {
       <ToBookMenuContainer
         data-open={menuStatus}
         className="sc-tobook-dropdown"
-        style={{ fontSize: '14px', cursor: isLaptop ? 'pointer' : 'auto' }}
+        style={{ fontSize: '14px', cursor: 'pointer' }}
       >
         <Divider />
         <a href={`${linksHref.room}`}>{texts.room}</a>
@@ -302,7 +302,7 @@ const fadeIn = keyframes`
 `
 const BurgerContainer = styled.div`
   position: relative;
-  cursor: auto;
+  cursor: pointer;
   height: 25px;
   width: 50px;
 
@@ -447,7 +447,7 @@ const Navbar = () => {
           data-islarge={isLaptop}
           src={title}
           style={{
-            cursor: isLaptop ? 'pointer' : 'auto',
+            cursor: 'pointer',
             transform: `translateY(${
               isEffectCancelled ? 0 : translate
             }vh) scale(${isEffectCancelled ? 1 : scale})`
