@@ -4,7 +4,7 @@ import {
   contentsNewsLetter,
   contentsSocialLinks
 } from '@/contents/globals'
-import { useIsMobile, useText } from '@/hooks'
+import { useIsLaptop, useText } from '@/hooks'
 import { getFontSize } from '@/utils'
 import React, { useEffect } from 'react'
 import Button from '../Button'
@@ -43,22 +43,24 @@ const Contact = ({ fontSize }: ContentProps) => {
   }
   return (
     <Section>
-      <S.Part direction="row" align="center" fontSize={fontSize}>
-        <Text opt_align="center">{texts.address}</Text>
-      </S.Part>
-      <S.Part direction="row" align="center" fontSize={fontSize}>
-        <Text>
-          {texts.zipCode} &nbsp; {texts.city}
-        </Text>
-      </S.Part>
-      <S.Part direction="row" align="space-around" fontSize={fontSize}>
-        <ExternalLink link={`mailto:${texts.email}`}>
-          <Text>{texts.email}</Text>
-        </ExternalLink>
-        <ExternalLink link={`tel:${texts.phone}`}>
-          <Text>{texts.phone}</Text>
-        </ExternalLink>
-      </S.Part>
+      <Column>
+        <S.Part direction="row" align="center" fontSize={fontSize}>
+          <Text opt_align="center">{texts.address}</Text>
+        </S.Part>
+        <S.Part direction="row" align="center" fontSize={fontSize}>
+          <Text>
+            {texts.zipCode} &nbsp; {texts.city}
+          </Text>
+        </S.Part>
+        <S.Part direction="row" align="space-around" fontSize={fontSize}>
+          <ExternalLink link={`mailto:${texts.email}`}>
+            <Text>{texts.email}</Text>
+          </ExternalLink>
+          <ExternalLink link={`tel:${texts.phone}`}>
+            <Text>{texts.phone}</Text>
+          </ExternalLink>
+        </S.Part>
+      </Column>
     </Section>
   )
 }
@@ -169,7 +171,7 @@ const Footer = (props: FooterProps) => {
     linkedin: contentsSocialLinks.linkedin.link
   })
   const router = useRouter()
-  const isMobile = useIsMobile()
+  const isLaptop = useIsLaptop()
   const spacing: TCssSize = {
     unit: 'px',
     value: 15
@@ -246,14 +248,14 @@ const Footer = (props: FooterProps) => {
     }
   }
 
-  const fontSize = isMobile ? fontSizeMobile : fontSizeLaptop
+  const fontSize = isLaptop ? fontSizeMobile : fontSizeLaptop
   const fontRegular = getFontSize(
     fontSize.regular.current,
     fontSize.regular.middle
   )
   const fontSmall = getFontSize(fontSize.small.current, fontSize.small.middle)
 
-  if (isMobile) {
+  if (!isLaptop) {
     return (
       <S.Wrapper className={`mobile sc-footer ${props.className}`} {...props}>
         <Section>
