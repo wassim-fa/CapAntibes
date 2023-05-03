@@ -20,7 +20,7 @@ export const Wrapper = styled.div`
 
   > div {
     position: relative;
-  cursor: pointer;
+    cursor: pointer;
     overflow: hidden;
     z-index: 0;
     height: 100%;

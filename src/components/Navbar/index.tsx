@@ -70,7 +70,6 @@ const LangContainer = styled.div`
 `
 const Lang = () => {
   const router = useRouter()
-  const isLaptop = useIsLaptop()
   const { lang, setLang } = useContext(LangContext)
   const { menuOpen, setMenuOpen } = useContext(MenuContext)
   const [menuStatus, setMenuStatus] = useState<'close' | 'open' | 'undefined'>(
@@ -213,7 +212,6 @@ const ToBookContainer = styled.div`
   }
 `
 const ToBook = () => {
-  const isLaptop = useIsLaptop()
   const { menuOpen, setMenuOpen } = useContext(MenuContext)
   const [menuStatus, setMenuStatus] = useState<'close' | 'open' | 'undefined'>(
     'undefined'

@@ -74,7 +74,13 @@ export default function PecheursRestaurant(meta: IMetaPage) {
             <Text className="p">
               {useText(contentsPecheursRestaurant.text1)}
             </Text>
-            <Link href={lang === Languages.FR ? "/pdfs/carte-les-pecheurs.pdf" : "/pdfs/les-pecheurs-card.pdf"}>
+            <Link
+              href={
+                lang === Languages.FR
+                  ? '/pdfs/carte-les-pecheurs.pdf'
+                  : '/pdfs/les-pecheurs-card.pdf'
+              }
+            >
               <Button className="btn">
                 <Text>{useText(contentsPecheursRestaurant.menu)}</Text>
               </Button>

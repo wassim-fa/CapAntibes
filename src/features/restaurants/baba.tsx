@@ -122,7 +122,13 @@ export default function BabaRestaurant(meta: IMetaPage) {
               {useText(contentsBabaRestaurant.subTitle3)}
             </Text>
             <Text className="p">{useText(contentsBabaRestaurant.text3)}</Text>
-            <Link href={lang === Languages.FR ? "/pdfs/carte-bar-plage-restaurant-baba.pdf" : "/pdfs/card-bar-beach-baba-restaurant.pdf"}>
+            <Link
+              href={
+                lang === Languages.FR
+                  ? '/pdfs/carte-bar-plage-restaurant-baba.pdf'
+                  : '/pdfs/card-bar-beach-baba-restaurant.pdf'
+              }
+            >
               <Button className="btn">
                 <Text>{useText(contentsBabaRestaurant.menu)}</Text>
               </Button>
