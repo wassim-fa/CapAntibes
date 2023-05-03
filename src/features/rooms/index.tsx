@@ -106,7 +106,10 @@ export default function Rooms(meta: IMetaPage) {
             opt_alignItems="flex-end"
           >
             <Image
-              className={isLaptop ? '' : 'fullWidth'}
+              style={{
+                width: `${isLaptop ? '80%' : '100%'}`,
+                height: 'auto'
+              }}
               src={isLaptop ? img1 : img1_mobile}
               alt="chambre de luxe"
             />
@@ -122,7 +125,10 @@ export default function Rooms(meta: IMetaPage) {
             opt_alignItems="flex-start"
           >
             <Image
-              className={isLaptop ? '' : 'fullWidth'}
+              style={{
+                width: `${isLaptop ? '80%' : '100%'}`,
+                height: 'auto'
+              }}
               src={isLaptop ? img2 : img2_mobile}
               alt="chambre privilège"
             />
@@ -181,7 +187,7 @@ export default function Rooms(meta: IMetaPage) {
             </Text>
             <Row>
               <Column opt_alignItems="flex-start">
-                <Link shallow replace href={useLink('/chambre-deluxe')}>
+                <Link shallow replace href={useLink('/chambre-privilege')}>
                   <Button className="btn">
                     <Text>{useText(contentsRoomsIndex.discover)}</Text>
                   </Button>
@@ -201,7 +207,10 @@ export default function Rooms(meta: IMetaPage) {
             opt_alignItems="flex-end"
           >
             <Image
-              className={isLaptop ? '' : 'fullWidth'}
+              style={{
+                width: `${isLaptop ? '80%' : '100%'}`,
+                height: 'auto'
+              }}
               src={isLaptop ? img4 : img4_mobile}
               alt="chambre de luxe"
             />
@@ -218,7 +227,10 @@ export default function Rooms(meta: IMetaPage) {
             opt_alignItems="flex-start"
           >
             <Image
-              className={isLaptop ? '' : 'fullWidth'}
+              style={{
+                width: `${isLaptop ? '80%' : '100%'}`,
+                height: 'auto'
+              }}
               src={isLaptop ? img5 : img5_mobile}
               alt="chambre privilège"
             />
@@ -297,7 +309,10 @@ export default function Rooms(meta: IMetaPage) {
             opt_alignItems="flex-end"
           >
             <Image
-              className={isLaptop ? '' : 'fullWidth'}
+              style={{
+                width: `${isLaptop ? '80%' : '100%'}`,
+                height: 'auto'
+              }}
               src={isLaptop ? img7 : img7_mobile}
               alt="chambre de luxe"
             />
@@ -314,7 +329,10 @@ export default function Rooms(meta: IMetaPage) {
             opt_alignItems="flex-start"
           >
             <Image
-              className={isLaptop ? '' : 'fullWidth'}
+              style={{
+                width: `${isLaptop ? '80%' : '100%'}`,
+                height: 'auto'
+              }}
               src={isLaptop ? img8 : img8_mobile}
               alt="chambre privilège"
             />
