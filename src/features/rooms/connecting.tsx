@@ -7,9 +7,9 @@ import random0 from '../../../public/assets/images/rooms/connecting/random_0.jpg
 import random1 from '../../../public/assets/images/rooms/connecting/random_1.jpg'
 import room0 from '../../../public/assets/images/rooms/connecting/room_0.jpg'
 import room0Mobile from '../../../public/assets/images/rooms/connecting/room_0_mobile.jpg'
-import { IMetaPage } from '@/interfaces'
+import { IRoomPage } from '@/interfaces'
 
-export default function ConnectingRoom(meta: IMetaPage) {
+export default function ConnectingRoom(props: IRoomPage) {
   const images = [random0, random1, room0]
   const imagesMobile = [random0, random1, room0Mobile]
   const menu = {
@@ -20,9 +20,10 @@ export default function ConnectingRoom(meta: IMetaPage) {
   return (
     <>
       <RoomLayout
-        meta={meta}
+        meta={{ title: props.title, description: props.description }}
         menu={menu}
         content={contentsConnectingRoom}
+        toBookLink={props.toBookLink}
         images={images}
         imagesMobile={imagesMobile}
         items={contentsConnectingRoomItems}

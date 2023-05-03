@@ -42,6 +42,7 @@ const Menu = () => {
     },
     restaurant: {
       main: useText(contentsLayout.restaurant),
+      restau: useText(contentsLayout.restaurant_restaurants),
       fishing: useText(contentsLayout.restaurant_fishing),
       beach: useText(contentsLayout.restaurant_beach)
     },
@@ -189,6 +190,15 @@ const Menu = () => {
             className={`${showItems === 'restaurant' ? 'active' : ''}`}
             style={{ fontSize: linkSize }}
           >
+            <S.Link
+              style={{
+                flexDirection: isLaptop ? 'row' : 'column'
+              }}
+            >
+              <Link shallow replace href={useLink('/restaurants-bar')}>
+                <div>{texts.restaurant.restau}</div>
+              </Link>
+            </S.Link>
             <S.Link
               style={{
                 flexDirection: isLaptop ? 'row' : 'column'

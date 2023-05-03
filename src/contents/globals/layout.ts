@@ -121,6 +121,11 @@ export const contentsLayout: Record<string, IContentByLang> = {
     en: 'Restaurants • Bar',
     ru: 'ru-Restaurants • Bar'
   },
+  restaurant_restaurants: {
+    fr: 'Nos restaurants •',
+    en: 'Our restaurants •',
+    ru: 'ru-Les pêcheurs restaurant •'
+  },
   restaurant_fishing: {
     fr: 'Les pêcheurs restaurant •',
     en: 'Les pêcheurs restaurant •',

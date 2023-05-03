@@ -47,7 +47,7 @@ export const contentsBabaRestaurant: Record<string, IContentByLang> = {
     ru: `de 19h00 à 23h00`
   },
   text2: {
-    fr: `Le matin signa nordiuropon etris. Decteri ssendem audem iusquod condem ad mo turebatiam vid consu inatodi ctorarit. Locciae invescia vero ve, quidendi pra, essenatabem consunum effreviverum ex se ante factatque miliniq uostrum int. An vermis, fursul vid sedite confer audende ntiaede mquit. Untrenihicae moc. Muliam ium urnum poenduc idiis. Rorsupi cavero in tabit.`,
+    fr: `Dans la fraîcheur du soir, l’ambiance s’apaise. Le décor est empreint d’élégance et de douceur. Les couleurs sont tamisées et, à la lumière des bougies, tout retrouve son calme. Vous dînez accompagné par le bruit des flots. Les épices s’échappent de la cuisine en plein air et parfument l’atmosphère. Autour du bar, vous prolongez le dîner pour un dernier verre.`,
     en: `In the coolness of the evening, the atmosphere calms down. The decor is imbued with elegance and sweetness. The colors are subdued, and by candlelight, everything regains its calm. You dine accompanied by the sound of the waves. Spices escape from the open-air kitchen and perfume the atmosphere. Around the bar, you prolong the dinner for a last drink.`,
     ru: `Le matin signa nordiuropon etris. Decteri ssendem audem iusquod condem ad mo turebatiam vid consu inatodi ctorarit. Locciae invescia vero ve, quidendi pra, essenatabem consunum effreviverum ex se ante factatque miliniq uostrum int. An vermis, fursul vid sedite confer audende ntiaede mquit. Untrenihicae moc. Muliam ium urnum poenduc idiis. Rorsupi cavero in tabit.`
   },

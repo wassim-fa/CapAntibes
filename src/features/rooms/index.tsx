@@ -29,10 +29,22 @@ import Image from 'next/image'
 import Column from '@/components/Column'
 import { IMetaPage, TCssSize } from '@/interfaces'
 import Link from 'next/link'
+import { useContext } from 'react'
+import { LangContext } from '@/stores'
+import Languages from '@/enums/languages'
+import ExternalLink from '@/components/ExternalLink'
 
 export default function Rooms(meta: IMetaPage) {
   const isLaptop = useIsLaptop()
   const spacing: TCssSize = { value: 0.8, unit: 'vw' }
+  const { lang } = useContext(LangContext)
+  let toBookLink =
+    'https://www.secure-hotel-booking.com/Cap-d-Antibes-Beach-Hotel/JK7H/fr?hotelId=13829'
+  if (lang === Languages.EN) {
+    toBookLink =
+      'https://www.secure-hotel-booking.com/Cap-d-Antibes-Beach-Hotel/JK7H/en?hotelId=13829'
+  }
+
   return (
     <>
       <RoomsPageStyles />
@@ -40,15 +52,17 @@ export default function Rooms(meta: IMetaPage) {
         <title>{meta.title}</title>
         <meta name="description" content={meta.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <main id="rooms" className={!isLaptop ? 'mobile' : ''}>
         <Column opt_margin={isLaptop ? [1, 3, 2, 1] : [3, 1.5, 1.5, 1.5]}>
           <Text className="h1">{useText(contentsRoomsIndex.title)}</Text>
           <Text className="p">{useText(contentsRoomsIndex.subTitle1)}</Text>
-          <Button className="btn">
-            <Text>{useText(contentsRoomsIndex.toBook)}</Text>
-          </Button>
+          <ExternalLink link={toBookLink}>
+            <Button className="btn">
+              <Text>{useText(contentsRoomsIndex.toBook)}</Text>
+            </Button>
+          </ExternalLink>
         </Column>
         {isLaptop && (
           <Row opt_margin={[0, 0, 0, 0]} className="imgs">
@@ -79,9 +93,11 @@ export default function Rooms(meta: IMetaPage) {
                 </Link>
               </Column>
               <Column opt_alignItems="flex-end">
-                <Button className="btn">
-                  <Text>{useText(contentsRoomsIndex.toBook)}</Text>
-                </Button>
+                <ExternalLink link={toBookLink}>
+                  <Button className="btn">
+                    <Text>{useText(contentsRoomsIndex.toBook)}</Text>
+                  </Button>
+                </ExternalLink>
               </Column>
             </Row>
           </Column>
@@ -90,7 +106,10 @@ export default function Rooms(meta: IMetaPage) {
             opt_alignItems="flex-end"
           >
             <Image
-              className={isLaptop ? '' : 'fullWidth'}
+              style={{
+                width: `${isLaptop ? '80%' : '100%'}`,
+                height: 'auto'
+              }}
               src={isLaptop ? img1 : img1_mobile}
               alt="chambre de luxe"
             />
@@ -106,7 +125,10 @@ export default function Rooms(meta: IMetaPage) {
             opt_alignItems="flex-start"
           >
             <Image
-              className={isLaptop ? '' : 'fullWidth'}
+              style={{
+                width: `${isLaptop ? '80%' : '100%'}`,
+                height: 'auto'
+              }}
               src={isLaptop ? img2 : img2_mobile}
               alt="chambre privilège"
             />
@@ -132,9 +154,11 @@ export default function Rooms(meta: IMetaPage) {
                 </Link>
               </Column>
               <Column opt_alignItems="flex-end">
-                <Button className="btn">
-                  <Text>{useText(contentsRoomsIndex.toBook)}</Text>
-                </Button>
+                <ExternalLink link={toBookLink}>
+                  <Button className="btn">
+                    <Text>{useText(contentsRoomsIndex.toBook)}</Text>
+                  </Button>
+                </ExternalLink>
               </Column>
             </Row>
           </Column>
@@ -163,16 +187,18 @@ export default function Rooms(meta: IMetaPage) {
             </Text>
             <Row>
               <Column opt_alignItems="flex-start">
-                <Link shallow replace href={useLink('/chambre-deluxe')}>
+                <Link shallow replace href={useLink('/chambre-privilege')}>
                   <Button className="btn">
                     <Text>{useText(contentsRoomsIndex.discover)}</Text>
                   </Button>
                 </Link>
               </Column>
               <Column opt_alignItems="flex-end">
-                <Button className="btn">
-                  <Text>{useText(contentsRoomsIndex.toBook)}</Text>
-                </Button>
+                <ExternalLink link={toBookLink}>
+                  <Button className="btn">
+                    <Text>{useText(contentsRoomsIndex.toBook)}</Text>
+                  </Button>
+                </ExternalLink>
               </Column>
             </Row>
           </Column>
@@ -181,7 +207,10 @@ export default function Rooms(meta: IMetaPage) {
             opt_alignItems="flex-end"
           >
             <Image
-              className={isLaptop ? '' : 'fullWidth'}
+              style={{
+                width: `${isLaptop ? '80%' : '100%'}`,
+                height: 'auto'
+              }}
               src={isLaptop ? img4 : img4_mobile}
               alt="chambre de luxe"
             />
@@ -198,7 +227,10 @@ export default function Rooms(meta: IMetaPage) {
             opt_alignItems="flex-start"
           >
             <Image
-              className={isLaptop ? '' : 'fullWidth'}
+              style={{
+                width: `${isLaptop ? '80%' : '100%'}`,
+                height: 'auto'
+              }}
               src={isLaptop ? img5 : img5_mobile}
               alt="chambre privilège"
             />
@@ -215,20 +247,18 @@ export default function Rooms(meta: IMetaPage) {
             </Text>
             <Row>
               <Column opt_alignItems="flex-start">
-                <Link
-                  shallow
-                  replace
-                  href={useLink('/chambre-privilege-vue-mer')}
-                >
+                <Link shallow replace href={useLink('/suite')}>
                   <Button className="btn">
                     <Text>{useText(contentsRoomsIndex.discover)}</Text>
                   </Button>
                 </Link>
               </Column>
               <Column opt_alignItems="flex-end">
-                <Button className="btn">
-                  <Text>{useText(contentsRoomsIndex.toBook)}</Text>
-                </Button>
+                <ExternalLink link={toBookLink}>
+                  <Button className="btn">
+                    <Text>{useText(contentsRoomsIndex.toBook)}</Text>
+                  </Button>
+                </ExternalLink>
               </Column>
             </Row>
           </Column>
@@ -255,16 +285,18 @@ export default function Rooms(meta: IMetaPage) {
             </Text>
             <Row>
               <Column opt_alignItems="flex-start">
-                <Link shallow replace href={useLink('/chambre-deluxe')}>
+                <Link shallow replace href={useLink('/suite-le-cap')}>
                   <Button className="btn">
                     <Text>{useText(contentsRoomsIndex.discover)}</Text>
                   </Button>
                 </Link>
               </Column>
               <Column opt_alignItems="flex-end">
-                <Button className="btn">
-                  <Text>{useText(contentsRoomsIndex.toBook)}</Text>
-                </Button>
+                <ExternalLink link={toBookLink}>
+                  <Button className="btn">
+                    <Text>{useText(contentsRoomsIndex.toBook)}</Text>
+                  </Button>
+                </ExternalLink>
               </Column>
             </Row>
           </Column>
@@ -273,7 +305,10 @@ export default function Rooms(meta: IMetaPage) {
             opt_alignItems="flex-end"
           >
             <Image
-              className={isLaptop ? '' : 'fullWidth'}
+              style={{
+                width: `${isLaptop ? '80%' : '100%'}`,
+                height: 'auto'
+              }}
               src={isLaptop ? img7 : img7_mobile}
               alt="chambre de luxe"
             />
@@ -290,7 +325,10 @@ export default function Rooms(meta: IMetaPage) {
             opt_alignItems="flex-start"
           >
             <Image
-              className={isLaptop ? '' : 'fullWidth'}
+              style={{
+                width: `${isLaptop ? '80%' : '100%'}`,
+                height: 'auto'
+              }}
               src={isLaptop ? img8 : img8_mobile}
               alt="chambre privilège"
             />
@@ -307,20 +345,18 @@ export default function Rooms(meta: IMetaPage) {
             </Text>
             <Row>
               <Column opt_alignItems="flex-start">
-                <Link
-                  shallow
-                  replace
-                  href={useLink('/chambre-privilege-vue-mer')}
-                >
+                <Link shallow replace href={useLink('/chambres-communicantes')}>
                   <Button className="btn">
                     <Text>{useText(contentsRoomsIndex.discover)}</Text>
                   </Button>
                 </Link>
               </Column>
               <Column opt_alignItems="flex-end">
-                <Button className="btn">
-                  <Text>{useText(contentsRoomsIndex.toBook)}</Text>
-                </Button>
+                <ExternalLink link={toBookLink}>
+                  <Button className="btn">
+                    <Text>{useText(contentsRoomsIndex.toBook)}</Text>
+                  </Button>
+                </ExternalLink>
               </Column>
             </Row>
           </Column>

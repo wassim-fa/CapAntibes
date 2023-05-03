@@ -6,24 +6,24 @@ export const contentsSocialLinks: Record<Socials, ILinkContent> = {
     label: 'WhatsApp',
     link: '/',
     linkRestoPecheur: '/',
-    linkRestoBaba: 'https://www.google.com/'
+    linkRestoBaba: '/'
   },
   [Socials.FACEBOOK]: {
     label: 'Facebook',
     link: 'https://www.facebook.com/antibesbeachhotel/',
-    linkRestoPecheur: '/',
-    linkRestoBaba: 'https://www.google.com/'
+    linkRestoPecheur: 'https://www.facebook.com/antibesbeachhotel/',
+    linkRestoBaba: 'https://www.facebook.com/antibesbeachhotel/'
   },
   [Socials.INSTAGRAM]: {
     label: 'Instagram',
     link: 'https://www.instagram.com/capdantibesbeachhotel/',
-    linkRestoPecheur: '/',
-    linkRestoBaba: 'https://www.google.com/'
+    linkRestoPecheur: 'https://www.instagram.com/capdantibesbeachhotel/',
+    linkRestoBaba: 'https://www.instagram.com/capdantibesbeachhotel/'
   },
   [Socials.LINKEDIN]: {
     label: 'Linkedin',
     link: 'https://www.linkedin.com/company/35678536/admin/',
-    linkRestoPecheur: '/',
-    linkRestoBaba: 'https://www.google.com/'
+    linkRestoPecheur: 'https://www.linkedin.com/company/35678536/admin/',
+    linkRestoBaba: 'https://www.linkedin.com/company/35678536/admin/'
   }
 }

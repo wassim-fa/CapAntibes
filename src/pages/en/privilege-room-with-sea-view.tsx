@@ -14,6 +14,7 @@ export default function SeaViewPage() {
     <SeaViewRoom
       title={`Privilege room with sea view | Cap d'antibes Beach Hotel Rivieira`}
       description={`This is a large room in this Hotel de la Rivieira of 36 m2 with the bay of Antibes in the background. In the foreground, some elements of tropical vegetation.`}
+      toBookLink="https://www.secure-hotel-booking.com/Cap-d-Antibes-Beach-Hotel/JK7H/en?hotelId=13829"
     />
   )
 }

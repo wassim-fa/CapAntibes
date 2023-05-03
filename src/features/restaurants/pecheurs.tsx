@@ -16,10 +16,20 @@ import { contentsPecheursRestaurant } from '@/contents/pages'
 import { PecheursRestaurantsPageStyles } from '@/styles/pages/restaurants/pecheurs'
 import Button from '@/components/Button'
 import { IMetaPage } from '@/interfaces'
+import { useContext } from 'react'
+import { LangContext } from '@/stores'
+import Link from 'next/link'
+import Languages from '@/enums/languages'
+import ExternalLink from '@/components/ExternalLink'
 
 const randomsImages = [random1, random2, random1, random2]
 export default function PecheursRestaurant(meta: IMetaPage) {
   const isLaptop = useIsLaptop()
+  const { lang } = useContext(LangContext)
+  let toBookLink = 'https://module.lafourchette.com/fr_FR/cta/iframe/5972-d196c'
+  if (lang === Languages.EN) {
+    toBookLink = 'https://module.lafourchette.com/en_US/cta/iframe/5972-d196c'
+  }
   return (
     <>
       <PecheursRestaurantsPageStyles />
@@ -27,7 +37,7 @@ export default function PecheursRestaurant(meta: IMetaPage) {
         <title>{meta.title}</title>
         <meta name="description" content={meta.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <main id="pecheurs-restaurant" className={!isLaptop ? 'mobile' : ''}>
         {!isLaptop && <Carrousel images={randomsImages} />}
@@ -39,9 +49,12 @@ export default function PecheursRestaurant(meta: IMetaPage) {
             {useText(contentsPecheursRestaurant.title)}
           </Text>
           <Text className="p">{useText(contentsPecheursRestaurant.intro)}</Text>
-          <Button className="btn">
-            <Text>{useText(contentsPecheursRestaurant.toBookTable)}</Text>
-          </Button>
+
+          <ExternalLink link={toBookLink}>
+            <Button className="btn">
+              <Text>{useText(contentsPecheursRestaurant.toBookTable)}</Text>
+            </Button>
+          </ExternalLink>
         </Column>
         {isLaptop ? (
           <RandomImages listImages={randomsImages} />
@@ -69,9 +82,17 @@ export default function PecheursRestaurant(meta: IMetaPage) {
             <Text className="p">
               {useText(contentsPecheursRestaurant.text1)}
             </Text>
-            <Button className="btn">
-              <Text>{useText(contentsPecheursRestaurant.menu)}</Text>
-            </Button>
+            <Link
+              href={
+                lang === Languages.FR
+                  ? '/pdfs/carte-les-pecheurs.pdf'
+                  : '/pdfs/les-pecheurs-card.pdf'
+              }
+            >
+              <Button className="btn">
+                <Text>{useText(contentsPecheursRestaurant.menu)}</Text>
+              </Button>
+            </Link>
           </Column>
           <Column opt_margin={isLaptop ? [0.5, 0, 0.5, 0] : [2, 0, 2, 0]}>
             <Text className="h5">

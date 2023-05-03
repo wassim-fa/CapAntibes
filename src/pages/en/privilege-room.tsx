@@ -14,6 +14,7 @@ export default function PrivilegePage() {
     <PrivilegeRoom
       title={`Privilege Room | A room in the French Rivieira`}
       description={`It is a room of the French Riviera of more than 36 m2. A large dressing room to store your things, ideal for long stays. `}
+      toBookLink="https://www.secure-hotel-booking.com/Cap-d-Antibes-Beach-Hotel/JK7H/en?hotelId=13829"
     />
   )
 }

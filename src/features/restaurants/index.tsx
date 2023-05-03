@@ -26,12 +26,28 @@ import { RestaurantsPageStyles } from '@/styles/pages/restaurants'
 import { contentsRestaurantsIndex } from '@/contents/pages/restaurants-index'
 import Row from '@/components/Row'
 import Link from 'next/link'
+import Languages from '@/enums/languages'
+import { LangContext } from '@/stores'
+import { useContext } from 'react'
+import ExternalLink from '@/components/ExternalLink'
 
 const randomsImages = [random1, random2, random1, random2]
 export default function Restaurants(meta: IMetaPage) {
   const isLaptop = useIsLaptop()
   const valueSpacing = isLaptop ? 20 : 10
   const spacing: TCssSize = { value: valueSpacing, unit: 'px' }
+  const { lang } = useContext(LangContext)
+  let toBookLinkFishing =
+    'https://module.lafourchette.com/fr_FR/cta/iframe/5972-d196c'
+  let toBookLinkBaba =
+    'https://bookings.zenchef.com/results?rid=361599&pid=1001'
+
+  if (lang === Languages.EN) {
+    toBookLinkBaba =
+      'https://bookings.zenchef.com/results?rid=361599&pid=1001&lang=en'
+    toBookLinkFishing =
+      'https://module.lafourchette.com/en_US/cta/iframe/5972-d196c'
+  }
   return (
     <>
       <RestaurantsPageStyles />
@@ -39,7 +55,7 @@ export default function Restaurants(meta: IMetaPage) {
         <title>{meta.title}</title>
         <meta name="description" content={meta.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <main id="restaurants" className={!isLaptop ? 'mobile' : ''}>
         {isLaptop ? (
@@ -57,9 +73,9 @@ export default function Restaurants(meta: IMetaPage) {
           <Text className="p">
             {useText(contentsRestaurantsIndex.description)}
           </Text>
-          <Button className="btn">
+          {/* <Button className="btn">
             <Text>{useText(contentsRestaurantsIndex.button)}</Text>
-          </Button>
+          </Button> */}
         </Column>
         <Image
           style={{ marginBottom: '2%' }}
@@ -97,9 +113,11 @@ export default function Restaurants(meta: IMetaPage) {
                 </Link>
               </Column>
               <Column opt_alignItems="flex-end">
-                <Button className="btn">
-                  <Text>{useText(contentsRestaurantsIndex.button)}</Text>
-                </Button>
+                <ExternalLink link={toBookLinkFishing}>
+                  <Button className="btn">
+                    <Text>{useText(contentsRestaurantsIndex.button)}</Text>
+                  </Button>
+                </ExternalLink>
               </Column>
             </Row>
           </Column>
@@ -154,9 +172,11 @@ export default function Restaurants(meta: IMetaPage) {
                 </Link>
               </Column>
               <Column opt_alignItems="flex-end">
-                <Button className="btn">
-                  <Text>{useText(contentsRestaurantsIndex.button)}</Text>
-                </Button>
+                <ExternalLink link={toBookLinkBaba}>
+                  <Button className="btn">
+                    <Text>{useText(contentsRestaurantsIndex.button)}</Text>
+                  </Button>
+                </ExternalLink>
               </Column>
             </Row>
           </Column>
@@ -186,9 +206,9 @@ export default function Restaurants(meta: IMetaPage) {
               {useText(contentsRestaurantsIndex.subTitle3)}
             </Text>
             <Text className="p">{useText(contentsRestaurantsIndex.text3)}</Text>
-            <Button className="btn">
+            {/* <Button className="btn">
               <Text>{useText(contentsRestaurantsIndex.menu)}</Text>
-            </Button>
+            </Button> */}
           </Column>
           <Column
             opt_margin={isLaptop ? [0.2, 0, 0.2, 1] : [0.2, 0, 0.2, 0]}
@@ -232,9 +252,9 @@ export default function Restaurants(meta: IMetaPage) {
               {useText(contentsRestaurantsIndex.subTitle4)}
             </Text>
             <Text className="p">{useText(contentsRestaurantsIndex.text4)}</Text>
-            <Button className="btn">
+            {/* <Button className="btn">
               <Text>{useText(contentsRestaurantsIndex.menu)}</Text>
-            </Button>
+            </Button> */}
           </Column>
         </RowToColumn>
       </main>

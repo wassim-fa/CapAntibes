@@ -14,6 +14,7 @@ export default function ConnectingPage() {
     <ConnectingRoom
       title={`Connecting rooms| Cap d'antibes Beach Hotel`}
       description={`The family room combines two rooms into one apartment with two bathrooms. The ideal solution for a trip with family or friends.`}
+      toBookLink="https://www.secure-hotel-booking.com/Cap-d-Antibes-Beach-Hotel/JK7H/en?hotelId=13829"
     />
   )
 }

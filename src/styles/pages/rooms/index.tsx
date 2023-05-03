@@ -35,7 +35,7 @@ export const RoomsPageStyles = createGlobalStyle`
     }
 
     &.mobile {
-      
+
     .div-orange {
       background-color: red;
     }
