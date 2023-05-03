@@ -4,7 +4,7 @@ import {
   contentsNewsLetter,
   contentsSocialLinks
 } from '@/contents/globals'
-import { useIsLaptop, useIsMobile, useText } from '@/hooks'
+import { useIsLaptop, useText } from '@/hooks'
 import { getFontSize } from '@/utils'
 import React, { useEffect } from 'react'
 import Button from '../Button'

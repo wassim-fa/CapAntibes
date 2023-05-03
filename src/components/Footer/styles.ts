@@ -45,7 +45,7 @@ export const Wrapper = styled.footer`
 
 export const Section = styled.div`
   display: flex;
-  &.mobile{
+  &.mobile {
     flex-direction: column;
   }
   flex-direction: row;
