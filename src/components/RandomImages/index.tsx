@@ -29,7 +29,7 @@ const RandomImages = ({ listImages }: RandomImagesProps) => {
     [0, 1],
     [2, 3]
   ])
-  const [imagesToShow, setImagesToShow] = useState<[number, number]>([0, 0])
+  const [imagesToShow, setImagesToShow] = useState<[number, number]>([-1, -1])
 
   const changeImgAuto = useCallback(() => {
     const _imagesToShow = imagesToShow
@@ -37,7 +37,10 @@ const RandomImages = ({ listImages }: RandomImagesProps) => {
 
     // Change visibility of new active component
     const newComponentActive = (componentActive + 1) % 2
-    if (_imagesToShow[newComponentActive] === 0) {
+    if (
+      _imagesToShow[newComponentActive] === 0 ||
+      _imagesToShow[newComponentActive] === -1
+    ) {
       _imagesToShow[newComponentActive] = 1
     } else {
       _imagesToShow[newComponentActive] = 0
