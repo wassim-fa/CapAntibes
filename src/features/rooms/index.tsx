@@ -36,8 +36,8 @@ import ExternalLink from '@/components/ExternalLink'
 
 export default function Rooms(meta: IMetaPage) {
   const isLaptop = useIsLaptop()
-  const { lang } = useContext(LangContext)
   const spacing: TCssSize = { value: 0.8, unit: 'vw' }
+  const { lang } = useContext(LangContext)
   let toBookLink =
     'https://www.secure-hotel-booking.com/Cap-d-Antibes-Beach-Hotel/JK7H/fr?hotelId=13829'
   if (lang === Languages.EN) {
