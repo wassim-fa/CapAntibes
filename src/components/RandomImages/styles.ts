@@ -10,12 +10,12 @@ const fadeOut = keyframes`
   }
 `
 const fadeIn = keyframes`
-  from {      
+  from {
     opacity: 0;
   }
 
-  to {       
-    opacity: 1;    
+  to {
+    opacity: 1;
   }
 `
 
@@ -32,6 +32,14 @@ export const Wrapper = styled.div`
     object-fit: cover;
     width: 100%;
     height: 100%;
+  }
+  &[data-imgtoshow='-1'] > * {
+    :first-child {
+      opacity: 1;
+    }
+    :last-child {
+      opacity: 0;
+    }
   }
 
   &[data-imgtoshow='0'] > * {
