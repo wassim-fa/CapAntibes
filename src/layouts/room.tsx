@@ -97,7 +97,7 @@ const RoomLayout = (props: IRoomLayoutProps): JSX.Element => {
         <title>{meta.title}</title>
         <meta name="description" content={meta.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <main id="room" className={!isLaptop ? 'mobile' : ''}>
         <Row>

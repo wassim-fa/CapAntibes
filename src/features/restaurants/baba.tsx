@@ -4,15 +4,15 @@ import { useIsLaptop, useText } from '@/hooks'
 import Head from 'next/head'
 import random1 from '../../../public/assets/images/restaurants/baba/random_1.jpg'
 import random2 from '../../../public/assets/images/restaurants/baba/random_2.jpg'
-import img0 from '../../../public/assets/images/restaurants/baba/baba_0.jpg'
+import img0 from '../../../public/assets/images/restaurants/baba/baba_0.png'
 import img1 from '../../../public/assets/images/restaurants/baba/baba_1.jpg'
 import img3 from '../../../public/assets/images/restaurants/baba/baba_3.jpg'
 import img3Mobile from '../../../public/assets/images/restaurants/baba/baba_3_mobile.jpg'
 import img4 from '../../../public/assets/images/restaurants/baba/baba_4.jpg'
 import img5 from '../../../public/assets/images/restaurants/baba/baba_5.jpg'
 import img5Mobile from '../../../public/assets/images/restaurants/baba/baba_4_mobile.jpg'
-import img6 from '../../../public/assets/images/restaurants/baba/baba_6.jpg'
-import img6Mobile from '../../../public/assets/images/restaurants/baba/baba_6_mobile.jpg'
+// import img6 from '../../../public/assets/images/restaurants/baba/baba_6.jpg'
+// import img6Mobile from '../../../public/assets/images/restaurants/baba/baba_6_mobile.jpg'
 import img1Mobile from '../../../public/assets/images/restaurants/baba/baba_1_mobile.jpg'
 
 import Image from 'next/image'
@@ -23,6 +23,7 @@ import { contentsBabaRestaurant } from '@/contents/pages'
 import Button from '@/components/Button'
 import { BabaRestaurantsPageStyles } from '@/styles/pages/restaurants/baba'
 import { IMetaPage } from '@/interfaces'
+import Link from 'next/link'
 
 const randomsImages = [random1, random2, random1, random2]
 export default function BabaRestaurant(meta: IMetaPage) {
@@ -34,7 +35,7 @@ export default function BabaRestaurant(meta: IMetaPage) {
         <title>{meta.title}</title>
         <meta name="description" content={meta.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <main id="baba-restaurant" className={!isLaptop ? 'mobile' : ''}>
         {!isLaptop && <Carrousel images={randomsImages} />}
@@ -77,9 +78,11 @@ export default function BabaRestaurant(meta: IMetaPage) {
               {useText(contentsBabaRestaurant.subTitle1)}
             </Text>
             <Text className="p">{useText(contentsBabaRestaurant.text1)}</Text>
-            <Button className="btn">
-              <Text>{useText(contentsBabaRestaurant.menu)}</Text>
-            </Button>
+            <Link href="/pdfs/card-bar-beach-baba-restaurant.pdf">
+              <Button className="btn">
+                <Text>{useText(contentsBabaRestaurant.menu)}</Text>
+              </Button>
+            </Link>
           </Column>
           <Column opt_margin={isLaptop ? [0.5, 0, 0.5, 0] : [2, 0, 2, 0]}>
             <Text className="h5">
@@ -89,9 +92,11 @@ export default function BabaRestaurant(meta: IMetaPage) {
               {useText(contentsBabaRestaurant.subTitle2)}
             </Text>
             <Text className="p">{useText(contentsBabaRestaurant.text2)}</Text>
-            <Button className="btn">
-              <Text>{useText(contentsBabaRestaurant.menu)}</Text>
-            </Button>
+            <Link href="/pdfs/card-bar-beach-baba-restaurant.pdf">
+              <Button className="btn">
+                <Text>{useText(contentsBabaRestaurant.menu)}</Text>
+              </Button>
+            </Link>
           </Column>
         </RowToColumn>
         <Image
@@ -113,9 +118,11 @@ export default function BabaRestaurant(meta: IMetaPage) {
               {useText(contentsBabaRestaurant.subTitle3)}
             </Text>
             <Text className="p">{useText(contentsBabaRestaurant.text3)}</Text>
-            <Button className="btn">
-              <Text>{useText(contentsBabaRestaurant.menu)}</Text>
-            </Button>
+            <Link href="/pdfs/card-bar-beach-baba-restaurant.pdf">
+              <Button className="btn">
+                <Text>{useText(contentsBabaRestaurant.menu)}</Text>
+              </Button>
+            </Link>
           </Column>
           <Column
             opt_margin={isLaptop ? [0.2, 0, 0.2, 1] : [0.2, 0, 0.2, 0]}
@@ -146,9 +153,11 @@ export default function BabaRestaurant(meta: IMetaPage) {
               {useText(contentsBabaRestaurant.subTitle4)}
             </Text>
             <Text className="p">{useText(contentsBabaRestaurant.text4)}</Text>
-            <Button className="btn">
-              <Text>{useText(contentsBabaRestaurant.menu)}</Text>
-            </Button>
+            <Link href="/pdfs/baba-glaces.pdf">
+              <Button className="btn">
+                <Text>{useText(contentsBabaRestaurant.menu)}</Text>
+              </Button>
+            </Link>
           </Column>
           <Column opt_alignItems="flex-start" opt_justifyContent="center">
             <Image
@@ -169,7 +178,7 @@ export default function BabaRestaurant(meta: IMetaPage) {
             alt="paysage"
           />
         )}
-        <RowToColumn
+        {/* <RowToColumn
           className="section"
           align={isLaptop ? 'center' : 'flex-start'}
           marginForRow={[1, 1.5, 0.5, 1.5]}
@@ -197,7 +206,7 @@ export default function BabaRestaurant(meta: IMetaPage) {
               alt="plage"
             />
           </Column>
-        </RowToColumn>
+        </RowToColumn> */}
       </main>
     </>
   )

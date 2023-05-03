@@ -40,7 +40,7 @@ export default function Rooms(meta: IMetaPage) {
         <title>{meta.title}</title>
         <meta name="description" content={meta.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <main id="rooms" className={!isLaptop ? 'mobile' : ''}>
         <Column opt_margin={isLaptop ? [1, 3, 2, 1] : [3, 1.5, 1.5, 1.5]}>

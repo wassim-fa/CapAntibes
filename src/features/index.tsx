@@ -14,7 +14,9 @@ import img3 from '../../public/assets/images/home/home_3.jpg'
 import img3Mobile from '../../public/assets/images/home/home_3_mobile.jpg'
 import img4 from '../../public/assets/images/home/home_4.jpg'
 import img4Mobile from '../../public/assets/images/home/home_4_mobile.jpg'
-import logo3 from '../../public/assets/images/home/logo_3.jpg'
+import img5 from '../../public/assets/images/home/home_5.jpg'
+import img5Mobile from '../../public/assets/images/home/home_5_mobile.jpg'
+import logo3 from '../../public/assets/images/home/logo_3.png'
 import random0 from '../../public/assets/images/home/random0.jpg'
 import random1 from '../../public/assets/images/home/random1.jpg'
 import random2 from '../../public/assets/images/home/random2.jpg'
@@ -90,7 +92,7 @@ export default function Home(meta: IMetaPage) {
         <title>{meta.title}</title>
         <meta name="description" content={meta.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <main id="home" className={!isLaptop ? 'mobile' : ''}>
         {!isEffectCancelled && (
@@ -195,11 +197,11 @@ export default function Home(meta: IMetaPage) {
               {useText(contentsHome.title3_2)}
             </Text>
             <Text className="p">{useText(contentsHome.text3)}</Text>
-            {/* <Link shallow replace href={useLink('/restaurant-les-pecheurs')}>
+            <Link shallow replace href={useLink('/restaurant-les-pecheurs')}>
               <Button className="btn">
                 <Text>{useText(contentsHome.btnMoreInformation)}</Text>
               </Button>
-            </Link> */}
+            </Link>
           </Column>
           <Column
             opt_alignItems="flex-end"
@@ -243,13 +245,13 @@ export default function Home(meta: IMetaPage) {
               <br />
               {useText(contentsHome.text4_2)}
             </Text>
-            {/* <Link shallow replace href={useLink('/restaurant-baba')}>
+            <Link shallow replace href={useLink('/restaurant-baba')}>
               <Button opt_color={Colors.YELLOW} className="btn">
                 <Text opt_color={Colors.YELLOW}>
                   {useText(contentsHome.btnMoreInformation)}
                 </Text>
               </Button>
-            </Link> */}
+            </Link>
           </Column>
           <Column
             opt_margin={isLaptop ? [0.2, 0.8, 0.2, 0.8] : [0.2, 1, 0.2, 1]}
@@ -312,7 +314,7 @@ export default function Home(meta: IMetaPage) {
             opt_margin={isLaptop ? [0, 0, 0, 0] : [0.5, 0, 0, 0]}
           >
             <Image
-              src={img2}
+              src={isLaptop ? img5 : img5Mobile}
               style={{
                 width: `${isLaptop ? '90%' : '100%'}`,
                 height: 'auto'

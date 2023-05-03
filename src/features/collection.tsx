@@ -23,7 +23,7 @@ export default function Collection(meta: IMetaPage) {
         <title>{meta.title}</title>
         <meta name="description" content={meta.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <main id="collection" className={!isLaptop ? 'mobile' : ''}>
         <Row opt_margin={isLaptop ? [1.5, 1.5, 0, 1.5] : [6, 1.5, 1, 1.5]}>

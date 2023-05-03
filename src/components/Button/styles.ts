@@ -20,6 +20,6 @@ export const Wrapper = styled.button<WrapperProps>`
   }
   display: flex;
   align-items: center;
-  cursor: auto;
+  cursor: pointer;
   width: ${(props) => getCssSize(props.width)};
 `
