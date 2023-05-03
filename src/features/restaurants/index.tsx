@@ -186,9 +186,9 @@ export default function Restaurants(meta: IMetaPage) {
               {useText(contentsRestaurantsIndex.subTitle3)}
             </Text>
             <Text className="p">{useText(contentsRestaurantsIndex.text3)}</Text>
-            <Button className="btn">
+            {/* <Button className="btn">
               <Text>{useText(contentsRestaurantsIndex.menu)}</Text>
-            </Button>
+            </Button> */}
           </Column>
           <Column
             opt_margin={isLaptop ? [0.2, 0, 0.2, 1] : [0.2, 0, 0.2, 0]}
@@ -232,9 +232,9 @@ export default function Restaurants(meta: IMetaPage) {
               {useText(contentsRestaurantsIndex.subTitle4)}
             </Text>
             <Text className="p">{useText(contentsRestaurantsIndex.text4)}</Text>
-            <Button className="btn">
+            {/* <Button className="btn">
               <Text>{useText(contentsRestaurantsIndex.menu)}</Text>
-            </Button>
+            </Button> */}
           </Column>
         </RowToColumn>
       </main>
