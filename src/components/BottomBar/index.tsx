@@ -1,5 +1,5 @@
 import { contentsLayout } from '@/contents/globals'
-import { useIsMobile, useText } from '@/hooks'
+import { useIsLaptop, useIsMobile, useText } from '@/hooks'
 import { MenuContext } from '@/stores'
 import { useContext, useEffect, useState } from 'react'
 import styled, { keyframes } from 'styled-components'
@@ -65,7 +65,7 @@ const BottomBar = () => {
     const value = menuOpen === 'tobook' ? 'tobook-close' : 'tobook'
     setMenuOpen(value)
   }
-  const isMobile = useIsMobile()
+  const isLaptop = useIsLaptop()
   const linksHref = {
     room: useText(contentsLayout.linkRoom),
     baba: useText(contentsLayout.linkBaba),
@@ -96,7 +96,7 @@ const BottomBar = () => {
     }
   }, [menuOpen])
 
-  if (isMobile) {
+  if (!isLaptop) {
     return (
       <>
         <ToBookMenuContainer
