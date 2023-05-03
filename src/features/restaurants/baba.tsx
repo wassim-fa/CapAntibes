@@ -24,10 +24,14 @@ import Button from '@/components/Button'
 import { BabaRestaurantsPageStyles } from '@/styles/pages/restaurants/baba'
 import { IMetaPage } from '@/interfaces'
 import Link from 'next/link'
+import { LangContext } from '@/stores'
+import { useContext } from 'react'
+import Languages from '@/enums/languages'
 
 const randomsImages = [random1, random2, random1, random2]
 export default function BabaRestaurant(meta: IMetaPage) {
   const isLaptop = useIsLaptop()
+  const { lang } = useContext(LangContext)
   return (
     <>
       <BabaRestaurantsPageStyles />
@@ -78,7 +82,7 @@ export default function BabaRestaurant(meta: IMetaPage) {
               {useText(contentsBabaRestaurant.subTitle1)}
             </Text>
             <Text className="p">{useText(contentsBabaRestaurant.text1)}</Text>
-            <Link href="/pdfs/card-bar-beach-baba-restaurant.pdf">
+            <Link href="/pdfs/carte-food-plage-restaurant-baba.pdf">
               <Button className="btn">
                 <Text>{useText(contentsBabaRestaurant.menu)}</Text>
               </Button>
@@ -92,7 +96,7 @@ export default function BabaRestaurant(meta: IMetaPage) {
               {useText(contentsBabaRestaurant.subTitle2)}
             </Text>
             <Text className="p">{useText(contentsBabaRestaurant.text2)}</Text>
-            <Link href="/pdfs/card-bar-beach-baba-restaurant.pdf">
+            <Link href="/pdfs/carte-food-plage-restaurant-baba.pdf">
               <Button className="btn">
                 <Text>{useText(contentsBabaRestaurant.menu)}</Text>
               </Button>
@@ -118,7 +122,7 @@ export default function BabaRestaurant(meta: IMetaPage) {
               {useText(contentsBabaRestaurant.subTitle3)}
             </Text>
             <Text className="p">{useText(contentsBabaRestaurant.text3)}</Text>
-            <Link href="/pdfs/card-bar-beach-baba-restaurant.pdf">
+            <Link href={lang === Languages.FR ? "/pdfs/carte-bar-plage-restaurant-baba.pdf" : "/pdfs/card-bar-beach-baba-restaurant.pdf"}>
               <Button className="btn">
                 <Text>{useText(contentsBabaRestaurant.menu)}</Text>
               </Button>
