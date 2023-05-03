@@ -57,9 +57,9 @@ export default function Restaurants(meta: IMetaPage) {
           <Text className="p">
             {useText(contentsRestaurantsIndex.description)}
           </Text>
-          <Button className="btn">
+          {/* <Button className="btn">
             <Text>{useText(contentsRestaurantsIndex.button)}</Text>
-          </Button>
+          </Button> */}
         </Column>
         <Image
           style={{ marginBottom: '2%' }}
