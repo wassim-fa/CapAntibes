@@ -10,6 +10,7 @@ import Button from '@/components/Button'
 import Column from '@/components/Column'
 import Row from '@/components/Row'
 import Divider from '@/components/Divider'
+import ExternalLink from '@/components/ExternalLink'
 
 interface IITemProps {
   itemPadding: number
@@ -57,11 +58,12 @@ interface IRoomLayoutProps {
   content: Record<string, IContentByLang>
   items: IContentByLang[]
   menu: IMenu
+  toBookLink: string
   images: StaticImageData[]
   imagesMobile: StaticImageData[]
 }
 const RoomLayout = (props: IRoomLayoutProps): JSX.Element => {
-  const { meta, content, menu, images, imagesMobile, items } = props
+  const { meta, content, menu, toBookLink, images, imagesMobile, items } = props
   const isLaptop = useIsLaptop()
   const imgsToShow = isLaptop ? images : imagesMobile
   const nbItemsPerColumn = Math.round(items.length / 3)
@@ -157,9 +159,11 @@ const RoomLayout = (props: IRoomLayoutProps): JSX.Element => {
         >
           <Text className="h3">{useText(content.title)}</Text>
           <Text className="p">{useText(content.subTitle1)}</Text>
-          <Button className="btn">
-            <Text>{useText(content.toBook)}</Text>
-          </Button>
+          <ExternalLink link={toBookLink}>
+            <Button className="btn">
+              <Text>{useText(content.toBook)}</Text>
+            </Button>
+          </ExternalLink>
         </Column>
         <RowToColumn
           className="items"

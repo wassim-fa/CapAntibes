@@ -14,6 +14,7 @@ export default function CommunicantePage() {
     <ConnectingRoom
       title={`Chambres communicantes | Cap d'antibes Beach Hotel`}
       description={`La chambre familiale réunit deux chambres en un appartement disposant de deux salles de bains. La solution idéale pour un voyage en famille ou entre amis. `}
+      toBookLink="https://www.secure-hotel-booking.com/Cap-d-Antibes-Beach-Hotel/JK7H/fr?hotelId=13829"
     />
   )
 }

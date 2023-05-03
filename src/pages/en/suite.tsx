@@ -14,6 +14,7 @@ export default function DesignPage() {
     <DesignRoom
       title={`Suite on the French Riviera | Cap d'antibes Beach Hotel`}
       description={`This Suite of the French Riviera, offer breathtaking views of the landscape. The bathrooms are equipped with large bathtubs or rain showers. `}
+      toBookLink="https://www.secure-hotel-booking.com/Cap-d-Antibes-Beach-Hotel/JK7H/en?hotelId=13829"
     />
   )
 }
