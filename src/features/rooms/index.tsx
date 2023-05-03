@@ -29,10 +29,22 @@ import Image from 'next/image'
 import Column from '@/components/Column'
 import { IMetaPage, TCssSize } from '@/interfaces'
 import Link from 'next/link'
+import { useContext } from 'react'
+import { LangContext } from '@/stores'
+import Languages from '@/enums/languages'
+import ExternalLink from '@/components/ExternalLink'
 
 export default function Rooms(meta: IMetaPage) {
   const isLaptop = useIsLaptop()
+  const { lang } = useContext(LangContext)
   const spacing: TCssSize = { value: 0.8, unit: 'vw' }
+  let toBookLink =
+    'https://www.secure-hotel-booking.com/Cap-d-Antibes-Beach-Hotel/JK7H/fr?hotelId=13829'
+  if (lang === Languages.EN) {
+    toBookLink =
+      'https://www.secure-hotel-booking.com/Cap-d-Antibes-Beach-Hotel/JK7H/en?hotelId=13829'
+  }
+
   return (
     <>
       <RoomsPageStyles />
@@ -46,9 +58,11 @@ export default function Rooms(meta: IMetaPage) {
         <Column opt_margin={isLaptop ? [1, 3, 2, 1] : [3, 1.5, 1.5, 1.5]}>
           <Text className="h1">{useText(contentsRoomsIndex.title)}</Text>
           <Text className="p">{useText(contentsRoomsIndex.subTitle1)}</Text>
-          <Button className="btn">
-            <Text>{useText(contentsRoomsIndex.toBook)}</Text>
-          </Button>
+          <ExternalLink link={toBookLink}>
+            <Button className="btn">
+              <Text>{useText(contentsRoomsIndex.toBook)}</Text>
+            </Button>
+          </ExternalLink>
         </Column>
         {isLaptop && (
           <Row opt_margin={[0, 0, 0, 0]} className="imgs">
@@ -79,9 +93,11 @@ export default function Rooms(meta: IMetaPage) {
                 </Link>
               </Column>
               <Column opt_alignItems="flex-end">
-                <Button className="btn">
-                  <Text>{useText(contentsRoomsIndex.toBook)}</Text>
-                </Button>
+                <ExternalLink link={toBookLink}>
+                  <Button className="btn">
+                    <Text>{useText(contentsRoomsIndex.toBook)}</Text>
+                  </Button>
+                </ExternalLink>
               </Column>
             </Row>
           </Column>
@@ -132,9 +148,11 @@ export default function Rooms(meta: IMetaPage) {
                 </Link>
               </Column>
               <Column opt_alignItems="flex-end">
-                <Button className="btn">
-                  <Text>{useText(contentsRoomsIndex.toBook)}</Text>
-                </Button>
+                <ExternalLink link={toBookLink}>
+                  <Button className="btn">
+                    <Text>{useText(contentsRoomsIndex.toBook)}</Text>
+                  </Button>
+                </ExternalLink>
               </Column>
             </Row>
           </Column>
@@ -170,9 +188,11 @@ export default function Rooms(meta: IMetaPage) {
                 </Link>
               </Column>
               <Column opt_alignItems="flex-end">
-                <Button className="btn">
-                  <Text>{useText(contentsRoomsIndex.toBook)}</Text>
-                </Button>
+                <ExternalLink link={toBookLink}>
+                  <Button className="btn">
+                    <Text>{useText(contentsRoomsIndex.toBook)}</Text>
+                  </Button>
+                </ExternalLink>
               </Column>
             </Row>
           </Column>
@@ -226,9 +246,11 @@ export default function Rooms(meta: IMetaPage) {
                 </Link>
               </Column>
               <Column opt_alignItems="flex-end">
-                <Button className="btn">
-                  <Text>{useText(contentsRoomsIndex.toBook)}</Text>
-                </Button>
+                <ExternalLink link={toBookLink}>
+                  <Button className="btn">
+                    <Text>{useText(contentsRoomsIndex.toBook)}</Text>
+                  </Button>
+                </ExternalLink>
               </Column>
             </Row>
           </Column>
@@ -262,9 +284,11 @@ export default function Rooms(meta: IMetaPage) {
                 </Link>
               </Column>
               <Column opt_alignItems="flex-end">
-                <Button className="btn">
-                  <Text>{useText(contentsRoomsIndex.toBook)}</Text>
-                </Button>
+                <ExternalLink link={toBookLink}>
+                  <Button className="btn">
+                    <Text>{useText(contentsRoomsIndex.toBook)}</Text>
+                  </Button>
+                </ExternalLink>
               </Column>
             </Row>
           </Column>
@@ -318,9 +342,11 @@ export default function Rooms(meta: IMetaPage) {
                 </Link>
               </Column>
               <Column opt_alignItems="flex-end">
-                <Button className="btn">
-                  <Text>{useText(contentsRoomsIndex.toBook)}</Text>
-                </Button>
+                <ExternalLink link={toBookLink}>
+                  <Button className="btn">
+                    <Text>{useText(contentsRoomsIndex.toBook)}</Text>
+                  </Button>
+                </ExternalLink>
               </Column>
             </Row>
           </Column>

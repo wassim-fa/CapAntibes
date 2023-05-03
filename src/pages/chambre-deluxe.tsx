@@ -14,7 +14,7 @@ export default function DeluxePage() {
     <LuxeRoom
       title={`Chambre Deluxe | Cap d'antibes Beach Hotel *****`}
       description={`La chambre Deluxe est épurée et invite à la sérénité. Elle donne directement sur le jardin ou dispose d’une terrasse privée pour celle à l’étage.`}
-      toBookLink='https://www.secure-hotel-booking.com/Cap-d-Antibes-Beach-Hotel/JK7H/fr?hotelId=13829'
+      toBookLink="https://www.secure-hotel-booking.com/Cap-d-Antibes-Beach-Hotel/JK7H/fr?hotelId=13829"
     />
   )
 }
