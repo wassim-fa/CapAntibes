@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "export": "next export",
     "lint": "eslint src",
     "lint:fix": "npm run lint -- --fix",
     "test": "jest",
@@ -31,6 +32,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-swipeable": "^7.0.0",
+    "sharp": "^0.32.1",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {

@@ -40,7 +40,22 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <link
+            rel="preload"
+            href="/assets/fonts/EurostileMediumExtended.otf"
+            as="font"
+            type="font/otf"
+            crossOrigin=""
+          />
+          <link
+            rel="preload"
+            href="/assets/fonts/EurostileBlackExtended.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin=""
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />
