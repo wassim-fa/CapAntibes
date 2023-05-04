@@ -1,5 +1,5 @@
 import { contentsLayout } from '@/contents/globals'
-import { useIsLaptop, useIsMobile, useText } from '@/hooks'
+import { useIsLaptop, useText } from '@/hooks'
 import { MenuContext } from '@/stores'
 import { useContext, useEffect, useState } from 'react'
 import styled, { keyframes } from 'styled-components'
