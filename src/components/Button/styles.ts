@@ -20,10 +20,12 @@ export const Wrapper = styled.button<WrapperProps>`
   }
   display: flex;
   align-items: center;
-  @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi),
   @supports (-webkit-touch-callout: none) {
     align-items: initial;
     background-color: black;
+  }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+    align-items: initial;
   }
   cursor: pointer;
   width: ${(props) => getCssSize(props.width)};
