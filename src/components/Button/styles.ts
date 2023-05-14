@@ -19,7 +19,14 @@ export const Wrapper = styled.button<WrapperProps>`
     margin-left: 0;
   }
   display: flex;
-  align-items: center;
+  @supports (-webkit-touch-callout: none) {
+    background-color: black;
+  }
+
+  @supports not (-webkit-touch-callout: none) {
+    align-items: center;
+    background-color: yellow;
+  }
   cursor: pointer;
   width: ${(props) => getCssSize(props.width)};
 `
