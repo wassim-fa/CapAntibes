@@ -19,8 +19,6 @@ export const Wrapper = styled.button<WrapperProps>`
     margin-left: 0;
   }
   display: flex;
-  align-items: center;
-  background-color: yellow;
   @supports (-webkit-touch-callout: none) {
     align-items: initial !important;
     background-color: black !important;
