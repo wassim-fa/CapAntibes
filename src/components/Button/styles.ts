@@ -19,13 +19,12 @@ export const Wrapper = styled.button<WrapperProps>`
     margin-left: 0;
   }
   display: flex;
-  @supports (-webkit-touch-callout: none) {
-    align-items: initial !important;
-    background-color: black !important;
+
+  .is-apple & {
+    background-color: red;
   }
-  @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
-    align-items: initial !important;
-    background-color: red !important;
+  .is-not-apple & {
+    align-items: center;
   }
   cursor: pointer;
   width: ${(props) => getCssSize(props.width)};
