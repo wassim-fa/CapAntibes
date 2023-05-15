@@ -25,6 +25,7 @@ export const Wrapper = styled.button<WrapperProps>`
   }
   .is-not-apple & {
     align-items: center;
+    background-color: blue;
   }
   cursor: pointer;
   width: ${(props) => getCssSize(props.width)};
