@@ -11,13 +11,15 @@ import Languages from '@/enums/languages'
 
 export function DefaultLayout({
   defaultLang,
+  isApple,
   children
 }: {
   defaultLang: Languages
+  isApple: boolean
   children: React.ReactNode
 }): JSX.Element {
   return (
-    <>
+    <div className={isApple ? 'is-apple' : 'is-not-apple'}>
       <GlobalStyles />
       <ThemeProvider theme={defaultTheme}>
         <ContextsLayout defaultLang={defaultLang}>
@@ -28,6 +30,6 @@ export function DefaultLayout({
           <BottomBar />
         </ContextsLayout>
       </ThemeProvider>
-    </>
+    </div>
   )
 }
