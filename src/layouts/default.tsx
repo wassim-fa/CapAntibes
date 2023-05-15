@@ -4,20 +4,26 @@ import Menu from '@/components/Menu'
 import Navbar from '@/components/Navbar'
 import { defaultTheme } from '@/styles'
 import GlobalStyles from '@/styles/global'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { ContextsLayout } from './contexts'
 import Languages from '@/enums/languages'
 
 export function DefaultLayout({
   defaultLang,
-  isApple,
   children
 }: {
   defaultLang: Languages
-  isApple: boolean
   children: React.ReactNode
 }): JSX.Element {
+  const [isApple, setIsApple] = useState(true)
+
+  useEffect(() => {
+    const userAgent = navigator.userAgent
+    console.log(userAgent)
+    setIsApple(/Macintosh|MacIntel|MacPPC|Mac68K|iPhone|iPod/.test(userAgent))
+  }, [])
+
   return (
     <div className={isApple ? 'is-apple' : 'is-not-apple'}>
       <GlobalStyles />
