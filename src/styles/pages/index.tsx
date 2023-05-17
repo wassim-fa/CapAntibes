@@ -23,6 +23,7 @@ export const IndexPageStyles = createGlobalStyle`
       font-size: 16px;
       p {        
         height: 22px;
+        padding: 3px 0;
       }
     }
     .p {

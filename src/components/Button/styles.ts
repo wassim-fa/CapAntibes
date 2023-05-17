@@ -12,9 +12,6 @@ export const Wrapper = styled.button<WrapperProps>`
   svg {
     height: 100%;
   }
-  p {
-    padding: 3px 0;
-  }
   > *:first-child {
     margin-left: 0;
   }
