@@ -21,9 +21,8 @@ export const IndexPageStyles = createGlobalStyle`
       margin-top: 15px;
       text-transform: uppercase;
       font-size: 16px;
-      p {        
+      p, svg {
         height: 22px;
-        padding: 0;
       }
     }
     .p {
@@ -45,10 +44,9 @@ export const IndexPageStyles = createGlobalStyle`
       }
       .btn {
         margin-top: 10px;
-        font-size: 14px;        
-        p {        
+        font-size: 14px;
+        p, svg {
           height: 23px;
-          padding: 3px 0;
         }
       }
       .p {
@@ -57,7 +55,7 @@ export const IndexPageStyles = createGlobalStyle`
           text-transform: none;
         }
       }
-      .yellow { 
+      .yellow {
         margin-top: 42px;
       }
     }

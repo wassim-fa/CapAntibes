@@ -21,7 +21,7 @@ export function DefaultLayout({
   useEffect(() => {
     const userAgent = navigator.userAgent
     console.log(userAgent)
-    setIsApple(/Macintosh|MacIntel|MacPPC|Mac68K|iPhone|iPod/.test(userAgent))
+    setIsApple(/Macintosh|MacIntel|MacPPC|Mac68K/.test(userAgent))
   }, [])
 
   return (
