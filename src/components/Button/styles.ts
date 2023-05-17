@@ -8,11 +8,12 @@ type WrapperProps = {
 export const Wrapper = styled.button<WrapperProps>`
   > * {
     margin: 0 10px;
-    display: flex !important;
-    align-items: center;
   }
   svg {
     height: 100%;
+  }
+  p {
+    padding: 3px 0;
   }
   > *:first-child {
     margin-left: 0;
