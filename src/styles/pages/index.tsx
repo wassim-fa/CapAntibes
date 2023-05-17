@@ -23,7 +23,7 @@ export const IndexPageStyles = createGlobalStyle`
       font-size: 16px;
       p {        
         height: 22px;
-        padding: 3px 0;
+        padding: 0;
       }
     }
     .p {
@@ -48,6 +48,7 @@ export const IndexPageStyles = createGlobalStyle`
         font-size: 14px;        
         p {        
           height: 23px;
+          padding: 3px 0;
         }
       }
       .p {
