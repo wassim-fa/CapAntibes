@@ -8,6 +8,8 @@ type WrapperProps = {
 export const Wrapper = styled.button<WrapperProps>`
   > * {
     margin: 0 10px;
+    display: flex !important;
+    align-items: center;
   }
   svg {
     height: 100%;
@@ -18,7 +20,7 @@ export const Wrapper = styled.button<WrapperProps>`
   > *:last-child {
     margin-left: 0;
   }
-  display: flex;
+  display: flex !important;
   align-items: center;
   cursor: pointer;
   width: ${(props) => getCssSize(props.width)};
