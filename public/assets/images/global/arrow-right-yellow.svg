@@ -8,6 +8,6 @@
   <path
     d="M1 1.5L16 9.5L1 19"
     stroke="#FAB50B"
-    strokeWidth="2"
+    stroke-width="2"
   />
 </svg>
