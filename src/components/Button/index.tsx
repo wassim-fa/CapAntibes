@@ -21,18 +21,24 @@ const Button = ({
   children,
   ...props
 }: PropsWithChildren<ButtonProps>) => {
-  const imgArrowLeft = opt_color === Colors.YELLOW ? arrowLeftYellow : arrowLeft;
-  const imgArrowRight = opt_color === Colors.YELLOW ? arrowRightYellow : arrowRight;
+  const imgArrowLeft = opt_color === Colors.YELLOW ? arrowLeftYellow : arrowLeft
+  const imgArrowRight =
+    opt_color === Colors.YELLOW ? arrowRightYellow : arrowRight
   return (
-  <S.Wrapper
-    className={`sc-button ${props.className}`}
-    {...props}
-    width={opt_width}
-  >
-    {opt_arrow_position === 'left' && (<Image src={imgArrowLeft} alt='fleche' />)}
-    {children}
-    {opt_arrow_position === 'right' && (<Image src={imgArrowRight} alt='fleche' />)}
-  </S.Wrapper>
-)}
+    <S.Wrapper
+      className={`sc-button ${props.className}`}
+      {...props}
+      width={opt_width}
+    >
+      {opt_arrow_position === 'left' && (
+        <Image src={imgArrowLeft} alt="fleche" />
+      )}
+      {children}
+      {opt_arrow_position === 'right' && (
+        <Image src={imgArrowRight} alt="fleche" />
+      )}
+    </S.Wrapper>
+  )
+}
 
 export default Button
