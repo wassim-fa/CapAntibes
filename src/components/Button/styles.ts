@@ -19,6 +19,12 @@ export const Wrapper = styled.button<WrapperProps>`
     margin-left: 0;
   }
   display: flex !important;
+  .is-apple & {
+    padding: 3px 0;
+  }
+  .is-not-apple & {
+    align-items: center;
+  }
   cursor: pointer;
   width: ${(props) => getCssSize(props.width)};
 `

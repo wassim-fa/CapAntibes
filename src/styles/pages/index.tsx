@@ -48,6 +48,9 @@ export const IndexPageStyles = createGlobalStyle`
         p, svg {
           height: 23px;
         }
+        p {
+          padding: 3px 0;
+        }
       }
       .p {
         font-size: 13px;
