@@ -20,7 +20,9 @@ export const Wrapper = styled.button<WrapperProps>`
   }
   display: flex !important;
   .is-apple & {
-    padding: 3px 0;
+    p {
+      padding: 3px 0;
+    }
   }
   .is-not-apple & {
     align-items: center;
