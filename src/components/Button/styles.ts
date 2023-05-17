@@ -19,7 +19,9 @@ export const Wrapper = styled.button<WrapperProps>`
     margin-left: 0;
   }
   display: flex !important;
-  align-items: center;
+  .is-not-apple & {
+    align-items: center;
+  }
   cursor: pointer;
   width: ${(props) => getCssSize(props.width)};
 `
