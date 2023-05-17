@@ -1,13 +1,8 @@
 import Colors from '@/enums/colors'
 import { TCssSize } from '@/interfaces'
-import arrowLeft from '../.././../public/assets/images/global/arrow-left.svg'
-import arrowRight from '../.././../public/assets/images/global/arrow-right.svg'
-import arrowLeftYellow from '../.././../public/assets/images/global/arrow-left-yellow.svg'
-import arrowRightYellow from '../.././../public/assets/images/global/arrow-right-yellow.svg'
-
+import { defaultTheme } from '@/styles'
 import { PropsWithChildren } from 'react'
 import * as S from './styles'
-import Image from 'next/image'
 
 interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
   opt_color?: Colors
@@ -20,25 +15,44 @@ const Button = ({
   opt_arrow_position = 'right',
   children,
   ...props
-}: PropsWithChildren<ButtonProps>) => {
-  const imgArrowLeft = opt_color === Colors.YELLOW ? arrowLeftYellow : arrowLeft
-  const imgArrowRight =
-    opt_color === Colors.YELLOW ? arrowRightYellow : arrowRight
-  return (
-    <S.Wrapper
-      className={`sc-button ${props.className}`}
-      {...props}
-      width={opt_width}
-    >
-      {opt_arrow_position === 'left' && (
-        <Image src={imgArrowLeft} alt="fleche" />
-      )}
-      {children}
-      {opt_arrow_position === 'right' && (
-        <Image src={imgArrowRight} alt="fleche" />
-      )}
-    </S.Wrapper>
-  )
-}
+}: PropsWithChildren<ButtonProps>) => (
+  <S.Wrapper
+    className={`sc-button ${props.className}`}
+    {...props}
+    width={opt_width}
+  >
+    {opt_arrow_position === 'left' && (
+      <svg
+        width="12"
+        height="auto"
+        viewBox="0 0 18 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M18 17.9776L3 10.5728L18 1.77957"
+          stroke={defaultTheme.fontColors[opt_color]}
+          strokeWidth="2"
+        />
+      </svg>
+    )}
+    {children}
+    {opt_arrow_position === 'right' && (
+      <svg
+        width="12"
+        height="auto"
+        viewBox="0 0 18 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M1 1.5L16 9.5L1 19"
+          stroke={defaultTheme.fontColors[opt_color]}
+          strokeWidth="2"
+        />
+      </svg>
+    )}
+  </S.Wrapper>
+)
 
 export default Button
