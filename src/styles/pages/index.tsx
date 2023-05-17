@@ -21,6 +21,9 @@ export const IndexPageStyles = createGlobalStyle`
       margin-top: 15px;
       text-transform: uppercase;
       font-size: 16px;
+      p {        
+        height: 22px;
+      }
     }
     .p {
       font-size: 17px;
@@ -41,7 +44,10 @@ export const IndexPageStyles = createGlobalStyle`
       }
       .btn {
         margin-top: 10px;
-        font-size: 14px;
+        font-size: 14px;        
+        p {        
+          height: 23px;
+        }
       }
       .p {
         font-size: 13px;
