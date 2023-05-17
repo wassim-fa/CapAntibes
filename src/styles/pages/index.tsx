@@ -21,9 +21,6 @@ export const IndexPageStyles = createGlobalStyle`
       margin-top: 15px;
       text-transform: uppercase;
       font-size: 16px;
-      svg {
-        height: 22px !important;
-      }
     }
     .p {
       font-size: 17px;
@@ -43,9 +40,6 @@ export const IndexPageStyles = createGlobalStyle`
         margin-bottom: 15px;
       }
       .btn {
-        svg {
-          height: 23px !important;
-        }
         margin-top: 10px;
         font-size: 14px;
       }
