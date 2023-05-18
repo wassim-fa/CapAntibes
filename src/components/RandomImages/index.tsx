@@ -26,8 +26,8 @@ const RandomImages = ({ listImages }: RandomImagesProps) => {
   const [imgId, setImgId] = useState<number>(2)
   const [componentActive, setComponentActive] = useState<number>(1)
   const [images, setImages] = useState<[number, number][]>([
-    [0, 1],
-    [2, 3]
+    [0, 2],
+    [1, 3]
   ])
   const [imagesToShow, setImagesToShow] = useState<[number, number]>([-1, -1])
   const changeImgAuto = useCallback(() => {
@@ -49,7 +49,7 @@ const RandomImages = ({ listImages }: RandomImagesProps) => {
     const newImgId = (imgId + 1) % listImages.length
     if (_imagesToShow[componentActive] === 0) {
       _images[componentActive][1] = newImgId
-    } else {
+    } else if (_imagesToShow[componentActive] === 1) {
       _images[componentActive][0] = newImgId
     }
     setImgId(newImgId)
