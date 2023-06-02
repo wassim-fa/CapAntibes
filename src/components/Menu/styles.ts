@@ -25,6 +25,7 @@ export const Item = styled.div`
 
   .not-hover {
     display: flex;
+    color: red;
   }
   .hover {
     display: none;
