@@ -95,8 +95,8 @@ const Menu = () => {
             onClick={() => handleClick('hotel')}
             style={{ fontSize: labelSize, zIndex: 3 }}
           >
-            <Text className="not-hover">{texts.hotel.main}</Text>
             <Text className="hover">{texts.hotel.main}</Text>
+            <Text className="not-hover">{texts.hotel.main}</Text>
           </div>
           <S.SubItem
             className={`${showItems === 'hotel' ? 'active' : ''}`}
