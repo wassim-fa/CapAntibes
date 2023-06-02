@@ -24,7 +24,7 @@ export const Item = styled.div`
   margin: 2px 0;
 
   &:hover > *:first-child,
-  &:hover > *:first-child  *, {
+  &:hover > *:first-child * {
     color: #f3d7c8;
   }
 
