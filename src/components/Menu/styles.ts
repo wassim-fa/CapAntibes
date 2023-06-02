@@ -23,22 +23,8 @@ export const Item = styled.div`
   flex-direction: column;
   margin: 2px 0;
 
-  .not-hover {
-    display: flex;
-    color: red;
-  }
-  .hover {
-    display: none;
-    color: #f3d7c8;
-  }
-
-  & > *:hover .not-hover,
-  &:hover > *:first-child .not-hover {
-    display: none;
-  }
-  & > *:hover .hover,
-  &:hover > *:first-child .hover {
-    display: flex;
+  &:hover > *:first-child svg {
+    fill="#f3d7c8"
   }
 
   &:hover > *:first-child {

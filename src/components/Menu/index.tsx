@@ -96,28 +96,15 @@ const Menu = () => {
             style={{ fontSize: labelSize, zIndex: 3 }}
           >
             <svg
-              className="hover"
               xmlns="http://www.w3.org/2000/svg"
               width="100"
               height="20"
               viewBox="0 0 100 20"
             >
-              <text x="0" y="15" fontSize="14" fill="red">
+              <text x="0" y="15" fontSize="14" fill="#d99b81">
                 {texts.hotel.main}
               </text>
             </svg>
-            <svg
-              className="not-hover"
-              xmlns="http://www.w3.org/2000/svg"
-              width="100"
-              height="20"
-              viewBox="0 0 100 20"
-            >
-              <text x="0" y="15" fontSize="14" fill="#f3d7c8">
-                {texts.hotel.main}
-              </text>
-            </svg>
-            {/* <Text className="hover">{texts.hotel.main}</Text> */}
           </div>
           <S.SubItem
             className={`${showItems === 'hotel' ? 'active' : ''}`}
