@@ -30,11 +30,18 @@ export const Item = styled.div`
     display: none;
     color: #f3d7c8;
   }
+
+  & > *:hover .not-hover,
   &:hover > *:first-child .not-hover {
     display: none;
   }
+  & > *:hover .hover,
   &:hover > *:first-child .hover {
     display: flex;
+  }
+
+  &:hover > *:first-child {
+    color: #f3d7c8;
   }
 
   &.mobile > *:first-child {
