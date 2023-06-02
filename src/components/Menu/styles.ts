@@ -22,7 +22,11 @@ export const Item = styled.div`
   display: flex;
   flex-direction: column;
   margin: 2px 0;
-  transition: color 0.3s ease;
+
+  *:first-child,
+  *:first-child * {
+    transition: color 0.3s ease;
+  }
 
   &:hover > *:first-child,
   &:hover > *:first-child * {
