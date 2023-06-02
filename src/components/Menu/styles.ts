@@ -23,9 +23,18 @@ export const Item = styled.div`
   flex-direction: column;
   margin: 2px 0;
 
-  &:hover > *:first-child,
-  &:hover > *:first-child * {
-    opacity: 0.5;
+  .not-hover {
+    display: flex;
+  }
+  .hover {
+    display: none;
+    color: #f3d7c8;
+  }
+  &:hover > *:first-child .not-hover {
+    display: none;
+  }
+  &:hover > *:first-child .hover {
+    display: flex;
   }
 
   &.mobile > *:first-child {

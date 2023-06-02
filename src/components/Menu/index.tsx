@@ -8,6 +8,7 @@ import { useContext, useEffect, useState } from 'react'
 import * as S from './styles'
 import { urls } from '@/utils'
 import { useRouter } from 'next/router'
+import Text from '../Text'
 
 const Menu = () => {
   const router = useRouter()
@@ -94,7 +95,8 @@ const Menu = () => {
             onClick={() => handleClick('hotel')}
             style={{ fontSize: labelSize, zIndex: 3 }}
           >
-            {texts.hotel.main}
+            <Text className="not-hover">{texts.hotel.main}</Text>
+            <Text className="hover">{texts.hotel.main}</Text>
           </div>
           <S.SubItem
             className={`${showItems === 'hotel' ? 'active' : ''}`}
