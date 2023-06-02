@@ -8,6 +8,7 @@ import { useContext, useEffect, useState } from 'react'
 import * as S from './styles'
 import { urls } from '@/utils'
 import { useRouter } from 'next/router'
+import Text from '../Text'
 
 const Menu = () => {
   const router = useRouter()
@@ -89,12 +90,12 @@ const Menu = () => {
       className={`sc-menu ${!isLaptop ? 'mobile' : ''}`}
     >
       <div className="list">
-        {/* <S.Item className={!isLaptop ? 'mobile' : ''}>
+        <S.Item className={!isLaptop ? 'mobile' : ''}>
           <div
             onClick={() => handleClick('hotel')}
             style={{ fontSize: labelSize, zIndex: 3 }}
           >
-            {texts.hotel.main}
+            <Text>{texts.hotel.main}</Text>
           </div>
           <S.SubItem
             className={`${showItems === 'hotel' ? 'active' : ''}`}
@@ -125,7 +126,7 @@ const Menu = () => {
               </Link>
             </S.Link>
           </S.SubItem>
-        </S.Item> */}
+        </S.Item>
         <S.Item className={!isLaptop ? 'mobile' : ''}>
           <div
             onClick={() => handleClick('room')}
