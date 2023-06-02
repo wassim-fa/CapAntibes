@@ -25,8 +25,7 @@ export const Item = styled.div`
 
   &:hover > *:first-child,
   &:hover > *:first-child * {
-    color: #f3d7c8;
-    text-shadow: 0 0 1px rgba(0, 0, 0, 0.01);
+    opacity: 0.5;
   }
 
   &.mobile > *:first-child {
