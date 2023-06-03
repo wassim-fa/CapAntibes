@@ -21,13 +21,14 @@ const ItemText = ({ text }: { text: string }) => {
 
     const textWidth = textElement.getComputedTextLength()
     svgElement.setAttribute('width', textWidth.toString())
+    console.log('textElement', textElement)
+    console.log('textWidth', textWidth)
   }, [])
 
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       ref={svgRef}
-      width="100%"
       height="100%"
       viewBox="0 0 100 20"
     >
