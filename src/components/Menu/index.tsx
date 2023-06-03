@@ -134,10 +134,10 @@ const Menu = () => {
               }}
             >
               <Link shallow replace href={useLink('/histoire-du-cap')}>
-                {renderSubItemDiv(texts.hotel.history)}
+                {renderItemDiv(texts.hotel.history, 'hotel')}
               </Link>
               <Link shallow replace href={useLink('/la-galerie')}>
-                {renderSubItemDiv(texts.hotel.gallery)}
+                {renderItemDiv(texts.hotel.gallery, 'hotel')}
               </Link>
             </S.Link>
             <S.Link
@@ -146,7 +146,7 @@ const Menu = () => {
               }}
             >
               <Link shallow replace href={useLink('/localisation')}>
-                <div>{texts.hotel.localisation}</div>
+                {renderSubItemDiv(texts.hotel.localisation)}
               </Link>
               <Link shallow replace href={useLink('/la-collection')}>
                 <div>{texts.hotel.collection}</div>
