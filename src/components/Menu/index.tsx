@@ -10,29 +10,19 @@ import { urls } from '@/utils'
 import { useRouter } from 'next/router'
 
 const ItemText = ({ text }: { text: string }) => {
-  const svgRef = useRef<SVGSVGElement>(null)
+  const textRef = useRef<SVGTextElement | null>(null)
 
   useEffect(() => {
-    const svgElement = svgRef.current
-    if (!svgElement) return // Vérifier si la référence est définie
-
-    const textElement = svgElement.querySelector('text')
-    if (!textElement) return // Vérifier si l'élément 'text' est trouvé
-
-    const textWidth = textElement.getComputedTextLength()
-    svgElement.setAttribute('width', textWidth.toString())
-    console.log('textElement', textElement)
-    console.log('textWidth', textWidth)
+    if (textRef.current) {
+      const bbox = textRef.current.getBBox()
+      console.log('Width:', bbox.width)
+      console.log('Height:', bbox.height)
+    }
   }, [])
 
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      ref={svgRef}
-      height="100%"
-      viewBox="0 0 100 20"
-    >
-      <text x="0" y="15" fontSize="15" textAnchor="start">
+    <svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 100 20">
+      <text ref={textRef} x="0" y="15" fontSize="15" textAnchor="start">
         {text}
       </text>
     </svg>
