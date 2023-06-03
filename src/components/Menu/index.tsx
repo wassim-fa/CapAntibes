@@ -94,15 +94,15 @@ const Menu = () => {
         <S.Item className={!isLaptop ? 'mobile' : ''}>
           <div
             onClick={() => handleClick('hotel')}
-            style={{ fontSize: labelSize, zIndex: 3 }}
+            style={{ zIndex: 3, height: '73px' }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="100%"
-              height="73px"
+              height="100%"
               viewBox="0 0 100 20"
             >
-              <text x="0" y="15" fontSize={labelSizeSvg}>
+              <text x="0" y="15" fontSize="15">
                 {texts.hotel.main}
               </text>
             </svg>
