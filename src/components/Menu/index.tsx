@@ -22,6 +22,7 @@ const Menu = () => {
   >(null)
   const isLaptop = useIsLaptop()
   const labelSize = !isLaptop ? '24px' : '56px'
+  const labelSizeSvg = !isLaptop ? '24' : '56'
   const linkSize = !isLaptop ? '15px' : '29px'
 
   const texts = {
@@ -98,10 +99,10 @@ const Menu = () => {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="100%"
-              height="100%"
+              height="73px"
               viewBox="0 0 100 20"
             >
-              <text x="0" y="15" fontSize={labelSize} fill="#d99b81">
+              <text x="0" y="15" fontSize={labelSizeSvg}>
                 {texts.hotel.main}
               </text>
             </svg>
