@@ -26,6 +26,7 @@ export const Item = styled.div`
   svg {
     fill: #d99b81;
   }
+  svg:hover,
   &:hover > *:first-child svg {
     fill: #f3d7c8;
   }

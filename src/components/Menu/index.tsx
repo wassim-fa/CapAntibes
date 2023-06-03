@@ -137,7 +137,7 @@ const Menu = () => {
                 {renderSubItemDiv(texts.hotel.history)}
               </Link>
               <Link shallow replace href={useLink('/la-galerie')}>
-                <div>{texts.hotel.gallery}</div>
+                {renderSubItemDiv(texts.hotel.gallery)}
               </Link>
             </S.Link>
             <S.Link
