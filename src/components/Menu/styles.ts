@@ -23,15 +23,11 @@ export const Item = styled.div`
   flex-direction: column;
   margin: 2px 0;
 
-  svg {
-    fill: #d99b81;
-  }
-  svg:hover,
-  &:hover > *:first-child svg {
-    fill: #f3d7c8;
+  p {
+    color: #d99b81;
   }
 
-  &:hover > *:first-child {
+  &:hover > *:first-child p {
     color: #f3d7c8;
   }
 
