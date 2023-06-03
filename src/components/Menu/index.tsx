@@ -4,23 +4,38 @@ import { useIsLaptop, useLink, useText } from '@/hooks'
 import { MenuContext } from '@/stores'
 import { LangContext } from '@/stores'
 import Link from 'next/link'
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import * as S from './styles'
 import { urls } from '@/utils'
 import { useRouter } from 'next/router'
 
-const ItemText = ({ text }: { text: string }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="100%"
-    height="100%"
-    viewBox="0 0 100 20"
-  >
-    <text x="0" y="15" fontSize="15" textAnchor="start">
-      {text}
-    </text>
-  </svg>
-)
+const ItemText = ({ text }: { text: string }) => {
+  const svgRef = useRef<SVGSVGElement>(null)
+
+  useEffect(() => {
+    const svgElement = svgRef.current
+    if (!svgElement) return // Vérifier si la référence est définie
+
+    const textElement = svgElement.querySelector('text')
+    if (!textElement) return // Vérifier si l'élément 'text' est trouvé
+
+    const textWidth = textElement.getComputedTextLength()
+    svgElement.setAttribute('width', textWidth.toString())
+  }, [])
+
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      ref={svgRef}
+      height="100%"
+      viewBox="0 0 100 20"
+    >
+      <text x="0" y="15" fontSize="15" textAnchor="start">
+        {text}
+      </text>
+    </svg>
+  )
+}
 
 const Menu = () => {
   const router = useRouter()
