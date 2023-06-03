@@ -101,7 +101,7 @@ const Menu = () => {
               height="20"
               viewBox="0 0 100 20"
             >
-              <text x="0" y="15" fontSize="14" fill="#d99b81">
+              <text x="0" y="15" fontSize={labelSize} fill="#d99b81">
                 {texts.hotel.main}
               </text>
             </svg>

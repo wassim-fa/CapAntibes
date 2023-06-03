@@ -24,7 +24,7 @@ export const Item = styled.div`
   margin: 2px 0;
 
   &:hover > *:first-child svg {
-    fill="#f3d7c8"
+    fill: #f3d7c8
   }
 
   &:hover > *:first-child {
