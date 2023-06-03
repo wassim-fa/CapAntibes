@@ -35,6 +35,7 @@ const Menu = () => {
   const isLaptop = useIsLaptop()
   const labelSize = !isLaptop ? '24px' : '56px'
   const itemHeight = !isLaptop ? '51px' : '73px'
+  const subItemHeight = !isLaptop ? '20px' : '38px'
   const linkSize = !isLaptop ? '15px' : '29px'
 
   const texts = {
@@ -95,6 +96,12 @@ const Menu = () => {
     </div>
   )
 
+  const renderSubItemDiv = (text: string) => (
+    <div style={{ height: `${subItemHeight}`, width: 'fit-content' }}>
+      <ItemText text={text} />
+    </div>
+  )
+
   useEffect(() => {
     switch (menuOpen) {
       case 'menu':
@@ -127,9 +134,7 @@ const Menu = () => {
               }}
             >
               <Link shallow replace href={useLink('/histoire-du-cap')}>
-                <div>
-                  <ItemText text={texts.hotel.history} />
-                </div>
+                {renderSubItemDiv(texts.hotel.history)}
               </Link>
               <Link shallow replace href={useLink('/la-galerie')}>
                 <div>{texts.hotel.gallery}</div>
