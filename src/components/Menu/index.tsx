@@ -8,7 +8,19 @@ import { useContext, useEffect, useState } from 'react'
 import * as S from './styles'
 import { urls } from '@/utils'
 import { useRouter } from 'next/router'
-// import Text from '../Text'
+
+const ItemText = ({ text }: { text: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="100%"
+    height="100%"
+    viewBox="0 0 100 20"
+  >
+    <text x="0" y="15" fontSize="15" textAnchor="start">
+      {text}
+    </text>
+  </svg>
+)
 
 const Menu = () => {
   const router = useRouter()
@@ -22,7 +34,7 @@ const Menu = () => {
   >(null)
   const isLaptop = useIsLaptop()
   const labelSize = !isLaptop ? '24px' : '56px'
-  const labelSizeSvg = !isLaptop ? '24' : '56'
+  const itemHeight = !isLaptop ? '51px' : '73px'
   const linkSize = !isLaptop ? '15px' : '29px'
 
   const texts = {
@@ -71,6 +83,18 @@ const Menu = () => {
     setShowItems(newValue)
   }
 
+  const renderItemDiv = (
+    text: string,
+    itemValue: 'hotel' | 'room' | 'restaurant' | 'farniente'
+  ) => (
+    <div
+      onClick={() => handleClick(itemValue)}
+      style={{ zIndex: 3, height: `${itemHeight}`, width: 'fit-content' }}
+    >
+      <ItemText text={text} />
+    </div>
+  )
+
   useEffect(() => {
     switch (menuOpen) {
       case 'menu':
@@ -92,21 +116,7 @@ const Menu = () => {
     >
       <div className="list">
         <S.Item className={!isLaptop ? 'mobile' : ''}>
-          <div
-            onClick={() => handleClick('hotel')}
-            style={{ zIndex: 3, height: '73px' }}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="100%"
-              height="100%"
-              viewBox="0 0 100 20"
-            >
-              <text x="0" y="15" fontSize="15">
-                {texts.hotel.main}
-              </text>
-            </svg>
-          </div>
+          {renderItemDiv(texts.hotel.main, 'hotel')}
           <S.SubItem
             className={`${showItems === 'hotel' ? 'active' : ''}`}
             style={{ fontSize: linkSize }}
@@ -117,7 +127,9 @@ const Menu = () => {
               }}
             >
               <Link shallow replace href={useLink('/histoire-du-cap')}>
-                <div>{texts.hotel.history}</div>
+                <div>
+                  <ItemText text={texts.hotel.history} />
+                </div>
               </Link>
               <Link shallow replace href={useLink('/la-galerie')}>
                 <div>{texts.hotel.gallery}</div>
