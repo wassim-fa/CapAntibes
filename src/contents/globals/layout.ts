@@ -57,7 +57,7 @@ export const contentsLayout: Record<string, IContentByLang> = {
     ru: 'mailto:event@cabh.fr'
   },
   hotel: {
-    fr: "l'hôtel",
+    fr: `l'hôtel`,
     en: 'The hôtel',
     ru: "ru-l'hôtel"
   },
