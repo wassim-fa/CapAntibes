@@ -224,7 +224,11 @@ const Menu = () => {
           <Link shallow href={useLink('/farniente')}>
             <div
               className="menu-item"
-              style={{ lineHeight: labelHeight, fontSize: labelSize, zIndex: 3 }}
+              style={{
+                lineHeight: labelHeight,
+                fontSize: labelSize,
+                zIndex: 3
+              }}
             >
               {texts.farniente}
             </div>
@@ -234,7 +238,11 @@ const Menu = () => {
           <Link shallow href={useLink('/bien-etre')}>
             <div
               className="menu-item"
-              style={{ lineHeight: labelHeight, fontSize: labelSize, zIndex: 3 }}
+              style={{
+                lineHeight: labelHeight,
+                fontSize: labelSize,
+                zIndex: 3
+              }}
             >
               {texts.wellness}
             </div>
