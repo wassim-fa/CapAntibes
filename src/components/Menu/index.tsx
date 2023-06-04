@@ -309,30 +309,22 @@ const Menu = () => {
           </div> */}
         </div>
       )}
-      <Text className="p test-hover">{texts.hotel.main}</Text>
+      <Text opt_size={labelSize} className="p test-hover">
+        {texts.hotel.main}
+      </Text>
 
-      <div
-        onClick={() => handleClick('hotel')}
-        style={{ fontSize: labelSize, zIndex: 3 }}
-      >
-        <Text className="p test-hover">{texts.hotel.main}</Text>
+      <div onClick={() => handleClick('hotel')} style={{ zIndex: 3 }}>
+        <Text opt_size={labelSize} className="p test-hover">
+          {texts.hotel.main}
+        </Text>
       </div>
       <S.Item className={!isLaptop ? 'mobile' : ''}>
-        <div
-          onClick={() => handleClick('hotel')}
-          style={{ fontSize: labelSize, zIndex: 3 }}
-        >
-          <Text className="p test-hover">{texts.hotel.main}</Text>
+        <div onClick={() => handleClick('hotel')} style={{ zIndex: 3 }}>
+          <Text opt_size={labelSize} className="p test-hover">
+            {texts.hotel.main}
+          </Text>
         </div>
       </S.Item>
-      <S.ItemTest className={!isLaptop ? 'mobile' : ''}>
-        <div
-          onClick={() => handleClick('hotel')}
-          style={{ fontSize: labelSize, zIndex: 3 }}
-        >
-          <Text className="p test-hover">{texts.hotel.main}</Text>
-        </div>
-      </S.ItemTest>
     </S.Wrapper>
   )
 }
