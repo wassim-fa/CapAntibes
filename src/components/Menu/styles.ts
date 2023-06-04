@@ -26,13 +26,19 @@ export const Item = styled.div`
   &:hover > *:first-child {
     color: #f3d7c8;
   }
+  .menu-item {
+    margin-bottom: -7px;
+  }
+  .menu-link {
+    margin-bottom: -4px;
+  }
   .menu-item:hover,
   .menu-item:hover > * {
     color: #f3d7c8;
   }
 
   &.mobile > *:first-child {
-    margin: 10px 0;
+    margin: 10px 0 0 0;
   }
 `
 export const SubItem = styled.div`

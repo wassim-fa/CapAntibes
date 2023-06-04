@@ -109,10 +109,10 @@ const Menu = () => {
               }}
             >
               {/* <Link shallow  href={useLink('/histoire-du-cap')}>
-                <div>{texts.hotel.history}</div>
+                <div className="menu-link">{texts.hotel.history}</div>
               </Link> */}
               <Link shallow href={useLink('/la-galerie')}>
-                <div>{texts.hotel.gallery}</div>
+                <div className="menu-link">{texts.hotel.gallery}</div>
               </Link>
             </S.Link>
             <S.Link
@@ -121,10 +121,10 @@ const Menu = () => {
               }}
             >
               {/* <Link shallow  href={useLink('/localisation')}>
-                <div>{texts.hotel.localisation}</div>
+                <div className="menu-link">{texts.hotel.localisation}</div>
               </Link> */}
               <Link shallow href={useLink('/la-collection')}>
-                <div>{texts.hotel.collection}</div>
+                <div className="menu-link">{texts.hotel.collection}</div>
               </Link>
             </S.Link>
           </S.SubItem>
@@ -147,10 +147,10 @@ const Menu = () => {
               }}
             >
               <Link shallow href={useLink('/chambre-deluxe')}>
-                <div>{texts.rooms.deluxe}</div>
+                <div className="menu-link">{texts.rooms.deluxe}</div>
               </Link>
               <Link shallow href={useLink('/chambre-privilege')}>
-                <div>{texts.rooms.privilege}</div>
+                <div className="menu-link">{texts.rooms.privilege}</div>
               </Link>
             </S.Link>
             <S.Link
@@ -159,10 +159,10 @@ const Menu = () => {
               }}
             >
               <Link shallow href={useLink('/chambre-privilege-vue-mer')}>
-                <div>{texts.rooms.seaview}</div>
+                <div className="menu-link">{texts.rooms.seaview}</div>
               </Link>
               <Link shallow href={useLink('/suite')}>
-                <div>{texts.rooms.design}</div>
+                <div className="menu-link">{texts.rooms.design}</div>
               </Link>
             </S.Link>
             <S.Link
@@ -171,10 +171,10 @@ const Menu = () => {
               }}
             >
               <Link shallow href={useLink('/suite-le-cap')}>
-                <div>{texts.rooms.executive}</div>
+                <div className="menu-link">{texts.rooms.executive}</div>
               </Link>
               <Link shallow href={useLink('/chambres-communicantes')}>
-                <div>{texts.rooms.connecting}</div>
+                <div className="menu-link">{texts.rooms.connecting}</div>
               </Link>
             </S.Link>
           </S.SubItem>
@@ -197,7 +197,7 @@ const Menu = () => {
               }}
             >
               <Link shallow href={useLink('/restaurants-bar')}>
-                <div>{texts.restaurant.restau}</div>
+                <div className="menu-link">{texts.restaurant.restau}</div>
               </Link>
             </S.Link>
             <S.Link
@@ -206,7 +206,7 @@ const Menu = () => {
               }}
             >
               <Link shallow href={useLink('/restaurant-les-pecheurs')}>
-                <div>{texts.restaurant.fishing}</div>
+                <div className="menu-link">{texts.restaurant.fishing}</div>
               </Link>
             </S.Link>
             <S.Link
@@ -215,7 +215,7 @@ const Menu = () => {
               }}
             >
               <Link shallow href={useLink('/restaurant-baba')}>
-                <div>{texts.restaurant.beach}</div>
+                <div className="menu-link">{texts.restaurant.beach}</div>
               </Link>
             </S.Link>
           </S.SubItem>
