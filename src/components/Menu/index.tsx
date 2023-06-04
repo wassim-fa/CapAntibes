@@ -9,7 +9,6 @@ import * as S from './styles'
 import { urls } from '@/utils'
 import { useRouter } from 'next/router'
 import Text from '../Text'
-import { contentsHome } from '@/contents/pages/home'
 
 const Menu = () => {
   const router = useRouter()
@@ -310,22 +309,30 @@ const Menu = () => {
           </div> */}
         </div>
       )}
-      <Text className="p test-hover">{useText(contentsHome.text1_2)}</Text>
+      <Text className="p test-hover">{texts.hotel.main}</Text>
 
       <div
         onClick={() => handleClick('hotel')}
         style={{ fontSize: labelSize, zIndex: 3 }}
       >
-        <Text className="p test-hover">{useText(contentsHome.text1_2)}</Text>
+        <Text className="p test-hover">{texts.hotel.main}</Text>
       </div>
       <S.Item className={!isLaptop ? 'mobile' : ''}>
         <div
           onClick={() => handleClick('hotel')}
           style={{ fontSize: labelSize, zIndex: 3 }}
         >
-          <Text className="p test-hover">{useText(contentsHome.text1_2)}</Text>
+          <Text className="p test-hover">{texts.hotel.main}</Text>
         </div>
       </S.Item>
+      <S.ItemTest className={!isLaptop ? 'mobile' : ''}>
+        <div
+          onClick={() => handleClick('hotel')}
+          style={{ fontSize: labelSize, zIndex: 3 }}
+        >
+          <Text className="p test-hover">{texts.hotel.main}</Text>
+        </div>
+      </S.ItemTest>
     </S.Wrapper>
   )
 }

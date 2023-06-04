@@ -18,6 +18,27 @@ const slideRight = keyframes`
     transform: translateX(100%);
   }
 `
+export const ItemTest = styled.div`
+  display: flex;
+  flex-direction: column;
+  // margin: 2px 0;
+
+  // p {
+  //   line-height: 73px;
+  //   color: #d99b81;
+  // }
+
+  // &:hover > *:first-child p {
+  //   color: #f3d7c8;
+  // }
+
+  // &.mobile > *:first-child {
+  //   margin: 10px 0;
+  // }
+  // &.mobile p {
+  //   line-height: 51px;
+  // }
+`
 export const Item = styled.div`
   display: flex;
   flex-direction: column;
@@ -60,7 +81,7 @@ export const Link = styled.div`
   }
 `
 export const Wrapper = styled.div`
-  ..test-hover,
+  .test-hover,
   p {
     line-height: 73px;
     color: #d99b81;
