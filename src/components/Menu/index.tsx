@@ -21,7 +21,9 @@ const Menu = () => {
   >(null)
   const isLaptop = useIsLaptop()
   const labelSize = !isLaptop ? '24px' : '56px'
-  const linkSize = !isLaptop ? '15px' : '29px'
+  const labelHeight = !isLaptop ? '40px' : '80px'
+  const linkSize = !isLaptop ? '15px' : '26px'
+  const linkHeight = !isLaptop ? '30px' : '50px'
 
   const texts = {
     hotel: {
@@ -89,27 +91,28 @@ const Menu = () => {
       className={`sc-menu ${!isLaptop ? 'mobile' : ''}`}
     >
       <div className="list">
-        {/* <S.Item className={!isLaptop ? 'mobile' : ''}>
+        <S.Item className={!isLaptop ? 'mobile' : ''}>
           <div
+            className="menu-item"
             onClick={() => handleClick('hotel')}
-            style={{ fontSize: labelSize, zIndex: 3 }}
+            style={{ lineHeight: labelHeight, fontSize: labelSize, zIndex: 3 }}
           >
             {texts.hotel.main}
           </div>
           <S.SubItem
             className={`${showItems === 'hotel' ? 'active' : ''}`}
-            style={{ fontSize: linkSize }}
+            style={{ lineHeight: linkHeight, fontSize: linkSize }}
           >
             <S.Link
               style={{
                 flexDirection: isLaptop ? 'row' : 'column'
               }}
             >
-              <Link shallow replace href={useLink('/histoire-du-cap')}>
-                <div>{texts.hotel.history}</div>
-              </Link>
-              <Link shallow replace href={useLink('/la-galerie')}>
-                <div>{texts.hotel.gallery}</div>
+              {/* <Link shallow  href={useLink('/histoire-du-cap')}>
+                <div className="menu-link">{texts.hotel.history}</div>
+              </Link> */}
+              <Link shallow href={useLink('/la-galerie')}>
+                <div className="menu-link">{texts.hotel.gallery}</div>
               </Link>
             </S.Link>
             <S.Link
@@ -117,52 +120,37 @@ const Menu = () => {
                 flexDirection: isLaptop ? 'row' : 'column'
               }}
             >
-              <Link shallow replace href={useLink('/localisation')}>
-                <div>{texts.hotel.localisation}</div>
-              </Link>
-              <Link shallow replace href={useLink('/la-collection')}>
-                <div>{texts.hotel.collection}</div>
+              {/* <Link shallow  href={useLink('/localisation')}>
+                <div className="menu-link">{texts.hotel.localisation}</div>
+              </Link> */}
+              <Link shallow href={useLink('/la-collection')}>
+                <div className="menu-link">{texts.hotel.collection}</div>
               </Link>
             </S.Link>
           </S.SubItem>
-        </S.Item> */}
+        </S.Item>
         <S.Item className={!isLaptop ? 'mobile' : ''}>
           <div
+            className="menu-item"
             onClick={() => handleClick('room')}
-            style={{ fontSize: labelSize, zIndex: 3 }}
+            style={{ lineHeight: labelHeight, fontSize: labelSize, zIndex: 3 }}
           >
             {texts.rooms.main}
           </div>
           <S.SubItem
             className={`${showItems === 'room' ? 'active' : ''}`}
-            style={{ fontSize: linkSize }}
+            style={{ lineHeight: linkHeight, fontSize: linkSize }}
           >
             <S.Link
               style={{
                 flexDirection: isLaptop ? 'row' : 'column'
               }}
             >
-              <Link shallow replace href={useLink('/chambre-deluxe')}>
-                <div>{texts.rooms.deluxe}</div>
+              <Link shallow href={useLink('/chambre-deluxe')}>
+                <div className="menu-link">{texts.rooms.deluxe}</div>
               </Link>
-              <Link shallow replace href={useLink('/chambre-privilege')}>
-                <div>{texts.rooms.privilege}</div>
-              </Link>
-            </S.Link>
-            <S.Link
-              style={{
-                flexDirection: isLaptop ? 'row' : 'column'
-              }}
-            >
-              <Link
-                shallow
-                replace
-                href={useLink('/chambre-privilege-vue-mer')}
-              >
-                <div>{texts.rooms.seaview}</div>
-              </Link>
-              <Link shallow replace href={useLink('/suite')}>
-                <div>{texts.rooms.design}</div>
+              <Link shallow href={useLink('/chambre-privilege')}>
+                <div className="menu-link">{texts.rooms.privilege}</div>
               </Link>
             </S.Link>
             <S.Link
@@ -170,33 +158,46 @@ const Menu = () => {
                 flexDirection: isLaptop ? 'row' : 'column'
               }}
             >
-              <Link shallow replace href={useLink('/suite-le-cap')}>
-                <div>{texts.rooms.executive}</div>
+              <Link shallow href={useLink('/chambre-privilege-vue-mer')}>
+                <div className="menu-link">{texts.rooms.seaview}</div>
               </Link>
-              <Link shallow replace href={useLink('/chambres-communicantes')}>
-                <div>{texts.rooms.connecting}</div>
+              <Link shallow href={useLink('/suite')}>
+                <div className="menu-link">{texts.rooms.design}</div>
+              </Link>
+            </S.Link>
+            <S.Link
+              style={{
+                flexDirection: isLaptop ? 'row' : 'column'
+              }}
+            >
+              <Link shallow href={useLink('/suite-le-cap')}>
+                <div className="menu-link">{texts.rooms.executive}</div>
+              </Link>
+              <Link shallow href={useLink('/chambres-communicantes')}>
+                <div className="menu-link">{texts.rooms.connecting}</div>
               </Link>
             </S.Link>
           </S.SubItem>
         </S.Item>
         <S.Item className={!isLaptop ? 'mobile' : ''}>
           <div
+            className="menu-item"
             onClick={() => handleClick('restaurant')}
-            style={{ fontSize: labelSize, zIndex: 3 }}
+            style={{ lineHeight: labelHeight, fontSize: labelSize, zIndex: 3 }}
           >
             {texts.restaurant.main}
           </div>
           <S.SubItem
             className={`${showItems === 'restaurant' ? 'active' : ''}`}
-            style={{ fontSize: linkSize }}
+            style={{ lineHeight: linkHeight, fontSize: linkSize }}
           >
             <S.Link
               style={{
                 flexDirection: isLaptop ? 'row' : 'column'
               }}
             >
-              <Link shallow replace href={useLink('/restaurants-bar')}>
-                <div>{texts.restaurant.restau}</div>
+              <Link shallow href={useLink('/restaurants-bar')}>
+                <div className="menu-link">{texts.restaurant.restau}</div>
               </Link>
             </S.Link>
             <S.Link
@@ -204,8 +205,8 @@ const Menu = () => {
                 flexDirection: isLaptop ? 'row' : 'column'
               }}
             >
-              <Link shallow replace href={useLink('/restaurant-les-pecheurs')}>
-                <div>{texts.restaurant.fishing}</div>
+              <Link shallow href={useLink('/restaurant-les-pecheurs')}>
+                <div className="menu-link">{texts.restaurant.fishing}</div>
               </Link>
             </S.Link>
             <S.Link
@@ -213,29 +214,43 @@ const Menu = () => {
                 flexDirection: isLaptop ? 'row' : 'column'
               }}
             >
-              <Link shallow replace href={useLink('/restaurant-baba')}>
-                <div>{texts.restaurant.beach}</div>
+              <Link shallow href={useLink('/restaurant-baba')}>
+                <div className="menu-link">{texts.restaurant.beach}</div>
               </Link>
             </S.Link>
           </S.SubItem>
         </S.Item>
-        {/* <S.Item className={!isLaptop ? 'mobile' : ''}>
-          <Link shallow replace href={useLink('/farniente')}>
-            <div style={{ fontSize: labelSize, zIndex: 3 }}>
+        <S.Item className={!isLaptop ? 'mobile' : ''}>
+          <Link shallow href={useLink('/farniente')}>
+            <div
+              className="menu-item"
+              style={{
+                lineHeight: labelHeight,
+                fontSize: labelSize,
+                zIndex: 3
+              }}
+            >
               {texts.farniente}
             </div>
           </Link>
         </S.Item>
         <S.Item className={!isLaptop ? 'mobile' : ''}>
-          <Link shallow replace href={useLink('/bien-etre')}>
-            <div style={{ fontSize: labelSize, zIndex: 3 }}>
+          <Link shallow href={useLink('/bien-etre')}>
+            <div
+              className="menu-item"
+              style={{
+                lineHeight: labelHeight,
+                fontSize: labelSize,
+                zIndex: 3
+              }}
+            >
               {texts.wellness}
             </div>
           </Link>
         </S.Item>
-        <S.Item className={!isLaptop ? 'mobile' : ''}>
-          <Link shallow replace href={useLink('/privatisation')}>
-            <div style={{ fontSize: labelSize, zIndex: 3 }}>
+        {/* <S.Item className={!isLaptop ? 'mobile' : ''}>
+          <Link shallow  href={useLink('/privatisation')}>
+            <div className='menu-item' style={{ fontSize: labelSize, zIndex: 3 }}>
               {texts.privatization}
             </div>
           </Link>

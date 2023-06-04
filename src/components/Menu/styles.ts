@@ -26,9 +26,20 @@ export const Item = styled.div`
   &:hover > *:first-child {
     color: #f3d7c8;
   }
+  .menu-item {
+    margin-bottom: -7px;
+  }
+  .menu-link {
+    margin-top: -7px;
+    margin-bottom: -7px;
+  }
+  .menu-item:hover,
+  .menu-item:hover > * {
+    color: #f3d7c8;
+  }
 
   &.mobile > *:first-child {
-    margin: 10px 0;
+    margin: 10px 0 0 0;
   }
 `
 export const SubItem = styled.div`
@@ -101,6 +112,7 @@ export const Wrapper = styled.div`
 
     div {
       cursor: pointer;
+      padding-right: 5px;
     }
   }
 

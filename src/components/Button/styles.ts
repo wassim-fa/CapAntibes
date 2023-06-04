@@ -18,8 +18,15 @@ export const Wrapper = styled.button<WrapperProps>`
   > *:last-child {
     margin-left: 0;
   }
-  display: flex;
-  align-items: center;
+  display: flex !important;
+  .is-apple & {
+    p {
+      padding: 3px 0;
+    }
+  }
+  .is-not-apple & {
+    align-items: center;
+  }
   cursor: pointer;
   width: ${(props) => getCssSize(props.width)};
 `
