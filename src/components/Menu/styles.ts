@@ -30,7 +30,8 @@ export const Item = styled.div`
     margin-bottom: -7px;
   }
   .menu-link {
-    margin-bottom: -4px;
+    margin-top: -7px;
+    margin-bottom: -7px;
   }
   .menu-item:hover,
   .menu-item:hover > * {
