@@ -134,6 +134,47 @@ const Menu = () => {
         </S.Item>
         <S.Item className={!isLaptop ? 'mobile' : ''}>
           <div
+            onClick={() => handleClick('hotel')}
+            style={{ fontSize: labelSize, zIndex: 3 }}
+          >
+            <Text className="p test-hover">{texts.hotel.main}</Text>
+          </div>
+          <S.SubItem
+            className={`${showItems === 'hotel' ? 'active' : ''}`}
+            style={{ fontSize: linkSize }}
+          >
+            <S.Link
+              style={{
+                flexDirection: isLaptop ? 'row' : 'column'
+              }}
+            >
+              <Link shallow replace href={useLink('/histoire-du-cap')}>
+                <div>
+                  <p>{texts.hotel.history}</p>
+                </div>
+              </Link>
+              <Link shallow replace href={useLink('/la-galerie')}>
+                <div>
+                  <p>{texts.hotel.gallery}</p>
+                </div>
+              </Link>
+            </S.Link>
+            <S.Link
+              style={{
+                flexDirection: isLaptop ? 'row' : 'column'
+              }}
+            >
+              <Link shallow replace href={useLink('/localisation')}>
+                <div>{texts.hotel.localisation}</div>
+              </Link>
+              <Link shallow replace href={useLink('/la-collection')}>
+                <div>{texts.hotel.collection}</div>
+              </Link>
+            </S.Link>
+          </S.SubItem>
+        </S.Item>
+        <S.Item className={!isLaptop ? 'mobile' : ''}>
+          <div
             onClick={() => handleClick('room')}
             style={{ fontSize: labelSize, zIndex: 3 }}
           >
@@ -270,6 +311,15 @@ const Menu = () => {
         </div>
       )}
       <Text className="p test-hover">{useText(contentsHome.text1_2)}</Text>
+
+      <S.Item className={!isLaptop ? 'mobile' : ''}>
+        <div
+          onClick={() => handleClick('hotel')}
+          style={{ fontSize: labelSize, zIndex: 3 }}
+        >
+          <p>{texts.hotel.main}</p>
+        </div>
+      </S.Item>
     </S.Wrapper>
   )
 }
