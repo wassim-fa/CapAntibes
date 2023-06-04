@@ -60,12 +60,13 @@ export const Link = styled.div`
   }
 `
 export const Wrapper = styled.div`
+  ..test-hover,
   p {
     line-height: 73px;
     color: #d99b81;
   }
 
-  &:hover p,
+  .test-hover:hover,
   p:hover {
     color: #f3d7c8;
   }
