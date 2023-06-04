@@ -269,7 +269,7 @@ const Menu = () => {
           </div> */}
         </div>
       )}
-      <Text className="p test-hover">{useText(contentsHome.text1_1)}</Text>
+      <Text className="p test-hover">{useText(contentsHome.text1_2)}</Text>
     </S.Wrapper>
   )
 }
