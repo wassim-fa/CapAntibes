@@ -24,6 +24,7 @@ export const Item = styled.div`
   margin: 2px 0;
 
   p {
+    line-height: 73px;
     color: #d99b81;
   }
 
@@ -33,6 +34,9 @@ export const Item = styled.div`
 
   &.mobile > *:first-child {
     margin: 10px 0;
+  }
+  &.mobile p {
+    line-height: 51px;
   }
 `
 export const SubItem = styled.div`
