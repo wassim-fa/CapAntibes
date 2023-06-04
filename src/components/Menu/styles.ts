@@ -23,20 +23,16 @@ export const Item = styled.div`
   flex-direction: column;
   margin: 2px 0;
 
-  p {
-    line-height: 80px;
-    color: #d99b81;
+  &:hover > *:first-child {
+    color: #f3d7c8;
   }
-
-  &:hover > *:first-child p {
+  .menu-item:hover,
+  .menu-item:hover > * {
     color: #f3d7c8;
   }
 
   &.mobile > *:first-child {
     margin: 10px 0;
-  }
-  &.mobile p {
-    line-height: 51px;
   }
 `
 export const SubItem = styled.div`
@@ -60,17 +56,6 @@ export const Link = styled.div`
   }
 `
 export const Wrapper = styled.div`
-  .test-hover,
-  p {
-    line-height: 80px;
-    color: #d99b81;
-  }
-
-  .test-hover:hover,
-  p:hover {
-    color: #f3d7c8;
-  }
-
   &.mobile {
     transform: translateX(100%);
     display: flex;
@@ -120,6 +105,7 @@ export const Wrapper = styled.div`
 
     div {
       cursor: pointer;
+      padding-right: 5px;
     }
   }
 
