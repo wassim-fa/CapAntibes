@@ -8,6 +8,8 @@ import { useContext, useEffect, useState } from 'react'
 import * as S from './styles'
 import { urls } from '@/utils'
 import { useRouter } from 'next/router'
+import Text from '../Text'
+import { contentsHome } from '@/contents/pages/home'
 
 const Menu = () => {
   const router = useRouter()
@@ -267,6 +269,7 @@ const Menu = () => {
           </div> */}
         </div>
       )}
+      <Text className="p test-hover">{useText(contentsHome.text1_1)}</Text>
     </S.Wrapper>
   )
 }

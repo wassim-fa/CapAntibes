@@ -60,6 +60,16 @@ export const Link = styled.div`
   }
 `
 export const Wrapper = styled.div`
+  p {
+    line-height: 73px;
+    color: #d99b81;
+  }
+
+  &:hover p,
+  p:hover {
+    color: #f3d7c8;
+  }
+
   &.mobile {
     transform: translateX(100%);
     display: flex;
