@@ -313,11 +313,11 @@ const Menu = () => {
       <Text className="p test-hover">{useText(contentsHome.text1_2)}</Text>
 
       <div
-          onClick={() => handleClick('hotel')}
-          style={{ fontSize: labelSize, zIndex: 3 }}
-        >
-          <Text className="p test-hover">{useText(contentsHome.text1_2)}</Text>
-        </div>
+        onClick={() => handleClick('hotel')}
+        style={{ fontSize: labelSize, zIndex: 3 }}
+      >
+        <Text className="p test-hover">{useText(contentsHome.text1_2)}</Text>
+      </div>
       <S.Item className={!isLaptop ? 'mobile' : ''}>
         <div
           onClick={() => handleClick('hotel')}
