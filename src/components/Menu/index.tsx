@@ -21,7 +21,7 @@ const Menu = () => {
     null | 'hotel' | 'room' | 'restaurant' | 'farniente'
   >(null)
   const isLaptop = useIsLaptop()
-  const labelSize = !isLaptop ? '24px' : '46px'
+  const labelSize = !isLaptop ? '24px' : '56px'
   const linkSize = !isLaptop ? '15px' : '29px'
 
   const texts = {

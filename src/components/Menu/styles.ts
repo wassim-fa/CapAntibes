@@ -24,7 +24,7 @@ export const Item = styled.div`
   margin: 2px 0;
 
   p {
-    line-height: 73px;
+    line-height: 80px;
     color: #d99b81;
   }
 
@@ -62,7 +62,7 @@ export const Link = styled.div`
 export const Wrapper = styled.div`
   .test-hover,
   p {
-    line-height: 73px;
+    line-height: 80px;
     color: #d99b81;
   }
 
